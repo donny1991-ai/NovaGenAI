@@ -893,3 +893,98 @@
     .waa-capabilities { grid-template-columns: 1fr; }
     .waa-before-after { grid-template-columns: 1fr; }
 }
+
+/* ══════ TEAM PAGE — ENHANCED ══════ */
+
+/* Stat Bar */
+.team-stats {
+    display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap;
+    padding: 3rem 2rem; background: #050505;
+    border-bottom: 1px solid rgba(255,255,255,.06);
+}
+.team-stat { text-align: center; }
+.team-stat-num {
+    font-family: var(--ff-display); font-size: 2.5rem; font-weight: 900;
+    color: var(--clr-accent);
+}
+.team-stat-label {
+    font-family: var(--ff-body); font-size: .75rem; color: var(--clr-muted);
+    letter-spacing: .08em; text-transform: uppercase; margin-top: .25rem;
+}
+
+/* Featured Engineer Sections */
+.team-eng-featured {
+    display: grid; grid-template-columns: 1fr 1.3fr; gap: 3rem;
+    align-items: center; margin-bottom: 3rem;
+    padding: 2.5rem; background: var(--clr-surface);
+    border: 1px solid rgba(255,255,255,.06); border-radius: 16px;
+    transition: all .3s ease;
+}
+.team-eng-featured:hover { border-color: rgba(0,212,255,.15); }
+.team-eng-featured--reverse { grid-template-columns: 1.3fr 1fr; }
+.team-eng-featured--reverse .team-eng-featured-img { order: 2; }
+.team-eng-featured--reverse .team-eng-featured-content { order: 1; }
+.team-eng-featured-img img {
+    width: 100%; height: 280px; object-fit: cover;
+    border-radius: 12px; border: 1px solid rgba(255,255,255,.06);
+}
+.team-eng-badge {
+    display: inline-block; padding: .25rem .75rem; border-radius: 4px;
+    font-size: .65rem; font-weight: 700; letter-spacing: .1em;
+    background: rgba(0,212,255,.1); color: var(--clr-accent);
+    border: 1px solid rgba(0,212,255,.2); margin-bottom: .75rem;
+}
+.team-eng-featured-content h3 {
+    font-family: var(--ff-display); font-size: 1.4rem; font-weight: 800;
+    margin-bottom: .75rem;
+}
+.team-eng-featured-content > p {
+    font-family: var(--ff-body); font-size: .88rem; color: rgba(255,255,255,.7);
+    line-height: 1.7; margin-bottom: 1rem;
+}
+.team-eng-list {
+    list-style: none; padding: 0; margin-bottom: 1.25rem;
+}
+.team-eng-list li {
+    font-family: var(--ff-body); font-size: .82rem; color: var(--clr-muted);
+    padding: .35rem 0 .35rem 1.25rem; position: relative; line-height: 1.5;
+}
+.team-eng-list li::before {
+    content: '→'; position: absolute; left: 0; color: var(--clr-accent);
+}
+
+/* Built Portfolio Grid */
+.team-built-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem;
+}
+.team-built-card {
+    background: var(--clr-surface); border: 1px solid rgba(255,255,255,.08);
+    border-radius: 12px; overflow: hidden; transition: all .3s ease;
+}
+.team-built-card:hover {
+    border-color: var(--clr-accent); transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0,212,255,.08);
+}
+.team-built-img {
+    width: 100%; height: 180px; object-fit: cover;
+}
+.team-built-content {
+    padding: 1.5rem;
+}
+.team-built-content h4 {
+    font-family: var(--ff-display); font-size: 1.05rem; font-weight: 700;
+    margin-bottom: .5rem;
+}
+.team-built-content p {
+    font-family: var(--ff-body); font-size: .82rem; color: var(--clr-muted);
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .team-eng-featured, .team-eng-featured--reverse { grid-template-columns: 1fr; }
+    .team-eng-featured--reverse .team-eng-featured-img { order: 0; }
+    .team-eng-featured--reverse .team-eng-featured-content { order: 0; }
+    .team-built-grid { grid-template-columns: 1fr; }
+    .team-stats { gap: 1.5rem; }
+    .team-stat-num { font-size: 1.8rem; }
+}

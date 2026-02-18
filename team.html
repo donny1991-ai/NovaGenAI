@@ -50,7 +50,7 @@
                 </div>
             </div>
             <a href="case-studies.html">CASE STUDIES</a>
-            <a href="team.html">OUR TEAM</a>
+            <a href="team.html" class="nav__active">OUR TEAM</a>
             <a href="about.html">ABOUT</a>
             <a href="contact.html">CONTACT</a>
         </nav>
@@ -58,11 +58,32 @@
     </header>
 
     <!-- ══════ HERO ══════ -->
-    <section class="page-hero">
-        <div class="page-hero__inner">
+    <section class="page-hero" style="position:relative;overflow:hidden;">
+        <img src="images/team-collab.jpg" alt="" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.12;pointer-events:none;">
+        <div class="page-hero__inner" style="position:relative;z-index:2;">
             <p class="page-hero__label">// THE PEOPLE BEHIND THE AI</p>
             <h1 class="page-hero__title">OUR <span class="accent">TEAM</span></h1>
-            <p class="page-hero__sub">We're not consultants with a ChatGPT subscription. We're a full engineering team that builds, deploys, and maintains production AI systems.</p>
+            <p class="page-hero__sub">We're not consultants with a ChatGPT subscription. We're a full engineering team that builds, deploys, and maintains production AI systems. Every line of code. Every model. Every deployment.</p>
+        </div>
+    </section>
+
+    <!-- ══════ HEADLINE STAT BAR ══════ -->
+    <section class="team-stats fade-up">
+        <div class="team-stat">
+            <div class="team-stat-num">6+</div>
+            <div class="team-stat-label">Engineering Disciplines</div>
+        </div>
+        <div class="team-stat">
+            <div class="team-stat-num">8+</div>
+            <div class="team-stat-label">AI Models in Production</div>
+        </div>
+        <div class="team-stat">
+            <div class="team-stat-num">3</div>
+            <div class="team-stat-label">Languages Supported</div>
+        </div>
+        <div class="team-stat">
+            <div class="team-stat-num">24/7</div>
+            <div class="team-stat-label">Systems Uptime</div>
         </div>
     </section>
 
@@ -76,77 +97,123 @@
                 <div class="team-leader-avatar">DC</div>
                 <h3>Don Calaki</h3>
                 <p class="team-leader-role">Founder & CEO</p>
-                <p class="team-leader-bio">AI strategist and product builder. Leads NovaGenAI's vision of deploying intelligent systems across healthcare and enterprise. Head of AI & Digital Systems at CryoCord Group.</p>
+                <p class="team-leader-bio">AI strategist and product builder. Leads NovaGenAI's vision of deploying intelligent systems across healthcare and enterprise. Head of AI & Digital Systems at CryoCord Group. Built and deployed AI voice agents, sales intelligence platforms, and HR automation systems serving 160+ employees.</p>
             </div>
             <div class="team-leader-card">
+                <div class="team-leader-avatar" style="background:rgba(34,197,94,.1);border-color:#22C55E;color:#22C55E;">JT</div>
                 <h3>James Then Khong Lek</h3>
                 <p class="team-leader-role">Board Director</p>
-                <p class="team-leader-bio">CEO & Managing Director of CryoCord Group — Malaysia's largest stem cell bank with 65% market share. MACGT representative. Brings decades of healthcare leadership.</p>
+                <p class="team-leader-bio">CEO & Managing Director of CryoCord Group — Malaysia's largest stem cell bank with 65% market share. MACGT representative. Brings decades of healthcare industry leadership and corporate governance experience across Southeast Asia.</p>
             </div>
             <div class="team-leader-card">
+                <div class="team-leader-avatar" style="background:rgba(168,85,247,.1);border-color:#A855F7;color:#A855F7;">HL</div>
                 <h3>Henry Low</h3>
                 <p class="team-leader-role">Board Director</p>
-                <p class="team-leader-bio">CryoCord Group Board member. Strategic advisor on corporate governance, partnerships, and business development across Southeast Asia.</p>
+                <p class="team-leader-bio">CryoCord Group Board member. Strategic advisor on corporate governance, partnerships, and business development. Deep experience in Malaysian corporate landscape and cross-border business operations.</p>
             </div>
             <div class="team-leader-card">
+                <div class="team-leader-avatar" style="background:rgba(255,92,0,.1);border-color:#FF5C00;color:#FF5C00;">CSK</div>
                 <h3>Prof Dato' Dr. Cheong Soon Keng</h3>
                 <p class="team-leader-role">Scientific Advisor</p>
-                <p class="team-leader-bio">UKM Emeritus Professor of Haematology, Fellow of the Academy of Sciences Malaysia (FASc). 344+ publications. Co-founder of CryoCord. Bridges AI innovation with clinical science.</p>
+                <p class="team-leader-bio">UKM Emeritus Professor of Haematology. Fellow of the Academy of Sciences Malaysia (FASc). <strong>344+ peer-reviewed publications.</strong> Co-founder of CryoCord. Bridges the frontier of AI innovation with decades of clinical science leadership. The scientific authority behind our biotech AI initiatives.</p>
             </div>
         </div>
     </section>
 
-    <!-- ══════ ENGINEERING CAPABILITIES ══════ -->
+    <!-- ══════ ENGINEERING TEAM — WITH IMAGES ══════ -->
     <section class="ag-section ag-section--surface fade-up">
         <p class="ag-label">// ENGINEERING CAPABILITIES</p>
-        <h2 class="ag-heading">What We <span class="accent">Build</span></h2>
-        <p class="ag-subtext">Every discipline needed to take AI from concept to production — in-house.</p>
+        <h2 class="ag-heading">Our <span class="accent">Engineers</span></h2>
+        <p class="ag-subtext">Every discipline needed to take AI from concept to production — in-house. No outsourcing. No contractors. Full ownership.</p>
 
-        <div class="ag-team-grid">
-            <div class="ag-team-card">
-                <div class="ag-team-icon">🧠</div>
-                <h4>AI & ML Engineers</h4>
-                <p>Custom model training, LLM fine-tuning, inference pipeline deployment on NVIDIA DGX hardware. Production ML, not Jupyter notebooks.</p>
+        <!-- ML Engineers — Featured -->
+        <div class="team-eng-featured fade-up">
+            <div class="team-eng-featured-img">
+                <img src="images/ai-chip.jpg" alt="AI and machine learning" loading="lazy">
+            </div>
+            <div class="team-eng-featured-content">
+                <div class="team-eng-badge">CORE TEAM</div>
+                <h3>AI & Machine Learning Engineers</h3>
+                <p>Our ML engineers build the brains of every agent. Custom model training, LLM fine-tuning for domain-specific tasks, inference pipeline optimisation on NVIDIA DGX hardware. They don't run Jupyter notebooks — they ship production ML systems that serve thousands of requests per minute.</p>
+                <ul class="team-eng-list">
+                    <li>Fine-tuning frontier models (Claude, GPT, Gemini) for healthcare & enterprise</li>
+                    <li>On-premise LLM deployment via vLLM on DGX Spark (Llama 70B-200B)</li>
+                    <li>RAG pipeline engineering — chunking, embedding, retrieval optimisation</li>
+                    <li>Predictive modelling — cell viability, lead scoring, anomaly detection</li>
+                    <li>Multi-agent orchestration architecture and swarm intelligence design</li>
+                </ul>
                 <div class="team-tech-tags">
-                    <span>PyTorch</span><span>vLLM</span><span>CUDA</span><span>Transformers</span><span>ONNX</span>
+                    <span>PyTorch</span><span>vLLM</span><span>CUDA</span><span>Transformers</span><span>ONNX</span><span>LangChain</span><span>pgvector</span>
                 </div>
             </div>
-            <div class="ag-team-card">
-                <div class="ag-team-icon">💻</div>
-                <h4>Full-Stack Developers</h4>
-                <p>Production-grade web apps, REST APIs, real-time systems, mobile platforms. Ship complete systems, not prototypes.</p>
+        </div>
+
+        <!-- Full-Stack Developers — Featured -->
+        <div class="team-eng-featured team-eng-featured--reverse fade-up">
+            <div class="team-eng-featured-img">
+                <img src="images/coding.jpg" alt="Full-stack development" loading="lazy">
+            </div>
+            <div class="team-eng-featured-content">
+                <div class="team-eng-badge" style="background:rgba(34,197,94,.1);color:#22C55E;border-color:#22C55E;">CORE TEAM</div>
+                <h3>Full-Stack Developers</h3>
+                <p>Production-grade applications, not prototypes. Our developers build the platforms that AI agents operate within — CRMs, HR portals, dashboards, APIs. Complete systems with authentication, real-time data, and enterprise-grade security. Every product we deploy is built by this team.</p>
+                <ul class="team-eng-list">
+                    <li>Clarify Sales Platform — real-time CRM with embedded AI intelligence</li>
+                    <li>My CryoCord HR Portal — serving 160+ employees with Kanban, calendar, messaging</li>
+                    <li>REST APIs and real-time WebSocket systems for agent communication</li>
+                    <li>Database architecture — PostgreSQL, Supabase, vector stores</li>
+                    <li>Mobile-responsive, accessible, production-deployed applications</li>
+                </ul>
                 <div class="team-tech-tags">
-                    <span>TypeScript</span><span>Next.js</span><span>React</span><span>Node.js</span><span>Python</span><span>PostgreSQL</span>
+                    <span>TypeScript</span><span>Next.js</span><span>React</span><span>Node.js</span><span>Python</span><span>PostgreSQL</span><span>Supabase</span>
                 </div>
             </div>
-            <div class="ag-team-card">
-                <div class="ag-team-icon">🎤</div>
-                <h4>Voice & NLP Specialists</h4>
-                <p>Multilingual voice agent development (EN/BM/ZH), speech recognition, natural language understanding, conversational AI design.</p>
+        </div>
+
+        <!-- Voice & NLP — Featured -->
+        <div class="team-eng-featured fade-up">
+            <div class="team-eng-featured-img">
+                <img src="images/voice-tech.jpg" alt="Voice AI technology" loading="lazy">
+            </div>
+            <div class="team-eng-featured-content">
+                <div class="team-eng-badge" style="background:rgba(168,85,247,.1);color:#A855F7;border-color:#A855F7;">SPECIALIST</div>
+                <h3>Voice & NLP Specialists</h3>
+                <p>Building AI that talks — in three languages. Our voice team creates natural, human-like conversational agents powered by ElevenLabs voice synthesis and Claude/GPT language understanding. These agents handle real phone calls with real patients, in real-time.</p>
+                <ul class="team-eng-list">
+                    <li>Multilingual voice agents — English, Bahasa Malaysia, Mandarin Chinese</li>
+                    <li>Natural conversation design — not IVR menus, real dialogue</li>
+                    <li>On-premise Whisper deployment for PDPA-compliant speech-to-text</li>
+                    <li>Sentiment analysis and intent classification for call routing</li>
+                    <li>Integration with CRM for real-time context during conversations</li>
+                </ul>
                 <div class="team-tech-tags">
-                    <span>ElevenLabs</span><span>Whisper</span><span>NLU</span><span>Dialogflow</span><span>TTS</span>
+                    <span>ElevenLabs</span><span>Whisper</span><span>Claude</span><span>NLU</span><span>TTS</span><span>WebRTC</span>
                 </div>
             </div>
+        </div>
+
+        <!-- Remaining roles as grid -->
+        <div class="ag-team-grid fade-up" style="margin-top:3rem;">
             <div class="ag-team-card">
                 <div class="ag-team-icon">📊</div>
                 <h4>Data Engineers</h4>
-                <p>ETL pipelines, data lake architecture, analytics dashboards, business intelligence, RAG indexing and retrieval pipelines.</p>
+                <p>ETL pipelines, data lake architecture, analytics dashboards, business intelligence. Build the data infrastructure that agents consume and act on.</p>
                 <div class="team-tech-tags">
-                    <span>Supabase</span><span>pgvector</span><span>BigQuery</span><span>dbt</span><span>Airflow</span>
+                    <span>Supabase</span><span>pgvector</span><span>BigQuery</span><span>dbt</span><span>Python</span>
                 </div>
             </div>
             <div class="ag-team-card">
                 <div class="ag-team-icon">🔧</div>
                 <h4>DevOps & Infrastructure</h4>
-                <p>On-premise deployment, CI/CD, monitoring, security hardening, DGX Spark administration, cloud-to-edge orchestration.</p>
+                <p>On-premise DGX Spark deployment, CI/CD pipelines, monitoring, security hardening. Keep production systems running 24/7 with zero downtime.</p>
                 <div class="team-tech-tags">
-                    <span>Docker</span><span>NVIDIA DGX</span><span>GitHub Actions</span><span>Terraform</span><span>Linux</span>
+                    <span>Docker</span><span>NVIDIA DGX</span><span>GitHub Actions</span><span>Linux</span><span>Terraform</span>
                 </div>
             </div>
             <div class="ag-team-card">
                 <div class="ag-team-icon">🎯</div>
                 <h4>Product & Strategy</h4>
-                <p>Requirements analysis, UX research, go-to-market planning, client success management. We ship outcomes, not features.</p>
+                <p>Requirements analysis, UX research, go-to-market. Translate business problems into AI solutions. We ship outcomes, not features.</p>
                 <div class="team-tech-tags">
                     <span>Figma</span><span>Analytics</span><span>A/B Testing</span><span>User Research</span>
                 </div>
@@ -154,8 +221,46 @@
         </div>
     </section>
 
-    <!-- ══════ HOW WE WORK ══════ -->
+    <!-- ══════ WHAT WE'VE BUILT ══════ -->
     <section class="ag-section fade-up">
+        <p class="ag-label">// TRACK RECORD</p>
+        <h2 class="ag-heading">What We've <span class="accent">Built</span></h2>
+        <p class="ag-subtext">Real systems. In production. Serving real users.</p>
+
+        <div class="team-built-grid">
+            <div class="team-built-card">
+                <img src="images/voice-agent.jpg" alt="AI Voice Agents" loading="lazy" class="team-built-img">
+                <div class="team-built-content">
+                    <h4>3 AI Voice Agents</h4>
+                    <p>James, Amila, Mei Lin — multilingual conversational agents handling patient enquiries, appointment booking, and sales support in English, Bahasa, and Mandarin. Live and taking calls.</p>
+                </div>
+            </div>
+            <div class="team-built-card">
+                <img src="images/coding.jpg" alt="Clarify Platform" loading="lazy" class="team-built-img">
+                <div class="team-built-content">
+                    <h4>Clarify Sales Platform</h4>
+                    <p>AI-native CRM with real-time lead scoring, pipeline intelligence, and automated follow-ups. Built for CryoCord Group's sales operation.</p>
+                </div>
+            </div>
+            <div class="team-built-card">
+                <img src="images/ai-engineers.jpg" alt="HR Portal" loading="lazy" class="team-built-img">
+                <div class="team-built-content">
+                    <h4>My CryoCord HR Portal</h4>
+                    <p>Full-scale HR platform serving 160+ employees. Kanban boards, calendar, messaging, staff directory, admin dashboards, Supabase Auth — production-grade.</p>
+                </div>
+            </div>
+            <div class="team-built-card">
+                <img src="images/data-center.jpg" alt="On-Premise AI" loading="lazy" class="team-built-img">
+                <div class="team-built-content">
+                    <h4>On-Premise AI Infrastructure</h4>
+                    <p>NVIDIA DGX Spark deployment with vLLM serving Llama 70B+. Patient data never leaves the building. PDPA compliant by architecture.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════ HOW WE WORK ══════ -->
+    <section class="ag-section ag-section--surface fade-up">
         <p class="ag-label">// OUR APPROACH</p>
         <h2 class="ag-heading">How We <span class="accent">Work</span></h2>
 
@@ -163,17 +268,17 @@
             <div class="team-approach-card">
                 <div class="team-approach-num">01</div>
                 <h4>Production First</h4>
-                <p>We don't build demos. Every system we create is designed for production from day one — scalable, monitored, maintained.</p>
+                <p>We don't build demos. Every system we create is designed for production from day one — scalable, monitored, maintained. Full-scale, never MVP.</p>
             </div>
             <div class="team-approach-card">
                 <div class="team-approach-num">02</div>
                 <h4>Full Ownership</h4>
-                <p>We build it, deploy it, and maintain it. No handoff to your IT team with a README. We own the outcome.</p>
+                <p>We build it, deploy it, and maintain it. No handoff to your IT team with a README. We own the outcome end-to-end.</p>
             </div>
             <div class="team-approach-card">
                 <div class="team-approach-num">03</div>
                 <h4>AI-Native Architecture</h4>
-                <p>Intelligence is built into the foundation — not bolted on. Every system we build has AI at its core, not as an afterthought.</p>
+                <p>Intelligence is built into the foundation — not bolted on. Every system has AI at its core, not as an afterthought or a plugin.</p>
             </div>
             <div class="team-approach-card">
                 <div class="team-approach-num">04</div>
@@ -184,9 +289,9 @@
     </section>
 
     <!-- ══════ PARTNERS ══════ -->
-    <section class="ag-section ag-section--surface fade-up">
-        <p class="ag-label">// OUR PARTNERS</p>
-        <h2 class="ag-heading">Technology <span class="accent">Partners</span></h2>
+    <section class="ag-section fade-up">
+        <p class="ag-label">// TECHNOLOGY PARTNERS</p>
+        <h2 class="ag-heading">We Work <span class="accent">With</span></h2>
 
         <div class="team-partners">
             <div class="team-partner">
@@ -194,32 +299,32 @@
                 <p>DGX Spark hardware, Grace Blackwell architecture, CUDA ecosystem</p>
             </div>
             <div class="team-partner">
-                <h4 style="font-family:var(--ff-display);font-size:1.1rem;letter-spacing:.1em">CRYOCORD GROUP</h4>
-                <p>Anchor client, 65% market share in Malaysian stem cell banking. Live AI deployment.</p>
+                <h4 style="font-family:var(--ff-display);font-size:1.1rem;letter-spacing:.1em;margin-bottom:.75rem">CRYOCORD GROUP</h4>
+                <p>Anchor deployment — 65% market share, Malaysia's largest stem cell bank</p>
             </div>
             <div class="team-partner">
-                <h4 style="font-family:var(--ff-display);font-size:1.1rem;letter-spacing:.1em">ELEVENLABS</h4>
-                <p>Voice synthesis and multilingual speech AI for our conversational agents</p>
+                <h4 style="font-family:var(--ff-display);font-size:1.1rem;letter-spacing:.1em;margin-bottom:.75rem">ELEVENLABS</h4>
+                <p>Voice synthesis — powering our multilingual conversational AI agents</p>
             </div>
             <div class="team-partner">
                 <img src="images/gcloud-logo.svg" alt="Google Cloud" loading="lazy" style="height:28px;filter:brightness(0) invert(1);">
-                <p>Gemini models, Vertex AI, cloud infrastructure for non-sensitive workloads</p>
+                <p>Gemini models, Vertex AI, cloud infrastructure</p>
             </div>
             <div class="team-partner">
-                <h4 style="font-family:var(--ff-display);font-size:1.1rem;letter-spacing:.1em">ANTHROPIC</h4>
-                <p>Claude frontier models for reasoning, code generation, and strategic analysis</p>
+                <h4 style="font-family:var(--ff-display);font-size:1.1rem;letter-spacing:.1em;margin-bottom:.75rem">ANTHROPIC</h4>
+                <p>Claude frontier models — reasoning, code generation, strategic analysis</p>
             </div>
             <div class="team-partner">
-                <h4 style="font-family:var(--ff-display);font-size:1.1rem;letter-spacing:.1em">OPENAI</h4>
-                <p>GPT models for creative writing, Whisper for speech-to-text, embedding models</p>
+                <h4 style="font-family:var(--ff-display);font-size:1.1rem;letter-spacing:.1em;margin-bottom:.75rem">OPENAI</h4>
+                <p>GPT models for creative content, Whisper for speech-to-text</p>
             </div>
         </div>
     </section>
 
     <!-- ══════ CTA ══════ -->
-    <section class="ag-section ag-cta-section fade-up">
+    <section class="ag-section ag-section--surface ag-cta-section fade-up">
         <h2 class="ag-heading">Want to Work <span class="accent">With Us?</span></h2>
-        <p class="ag-subtext">Whether you need AI agents deployed, a custom platform built, or your entire tech stack transformed — let's talk.</p>
+        <p class="ag-subtext">Whether you need AI agents deployed, a custom platform built, or your entire operation transformed — our team is ready.</p>
         <a href="contact.html" class="ag-cta-btn">Get In Touch →</a>
     </section>
 
