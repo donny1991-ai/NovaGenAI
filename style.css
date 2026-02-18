@@ -1482,3 +1482,20 @@ select.contact__input {
     .nav__dropdown-menu { display: none; }
     .nav__dropdown-trigger::after { display: none; }
 }
+
+/* ElevenLabs widget dark mode override */
+elevenlabs-convai {
+  --el-bg-color: #0a0a0a !important;
+  --el-text-color: #ffffff !important;
+  --el-btn-color: #00D4FF !important;
+  --el-border-color: #1a1a1a !important;
+}
+elevenlabs-convai::part(widget) {
+  background: #0a0a0a !important;
+  color: #fff !important;
+  border-color: #1a1a1a !important;
+}
+elevenlabs-convai::part(button) {
+  background: #00D4FF !important;
+  color: #000 !important;
+}
