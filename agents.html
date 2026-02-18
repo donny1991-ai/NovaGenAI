@@ -122,42 +122,150 @@
         </div>
     </section>
 
-    <!-- ══════ AGENT SPAWNING ══════ -->
+    <!-- ══════ AGENT SWARMS ══════ -->
     <section class="ag-section fade-up">
-        <p class="ag-label">// DYNAMIC INTELLIGENCE</p>
-        <h2 class="ag-heading">Agent <span class="accent">Spawning</span></h2>
-        <p class="ag-subtext">We don't deploy static bots. We dynamically spawn specialised agents on demand — each one configured for its specific mission.</p>
+        <p class="ag-label">// THE REAL POWER</p>
+        <h2 class="ag-heading">Agent <span class="accent">Swarms</span></h2>
+        <p class="ag-subtext">A single AI agent is useful. A coordinated swarm of specialist agents working in parallel? That's transformational. This is the core of what we build.</p>
+
+        <div class="ag-swarm-hero fade-up">
+            <div class="ag-swarm-visual">
+                <div class="ag-swarm-center-node">
+                    <div class="ag-swarm-pulse"></div>
+                    <div class="ag-swarm-pulse ag-swarm-pulse--2"></div>
+                    <span>ORCHESTRATOR</span>
+                </div>
+                <div class="ag-swarm-agents">
+                    <div class="ag-swarm-dot" style="--delay:0s;--x:-120px;--y:-80px"><span>🔍</span></div>
+                    <div class="ag-swarm-dot" style="--delay:.2s;--x:130px;--y:-70px"><span>💻</span></div>
+                    <div class="ag-swarm-dot" style="--delay:.4s;--x:-100px;--y:90px"><span>✍️</span></div>
+                    <div class="ag-swarm-dot" style="--delay:.6s;--x:110px;--y:85px"><span>📊</span></div>
+                    <div class="ag-swarm-dot" style="--delay:.8s;--x:0px;--y:-120px"><span>🛡️</span></div>
+                    <div class="ag-swarm-dot" style="--delay:1s;--x:-150px;--y:10px"><span>🎤</span></div>
+                    <div class="ag-swarm-dot" style="--delay:1.2s;--x:155px;--y:5px"><span>📣</span></div>
+                    <div class="ag-swarm-dot" style="--delay:1.4s;--x:0px;--y:130px"><span>🔧</span></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ag-text-block" style="max-width:800px;margin:0 auto 3rem;text-align:center;">
+            <p>When a complex task arrives, our orchestrator doesn't hand it to one agent. It <strong>decomposes the task</strong>, spins up 5, 10, or 20 specialist agents simultaneously, each tackling a piece of the puzzle. They work in parallel — a researcher gathers data while a writer drafts copy while an analyst crunches numbers while a compliance agent reviews everything. <strong>Work that takes a team of humans a week gets done in minutes.</strong></p>
+        </div>
+
+        <h3 class="ag-subheading fade-up">How a Swarm Executes</h3>
+
+        <div class="ag-swarm-flow fade-up">
+            <div class="ag-swarm-flow-step">
+                <div class="ag-swarm-flow-num">1</div>
+                <h4>Task Decomposition</h4>
+                <p>Complex request comes in. The orchestrator breaks it into independent subtasks — what can run in parallel? What has dependencies?</p>
+            </div>
+            <div class="ag-swarm-flow-arrow">⟶</div>
+            <div class="ag-swarm-flow-step">
+                <div class="ag-swarm-flow-num">2</div>
+                <h4>Agent Spawning</h4>
+                <p>Specialist agents are created on-the-fly. Each gets a role, knowledge base, tools, and the optimal AI model for its task. A researcher gets Gemini Flash. A coder gets Claude Sonnet. A writer gets GPT-5.2.</p>
+            </div>
+            <div class="ag-swarm-flow-arrow">⟶</div>
+            <div class="ag-swarm-flow-step">
+                <div class="ag-swarm-flow-num">3</div>
+                <h4>Parallel Execution</h4>
+                <p>All agents work simultaneously. They can communicate, share findings, and hand off work to each other. An agent that finishes early can spawn sub-agents for deeper analysis.</p>
+            </div>
+            <div class="ag-swarm-flow-arrow">⟶</div>
+            <div class="ag-swarm-flow-step">
+                <div class="ag-swarm-flow-num">4</div>
+                <h4>Consolidation</h4>
+                <p>The orchestrator collects all results, resolves conflicts, synthesises findings, and delivers a unified output — reviewed by a quality gate agent before delivery.</p>
+            </div>
+        </div>
+
+        <h3 class="ag-subheading fade-up">Real-World Swarm Examples</h3>
+
+        <div class="ag-swarm-examples fade-up">
+            <div class="ag-swarm-example">
+                <div class="ag-swarm-example-trigger">
+                    <span class="ag-swarm-example-tag">TASK</span>
+                    "Prepare a competitive analysis of 5 companies in our market"
+                </div>
+                <div class="ag-swarm-example-result">
+                    <span class="ag-swarm-example-tag ag-swarm-example-tag--green">SWARM</span>
+                    <strong>7 agents spawn:</strong> 5 Research Agents (one per competitor, running in parallel) + 1 Analyst Agent (compares findings) + 1 Writer Agent (produces the final report). <strong>Done in 8 minutes.</strong> A human team? 2-3 days.
+                </div>
+            </div>
+            <div class="ag-swarm-example">
+                <div class="ag-swarm-example-trigger">
+                    <span class="ag-swarm-example-tag">TASK</span>
+                    "Build and deploy a customer-facing landing page for our new product"
+                </div>
+                <div class="ag-swarm-example-result">
+                    <span class="ag-swarm-example-tag ag-swarm-example-tag--green">SWARM</span>
+                    <strong>6 agents spawn:</strong> Strategist (messaging), Writer (copy), Designer (UI/UX), Engineer (code), SEO Agent (optimisation), QA Agent (testing + security). All work in parallel. <strong>Live site in under an hour.</strong>
+                </div>
+            </div>
+            <div class="ag-swarm-example">
+                <div class="ag-swarm-example-trigger">
+                    <span class="ag-swarm-example-tag">TASK</span>
+                    "Process this month's 500 invoices and flag anomalies"
+                </div>
+                <div class="ag-swarm-example-result">
+                    <span class="ag-swarm-example-tag ag-swarm-example-tag--green">SWARM</span>
+                    <strong>50 agents spawn:</strong> Each processes 10 invoices — OCR extraction, PO matching, policy validation, anomaly detection. One Analyst Agent aggregates results and produces the exception report. <strong>Done in 12 minutes.</strong> Accounts team? 3 days.
+                </div>
+            </div>
+            <div class="ag-swarm-example">
+                <div class="ag-swarm-example-trigger">
+                    <span class="ag-swarm-example-tag">TASK</span>
+                    "Onboard 20 new employees starting Monday"
+                </div>
+                <div class="ag-swarm-example-result">
+                    <span class="ag-swarm-example-tag ag-swarm-example-tag--green">SWARM</span>
+                    <strong>20 HR Agents spawn:</strong> One per employee — generates welcome packs, creates system accounts, schedules orientation, assigns mentors, sends personalised onboarding sequences. All 20 processed simultaneously. <strong>Done in 15 minutes.</strong>
+                </div>
+            </div>
+        </div>
+
+        <div class="ag-comp-bottom fade-up" style="margin-top:2.5rem;">
+            <p><strong>This is the difference.</strong> Other companies give you one AI assistant. We give you an <strong>entire AI workforce</strong> that scales to the size of any task — instantly, in parallel, with every agent optimised for its specific role.</p>
+        </div>
+    </section>
+
+    <!-- ══════ AGENT ANATOMY ══════ -->
+    <section class="ag-section ag-section--surface fade-up">
+        <p class="ag-label">// ANATOMY OF AN AGENT</p>
+        <h2 class="ag-heading">What Every Agent <span class="accent">Gets</span></h2>
+        <p class="ag-subtext">Every agent we spawn — whether it lives for 5 minutes or runs permanently — is configured with these capabilities.</p>
 
         <div class="ag-spawn-grid">
             <div class="ag-spawn-card">
                 <div class="ag-spawn-icon">🎭</div>
                 <h4>Role Definition</h4>
-                <p>Every agent gets a specialised identity: "You are a senior sales analyst at [Company]. Your job is to..." — not a generic assistant.</p>
+                <p>A specialised identity and mission: "You are a senior sales analyst at [Company]. Your job is to score leads and recommend actions." Not a generic assistant — a domain expert.</p>
             </div>
             <div class="ag-spawn-card">
                 <div class="ag-spawn-icon">🧠</div>
-                <h4>Knowledge Base</h4>
-                <p>RAG-connected to your SOPs, product docs, medical protocols, compliance rules — whatever the agent needs to do its job with authority.</p>
+                <h4>Knowledge Base (RAG)</h4>
+                <p>Connected to your documents — SOPs, product specs, medical protocols, compliance rules, training materials. The agent doesn't guess — it retrieves authoritative answers from your data.</p>
             </div>
             <div class="ag-spawn-card">
                 <div class="ag-spawn-icon">🔧</div>
                 <h4>Tool Access</h4>
-                <p>CRM systems, databases, calendars, email, voice calls, file storage, APIs — agents use real tools, not just generate text.</p>
+                <p>CRM, ERP, databases, calendars, email, voice calls, file storage, APIs, spreadsheets. Agents don't just talk — they log into your systems and do the work.</p>
             </div>
             <div class="ag-spawn-card">
                 <div class="ag-spawn-icon">💾</div>
                 <h4>Persistent Memory</h4>
-                <p>Agents remember past interactions, decisions, and context. Your HR agent knows it processed John's leave last Tuesday.</p>
+                <p>Remembers past interactions, decisions, and context across sessions. Your HR agent knows it approved John's leave last Tuesday and that his balance is now 12 days.</p>
             </div>
             <div class="ag-spawn-card">
                 <div class="ag-spawn-icon">🛡️</div>
-                <h4>Guardrails</h4>
-                <p>Compliance rules, escalation triggers, spending limits, human-approval gates. Every agent operates within strict boundaries.</p>
+                <h4>Guardrails & Escalation</h4>
+                <p>Compliance rules, spending limits, approval gates, and human escalation triggers. The agent knows exactly when to act and when to ask a human.</p>
             </div>
             <div class="ag-spawn-card">
-                <div class="ag-spawn-icon">⚡</div>
-                <h4>Multi-Agent Swarms</h4>
-                <p>Complex tasks get decomposed: the orchestrator spawns 5-10 specialist agents in parallel, consolidates results, and delivers a unified output.</p>
+                <div class="ag-spawn-icon">🧬</div>
+                <h4>Optimal AI Model</h4>
+                <p>Each agent gets the best model for its task. A researcher gets Gemini (fast, cheap). A strategist gets Claude Opus (deep reasoning). Sensitive tasks get Llama 3 (on-premise).</p>
             </div>
         </div>
     </section>
