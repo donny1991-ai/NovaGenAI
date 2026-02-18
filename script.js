@@ -1,0 +1,127 @@
+/* ═══════════════════════════════════════════════════════
+   NOVAGENAI — script.js
+   ═══════════════════════════════════════════════════════ */
+
+// ── Nav blur on scroll ───────────────────────────────
+const nav = document.getElementById('nav');
+let ticking = false;
+window.addEventListener('scroll', () => {
+    if (!ticking) {
+        window.requestAnimationFrame(() => {
+            nav.style.background = window.scrollY > 40 ? 'rgba(0,0,0,.85)' : 'rgba(0,0,0,.6)';
+            ticking = false;
+        });
+        ticking = true;
+    }
+});
+
+// ── Smooth anchor scroll ─────────────────────────────
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', (e) => {
+        const target = document.querySelector(anchor.getAttribute('href'));
+        if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+    });
+});
+
+// ── Scroll-triggered animations ──────────────────────
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.solutions, .testimonials, .contact, .footer').forEach(el => observer.observe(el));
+
+// ── Testimonials Carousel ────────────────────────────
+const testimonialsData = [
+    { quote: "On-premise AI means our patient data never leaves our building. Non-negotiable in healthcare.", by: "Dr. Ahmad Razif, CTO, Healthcare Group" },
+    { quote: "The Clarify platform gives us real-time intelligence we never had before. Game changer.", by: "Sarah Lim, Sales Director, CryoCord Group" },
+    { quote: "Multilingual AI support in English, Bahasa, and Mandarin — unlike anything in the market.", by: "Mei Ling Chen, Patient Relations Manager, CryoCord" },
+    { quote: "Onboarding went from 3-month staff training to 2 weeks with their knowledge base AI.", by: "Priya Nair, HR Manager, Healthcare Org" },
+    { quote: "Their predictive cell model is first-of-its-kind innovation in biotech AI.", by: "Dr. Tan Wei Ming, Lab Director, Medical Group" },
+    { quote: "ROI was visible within the first month. Enquiry-to-patient conversion doubled.", by: "James Wong, CIO, Private Hospital" },
+    { quote: "Finally, an AI company that understands Malaysian healthcare. Built compliance-first.", by: "Farah Ismail, COO, Biotech Firm" },
+    { quote: "The intersection of artificial intelligence and cell biology represents the next frontier. NovaGenAI is positioned at this exact convergence.", by: "Prof. Dr. Cheong Soon Keng, Academy of Sciences Malaysia" },
+    { quote: "Their voice agent handles 80% of our enquiries autonomously. Our team focuses on what matters.", by: "Rachel Goh, Operations Manager, CryoCord Group" },
+    { quote: "The RAG system turned 10 years of SOPs into an instant knowledge base. Staff love it.", by: "Kumar Selvam, IT Director, Medical Centre" },
+    { quote: "We deployed their DGX Spark solution in 3 weeks. Patient data sovereignty solved.", by: "Dr. Amir Hassan, CISO, Hospital Group" },
+    { quote: "Marketing compliance used to take weeks of legal review. Now it's built into the AI.", by: "Lisa Tan, Marketing Director, Healthcare Corp" },
+    { quote: "The predictive analytics on cell viability have improved our storage protocols dramatically.", by: "Dr. Nurul Ain, Research Scientist, CryoCord Labs" },
+    { quote: "Integration was seamless. Their team understands healthcare workflows inside out.", by: "David Chong, Head of Digital, Private Hospital" },
+    { quote: "We've cut our customer response time from 24 hours to under 2 minutes with the voice agent.", by: "Siti Aminah, Customer Service Lead, CryoCord" },
+    { quote: "The Clarify dashboard gives me visibility I've never had. Every lead, every touchpoint, tracked.", by: "Kevin Yap, Regional Sales Manager, CryoCord Group" },
+    { quote: "Their AI doesn't just automate — it augments our clinical decision-making.", by: "Dr. Liew Kah Meng, Chief Medical Officer" },
+    { quote: "Compliance-first AI is rare. NovaGenAI built it into their DNA, not as an afterthought.", by: "Tan Sri Dato' Razali, Board Advisor, Healthcare Group" },
+    { quote: "The HR automation alone saved us RM200K annually. Everything else is a bonus.", by: "Anita Kaur, CFO, CryoCord Group" },
+    { quote: "Best AI partner we've worked with. They understand both the tech and the science.", by: "Dr. Rajan Pillai, Director of Innovation, Biotech Ventures" },
+];
+
+const carousel = document.getElementById('testimonials-carousel');
+const prevBtn = document.getElementById('testimonial-prev');
+const nextBtn = document.getElementById('testimonial-next');
+
+if (carousel) {
+    let list = [...testimonialsData];
+    let cardSize = window.matchMedia('(min-width: 640px)').matches ? 365 : 280;
+
+    window.addEventListener('resize', () => {
+        cardSize = window.matchMedia('(min-width: 640px)').matches ? 365 : 280;
+        renderCards();
+    });
+
+    function getInitials(name) {
+        const parts = name.replace(/^(Dr\.|Prof\.|Tan Sri|Dato')\s*/gi, '').split(' ');
+        return (parts[0]?.[0] || '') + (parts[1]?.[0] || '');
+    }
+
+    function renderCards() {
+        carousel.innerHTML = '';
+        const half = Math.floor(list.length / 2);
+
+        list.forEach((t, index) => {
+            const position = index - half;
+            const isCenter = position === 0;
+
+            const card = document.createElement('div');
+            card.className = 'testimonial-card' + (isCenter ? ' testimonial-card--center' : '');
+
+            const offsetX = (cardSize / 1.5) * position;
+            const offsetY = isCenter ? -65 : (position % 2 ? 15 : -15);
+            const rotation = isCenter ? 0 : (position % 2 ? 2.5 : -2.5);
+
+            card.style.transform = `translate(-50%, -50%) translateX(${offsetX}px) translateY(${offsetY}px) rotate(${rotation}deg)`;
+            card.style.zIndex = isCenter ? 10 : (5 - Math.abs(position));
+            card.style.width = cardSize + 'px';
+            card.style.height = cardSize + 'px';
+
+            const authorName = t.by.split(',')[0].trim();
+            const initials = getInitials(authorName);
+
+            card.innerHTML = `
+                <div class="testimonial-card__initials">${initials}</div>
+                <h3 class="testimonial-card__quote">"${t.quote}"</h3>
+                <p class="testimonial-card__author">— ${t.by}</p>
+            `;
+
+            card.addEventListener('click', () => move(position));
+            carousel.appendChild(card);
+        });
+    }
+
+    function move(steps) {
+        if (steps === 0) return;
+        if (steps > 0) {
+            for (let i = 0; i < steps; i++) list.push(list.shift());
+        } else {
+            for (let i = 0; i < Math.abs(steps); i++) list.unshift(list.pop());
+        }
+        renderCards();
+    }
+
+    prevBtn?.addEventListener('click', () => move(-1));
+    nextBtn?.addEventListener('click', () => move(1));
+    renderCards();
+}
