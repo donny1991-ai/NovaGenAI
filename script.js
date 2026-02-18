@@ -208,3 +208,14 @@ document.querySelectorAll('.ag-org-node').forEach(node => {
 // Auto-show first department
 const firstNode = document.querySelector('.ag-org-node');
 if (firstNode) firstNode.click();
+
+// Remove Spline watermark
+setInterval(()=>{
+  const sv=document.querySelector('spline-viewer');
+  if(!sv||!sv.shadowRoot)return;
+  const logo=sv.shadowRoot.querySelector('#logo');
+  if(logo)logo.remove();
+  sv.shadowRoot.querySelectorAll('a').forEach(a=>{
+    if(a.href&&a.href.includes('spline'))a.remove();
+  });
+},500);

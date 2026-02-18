@@ -126,6 +126,10 @@ img { max-width: 100%; display: block; }
     display: flex; align-items: center; justify-content: center;
     pointer-events: auto;
 }
+/* Hide Spline watermark */
+.hero__3d-container spline-viewer::part(logo) { display:none!important; }
+spline-viewer #logo, spline-viewer [class*="logo"], spline-viewer a[href*="spline"] { display:none!important; }
+
 .hero__3d-container spline-viewer {
     width: 100vw !important;
     height: 100vh !important;
