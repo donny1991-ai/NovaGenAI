@@ -33,7 +33,7 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, { threshold: 0.1 });
 
-document.querySelectorAll('.solutions, .testimonials, .contact, .footer').forEach(el => observer.observe(el));
+document.querySelectorAll('.solutions, .testimonials, .contact, .footer, .fade-up').forEach(el => observer.observe(el));
 
 // ── Testimonials Carousel ────────────────────────────
 const testimonialsData = [
@@ -125,3 +125,86 @@ if (carousel) {
     nextBtn?.addEventListener('click', () => move(1));
     renderCards();
 }
+
+// ── Org Diagram — position nodes in a circle ─────────
+const orgDiagram = document.getElementById('org-diagram');
+if (orgDiagram) {
+    const nodes = orgDiagram.querySelectorAll('.org-node');
+    const hub = document.getElementById('org-hub');
+    const svgLines = document.getElementById('org-lines');
+
+    function positionOrgNodes() {
+        if (window.innerWidth < 768) return; // mobile uses flex column
+        const w = orgDiagram.offsetWidth;
+        const h = orgDiagram.offsetHeight;
+        const cx = w / 2;
+        const cy = h / 2;
+        const radius = Math.min(cx, cy) - 80;
+
+        svgLines.setAttribute('viewBox', `0 0 ${w} ${h}`);
+        svgLines.innerHTML = '';
+
+        nodes.forEach((node, i) => {
+            const angle = (i / nodes.length) * Math.PI * 2 - Math.PI / 2;
+            const nx = cx + radius * Math.cos(angle);
+            const ny = cy + radius * Math.sin(angle);
+            node.style.left = nx + 'px';
+            node.style.top = ny + 'px';
+            node.style.transform = 'translate(-50%, -50%)';
+
+            const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+            line.setAttribute('x1', cx);
+            line.setAttribute('y1', cy);
+            line.setAttribute('x2', nx);
+            line.setAttribute('y2', ny);
+            svgLines.appendChild(line);
+        });
+    }
+
+    positionOrgNodes();
+    window.addEventListener('resize', positionOrgNodes);
+
+    // Click toggle for mobile
+    nodes.forEach(node => {
+        node.addEventListener('click', (e) => {
+            const wasActive = node.classList.contains('active');
+            nodes.forEach(n => n.classList.remove('active'));
+            if (!wasActive) node.classList.add('active');
+        });
+    });
+}
+
+// ── Contact form handling ────────────────────────────
+const contactForm = document.getElementById('contact-form');
+if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const btn = contactForm.querySelector('.contact__submit');
+        const origText = btn.textContent;
+        btn.textContent = 'Sent! We\'ll be in touch.';
+        btn.style.background = '#22C55E';
+        setTimeout(() => {
+            btn.textContent = origText;
+            btn.style.background = '';
+            contactForm.reset();
+        }, 3000);
+    });
+}
+
+/* ── Agents Page: Org Diagram Click Interaction ── */
+document.querySelectorAll('.ag-org-node').forEach(node => {
+    node.addEventListener('click', () => {
+        const dept = node.dataset.dept;
+        // Remove active from all nodes and details
+        document.querySelectorAll('.ag-org-node').forEach(n => n.classList.remove('active'));
+        document.querySelectorAll('.ag-dept-detail').forEach(d => d.classList.remove('active'));
+        // Activate clicked
+        node.classList.add('active');
+        const detail = document.querySelector(`.ag-dept-detail[data-dept="${dept}"]`);
+        if (detail) detail.classList.add('active');
+    });
+});
+
+// Auto-show first department
+const firstNode = document.querySelector('.ag-org-node');
+if (firstNode) firstNode.click();

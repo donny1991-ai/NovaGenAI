@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>AI Agents — NovaGenAI</title>
+    <meta name="description" content="Deploy autonomous AI agents across every department. Custom CRM systems with embedded AI. Enterprise-grade, on-premise capable."/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="agents.css"/>
+</head>
+<body>
+    <header class="nav" id="nav">
+        <a href="index.html" class="nav__brand"><span class="nav__dot"></span> NOVAGENAI</a>
+        <nav class="nav__links" id="nav-links">
+            <a href="solutions.html">SOLUTIONS</a>
+            <a href="agents.html" class="nav__active">AGENTS</a>
+            <a href="about.html">ABOUT</a>
+            <a href="case-studies.html">CASE STUDIES</a>
+            <a href="technology.html">TECHNOLOGY</a>
+            <a href="contact.html">CONTACT</a>
+        </nav>
+        <a href="contact.html" class="nav__cta" id="nav-cta">GET STARTED&nbsp;<span class="nav__cta-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span></a>
+    </header>
+
+    <!-- ══════ HERO ══════ -->
+    <section class="page-hero">
+        <div class="page-hero__inner">
+            <p class="page-hero__label">// AUTONOMOUS AI FOR ENTERPRISE</p>
+            <h1 class="page-hero__title">AI <span class="accent">AGENTS</span><br/>IN YOUR ORGANISATION</h1>
+            <p class="page-hero__sub">We don't build chatbots. We deploy autonomous AI agents that think, act, and deliver results across every department in your business.</p>
+        </div>
+    </section>
+
+    <!-- ══════ WHAT ARE AI AGENTS ══════ -->
+    <section class="ag-section fade-up">
+        <p class="ag-label">// BEYOND CHATBOTS</p>
+        <h2 class="ag-heading">What Are <span class="accent">AI Agents?</span></h2>
+        <div class="ag-two-col">
+            <div class="ag-text-block">
+                <p>Traditional chatbots follow scripts. AI agents <strong>reason, plan, and execute</strong>. They break complex tasks into steps, use tools (CRMs, databases, APIs, calendars), maintain memory across conversations, and make autonomous decisions within defined guardrails.</p>
+                <p>Our agents don't just answer questions — they <strong>do the work</strong>. A sales agent doesn't just tell you about leads — it scores them, drafts follow-ups, books meetings, and alerts your team when a deal is about to close.</p>
+            </div>
+            <div class="ag-comparison">
+                <div class="ag-comp-card ag-comp-card--old">
+                    <h4>❌ Traditional Chatbot</h4>
+                    <ul>
+                        <li>Follows rigid scripts</li>
+                        <li>Single-turn responses</li>
+                        <li>No memory between sessions</li>
+                        <li>Can't take actions</li>
+                        <li>Breaks on unexpected input</li>
+                    </ul>
+                </div>
+                <div class="ag-comp-card ag-comp-card--new">
+                    <h4>✅ NovaGenAI Agent</h4>
+                    <ul>
+                        <li>Reasons and plans autonomously</li>
+                        <li>Multi-step task execution</li>
+                        <li>Persistent memory & context</li>
+                        <li>Uses tools: CRM, email, databases</li>
+                        <li>Handles edge cases intelligently</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════ HOW AGENTS WORK ══════ -->
+    <section class="ag-section ag-section--surface fade-up">
+        <p class="ag-label">// UNDER THE HOOD</p>
+        <h2 class="ag-heading">How Our <span class="accent">Agents Work</span></h2>
+        <p class="ag-subtext">Every agent we deploy follows a proven architecture. Here's what happens when you give an agent a task.</p>
+
+        <div class="ag-pipeline">
+            <div class="ag-pipe-step">
+                <div class="ag-pipe-num">01</div>
+                <h4>Task Received</h4>
+                <p>User or system triggers a request — voice call, form submission, scheduled job, or another agent's handoff.</p>
+            </div>
+            <div class="ag-pipe-arrow">→</div>
+            <div class="ag-pipe-step">
+                <div class="ag-pipe-num">02</div>
+                <h4>Orchestrator Routes</h4>
+                <p>A master orchestrator agent analyses the task, determines complexity, and routes to the optimal specialist agent — or spawns multiple agents for parallel execution.</p>
+            </div>
+            <div class="ag-pipe-arrow">→</div>
+            <div class="ag-pipe-step">
+                <div class="ag-pipe-num">03</div>
+                <h4>Agent Executes</h4>
+                <p>The specialist agent loads its role definition, connects to relevant tools (CRM, database, calendar), retrieves context from its knowledge base via RAG, and executes autonomously.</p>
+            </div>
+            <div class="ag-pipe-arrow">→</div>
+            <div class="ag-pipe-step">
+                <div class="ag-pipe-num">04</div>
+                <h4>Result Delivered</h4>
+                <p>Task completed, audit trail logged, result delivered to user or handed to the next agent in the chain. Humans notified for review when guardrails require it.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════ AGENT SPAWNING ══════ -->
+    <section class="ag-section fade-up">
+        <p class="ag-label">// DYNAMIC INTELLIGENCE</p>
+        <h2 class="ag-heading">Agent <span class="accent">Spawning</span></h2>
+        <p class="ag-subtext">We don't deploy static bots. We dynamically spawn specialised agents on demand — each one configured for its specific mission.</p>
+
+        <div class="ag-spawn-grid">
+            <div class="ag-spawn-card">
+                <div class="ag-spawn-icon">🎭</div>
+                <h4>Role Definition</h4>
+                <p>Every agent gets a specialised identity: "You are a senior sales analyst at [Company]. Your job is to..." — not a generic assistant.</p>
+            </div>
+            <div class="ag-spawn-card">
+                <div class="ag-spawn-icon">🧠</div>
+                <h4>Knowledge Base</h4>
+                <p>RAG-connected to your SOPs, product docs, medical protocols, compliance rules — whatever the agent needs to do its job with authority.</p>
+            </div>
+            <div class="ag-spawn-card">
+                <div class="ag-spawn-icon">🔧</div>
+                <h4>Tool Access</h4>
+                <p>CRM systems, databases, calendars, email, voice calls, file storage, APIs — agents use real tools, not just generate text.</p>
+            </div>
+            <div class="ag-spawn-card">
+                <div class="ag-spawn-icon">💾</div>
+                <h4>Persistent Memory</h4>
+                <p>Agents remember past interactions, decisions, and context. Your HR agent knows it processed John's leave last Tuesday.</p>
+            </div>
+            <div class="ag-spawn-card">
+                <div class="ag-spawn-icon">🛡️</div>
+                <h4>Guardrails</h4>
+                <p>Compliance rules, escalation triggers, spending limits, human-approval gates. Every agent operates within strict boundaries.</p>
+            </div>
+            <div class="ag-spawn-card">
+                <div class="ag-spawn-icon">⚡</div>
+                <h4>Multi-Agent Swarms</h4>
+                <p>Complex tasks get decomposed: the orchestrator spawns 5-10 specialist agents in parallel, consolidates results, and delivers a unified output.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════ MULTI-AGENT ORCHESTRATION ══════ -->
+    <section class="ag-section ag-section--surface fade-up">
+        <p class="ag-label">// SWARM INTELLIGENCE</p>
+        <h2 class="ag-heading">Multi-Agent <span class="accent">Orchestration</span></h2>
+        <p class="ag-subtext">A single task can trigger an entire swarm of specialist agents working in parallel. Here's a real example:</p>
+
+        <div class="ag-orch">
+            <div class="ag-orch-trigger">
+                <div class="ag-orch-trigger-label">TASK</div>
+                <p>"Prepare the quarterly board report"</p>
+            </div>
+            <div class="ag-orch-line"></div>
+            <div class="ag-orch-hub">
+                <div class="ag-orch-hub-ring"></div>
+                ORCHESTRATOR
+            </div>
+            <div class="ag-orch-fan">
+                <div class="ag-orch-agent">
+                    <span class="ag-orch-dot" style="background:#00D4FF"></span>
+                    <strong>Analyst Agent</strong><br/>Pull financials, calculate KPIs, generate charts
+                </div>
+                <div class="ag-orch-agent">
+                    <span class="ag-orch-dot" style="background:#22C55E"></span>
+                    <strong>Research Agent</strong><br/>Market trends, competitor moves, industry data
+                </div>
+                <div class="ag-orch-agent">
+                    <span class="ag-orch-dot" style="background:#FF5C00"></span>
+                    <strong>Writer Agent</strong><br/>Draft executive summary, narrative sections
+                </div>
+                <div class="ag-orch-agent">
+                    <span class="ag-orch-dot" style="background:#A855F7"></span>
+                    <strong>Compliance Agent</strong><br/>Review for regulatory accuracy, flag risks
+                </div>
+            </div>
+            <div class="ag-orch-line"></div>
+            <div class="ag-orch-result">
+                <div class="ag-orch-trigger-label" style="background:#22C55E">RESULT</div>
+                <p>Complete board report delivered in 15 minutes — not 3 days</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════ ORG DIAGRAM ══════ -->
+    <section class="ag-section fade-up">
+        <p class="ag-label">// ACROSS YOUR ORGANISATION</p>
+        <h2 class="ag-heading">AI Agents in <span class="accent">Every Department</span></h2>
+        <p class="ag-subtext">Click any department to see the agents we deploy there.</p>
+
+        <div class="ag-org">
+            <div class="ag-org-center">
+                <div class="ag-org-center-ring"></div>
+                <div class="ag-org-center-ring ag-org-center-ring--2"></div>
+                YOUR<br/>COMPANY
+            </div>
+
+            <div class="ag-org-node" data-dept="sales" style="--angle: 0deg;">
+                <div class="ag-org-node-icon">💰</div>
+                <div class="ag-org-node-label">Sales</div>
+            </div>
+            <div class="ag-org-node" data-dept="hr" style="--angle: 45deg;">
+                <div class="ag-org-node-icon">👥</div>
+                <div class="ag-org-node-label">HR</div>
+            </div>
+            <div class="ag-org-node" data-dept="ops" style="--angle: 90deg;">
+                <div class="ag-org-node-icon">⚙️</div>
+                <div class="ag-org-node-label">Operations</div>
+            </div>
+            <div class="ag-org-node" data-dept="cs" style="--angle: 135deg;">
+                <div class="ag-org-node-icon">🎧</div>
+                <div class="ag-org-node-label">Customer Service</div>
+            </div>
+            <div class="ag-org-node" data-dept="marketing" style="--angle: 180deg;">
+                <div class="ag-org-node-icon">📣</div>
+                <div class="ag-org-node-label">Marketing</div>
+            </div>
+            <div class="ag-org-node" data-dept="lab" style="--angle: 225deg;">
+                <div class="ag-org-node-icon">🔬</div>
+                <div class="ag-org-node-label">Lab / R&D</div>
+            </div>
+            <div class="ag-org-node" data-dept="finance" style="--angle: 270deg;">
+                <div class="ag-org-node-icon">📊</div>
+                <div class="ag-org-node-label">Finance</div>
+            </div>
+            <div class="ag-org-node" data-dept="compliance" style="--angle: 315deg;">
+                <div class="ag-org-node-icon">🛡️</div>
+                <div class="ag-org-node-label">Compliance</div>
+            </div>
+        </div>
+
+        <!-- Detail panels — shown on click -->
+        <div class="ag-dept-details" id="ag-dept-details">
+            <div class="ag-dept-detail" data-dept="sales">
+                <h3>💰 Sales Agents</h3>
+                <ul>
+                    <li><strong>Lead Qualification Agent</strong> — Scores inbound leads in real-time using CRM data, conversation history, and predictive models. Hot leads get instant alerts.</li>
+                    <li><strong>Follow-Up Agent</strong> — Generates personalised follow-up sequences. Drafts emails, schedules calls, tracks engagement. Never lets a lead go cold.</li>
+                    <li><strong>Pipeline Intelligence</strong> — Forecasts which deals will close and when. Identifies at-risk deals. Recommends next-best-action for every opportunity.</li>
+                    <li><strong>Proposal Generator</strong> — Drafts customised proposals using product specs, pricing rules, and client context. Ready for review in minutes, not hours.</li>
+                </ul>
+            </div>
+            <div class="ag-dept-detail" data-dept="hr">
+                <h3>👥 HR Agents</h3>
+                <ul>
+                    <li><strong>Onboarding Agent</strong> — Walks new hires through every step: documents, system access, training schedule, introductions. Zero manual handholding.</li>
+                    <li><strong>Policy Q&A Agent</strong> — Instant answers from your employee handbook, SOPs, and HR policies. "How many annual leave days do I have?" — answered in seconds.</li>
+                    <li><strong>Leave & Attendance Agent</strong> — Processes leave requests, checks balances, routes approvals, updates calendars. Fully automated.</li>
+                    <li><strong>Document Intelligence</strong> — Processes HR documents, extracts data from forms, generates letters and contracts from templates.</li>
+                </ul>
+            </div>
+            <div class="ag-dept-detail" data-dept="ops">
+                <h3>⚙️ Operations Agents</h3>
+                <ul>
+                    <li><strong>Workflow Automation</strong> — Identifies bottlenecks, routes tasks, triggers approvals, and escalates when SLAs are at risk.</li>
+                    <li><strong>Scheduling Agent</strong> — Optimises resource allocation, room bookings, shift planning, and equipment scheduling across teams.</li>
+                    <li><strong>Process Monitor</strong> — Watches operational KPIs in real-time. Flags anomalies before they become problems.</li>
+                </ul>
+            </div>
+            <div class="ag-dept-detail" data-dept="cs">
+                <h3>🎧 Customer Service Agents</h3>
+                <ul>
+                    <li><strong>Voice Agent (Multilingual)</strong> — Handles calls in English, Bahasa Malaysia, and Mandarin. Natural conversation, not IVR menus. Books appointments, answers FAQs, routes complex issues.</li>
+                    <li><strong>Enquiry Router</strong> — Classifies incoming requests by urgency and type. Routes to the right team. Provides context so agents never ask "how can I help you?" twice.</li>
+                    <li><strong>24/7 Support Agent</strong> — Never sleeps. Handles enquiries at 3am with the same quality as 3pm. Escalates to humans only when genuinely needed.</li>
+                </ul>
+            </div>
+            <div class="ag-dept-detail" data-dept="marketing">
+                <h3>📣 Marketing Agents</h3>
+                <ul>
+                    <li><strong>Content Generator</strong> — Produces blog posts, social media, email campaigns, and ad copy. Healthcare-compliant by default.</li>
+                    <li><strong>Campaign Optimizer</strong> — A/B tests copy, optimises targeting, adjusts budgets based on real-time performance data.</li>
+                    <li><strong>Analytics Agent</strong> — Pulls data from Google Analytics, ad platforms, CRM. Generates weekly performance reports with actionable insights.</li>
+                </ul>
+            </div>
+            <div class="ag-dept-detail" data-dept="lab">
+                <h3>🔬 Lab / R&D Agents</h3>
+                <ul>
+                    <li><strong>Data Analysis Agent</strong> — Processes experimental data, identifies patterns, flags anomalies in cell viability, growth rates, and storage conditions.</li>
+                    <li><strong>Protocol Assistant</strong> — Instant access to lab protocols, SOPs, and safety procedures via natural language queries.</li>
+                    <li><strong>Predictive Modelling</strong> — Our proprietary cell viability prediction model — first-of-its-kind in biotech AI.</li>
+                </ul>
+            </div>
+            <div class="ag-dept-detail" data-dept="finance">
+                <h3>📊 Finance Agents</h3>
+                <ul>
+                    <li><strong>Invoice Processing</strong> — Extracts data from invoices, matches to POs, routes for approval, flags discrepancies. OCR + AI, not manual entry.</li>
+                    <li><strong>Expense Agent</strong> — Categorises expenses, enforces policy limits, generates reports, flags unusual spending patterns.</li>
+                    <li><strong>Reporting Agent</strong> — Pulls from multiple data sources, generates financial dashboards, delivers daily/weekly briefings to management.</li>
+                </ul>
+            </div>
+            <div class="ag-dept-detail" data-dept="compliance">
+                <h3>🛡️ Compliance Agents</h3>
+                <ul>
+                    <li><strong>Regulatory Monitor</strong> — Continuously scans your operations against MOH guidelines, PDPA requirements, and industry regulations. Flags violations before auditors find them.</li>
+                    <li><strong>Audit Preparation</strong> — Compiles documentation, generates compliance reports, identifies gaps, and recommends remediation steps.</li>
+                    <li><strong>Medical Claims Review</strong> — Validates healthcare marketing content against medical advertising regulations. No non-compliant content goes live.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════ LLM MODEL STACK ══════ -->
+    <section class="ag-section ag-section--surface fade-up">
+        <p class="ag-label">// THE BRAIN BEHIND THE AGENTS</p>
+        <h2 class="ag-heading">Our <span class="accent">Model Stack</span></h2>
+        <p class="ag-subtext">We don't rely on a single AI model. Every task is routed to the optimal model based on complexity, speed, cost, and data sensitivity.</p>
+
+        <div class="ag-models">
+            <div class="ag-model-tier">
+                <div class="ag-model-tier-label">☁️ FRONTIER MODELS (Cloud)</div>
+                <div class="ag-model-grid">
+                    <div class="ag-model-card">
+                        <div class="ag-model-badge" style="background:#A855F7">ANTHROPIC</div>
+                        <h4>Claude Opus 4</h4>
+                        <p>Deep strategy, complex reasoning, architecture decisions, critical analysis. The heavyweight for decisions that matter.</p>
+                    </div>
+                    <div class="ag-model-card">
+                        <div class="ag-model-badge" style="background:#A855F7">ANTHROPIC</div>
+                        <h4>Claude Sonnet 4.5</h4>
+                        <p>Code generation, data analysis, structured output. Best speed-to-quality ratio. Our workhorse for engineering tasks.</p>
+                    </div>
+                    <div class="ag-model-card">
+                        <div class="ag-model-badge" style="background:#22C55E">OPENAI</div>
+                        <h4>GPT-5.2</h4>
+                        <p>Creative writing, persuasive copy, marketing content. The strongest prose engine for client-facing communications.</p>
+                    </div>
+                    <div class="ag-model-card">
+                        <div class="ag-model-badge" style="background:#4285F4">GOOGLE</div>
+                        <h4>Gemini 2.5 Pro</h4>
+                        <p>Complex research, multi-step reasoning, long context. Processes entire codebases and document sets.</p>
+                    </div>
+                    <div class="ag-model-card">
+                        <div class="ag-model-badge" style="background:#4285F4">GOOGLE</div>
+                        <h4>Gemini 2.5 Flash</h4>
+                        <p>Bulk research, data gathering, summarisation. Ultra-fast, ultra-cheap. Runs thousands of queries at negligible cost.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ag-model-tier">
+                <div class="ag-model-tier-label">🏢 ON-PREMISE MODELS (DGX Spark)</div>
+                <div class="ag-model-grid">
+                    <div class="ag-model-card ag-model-card--onprem">
+                        <div class="ag-model-badge" style="background:#76B900">NVIDIA / META</div>
+                        <h4>Llama 3 (70B–200B)</h4>
+                        <p>Local LLM inference. Zero data leaves your building. PDPA compliant by architecture. Running on NVIDIA DGX Spark with vLLM.</p>
+                    </div>
+                    <div class="ag-model-card ag-model-card--onprem">
+                        <div class="ag-model-badge" style="background:#76B900">OPENAI / LOCAL</div>
+                        <h4>Whisper (On-Premise)</h4>
+                        <p>Speech-to-text, multilingual transcription. Process voice recordings locally — patient calls never leave your network.</p>
+                    </div>
+                    <div class="ag-model-card ag-model-card--onprem">
+                        <div class="ag-model-badge" style="background:#76B900">LOCAL</div>
+                        <h4>Embedding Models</h4>
+                        <p>Document embeddings for RAG pipelines running entirely on-premise. Your knowledge base indexed locally.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ag-routing-box fade-up">
+            <h4>⚡ Intelligent Model Routing</h4>
+            <p>Our orchestrator automatically routes each task to the best model. A quick FAQ answer goes to Gemini Flash (fast, cheap). A board-level strategy analysis goes to Claude Opus (deep reasoning). Sensitive patient data stays on Llama 3 (on-premise). You never think about which model — the system optimises automatically.</p>
+        </div>
+    </section>
+
+    <!-- ══════ AI-NATIVE CRM ══════ -->
+    <section class="ag-section fade-up">
+        <p class="ag-label">// AI-NATIVE PLATFORMS</p>
+        <h2 class="ag-heading">Custom <span class="accent">CRM Systems</span> with Embedded AI</h2>
+        <p class="ag-subtext">We don't plug AI into existing CRMs. We build custom platforms with intelligence baked into every layer.</p>
+
+        <div class="ag-crm-showcase">
+            <div class="ag-crm-text">
+                <h3>Meet <span class="accent">Clarify</span></h3>
+                <p>Our flagship sales intelligence platform, built for CryoCord Group — Malaysia's largest stem cell bank.</p>
+                <ul>
+                    <li>AI agents live <strong>inside</strong> the CRM, not bolted on</li>
+                    <li>Real-time ML lead scoring — not static rules</li>
+                    <li>Every interaction analysed: calls, emails, meetings</li>
+                    <li>Predictive pipeline: AI forecasts which leads convert and when</li>
+                    <li>Auto-generated follow-ups, proposals, nurture sequences</li>
+                    <li>Natural language: <em>"Show me Johor leads not contacted in 2 weeks"</em></li>
+                    <li>Compliance built-in: healthcare advertising rules, PDPA, consent tracking</li>
+                </ul>
+                <p class="ag-crm-cta">Your business deserves a CRM that thinks. <a href="contact.html" class="accent">Let's build it →</a></p>
+            </div>
+            <div class="ag-crm-mockup">
+                <div class="ag-crm-mock-header">
+                    <span class="ag-crm-mock-dot" style="background:#FF5F57"></span>
+                    <span class="ag-crm-mock-dot" style="background:#FFBD2E"></span>
+                    <span class="ag-crm-mock-dot" style="background:#28CA41"></span>
+                    <span style="margin-left:1rem;font-size:.7rem;color:#888">Clarify — Sales Intelligence</span>
+                </div>
+                <div class="ag-crm-mock-body">
+                    <div class="ag-crm-mock-row">
+                        <div class="ag-crm-mock-stat">
+                            <div class="ag-crm-mock-stat-num" style="color:#00D4FF">847</div>
+                            <div class="ag-crm-mock-stat-label">Active Leads</div>
+                        </div>
+                        <div class="ag-crm-mock-stat">
+                            <div class="ag-crm-mock-stat-num" style="color:#22C55E">73%</div>
+                            <div class="ag-crm-mock-stat-label">Conversion Rate</div>
+                        </div>
+                        <div class="ag-crm-mock-stat">
+                            <div class="ag-crm-mock-stat-num" style="color:#FF5C00">RM 2.4M</div>
+                            <div class="ag-crm-mock-stat-label">Pipeline Value</div>
+                        </div>
+                    </div>
+                    <div class="ag-crm-mock-bar-label">AI Lead Scoring Distribution</div>
+                    <div class="ag-crm-mock-bar"><div class="ag-crm-mock-bar-fill" style="width:85%;background:linear-gradient(90deg,#00D4FF,#22C55E)"></div></div>
+                    <div class="ag-crm-mock-bar"><div class="ag-crm-mock-bar-fill" style="width:62%;background:linear-gradient(90deg,#00D4FF,#A855F7)"></div></div>
+                    <div class="ag-crm-mock-bar"><div class="ag-crm-mock-bar-fill" style="width:45%;background:linear-gradient(90deg,#FF5C00,#FFBD2E)"></div></div>
+                    <div class="ag-crm-mock-insight">
+                        <span style="color:#00D4FF">🤖 AI Insight:</span> 12 leads in Johor showing high engagement — recommend outbound call campaign this week. Predicted close rate: 34%.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════ BEYOND BIOTECH ══════ -->
+    <section class="ag-section ag-section--surface fade-up">
+        <p class="ag-label">// NOT JUST HEALTHCARE</p>
+        <h2 class="ag-heading">Enterprise AI for <span class="accent">Every Industry</span></h2>
+        <p class="ag-subtext">NovaGenAI started in biotech — but our agent architecture deploys anywhere. We're putting real AI into corporate hands.</p>
+
+        <div class="ag-industry-grid">
+            <div class="ag-industry-card">
+                <div class="ag-industry-icon">🏥</div>
+                <h4>Healthcare & Biotech</h4>
+                <p>Voice agents, patient management, lab intelligence, compliance automation</p>
+            </div>
+            <div class="ag-industry-card">
+                <div class="ag-industry-icon">🏦</div>
+                <h4>Financial Services</h4>
+                <p>Risk assessment, document processing, compliance monitoring, client advisory</p>
+            </div>
+            <div class="ag-industry-card">
+                <div class="ag-industry-icon">🏭</div>
+                <h4>Manufacturing</h4>
+                <p>Quality control, supply chain optimisation, predictive maintenance, safety monitoring</p>
+            </div>
+            <div class="ag-industry-card">
+                <div class="ag-industry-icon">⚖️</div>
+                <h4>Professional Services</h4>
+                <p>Document intelligence, contract analysis, client communications, billing automation</p>
+            </div>
+            <div class="ag-industry-card">
+                <div class="ag-industry-icon">🏗️</div>
+                <h4>Property & Real Estate</h4>
+                <p>Lead management, property matching, tenant communications, portfolio analytics</p>
+            </div>
+            <div class="ag-industry-card">
+                <div class="ag-industry-icon">🚚</div>
+                <h4>Logistics</h4>
+                <p>Route optimisation, warehouse management, demand forecasting, carrier coordination</p>
+            </div>
+        </div>
+
+        <p class="ag-industry-bottom">If your business runs on people, processes, and data — <strong>we can deploy AI agents that make all three better.</strong></p>
+    </section>
+
+    <!-- ══════ OUR TEAM ══════ -->
+    <section class="ag-section fade-up">
+        <p class="ag-label">// THE PEOPLE BEHIND THE AGENTS</p>
+        <h2 class="ag-heading">Our <span class="accent">Team</span></h2>
+        <p class="ag-subtext">We're not consultants with a ChatGPT subscription. We're a full engineering team that builds, deploys, and maintains production AI systems.</p>
+
+        <div class="ag-team-grid">
+            <div class="ag-team-card">
+                <div class="ag-team-icon">🧠</div>
+                <h4>AI & ML Engineers</h4>
+                <p>Custom model training, LLM fine-tuning, inference pipeline deployment on NVIDIA DGX hardware. Production ML, not Jupyter notebooks.</p>
+            </div>
+            <div class="ag-team-card">
+                <div class="ag-team-icon">💻</div>
+                <h4>Full-Stack Developers</h4>
+                <p>Production-grade web apps, REST APIs, real-time systems, mobile platforms. Next.js, React, Node.js, Python, TypeScript.</p>
+            </div>
+            <div class="ag-team-card">
+                <div class="ag-team-icon">🎤</div>
+                <h4>Voice & NLP Specialists</h4>
+                <p>Multilingual voice agent development (EN/BM/ZH), speech recognition, natural language understanding, ElevenLabs integration.</p>
+            </div>
+            <div class="ag-team-card">
+                <div class="ag-team-icon">📊</div>
+                <h4>Data Engineers</h4>
+                <p>ETL pipelines, data lake architecture, analytics dashboards, business intelligence, RAG indexing pipelines.</p>
+            </div>
+            <div class="ag-team-card">
+                <div class="ag-team-icon">🔧</div>
+                <h4>DevOps & Infrastructure</h4>
+                <p>On-premise deployment, CI/CD, monitoring, security hardening, DGX Spark administration, cloud orchestration.</p>
+            </div>
+            <div class="ag-team-card">
+                <div class="ag-team-icon">🎯</div>
+                <h4>Product & Strategy</h4>
+                <p>Requirements analysis, UX research, go-to-market planning, client success management. We ship outcomes, not features.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════ DEPLOYMENT PROCESS ══════ -->
+    <section class="ag-section ag-section--surface fade-up">
+        <p class="ag-label">// HOW WE DEPLOY</p>
+        <h2 class="ag-heading">From Zero to <span class="accent">Live Agents</span></h2>
+
+        <div class="ag-deploy-steps">
+            <div class="ag-deploy-step">
+                <div class="ag-deploy-num">01</div>
+                <h4>Discovery</h4>
+                <p>We map your workflows, pain points, and data landscape. Where are humans doing work that AI should handle?</p>
+            </div>
+            <div class="ag-deploy-step">
+                <div class="ag-deploy-num">02</div>
+                <h4>Design</h4>
+                <p>Architect agent roles, data flows, tool integrations, and guardrails. You approve every decision before we build.</p>
+            </div>
+            <div class="ag-deploy-step">
+                <div class="ag-deploy-num">03</div>
+                <h4>Deploy</h4>
+                <p>On-premise or cloud — your choice. Agents go live with monitoring, logging, and human oversight from day one.</p>
+            </div>
+            <div class="ag-deploy-step">
+                <div class="ag-deploy-num">04</div>
+                <h4>Optimise</h4>
+                <p>Continuous learning. We monitor performance, refine agent behaviour, and scale to new departments as you grow.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════ SECURITY ══════ -->
+    <section class="ag-section fade-up">
+        <p class="ag-label">// ENTERPRISE SECURITY</p>
+        <h2 class="ag-heading">Guardrails & <span class="accent">Governance</span></h2>
+
+        <div class="ag-security-grid">
+            <div class="ag-security-card">
+                <h4>🔒 Data Sovereignty</h4>
+                <p>Sensitive data processed on-premise via DGX Spark. Patient records, financials, and HR data never leave your building.</p>
+            </div>
+            <div class="ag-security-card">
+                <h4>👤 Human-in-the-Loop</h4>
+                <p>Critical decisions require human approval. Agents escalate — they don't override. You define the escalation triggers.</p>
+            </div>
+            <div class="ag-security-card">
+                <h4>📋 Full Audit Trail</h4>
+                <p>Every agent action is logged: what it did, why, which data it accessed, which model it used. Complete accountability.</p>
+            </div>
+            <div class="ag-security-card">
+                <h4>🔐 Role-Based Access</h4>
+                <p>Agents only access what they need. A sales agent can't see HR records. A marketing agent can't access financials.</p>
+            </div>
+            <div class="ag-security-card">
+                <h4>📊 Data Classification</h4>
+                <p>Automatic routing: sensitive data stays on-premise, non-sensitive tasks use cloud models for best-in-class capability.</p>
+            </div>
+            <div class="ag-security-card">
+                <h4>🇲🇾 PDPA Compliant</h4>
+                <p>Built for Malaysian data protection law from day one. Consent tracking, data residency, right-to-deletion — all handled.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════ CTA ══════ -->
+    <section class="ag-section ag-section--surface ag-cta-section fade-up">
+        <h2 class="ag-heading">Ready to Deploy <span class="accent">AI Agents?</span></h2>
+        <p class="ag-subtext">Whether you need one agent or an entire swarm — let's talk about transforming your operations.</p>
+        <a href="contact.html" class="ag-cta-btn">Book a Demo →</a>
+    </section>
+
+    <!-- ══════ FOOTER ══════ -->
+    <footer class="footer">
+        <div class="footer__inner">
+            <div class="footer__brand">
+                <span class="footer__logo"><span class="nav__dot"></span> NOVAGENAI</span>
+                <p class="footer__tagline">Where AI Meets Life Sciences</p>
+            </div>
+            <div class="footer__links">
+                <a href="solutions.html">Solutions</a>
+                <a href="agents.html">Agents</a>
+                <a href="about.html">About</a>
+                <a href="case-studies.html">Case Studies</a>
+                <a href="technology.html">Technology</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <p class="footer__copy">&copy; 2026 NovaGenAI. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

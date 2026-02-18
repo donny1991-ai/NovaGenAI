@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 80" width="400" height="80">
+  <defs>
+    <filter id="glow2" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-color="#00D4FF" flood-opacity="0.3" result="color"/>
+      <feComposite in="color" in2="blur" operator="in" result="glow"/>
+      <feMerge>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <clipPath id="hexClip">
+      <polygon points="40,6 68,20 68,48 40,62 12,48 12,20"/>
+    </clipPath>
+  </defs>
+  <rect width="400" height="80" fill="#000"/>
+  <g transform="translate(0,6)" filter="url(#glow2)">
+    <!-- Outer hexagon -->
+    <polygon points="40,4 70,19 70,49 40,64 10,49 10,19" fill="none" stroke="#00D4FF" stroke-width="2" stroke-linejoin="round"/>
+    <!-- Inner hexagon -->
+    <polygon points="40,16 58,24 58,44 40,52 22,44 22,24" fill="none" stroke="#00D4FF" stroke-width="1" opacity="0.3" stroke-linejoin="round"/>
+    <!-- Neural network inside hexagon -->
+    <g clip-path="url(#hexClip)">
+      <!-- Layer 1 nodes -->
+      <circle cx="24" cy="24" r="2.5" fill="#00D4FF" opacity="0.7"/>
+      <circle cx="24" cy="34" r="2.5" fill="#00D4FF" opacity="0.7"/>
+      <circle cx="24" cy="44" r="2.5" fill="#00D4FF" opacity="0.7"/>
+      <!-- Layer 2 nodes -->
+      <circle cx="40" cy="20" r="2.8" fill="#00D4FF" opacity="0.9"/>
+      <circle cx="40" cy="34" r="3.2" fill="#00D4FF"/>
+      <circle cx="40" cy="48" r="2.8" fill="#00D4FF" opacity="0.9"/>
+      <!-- Layer 3 nodes -->
+      <circle cx="56" cy="24" r="2.5" fill="#00D4FF" opacity="0.7"/>
+      <circle cx="56" cy="34" r="2.5" fill="#00D4FF" opacity="0.7"/>
+      <circle cx="56" cy="44" r="2.5" fill="#00D4FF" opacity="0.7"/>
+      <!-- Connections L1→L2 -->
+      <line x1="24" y1="24" x2="40" y2="20" stroke="#00D4FF" stroke-width="0.6" opacity="0.35"/>
+      <line x1="24" y1="24" x2="40" y2="34" stroke="#00D4FF" stroke-width="0.6" opacity="0.35"/>
+      <line x1="24" y1="34" x2="40" y2="20" stroke="#00D4FF" stroke-width="0.6" opacity="0.25"/>
+      <line x1="24" y1="34" x2="40" y2="34" stroke="#00D4FF" stroke-width="0.8" opacity="0.45"/>
+      <line x1="24" y1="34" x2="40" y2="48" stroke="#00D4FF" stroke-width="0.6" opacity="0.25"/>
+      <line x1="24" y1="44" x2="40" y2="34" stroke="#00D4FF" stroke-width="0.6" opacity="0.35"/>
+      <line x1="24" y1="44" x2="40" y2="48" stroke="#00D4FF" stroke-width="0.6" opacity="0.35"/>
+      <!-- Connections L2→L3 -->
+      <line x1="40" y1="20" x2="56" y2="24" stroke="#00D4FF" stroke-width="0.6" opacity="0.35"/>
+      <line x1="40" y1="20" x2="56" y2="34" stroke="#00D4FF" stroke-width="0.6" opacity="0.25"/>
+      <line x1="40" y1="34" x2="56" y2="24" stroke="#00D4FF" stroke-width="0.6" opacity="0.35"/>
+      <line x1="40" y1="34" x2="56" y2="34" stroke="#00D4FF" stroke-width="0.8" opacity="0.45"/>
+      <line x1="40" y1="34" x2="56" y2="44" stroke="#00D4FF" stroke-width="0.6" opacity="0.35"/>
+      <line x1="40" y1="48" x2="56" y2="34" stroke="#00D4FF" stroke-width="0.6" opacity="0.25"/>
+      <line x1="40" y1="48" x2="56" y2="44" stroke="#00D4FF" stroke-width="0.6" opacity="0.35"/>
+    </g>
+  </g>
+  <!-- Wordmark -->
+  <text x="90" y="47" font-family="Inter, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="26" font-weight="600" letter-spacing="4" fill="#FFFFFF">NOVAGENAI</text>
+</svg>
