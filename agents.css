@@ -598,3 +598,31 @@
     .team-approach-grid { grid-template-columns: 1fr; }
     .team-partners { grid-template-columns: 1fr; }
 }
+
+/* ══════ 3-Column Comparison ══════ */
+.ag-comparison-3 {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+.ag-comp-subtitle {
+    font-family: var(--ff-body); font-size: .7rem; font-weight: 600;
+    letter-spacing: .1em; text-transform: uppercase;
+    margin-bottom: 1rem; opacity: .6;
+}
+.ag-comp-card--mid {
+    background: rgba(255,165,0,.04); border-color: rgba(255,165,0,.15);
+}
+.ag-comp-card--mid h4 { color: #FFA500; }
+.ag-comp-bottom {
+    text-align: center; max-width: 800px; margin: 0 auto;
+    padding: 2rem; background: rgba(0,212,255,.04);
+    border: 1px solid rgba(0,212,255,.1); border-radius: 12px;
+}
+.ag-comp-bottom p {
+    font-family: var(--ff-body); font-size: .95rem;
+    color: rgba(255,255,255,.8); line-height: 1.8;
+}
+.ag-comp-bottom strong { color: var(--clr-accent); }
+@media (max-width: 768px) {
+    .ag-comparison-3 { grid-template-columns: 1fr; }
+}
