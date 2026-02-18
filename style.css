@@ -65,15 +65,28 @@ img { max-width: 100%; display: block; }
     box-shadow: 0 0 8px var(--clr-accent);
     display: inline-block;
 }
-.nav__links { display: flex; gap: 2rem; }
-.nav__links a { position: relative; color: var(--clr-muted); transition: color .3s; }
-.nav__links a::after {
+.nav__links { display: flex; gap: 2rem; align-items: center; }
+.nav__links > a,
+.nav__links > .nav__dropdown > .nav__dropdown-trigger {
+    position: relative; color: var(--clr-muted); transition: color .3s;
+    font-family: var(--ff-body); font-size: .75rem; font-weight: 500;
+    letter-spacing: .12em; text-decoration: none;
+}
+.nav__links > a::after,
+.nav__links > .nav__dropdown > .nav__dropdown-trigger::after {
     content: ''; position: absolute; bottom: -4px; left: 0;
     width: 0; height: 1px; background: var(--clr-accent);
     transition: width .35s var(--ease-out-expo);
 }
-.nav__links a:hover { color: var(--clr-text); }
-.nav__links a:hover::after { width: 100%; }
+.nav__links > a:hover,
+.nav__links > .nav__dropdown:hover > .nav__dropdown-trigger { color: var(--clr-text); }
+.nav__links > a:hover::after,
+.nav__links > .nav__dropdown:hover > .nav__dropdown-trigger::after { width: 100%; }
+/* Override: dropdown trigger caret */
+.nav__dropdown > .nav__dropdown-trigger::after {
+    content: '▾'; position: static; font-size: .6rem; margin-left: .3rem;
+    opacity: .5; width: auto; height: auto; background: none;
+}
 .nav__cta {
     display: flex; align-items: center; gap: .35rem;
     color: var(--clr-muted); transition: color .3s;
@@ -1419,16 +1432,7 @@ select.contact__input {
 .nav__dropdown {
     position: relative;
 }
-.nav__dropdown-trigger {
-    font-family: var(--ff-body); font-size: .75rem; font-weight: 500;
-    letter-spacing: .12em; color: var(--clr-muted);
-    transition: color .3s; cursor: pointer;
-    padding: .5rem 0;
-}
-.nav__dropdown-trigger:hover { color: var(--clr-text); }
-.nav__dropdown-trigger::after {
-    content: '▾'; font-size: .6rem; margin-left: .3rem; opacity: .5;
-}
+/* dropdown trigger styles handled by .nav__links > .nav__dropdown > .nav__dropdown-trigger above */
 .nav__dropdown-menu {
     position: absolute; top: 100%; left: 50%;
     transform: translateX(-50%) translateY(8px);
@@ -1446,11 +1450,12 @@ select.contact__input {
     transform: translateX(-50%) translateY(0);
 }
 .nav__dropdown-menu a {
-    display: block; padding: .6rem 1.25rem;
+    display: block !important; padding: .6rem 1.25rem;
     font-family: var(--ff-body); font-size: .78rem; font-weight: 400;
     color: var(--clr-muted); letter-spacing: .03em;
     transition: all .2s ease; white-space: nowrap;
 }
+.nav__dropdown-menu a::after { display: none !important; }
 .nav__dropdown-menu a:hover {
     color: var(--clr-accent); background: rgba(0,212,255,.05);
     padding-left: 1.5rem;
