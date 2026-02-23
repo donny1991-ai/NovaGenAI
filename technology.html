@@ -12,6 +12,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="agents.css"/>
 </head>
 <body>
     <header class="nav" id="nav">
@@ -42,7 +43,7 @@
                 </div>
             </div>
             <div class="nav__dropdown">
-                <a href="technology.html" class="nav__dropdown-trigger">TECHNOLOGY</a>
+                <a href="technology.html" class="nav__dropdown-trigger nav__active">TECHNOLOGY</a>
                 <div class="nav__dropdown-menu">
                     <a href="technology.html">Overview</a>
                     <a href="technology.html#dgx-spark">NVIDIA DGX Spark</a>
@@ -59,145 +60,188 @@
         <a href="contact.html" class="nav__cta" id="nav-cta">GET STARTED&nbsp;<span class="nav__cta-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span></a>
     </header>
 
-    <section class="page-hero" style="position:relative;overflow:hidden;"><img src="images/network-security-new.jpg" alt="" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.08;pointer-events:none;">
-        <div class="page-hero__inner">
+    <!-- ══════ HERO ══════ -->
+    <section class="page-hero" style="position:relative;overflow:hidden;">
+        <img src="images/dgx-spark.jpg" alt="" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.15;pointer-events:none;">
+        <div class="page-hero__inner" style="position:relative;z-index:2;">
             <p class="page-hero__label">// OUR TECHNOLOGY</p>
             <h1 class="page-hero__title">BUILT FOR <span class="accent">ENTERPRISE AI</span></h1>
-            <p class="page-hero__subtitle">NVIDIA-powered infrastructure. On-premise deployment. Healthcare-grade security.</p>
+            <p class="page-hero__sub">NVIDIA-powered infrastructure. On-premise deployment. Healthcare-grade security. Zero compromises.</p>
         </div>
     </section>
 
-    <!-- DGX Spark -->
-    <section class="tech-dgx fade-up">
-        <div class="tech-dgx__inner">
-            <div class="tech-dgx__content">
-                <p class="section-label"><div id="dgx-spark"></div>
-            // HARDWARE</p>
-                <h2 class="section-title">NVIDIA <span class="accent">DGX Spark</span></h2>
-                <p class="tech-dgx__desc">The world's most powerful compact AI supercomputer, deployed inside your building. Run large language models locally with zero data leaving your premises.</p>
-                <div class="tech-dgx__specs">
-                    <div class="spec-item">
-                        <div class="spec-item__value" style="display:flex;align-items:center;gap:0.5rem"><img src="images/nvidia-logo.svg" alt="NVIDIA" loading="lazy" style="height:20px;filter:brightness(0) invert(1);vertical-align:middle;"> Grace Blackwell</div>
-                        <div class="spec-item__label">GB10 Superchip</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-item__value">128 GB</div>
-                        <div class="spec-item__label">Unified Memory</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-item__value">1 PFLOP</div>
-                        <div class="spec-item__label">FP4 AI Performance</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-item__value">200B+</div>
-                        <div class="spec-item__label">Parameter Model Support</div>
-                    </div>
-                </div>
-            </div>
-            <div class="tech-dgx__visual">
-                <img src="images/dgx-spark.jpg" alt="NVIDIA DGX Spark — compact AI supercomputer" loading="lazy" style="border-radius: 12px; max-width: 100%; object-fit: cover; width: 100%;">
-            </div>
+    <!-- ══════ HEADLINE STATS ══════ -->
+    <section class="team-stats fade-up">
+        <div class="team-stat">
+            <div class="team-stat-num">1 PFLOP</div>
+            <div class="team-stat-label">FP4 AI Performance</div>
+        </div>
+        <div class="team-stat">
+            <div class="team-stat-num">200B+</div>
+            <div class="team-stat-label">Parameter Models</div>
+        </div>
+        <div class="team-stat">
+            <div class="team-stat-num">128 GB</div>
+            <div class="team-stat-label">Unified Memory</div>
+        </div>
+        <div class="team-stat">
+            <div class="team-stat-num">0</div>
+            <div class="team-stat-label">Data Leaves Your Building</div>
         </div>
     </section>
 
-    <!-- Architecture -->
-    <section class="tech-arch fade-up">
-        <p class="section-label" style="text-align:center"><div id="architecture"></div>
-            // ARCHITECTURE</p>
-        <h2 class="section-title" style="text-align:center;margin-bottom:3rem">Deployment <span class="accent">Architecture</span></h2>
-        <div class="arch-flow">
-            <div class="arch-flow__step">
-                <div class="arch-flow__icon">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
-                </div>
-                <h4>On-Premise Deployment</h4>
-                <p>DGX Spark installed in your server room. Air-gapped option available.</p>
+    <!-- ══════ DGX SPARK — Featured ══════ -->
+    <section class="ag-section fade-up" id="dgx-spark">
+        <p class="ag-label">// HARDWARE</p>
+        <h2 class="ag-heading">NVIDIA <span class="accent">DGX Spark</span></h2>
+        <p class="ag-subtext">The world's most powerful compact AI supercomputer, deployed inside your building. Run large language models locally with zero data leaving your premises.</p>
+
+        <div class="team-eng-featured fade-up">
+            <div class="team-eng-featured-img">
+                <img src="images/dgx-spark.jpg" alt="NVIDIA DGX Spark data center" loading="lazy">
             </div>
-            <div class="arch-flow__arrow">→</div>
-            <div class="arch-flow__step">
-                <div class="arch-flow__icon">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+            <div class="team-eng-featured-content">
+                <div class="team-eng-badge" style="background:rgba(118,185,0,.1);color:#76B900;border-color:#76B900;">NVIDIA GRACE BLACKWELL</div>
+                <h3>GB10 Superchip Architecture</h3>
+                <p>Purpose-built for enterprise AI workloads. The Grace Blackwell GB10 superchip delivers unprecedented AI performance in a compact form factor — no data centre required. Deploy in your server room and run frontier-class models on-site.</p>
+                <ul class="team-eng-list">
+                    <li>1 PFLOP FP4 AI performance — frontier-class inference on your premises</li>
+                    <li>128 GB unified memory — run 200B+ parameter models without compromise</li>
+                    <li>CUDA 12.x ecosystem — full compatibility with enterprise AI toolchains</li>
+                    <li>Compact form factor — server room deployment, not a data centre</li>
+                    <li>Air-gapped option — complete physical network isolation available</li>
+                </ul>
+                <div class="team-tech-tags">
+                    <span>Grace Blackwell</span><span>CUDA</span><span>vLLM</span><span>200B+ Models</span><span>On-Premise</span>
                 </div>
-                <h4>Local LLM Inference</h4>
-                <p>vLLM serving 200B+ parameter models with optimised throughput.</p>
-            </div>
-            <div class="arch-flow__arrow">→</div>
-            <div class="arch-flow__step">
-                <div class="arch-flow__icon">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                </div>
-                <h4>Secure API Layer</h4>
-                <p>Authenticated, encrypted API gateway. Zero external data transfer.</p>
-            </div>
-            <div class="arch-flow__arrow">→</div>
-            <div class="arch-flow__step">
-                <div class="arch-flow__icon">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09"/></svg>
-                </div>
-                <h4>Department Agents</h4>
-                <p>AI agents deployed to Sales, HR, Ops, CS, Marketing, Lab, Finance, Compliance.</p>
             </div>
         </div>
     </section>
 
-    <!-- Security -->
-    <section class="tech-security fade-up">
-        <p class="section-label" style="text-align:center"><div id="security"></div>
-            // SECURITY &amp; COMPLIANCE</p>
-        <h2 class="section-title" style="text-align:center;margin-bottom:3rem">Enterprise-Grade <span class="accent">Security</span></h2>
-        <div class="tech-security__grid">
-            <div class="security-card">
-                <div class="security-card__icon">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+    <!-- ══════ DEPLOYMENT ARCHITECTURE ══════ -->
+    <section class="ag-section ag-section--surface fade-up" id="architecture">
+        <p class="ag-label">// ARCHITECTURE</p>
+        <h2 class="ag-heading">Deployment <span class="accent">Pipeline</span></h2>
+        <p class="ag-subtext">From hardware to agents — every layer purpose-built for enterprise AI.</p>
+
+        <div class="team-built-grid">
+            <div class="team-built-card">
+                <img src="images/tech-onprem-deploy.jpg" alt="On-Premise Deployment" loading="lazy" class="team-built-img">
+                <div class="team-built-content">
+                    <h4>On-Premise Deployment</h4>
+                    <p>DGX Spark installed in your server room. Physical hardware under your control. Air-gapped option for maximum security environments.</p>
                 </div>
-                <h4>Data Sovereignty</h4>
-                <p>Patient data processed and stored entirely on-premise. Zero cloud dependency for sensitive operations. Your data, your building, your control.</p>
             </div>
-            <div class="security-card">
-                <div class="security-card__icon">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            <div class="team-built-card">
+                <img src="images/tech-llm-inference.jpg" alt="Local LLM Inference" loading="lazy" class="team-built-img">
+                <div class="team-built-content">
+                    <h4>Local LLM Inference</h4>
+                    <p>vLLM serving 200B+ parameter models with continuous batching and optimised throughput. Llama, Mistral, and custom fine-tuned models.</p>
                 </div>
-                <h4>PDPA Compliance</h4>
-                <p>Built for Malaysia's Personal Data Protection Act from day one. Consent management, data minimisation, and audit trails built into every system.</p>
             </div>
-            <div class="security-card">
-                <div class="security-card__icon">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            <div class="team-built-card">
+                <img src="images/tech-secure-api.jpg" alt="Secure API Layer" loading="lazy" class="team-built-img">
+                <div class="team-built-content">
+                    <h4>Secure API Gateway</h4>
+                    <p>Authenticated, encrypted API layer. Role-based access control. Full audit logging. Zero external data transfer for sensitive workloads.</p>
                 </div>
-                <h4>On-Premise Processing</h4>
-                <p>All AI inference happens locally on your NVIDIA DGX Spark hardware. Air-gapped deployment available for maximum security environments.</p>
+            </div>
+            <div class="team-built-card">
+                <img src="images/tech-dept-agents.jpg" alt="Department AI Agents" loading="lazy" class="team-built-img">
+                <div class="team-built-content">
+                    <h4>Department Agents</h4>
+                    <p>AI agents deployed across Sales, HR, Operations, Customer Service, Marketing, Lab, Finance, and Compliance. Each with domain-specific knowledge.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- AI Stack -->
-    <section class="tech-stack fade-up">
-        <p class="section-label" style="text-align:center">// AI STACK</p>
-        <h2 class="section-title" style="text-align:center;margin-bottom:3rem">Our Technology <span class="accent">Stack</span></h2>
-        <div class="tech-stack__grid">
-            <div class="stack-item">
-                <div class="stack-item__layer">LLM Inference</div>
-                <div class="stack-item__tech">vLLM</div>
-                <p>High-throughput, memory-efficient serving of large language models with continuous batching.</p>
+    <!-- ══════ SECURITY & COMPLIANCE ══════ -->
+    <section class="ag-section fade-up" id="security">
+        <p class="ag-label">// SECURITY & COMPLIANCE</p>
+        <h2 class="ag-heading">Enterprise-Grade <span class="accent">Security</span></h2>
+        <p class="ag-subtext">Built for healthcare. Built for compliance. Built for the most sensitive data on earth.</p>
+
+        <!-- Data Sovereignty — Featured -->
+        <div class="team-eng-featured fade-up">
+            <div class="team-eng-featured-img">
+                <img src="images/tech-data-sovereignty.jpg" alt="Data Sovereignty" loading="lazy">
             </div>
-            <div class="stack-item">
-                <div class="stack-item__layer">Voice AI</div>
-                <div class="stack-item__tech">ElevenLabs</div>
-                <p>Natural, human-like voice synthesis for multilingual AI voice agents across EN, BM, and ZH.</p>
+            <div class="team-eng-featured-content">
+                <div class="team-eng-badge" style="background:rgba(212,160,23,.1);color:#D4A017;border-color:#D4A017;">ZERO TRUST</div>
+                <h3>Complete Data Sovereignty</h3>
+                <p>Patient data processed and stored entirely on-premise. Zero cloud dependency for sensitive operations. Your data never leaves your building — by architecture, not by policy.</p>
+                <ul class="team-eng-list">
+                    <li>All AI inference runs locally on your DGX Spark hardware</li>
+                    <li>No external API calls for sensitive data processing</li>
+                    <li>Physical air-gap option for maximum security environments</li>
+                    <li>Full data lifecycle management — ingestion to deletion</li>
+                    <li>Compliant with healthcare data residency requirements across APAC</li>
+                </ul>
+                <div class="team-tech-tags">
+                    <span>On-Premise</span><span>Air-Gapped</span><span>PDPA</span><span>Data Residency</span><span>Audit Trail</span>
+                </div>
             </div>
-            <div class="stack-item">
-                <div class="stack-item__layer">Embeddings</div>
-                <div class="stack-item__tech">Local Models</div>
-                <p>On-premise embedding generation for document intelligence and semantic search capabilities.</p>
+        </div>
+
+        <!-- Security Cards -->
+        <div class="team-built-grid" style="margin-top:2.5rem;">
+            <div class="team-built-card">
+                <img src="images/tech-pdpa.jpg" alt="PDPA Compliance" loading="lazy" class="team-built-img">
+                <div class="team-built-content">
+                    <h4>PDPA Compliance</h4>
+                    <p>Built for Malaysia's Personal Data Protection Act from day one. Consent management, data minimisation, and audit trails built into every system.</p>
+                </div>
             </div>
-            <div class="stack-item">
-                <div class="stack-item__layer">RAG Pipeline</div>
-                <div class="stack-item__tech">Custom</div>
-                <p>Retrieval-augmented generation pipeline for document intelligence, SOPs, and compliance queries.</p>
+            <div class="team-built-card">
+                <img src="images/tech-airgap.jpg" alt="Air-Gapped Deployment" loading="lazy" class="team-built-img">
+                <div class="team-built-content">
+                    <h4>Air-Gapped Deployment</h4>
+                    <p>Complete physical network isolation available. No internet connectivity required for core AI operations. Biometric access, 24/7 monitoring, tamper detection.</p>
+                </div>
             </div>
         </div>
     </section>
 
+    <!-- ══════ AI STACK ══════ -->
+    <section class="ag-section ag-section--surface fade-up">
+        <p class="ag-label">// AI STACK</p>
+        <h2 class="ag-heading">Technology <span class="accent">Stack</span></h2>
+        <p class="ag-subtext">Every layer engineered for performance, security, and scale.</p>
+
+        <div class="team-built-grid">
+            <div class="team-built-card">
+                <img src="images/tech-vllm.jpg" alt="LLM Inference" loading="lazy" class="team-built-img">
+                <div class="team-built-content">
+                    <h4>LLM Inference — vLLM</h4>
+                    <p>High-throughput, memory-efficient serving of large language models with continuous batching. Optimised for Grace Blackwell architecture.</p>
+                </div>
+            </div>
+            <div class="team-built-card">
+                <img src="images/tech-voice-ai.jpg" alt="Voice AI" loading="lazy" class="team-built-img">
+                <div class="team-built-content">
+                    <h4>Voice AI — ElevenLabs</h4>
+                    <p>Natural, human-like voice synthesis for multilingual AI agents. English, Bahasa Malaysia, and Mandarin Chinese — real conversations, not IVR menus.</p>
+                </div>
+            </div>
+            <div class="team-built-card">
+                <img src="images/tech-embeddings.jpg" alt="Vector Embeddings" loading="lazy" class="team-built-img">
+                <div class="team-built-content">
+                    <h4>Embeddings — On-Premise</h4>
+                    <p>Local embedding generation for document intelligence and semantic search. BGE-M3 multilingual embeddings with Qdrant vector store — all on your hardware.</p>
+                </div>
+            </div>
+            <div class="team-built-card">
+                <img src="images/tech-rag.jpg" alt="RAG Pipeline" loading="lazy" class="team-built-img">
+                <div class="team-built-content">
+                    <h4>RAG Pipeline — Custom</h4>
+                    <p>Retrieval-augmented generation for document intelligence. SOPs, contracts, medical protocols, compliance docs — instantly searchable with source citations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════ CTA ══════ -->
     <section class="sol-cta fade-up">
         <h2 class="sol-cta__title">See Our Technology in Action</h2>
         <p class="sol-cta__desc">Book a demo and experience enterprise AI infrastructure first-hand.</p>
@@ -208,7 +252,8 @@
         <div class="footer__inner">
             <div class="footer__brand">
                 <span class="footer__logo"><img src="images/novagenai-logo-new.png" alt="NovaGenAI" class="footer__logo-img"></span>
-                <p class="footer__tagline">AI Systems for Every Enterprise</p>
+                <p class="footer__tagline">Enterprise AI Systems — Asia-Pacific &amp; Global</p>
+                <p class="footer__tagline" style="margin-top:.25rem;font-size:.7rem;opacity:.6;">Malaysia · Australia · Singapore</p>
             </div>
             <div class="footer__links">
                 <a href="solutions.html">Solutions</a>
@@ -223,7 +268,6 @@
         </div>
     </footer>
     <script type="module" src="script.js"></script>
-    <!-- ElevenLabs Voice Agent Widget -->
     <script src="https://elevenlabs.io/convai-widget/index.js" async type="text/javascript"></script>
     <elevenlabs-convai agent-id="agent_2601khqrpb75ff9azd82e86tmatz" style="position:fixed;bottom:20px;right:20px;z-index:9999;" data-bg-color="#0a0a0a" data-text-color="#ffffff" data-btn-color="#00D4FF" data-btn-text-color="#000000" data-border-color="#1a1a1a"></elevenlabs-convai>
 </body>
