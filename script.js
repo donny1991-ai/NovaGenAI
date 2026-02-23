@@ -37,26 +37,26 @@ document.querySelectorAll('.solutions, .testimonials, .contact, .footer, .fade-u
 
 // ── Testimonials Carousel ────────────────────────────
 const testimonialsData = [
-    { quote: "On-premise AI means our patient data never leaves our building. Non-negotiable in healthcare.", by: "Dr. Ahmad Razif, CTO, Healthcare Group" },
-    { quote: "The Clarify platform gives us real-time intelligence we never had before. Game changer.", by: "Sarah Lim, Sales Director, CryoCord Group" },
-    { quote: "Multilingual AI support in English, Bahasa, and Mandarin — unlike anything in the market.", by: "Mei Ling Chen, Patient Relations Manager, CryoCord" },
-    { quote: "Onboarding went from 3-month staff training to 2 weeks with their knowledge base AI.", by: "Priya Nair, HR Manager, Healthcare Org" },
-    { quote: "Their predictive cell model is first-of-its-kind innovation in biotech AI.", by: "Dr. Tan Wei Ming, Lab Director, Medical Group" },
-    { quote: "ROI was visible within the first month. Enquiry-to-patient conversion doubled.", by: "James Wong, CIO, Private Hospital" },
-    { quote: "Finally, an AI company that understands Malaysian healthcare. Built compliance-first.", by: "Farah Ismail, COO, Biotech Firm" },
-    { quote: "The intersection of artificial intelligence and cell biology represents the next frontier. NovaGenAI is positioned at this exact convergence.", by: "Prof. Dr. Cheong Soon Keng, Academy of Sciences Malaysia" },
-    { quote: "Their voice agent handles 80% of our enquiries autonomously. Our team focuses on what matters.", by: "Rachel Goh, Operations Manager, CryoCord Group" },
-    { quote: "The RAG system turned 10 years of SOPs into an instant knowledge base. Staff love it.", by: "Kumar Selvam, IT Director, Medical Centre" },
-    { quote: "We deployed their DGX Spark solution in 3 weeks. Patient data sovereignty solved.", by: "Dr. Amir Hassan, CISO, Hospital Group" },
-    { quote: "Marketing compliance used to take weeks of legal review. Now it's built into the AI.", by: "Lisa Tan, Marketing Director, Healthcare Corp" },
-    { quote: "The predictive analytics on cell viability have improved our storage protocols dramatically.", by: "Dr. Nurul Ain, Research Scientist, CryoCord Labs" },
-    { quote: "Integration was seamless. Their team understands healthcare workflows inside out.", by: "David Chong, Head of Digital, Private Hospital" },
-    { quote: "We've cut our customer response time from 24 hours to under 2 minutes with the voice agent.", by: "Siti Aminah, Customer Service Lead, CryoCord" },
-    { quote: "The Clarify dashboard gives me visibility I've never had. Every lead, every touchpoint, tracked.", by: "Kevin Yap, Regional Sales Manager, CryoCord Group" },
-    { quote: "Their AI doesn't just automate — it augments our clinical decision-making.", by: "Dr. Liew Kah Meng, Chief Medical Officer" },
-    { quote: "Compliance-first AI is rare. NovaGenAI built it into their DNA, not as an afterthought.", by: "Tan Sri Dato' Razali, Board Advisor, Healthcare Group" },
-    { quote: "The HR automation alone saved us RM200K annually. Everything else is a bonus.", by: "Anita Kaur, CFO, CryoCord Group" },
-    { quote: "Best AI partner we've worked with. They understand both the tech and the science.", by: "Dr. Rajan Pillai, Director of Innovation, Biotech Ventures" },
+    { quote: "On-premise AI means our patient data never leaves our building. Non-negotiable in healthcare.", by: "Dr. Ahmad Razif, CTO, Healthcare Group", img: "images/testimonials/ahmad-razif.jpg" },
+    { quote: "The Clarify platform gives us real-time intelligence we never had before. Game changer.", by: "Sarah Lim, Sales Director, CryoCord Group", img: "images/testimonials/sarah-lim.jpg" },
+    { quote: "Multilingual AI support in English, Bahasa, and Mandarin — unlike anything in the market.", by: "Mei Ling Chen, Patient Relations Manager, CryoCord", img: "images/testimonials/mei-ling.jpg" },
+    { quote: "Onboarding went from 3-month staff training to 2 weeks with their knowledge base AI.", by: "Priya Nair, HR Manager, Healthcare Org", img: "images/testimonials/priya-nair.jpg" },
+    { quote: "Their predictive cell model is first-of-its-kind innovation in biotech AI.", by: "Dr. Tan Wei Ming, Lab Director, Medical Group", img: "images/testimonials/tan-wei-ming.jpg" },
+    { quote: "ROI was visible within the first month. Enquiry-to-patient conversion doubled.", by: "James Wong, CIO, Private Hospital", img: "images/testimonials/james-wong.jpg" },
+    { quote: "Finally, an AI company that understands Malaysian healthcare. Built compliance-first.", by: "Farah Ismail, COO, Biotech Firm", img: "images/testimonials/farah-ismail.jpg" },
+    { quote: "The intersection of artificial intelligence and cell biology represents the next frontier. NovaGenAI is positioned at this exact convergence.", by: "Prof. Dr. Cheong Soon Keng, Academy of Sciences Malaysia", img: "images/testimonials/cheong-soon-keng.jpg" },
+    { quote: "Their voice agent handles 80% of our enquiries autonomously. Our team focuses on what matters.", by: "Rachel Goh, Operations Manager, CryoCord Group", img: "images/testimonials/rachel-goh.jpg" },
+    { quote: "The RAG system turned 10 years of SOPs into an instant knowledge base. Staff love it.", by: "Kumar Selvam, IT Director, Medical Centre", img: "images/testimonials/kumar-selvam.jpg" },
+    { quote: "We deployed their DGX Spark solution in 3 weeks. Patient data sovereignty solved.", by: "Dr. Amir Hassan, CISO, Hospital Group", img: "images/testimonials/amir-hassan.jpg" },
+    { quote: "Marketing compliance used to take weeks of legal review. Now it's built into the AI.", by: "Lisa Tan, Marketing Director, Healthcare Corp", img: "images/testimonials/lisa-tan.jpg" },
+    { quote: "The predictive analytics on cell viability have improved our storage protocols dramatically.", by: "Dr. Nurul Ain, Research Scientist, CryoCord Labs", img: "images/testimonials/nurul-ain.jpg" },
+    { quote: "Integration was seamless. Their team understands healthcare workflows inside out.", by: "David Chong, Head of Digital, Private Hospital", img: "images/testimonials/david-chong.jpg" },
+    { quote: "We've cut our customer response time from 24 hours to under 2 minutes with the voice agent.", by: "Siti Aminah, Customer Service Lead, CryoCord", img: "images/testimonials/siti-aminah.jpg" },
+    { quote: "The Clarify dashboard gives me visibility I've never had. Every lead, every touchpoint, tracked.", by: "Kevin Yap, Regional Sales Manager, CryoCord Group", img: "images/testimonials/kevin-yap.jpg" },
+    { quote: "Their AI doesn't just automate — it augments our clinical decision-making.", by: "Dr. Liew Kah Meng, Chief Medical Officer", img: "images/testimonials/liew-kah-meng.jpg" },
+    { quote: "Compliance-first AI is rare. NovaGenAI built it into their DNA, not as an afterthought.", by: "Tan Sri Dato' Razali, Board Advisor, Healthcare Group", img: "images/testimonials/razali.jpg" },
+    { quote: "The HR automation alone saved us RM200K annually. Everything else is a bonus.", by: "Anita Kaur, CFO, CryoCord Group", img: "images/testimonials/anita-kaur.jpg" },
+    { quote: "Best AI partner we've worked with. They understand both the tech and the science.", by: "Dr. Rajan Pillai, Director of Innovation, Biotech Ventures", img: "images/testimonials/rajan-pillai.jpg" },
 ];
 
 const carousel = document.getElementById('testimonials-carousel');
@@ -101,7 +101,7 @@ if (carousel) {
             const initials = getInitials(authorName);
 
             card.innerHTML = `
-                <div class="testimonial-card__initials">${initials}</div>
+                <img src="${t.img}" alt="${authorName}" class="testimonial-card__avatar">
                 <h3 class="testimonial-card__quote">"${t.quote}"</h3>
                 <p class="testimonial-card__author">— ${t.by}</p>
             `;

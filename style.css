@@ -470,6 +470,15 @@ spline-viewer #logo, spline-viewer [class*="logo"], spline-viewer a[href*="splin
     font-size: .9rem; color: var(--clr-accent);
     margin-bottom: 1rem; flex-shrink: 0;
 }
+.testimonial-card__avatar {
+    width: 56px; height: 56px; border-radius: 50%;
+    object-fit: cover; margin-bottom: 1rem; flex-shrink: 0;
+    border: 2px solid rgba(255,255,255,.15);
+}
+.testimonial-card--center .testimonial-card__avatar {
+    width: 64px; height: 64px;
+    border-color: rgba(0,212,255,.4);
+}
 .testimonial-card--center .testimonial-card__initials {
     background: rgba(0, 0, 0, .2); color: #fff;
 }
