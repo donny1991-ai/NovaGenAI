@@ -4,6 +4,9 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="64x64" href="images/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
     <title>NovaGenAI — AI Systems for Every Enterprise</title>
     <meta name="description" content="NovaGenAI builds production AI systems for enterprises of every size. Voice agents, intelligent platforms, on-premise infrastructure, and multi-agent automation." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -18,7 +21,7 @@
     <!-- ════════════════════════════════════════════════════════ NAV -->
     <header class="nav" id="nav">
         <a href="#" class="nav__brand">
-            <span class="nav__dot"></span> NOVAGENAI
+            <img src="images/novagenai-logo-nav.png" alt="NovaGenAI" class="nav__logo-img">
         </a>
 
         <nav class="nav__links" id="nav-links">
@@ -28,7 +31,7 @@
                     <a href="solutions.html">All Solutions</a>
                     <a href="solutions.html#voice-agents">AI Voice Agents</a>
                     <a href="solutions.html#clarify">Clarify Sales Platform</a>
-                    <a href="solutions.html#cell-model">Predictive Cell Model</a>
+                    <a href="solutions.html#cell-model">Predictive Analytics &amp; AI Modelling</a>
                     <a href="solutions.html#on-premise">On-Premise AI (DGX Spark)</a>
                     <a href="solutions.html#rag">RAG Document Intelligence</a>
                     <a href="solutions.html#marketing-os">Marketing OS</a>
@@ -62,15 +65,16 @@
             <a href="contact.html">CONTACT</a>
         </nav>
 
-        <a href="#contact" class="nav__cta" id="nav-cta">
-            GET STARTED&nbsp;
-            <span class="nav__cta-icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="7" y1="17" x2="17" y2="7" />
-                    <polyline points="7 7 17 7 17 17" />
-                </svg>
-            </span>
-        </a>
+        <div class="nav__social">
+            <a href="https://www.linkedin.com/company/novagenai" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+            <a href="https://www.instagram.com/nova.genai" target="_blank" rel="noopener" aria-label="Instagram"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+            <a href="https://www.facebook.com/NovaGenAI" target="_blank" rel="noopener" aria-label="Facebook"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+            <a href="https://x.com/Nova_GenAI" target="_blank" rel="noopener" aria-label="X"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+            <a href="https://www.youtube.com/@Nova_GenAI" target="_blank" rel="noopener" aria-label="YouTube"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+            <a href="https://www.tiktok.com/@nova_genai" target="_blank" rel="noopener" aria-label="TikTok"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+            <a href="https://www.threads.net/@nova.genai" target="_blank" rel="noopener" aria-label="Threads"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.814.822c-1.072-3.854-3.57-5.564-7.465-5.586h-.01c-2.204.013-5.506.85-6.882 4.08-.792 1.86-.792 4.378 0 6.238 1.376 3.23 4.678 4.067 6.882 4.08h.01c1.94-.012 3.514-.404 4.678-1.164.982-.641 1.696-1.578 1.855-2.879-.276-.016-.556-.039-.84-.07-1.602-.172-2.994-.636-4.137-1.38-1.318-.857-2.218-2.086-2.598-3.547-.27-1.037-.188-2.095.231-3.065.538-1.242 1.587-2.152 2.958-2.565 1.088-.328 2.252-.31 3.283-.028-.003-.163-.01-.326-.019-.487l-.003-.052c-.065-1.003-.267-1.772-.616-2.35-.308-.512-.735-.854-1.305-1.044a4.91 4.91 0 00-.747-.188l.588-2.794c.425.069.84.181 1.234.333 1.164.452 2.072 1.241 2.7 2.348.568.998.893 2.165.966 3.467l.003.055c.01.2.017.402.02.604 1.148.555 2.065 1.381 2.646 2.427.754 1.357.836 3.088.227 4.746-.85 2.313-3.087 3.742-5.942 3.892-.293.016-.583.023-.87.023zm1.486-10.031c-.574-.137-1.165-.155-1.681 0-.702.212-1.167.598-1.387 1.107-.2.46-.2.969-.053 1.53.26 1 .87 1.738 1.763 2.13.68.3 1.476.487 2.368.56.46.038.897.057 1.315.057.08-.463.074-.95-.037-1.442-.287-1.269-1.167-2.966-3.488-3.592l-.004-.002c.402.054.8.14 1.189.26l.015-.608z"/></svg></a>
+            <a href="https://wa.me/60111401036" target="_blank" rel="noopener" aria-label="WhatsApp"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+        </div>
     </header>
 
     <!-- ════════════════════════════════════════════════════════ HERO -->
@@ -99,7 +103,7 @@
         <!-- Bottom-right subcopy -->
         <div class="hero__subcopy">
             <p class="hero__tagline">// INTELLIGENCE THAT<br />TRANSFORMS BUSINESS</p>
-            <p class="hero__subdesc">// WE ARE NOVAGENAI — AN AI COMPANY<br />BUILDING VOICE AGENTS, INTELLIGENT PLATFORMS,<br />AND PRODUCTION AI SYSTEMS FOR ENTERPRISES<br />FROM HEALTHCARE TO EVERY INDUSTRY.</p>
+            <p class="hero__subdesc">// WE ARE NOVAGENAI — A MULTINATIONAL AI COMPANY<br />BUILDING VOICE AGENTS, INTELLIGENT PLATFORMS,<br />CUSTOM LLM MODELS, AND PRODUCTION AI SYSTEMS<br />FOR ENTERPRISES ACROSS EVERY INDUSTRY.<br /><br />// HEADQUARTERED IN MALAYSIA.<br />OPERATIONS IN AUSTRALIA AND SINGAPORE.</p>
         </div>
 
     </main>
@@ -108,7 +112,7 @@
     <section class="trust" id="trust-bar">
         <p class="trust__text">TRUSTED BY INDUSTRY LEADERS</p>
         <div class="trust__logos" id="trust-logos">
-            <span class="trust__logo-slot">CRYOCORD GROUP</span>
+            <span class="trust__logo-slot">ENTERPRISE HEALTHCARE</span>
             <span class="trust__logo-slot">NVIDIA</span>
             <span class="trust__logo-slot">ELEVENLABS</span>
             <span class="trust__logo-slot">GOOGLE CLOUD</span>
@@ -118,8 +122,14 @@
 
     <!-- ════════════════════════════════════════════════════════ SOLUTIONS -->
     <section class="solutions" id="solutions">
-        <p class="solutions__label">// WHAT WE BUILD</p>
-        <h2 class="solutions__heading">OUR <span class="solutions__heading--accent">SOLUTIONS</span></h2>
+        <p class="solutions__label">// HOW WE SOLVE IT</p>
+        <h2 class="solutions__heading">YOUR <span class="solutions__heading--accent">SOLUTIONS</span></h2>
+
+        <!-- ROI Banner -->
+        <div style="max-width:900px;margin:0 auto 3rem;padding:2rem 2.5rem;background:rgba(0,212,255,.06);border:1px solid rgba(0,212,255,.2);border-radius:12px;text-align:center;">
+            <p style="font-family:'Outfit',sans-serif;font-weight:800;font-size:clamp(1.1rem,2.5vw,1.6rem);color:#fff;margin-bottom:.5rem;">65% of AI adopters report revenue increases averaging 19%</p>
+            <p style="font-family:'Inter',sans-serif;font-size:.9rem;color:#888;line-height:1.6;">72% see significant productivity improvements. Here's how we get you there.</p>
+        </div>
 
         <div class="solutions__grid">
             <div class="solutions__card">
@@ -127,7 +137,7 @@
                     <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
                 </div>
                 <h3 class="solutions__card-title">AI Voice Agents</h3>
-                <p class="solutions__card-desc">Multilingual AI voice agents in English, Bahasa Malaysia, and Mandarin. 24/7 intelligent conversations that handle enquiries, book appointments, and convert leads.</p>
+                <p class="solutions__card-desc">Multilingual AI voice agents in English, Bahasa Malaysia, and Mandarin. 24/7 intelligent conversations that handle enquiries, book appointments, qualify leads, and convert prospects. Already live for enterprise clients across APAC.</p>
             </div>
 
             <div class="solutions__card">
@@ -135,15 +145,15 @@
                     <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
                 </div>
                 <h3 class="solutions__card-title">Clarify Sales Platform</h3>
-                <p class="solutions__card-desc">Real-time sales intelligence and CRM automation. Track leads, predict conversion, and give your sales team superpowers with AI-driven insights.</p>
+                <p class="solutions__card-desc">AI-native sales CRM with real-time lead scoring, pipeline intelligence, and automated follow-ups. Track leads, predict conversion, and give your sales team superpowers with AI-driven insights.</p>
             </div>
 
             <div class="solutions__card">
                 <div class="solutions__card-icon">
                     <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
                 </div>
-                <h3 class="solutions__card-title">Predictive Cell Model</h3>
-                <p class="solutions__card-desc">First-of-its-kind AI for cell biology prediction. Analyse viability patterns, optimise storage protocols, and unlock insights from decades of cryopreservation data.</p>
+                <h3 class="solutions__card-title">Custom AI Models &amp; Prediction</h3>
+                <p class="solutions__card-desc">We build our own LLM models, prediction-based models, computer vision systems, cell prediction engines, and in-silico models. Custom AI trained on your data — demand forecasting, anomaly detection, predictive maintenance, biotech modelling, and more. Deployed on-premise or cloud.</p>
             </div>
 
             <div class="solutions__card">
@@ -151,7 +161,7 @@
                     <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
                 </div>
                 <h3 class="solutions__card-title">On-Premise AI (DGX Spark)</h3>
-                <p class="solutions__card-desc">NVIDIA DGX-powered AI infrastructure deployed on-site. Your data never leaves your building. Compliance-first AI for enterprises that demand sovereignty.</p>
+                <p class="solutions__card-desc">NVIDIA DGX Spark infrastructure deployed on-site. Run 200B parameter models inside your building. Your data never leaves your premises — complete sovereignty for healthcare, finance, government, and defence.</p>
             </div>
 
             <div class="solutions__card">
@@ -159,7 +169,7 @@
                     <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
                 </div>
                 <h3 class="solutions__card-title">RAG Document Intelligence</h3>
-                <p class="solutions__card-desc">Transform your knowledge base into an AI-powered search engine. SOPs, medical protocols, compliance docs — instantly accessible through natural language queries.</p>
+                <p class="solutions__card-desc">Transform your knowledge base into an AI-powered search engine. SOPs, contracts, medical protocols, compliance docs — instantly accessible through natural language queries with source citations.</p>
             </div>
 
             <div class="solutions__card">
@@ -167,7 +177,72 @@
                     <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>
                 </div>
                 <h3 class="solutions__card-title">Marketing OS</h3>
-                <p class="solutions__card-desc">AI-powered content generation, campaign automation, and performance analytics. Generate on-brand marketing at scale with built-in compliance guardrails.</p>
+                <p class="solutions__card-desc">AI-powered content generation, campaign automation, and performance analytics. Generate on-brand marketing at scale in English, BM, and Mandarin with built-in compliance guardrails.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════ WHY NOVAGENAI -->
+    <section class="solutions" id="why-novagenai" style="padding-top:3rem;">
+        <p class="solutions__label">// WHY NOVAGENAI</p>
+        <h2 class="solutions__heading">BUILT FOR <span class="solutions__heading--accent">MALAYSIA</span></h2>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;max-width:1200px;margin:0 auto;">
+
+            <div style="padding:2rem;background:#0a0a0a;border:1px solid rgba(255,255,255,.08);border-radius:12px;transition:all .4s cubic-bezier(.16,1,.3,1);" onmouseenter="this.style.borderColor='rgba(0,212,255,.3)';this.style.transform='translateY(-4px)'" onmouseleave="this.style.borderColor='rgba(255,255,255,.08)';this.style.transform='translateY(0)'">
+                <div style="width:48px;height:48px;border-radius:12px;background:rgba(0,212,255,.08);display:grid;place-items:center;color:#00D4FF;margin-bottom:1rem;font-size:1.4rem;">🎯</div>
+                <h3 style="font-family:'Outfit',sans-serif;font-weight:700;font-size:1.05rem;color:#fff;margin-bottom:.5rem;">Zero Technical Skill Required</h3>
+                <p style="font-family:'Inter',sans-serif;font-size:.85rem;color:#888;line-height:1.6;">52% of businesses cite skills gap as their #1 barrier to AI adoption. Our systems are built so your existing team can use them from day one — no developers, no data scientists needed.</p>
+            </div>
+
+            <div style="padding:2rem;background:#0a0a0a;border:1px solid rgba(255,255,255,.08);border-radius:12px;transition:all .4s cubic-bezier(.16,1,.3,1);" onmouseenter="this.style.borderColor='rgba(0,212,255,.3)';this.style.transform='translateY(-4px)'" onmouseleave="this.style.borderColor='rgba(255,255,255,.08)';this.style.transform='translateY(0)'">
+                <div style="width:48px;height:48px;border-radius:12px;background:rgba(0,212,255,.08);display:grid;place-items:center;color:#00D4FF;margin-bottom:1rem;font-size:1.4rem;">🌏</div>
+                <h3 style="font-family:'Outfit',sans-serif;font-weight:700;font-size:1.05rem;color:#fff;margin-bottom:.5rem;">Trilingual: EN / BM / ZH</h3>
+                <p style="font-family:'Inter',sans-serif;font-size:.85rem;color:#888;line-height:1.6;">Malaysia is trilingual — your AI should be too. Every system we build works natively in English, Bahasa Malaysia, and Mandarin. No translation layers, no compromises.</p>
+            </div>
+
+            <div style="padding:2rem;background:#0a0a0a;border:1px solid rgba(255,255,255,.08);border-radius:12px;transition:all .4s cubic-bezier(.16,1,.3,1);" onmouseenter="this.style.borderColor='rgba(0,212,255,.3)';this.style.transform='translateY(-4px)'" onmouseleave="this.style.borderColor='rgba(255,255,255,.08)';this.style.transform='translateY(0)'">
+                <div style="width:48px;height:48px;border-radius:12px;background:rgba(0,212,255,.08);display:grid;place-items:center;color:#00D4FF;margin-bottom:1rem;font-size:1.4rem;">🔒</div>
+                <h3 style="font-family:'Outfit',sans-serif;font-weight:700;font-size:1.05rem;color:#fff;margin-bottom:.5rem;">On-Premise Option</h3>
+                <p style="font-family:'Inter',sans-serif;font-size:.85rem;color:#888;line-height:1.6;">Your data never leaves your building. With NVIDIA DGX Spark, we deploy AI infrastructure on-site — full data sovereignty, full compliance, zero cloud dependency.</p>
+            </div>
+
+            <div style="padding:2rem;background:#0a0a0a;border:1px solid rgba(255,255,255,.08);border-radius:12px;transition:all .4s cubic-bezier(.16,1,.3,1);" onmouseenter="this.style.borderColor='rgba(0,212,255,.3)';this.style.transform='translateY(-4px)'" onmouseleave="this.style.borderColor='rgba(255,255,255,.08)';this.style.transform='translateY(0)'">
+                <div style="width:48px;height:48px;border-radius:12px;background:rgba(0,212,255,.08);display:grid;place-items:center;color:#00D4FF;margin-bottom:1rem;font-size:1.4rem;">💰</div>
+                <h3 style="font-family:'Outfit',sans-serif;font-weight:700;font-size:1.05rem;color:#fff;margin-bottom:.5rem;">Grant-Ready (MDAG-AI)</h3>
+                <p style="font-family:'Inter',sans-serif;font-size:.85rem;color:#888;line-height:1.6;">The MDAG-AI grant covers 70% of project costs up to RM2M. We handle the application process and structure projects to maximise your funding approval.</p>
+            </div>
+
+            <div style="padding:2rem;background:#0a0a0a;border:1px solid rgba(255,255,255,.08);border-radius:12px;transition:all .4s cubic-bezier(.16,1,.3,1);" onmouseenter="this.style.borderColor='rgba(0,212,255,.3)';this.style.transform='translateY(-4px)'" onmouseleave="this.style.borderColor='rgba(255,255,255,.08)';this.style.transform='translateY(0)'">
+                <div style="width:48px;height:48px;border-radius:12px;background:rgba(0,212,255,.08);display:grid;place-items:center;color:#00D4FF;margin-bottom:1rem;font-size:1.4rem;">🚀</div>
+                <h3 style="font-family:'Outfit',sans-serif;font-weight:700;font-size:1.05rem;color:#fff;margin-bottom:.5rem;">Production Systems, Not Demos</h3>
+                <p style="font-family:'Inter',sans-serif;font-size:.85rem;color:#888;line-height:1.6;">We don't build proof-of-concepts that collect dust. Every system goes live, serves real customers, and delivers measurable ROI from week one.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════ STATS -->
+    <section class="solutions" id="stats" style="padding-top:3rem;padding-bottom:5rem;">
+        <p class="solutions__label">// BY THE NUMBERS</p>
+        <h2 class="solutions__heading">PROVEN <span class="solutions__heading--accent">IMPACT</span></h2>
+
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;max-width:1000px;margin:0 auto;text-align:center;">
+            <div style="padding:2rem;background:#0a0a0a;border:1px solid rgba(255,255,255,.08);border-radius:12px;">
+                <p class="stat-counter" data-target="160" style="font-family:'Outfit',sans-serif;font-weight:900;font-size:clamp(2rem,4vw,3rem);color:#00D4FF;margin-bottom:.35rem;">0+</p>
+                <p style="font-family:'Inter',sans-serif;font-size:.85rem;color:#888;">Employees Served</p>
+            </div>
+            <div style="padding:2rem;background:#0a0a0a;border:1px solid rgba(255,255,255,.08);border-radius:12px;">
+                <p class="stat-counter" data-target="3" style="font-family:'Outfit',sans-serif;font-weight:900;font-size:clamp(2rem,4vw,3rem);color:#00D4FF;margin-bottom:.35rem;">0</p>
+                <p style="font-family:'Inter',sans-serif;font-size:.85rem;color:#888;">Languages Supported</p>
+            </div>
+            <div style="padding:2rem;background:#0a0a0a;border:1px solid rgba(255,255,255,.08);border-radius:12px;">
+                <p style="font-family:'Outfit',sans-serif;font-weight:900;font-size:clamp(2rem,4vw,3rem);color:#00D4FF;margin-bottom:.35rem;">24/7</p>
+                <p style="font-family:'Inter',sans-serif;font-size:.85rem;color:#888;">Availability</p>
+            </div>
+            <div style="padding:2rem;background:#0a0a0a;border:1px solid rgba(255,255,255,.08);border-radius:12px;">
+                <p style="font-family:'Outfit',sans-serif;font-weight:900;font-size:clamp(2rem,4vw,3rem);color:#00D4FF;margin-bottom:.35rem;">&lt;5 min</p>
+                <p style="font-family:'Inter',sans-serif;font-size:.85rem;color:#888;">Lead Response Time</p>
             </div>
         </div>
     </section>
@@ -210,17 +285,7 @@
                         </div>
                         <div>
                             <p class="contact__detail-label">Email</p>
-                            <p class="contact__detail-value">hello@novagenai.com</p>
-                        </div>
-                    </div>
-
-                    <div class="contact__detail">
-                        <div class="contact__detail-icon">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" /></svg>
-                        </div>
-                        <div>
-                            <p class="contact__detail-label">Phone</p>
-                            <p class="contact__detail-value">+60 3-7890 1234</p>
+                            <p class="contact__detail-value"><a href="mailto:enquiries@novagenai.com.my" style="color:#00D4FF;text-decoration:none;">enquiries@novagenai.com.my</a></p>
                         </div>
                     </div>
 
@@ -230,10 +295,12 @@
                         </div>
                         <div>
                             <p class="contact__detail-label">Address</p>
-                            <p class="contact__detail-value">Kuala Lumpur, Malaysia</p>
+                            <p class="contact__detail-value">Headquarters: Kuala Lumpur, Malaysia | Australia | Singapore</p>
                         </div>
                     </div>
                 </div>
+
+<!-- agent button removed -->
             </div>
 
             <div class="contact__form-wrap">
@@ -251,6 +318,43 @@
                         <input class="contact__input" type="text" id="contact-company" name="company" placeholder="Your company" />
                     </div>
                     <div class="contact__field">
+                        <label class="contact__label" for="contact-phone">Phone</label>
+                        <input class="contact__input" type="tel" id="contact-phone" name="phone" placeholder="+60 12-345 6789" />
+                    </div>
+                    <div class="contact__field">
+                        <label class="contact__label" for="contact-industry">Industry</label>
+                        <select class="contact__input" id="contact-industry" name="industry">
+                            <option value="" disabled selected>Select your industry</option>
+                            <option value="healthcare">Healthcare</option>
+                            <option value="biotech">Biotech / Life Sciences</option>
+                            <option value="pharmaceutical">Pharmaceutical</option>
+                            <option value="financial">Financial Services / Banking</option>
+                            <option value="insurance">Insurance</option>
+                            <option value="manufacturing">Manufacturing</option>
+                            <option value="automotive">Automotive</option>
+                            <option value="oil-gas">Oil & Gas / Energy</option>
+                            <option value="retail">Retail / E-commerce</option>
+                            <option value="fmcg">FMCG / Consumer Goods</option>
+                            <option value="fnb">Food & Beverage</option>
+                            <option value="logistics">Logistics / Supply Chain</option>
+                            <option value="real-estate">Real Estate / Property</option>
+                            <option value="construction">Construction / Engineering</option>
+                            <option value="education">Education</option>
+                            <option value="government">Government / Public Sector</option>
+                            <option value="technology">Technology / SaaS</option>
+                            <option value="telco">Telecommunications</option>
+                            <option value="media">Media / Entertainment</option>
+                            <option value="hospitality">Hospitality / Tourism</option>
+                            <option value="agriculture">Agriculture / Agritech</option>
+                            <option value="legal">Legal</option>
+                            <option value="accounting">Accounting / Audit</option>
+                            <option value="consulting">Consulting</option>
+                            <option value="hr-recruitment">HR / Recruitment</option>
+                            <option value="nonprofit">Non-Profit / NGO</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="contact__field">
                         <label class="contact__label" for="contact-message">Message</label>
                         <textarea class="contact__textarea" id="contact-message" name="message" rows="4" placeholder="Tell us about your project..." required></textarea>
                     </div>
@@ -264,8 +368,9 @@
     <footer class="footer">
         <div class="footer__inner">
             <div class="footer__brand">
-                <span class="footer__logo"><span class="nav__dot"></span> NOVAGENAI</span>
-                <p class="footer__tagline">AI Systems for Every Enterprise</p>
+                <span class="footer__logo"><img src="images/novagenai-logo-footer.png" alt="NovaGenAI" class="footer__logo-img"></span>
+                <p class="footer__tagline">Enterprise AI Systems — Asia-Pacific &amp; Global</p>
+                <p class="footer__tagline" style="margin-top:.25rem;font-size:.7rem;opacity:.6;">Malaysia · Australia</p>
             </div>
             <div class="footer__links">
                 <a href="solutions.html">Solutions</a>
@@ -276,10 +381,91 @@
                 <a href="about.html">About</a>
                 <a href="contact.html">Contact</a>
             </div>
+                        <div class="footer__social">
+                <a href="https://www.linkedin.com/company/novagenai" target="_blank" rel="noopener" aria-label="LinkedIn" class="footer__social-link footer__social--linkedin"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+                <a href="https://www.instagram.com/nova.genai" target="_blank" rel="noopener" aria-label="Instagram" class="footer__social-link footer__social--instagram"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+                <a href="https://www.facebook.com/NovaGenAI" target="_blank" rel="noopener" aria-label="Facebook" class="footer__social-link footer__social--facebook"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+                <a href="https://x.com/Nova_GenAI" target="_blank" rel="noopener" aria-label="X" class="footer__social-link footer__social--x"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+                <a href="https://www.youtube.com/@Nova_GenAI" target="_blank" rel="noopener" aria-label="YouTube" class="footer__social-link footer__social--youtube"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+                <a href="https://www.tiktok.com/@nova_genai" target="_blank" rel="noopener" aria-label="TikTok" class="footer__social-link footer__social--tiktok"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+                <a href="https://www.threads.net/@nova.genai" target="_blank" rel="noopener" aria-label="Threads" class="footer__social-link footer__social--threads"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.814.822c-1.072-3.854-3.57-5.564-7.465-5.586h-.01c-2.204.013-5.506.85-6.882 4.08-.792 1.86-.792 4.378 0 6.238 1.376 3.23 4.678 4.067 6.882 4.08h.01c1.94-.012 3.514-.404 4.678-1.164.982-.641 1.696-1.578 1.855-2.879-.276-.016-.556-.039-.84-.07-1.602-.172-2.994-.636-4.137-1.38-1.318-.857-2.218-2.086-2.598-3.547-.27-1.037-.188-2.095.231-3.065.538-1.242 1.587-2.152 2.958-2.565 1.088-.328 2.252-.31 3.283-.028-.003-.163-.01-.326-.019-.487l-.003-.052c-.065-1.003-.267-1.772-.616-2.35-.308-.512-.735-.854-1.305-1.044a4.91 4.91 0 00-.747-.188l.588-2.794c.425.069.84.181 1.234.333 1.164.452 2.072 1.241 2.7 2.348.568.998.893 2.165.966 3.467l.003.055c.01.2.017.402.02.604 1.148.555 2.065 1.381 2.646 2.427.754 1.357.836 3.088.227 4.746-.85 2.313-3.087 3.742-5.942 3.892-.293.016-.583.023-.87.023zm1.486-10.031c-.574-.137-1.165-.155-1.681 0-.702.212-1.167.598-1.387 1.107-.2.46-.2.969-.053 1.53.26 1 .87 1.738 1.763 2.13.68.3 1.476.487 2.368.56.46.038.897.057 1.315.057.08-.463.074-.95-.037-1.442-.287-1.269-1.167-2.966-3.488-3.592l-.004-.002c.402.054.8.14 1.189.26l.015-.608z"/></svg></a>
+                <a href="https://wa.me/60111401036" target="_blank" rel="noopener" aria-label="WhatsApp" class="footer__social-link footer__social--whatsapp"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+            </div>
             <p class="footer__copy">&copy; 2026 NovaGenAI. All rights reserved.</p>
         </div>
     </footer>
 
+    <script>
+    // Animated counters
+    function animateCounters() {
+        document.querySelectorAll('.stat-counter').forEach(el => {
+            const target = parseInt(el.dataset.target);
+            const suffix = el.textContent.includes('+') ? '+' : '';
+            let current = 0;
+            const step = Math.max(1, Math.floor(target / 60));
+            const timer = setInterval(() => {
+                current += step;
+                if (current >= target) { current = target; clearInterval(timer); }
+                el.textContent = current + suffix;
+            }, 30);
+        });
+    }
+    // Trigger counters when stats section is visible
+    const statsSection = document.getElementById('stats');
+    if (statsSection) {
+        const statsObs = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    statsObs.disconnect();
+                }
+            });
+        }, { threshold: 0.3 });
+        statsObs.observe(statsSection);
+    }
+    // Make new sections fade in
+    const newSections = document.querySelectorAll('#why-novagenai, #stats');
+    const fadeObs = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) entry.target.classList.add('visible');
+        });
+    }, { threshold: 0.1 });
+    newSections.forEach(s => fadeObs.observe(s));
+    </script>
+    <script>
+    document.getElementById('contact-form').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const btn = this.querySelector('.contact__submit');
+        const origText = btn.textContent;
+        btn.textContent = 'Sending...';
+        btn.disabled = true;
+        btn.style.opacity = '0.6';
+        const name = document.getElementById('contact-name').value;
+        const email = document.getElementById('contact-email').value;
+        const company = document.getElementById('contact-company').value || 'Not provided';
+        const phone = document.getElementById('contact-phone').value || 'Not provided';
+        const industry = document.getElementById('contact-industry').value || 'Not specified';
+        const message = document.getElementById('contact-message').value;
+        const transcript = 'Website contact form submission. My name is ' + name + '. I work for ' + company + '. My email is ' + email + '. My phone number is ' + phone + '. Industry: ' + industry + '. Message: ' + message;
+        try {
+            await fetch('https://doncalaki.app.n8n.cloud/webhook/novagen-voice-lead', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ transcript: transcript, conversation_id: 'web-form-' + Date.now(), metadata: { call_duration_secs: 0, language: 'en', source: 'website-contact-form' } })
+            });
+            btn.textContent = '✓ Message Sent!';
+            btn.style.background = '#22c55e';
+            this.reset();
+            setTimeout(function() { btn.textContent = origText; btn.style.background = ''; btn.disabled = false; btn.style.opacity = '1'; }, 4000);
+        } catch (err) {
+            btn.textContent = 'Error — try again';
+            btn.style.background = '#ef4444';
+            btn.disabled = false;
+            btn.style.opacity = '1';
+            setTimeout(function() { btn.textContent = origText; btn.style.background = ''; }, 3000);
+        }
+    });
+    </script>
     <script type="module" src="script.js"></script>
     <!-- ElevenLabs Voice Agent Widget -->
     <script src="https://elevenlabs.io/convai-widget/index.js" async type="text/javascript"></script>
