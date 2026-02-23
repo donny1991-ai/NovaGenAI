@@ -1465,14 +1465,13 @@ select.contact__input {
 }
 .nav__social a {
     display: flex;
-    color: #00d4ff;
-    filter: drop-shadow(0 0 4px rgba(0,212,255,.4));
-    transition: color .3s ease, transform .3s ease, filter .3s ease;
+    color: rgba(255,255,255,.55);
+    transition: color .3s ease, filter .3s ease, transform .3s ease;
 }
 .nav__social a:hover {
-    color: #fff;
+    color: #00d4ff;
     transform: scale(1.15);
-    filter: drop-shadow(0 0 10px rgba(0,212,255,.7)) drop-shadow(0 0 20px rgba(0,212,255,.3));
+    filter: drop-shadow(0 0 8px rgba(0,212,255,.6)) drop-shadow(0 0 18px rgba(0,212,255,.3));
 }
 
 /* ══════ NAV DROPDOWNS ══════ */
