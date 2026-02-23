@@ -1,1 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 40"><text x="0" y="30" font-family="Inter,sans-serif" font-size="24" font-weight="600" fill="white" letter-spacing="2">ELEVENLABS</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 80">
+  <!-- ElevenLabs iconic double bars -->
+  <g transform="translate(16,18)">
+    <rect x="0" y="0" width="8" height="44" rx="2" fill="white"/>
+    <rect x="16" y="0" width="8" height="44" rx="2" fill="white"/>
+  </g>
+  <text x="52" y="50" font-family="'Inter','Helvetica Neue',Arial,sans-serif" font-size="30" font-weight="600" fill="white" letter-spacing="0.5">ElevenLabs</text>
+</svg>
