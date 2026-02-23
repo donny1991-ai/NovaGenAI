@@ -143,62 +143,81 @@
     </section>
 
     <!-- ════════════════════════════════════════════════════════ SOLUTIONS -->
-    <section class="solutions" id="solutions">
-        <p class="solutions__label">// HOW WE SOLVE IT</p>
-        <h2 class="solutions__heading">YOUR <span class="solutions__heading--accent">SOLUTIONS</span></h2>
+    <section class="ag-section" id="solutions">
+        <p class="ag-label">// HOW WE SOLVE IT</p>
+        <h2 class="ag-heading">YOUR <span class="accent">SOLUTIONS</span></h2>
+        <p class="ag-subtext">Real systems. In production. Delivering measurable ROI from week one.</p>
 
-        <!-- ROI Banner -->
-        <div style="max-width:900px;margin:0 auto 3rem;padding:2rem 2.5rem;background:rgba(0,212,255,.06);border:1px solid rgba(0,212,255,.2);border-radius:12px;text-align:center;">
-            <p style="font-family:'Outfit',sans-serif;font-weight:800;font-size:clamp(1.1rem,2.5vw,1.6rem);color:#fff;margin-bottom:.5rem;">65% of AI adopters report revenue increases averaging 19%</p>
-            <p style="font-family:'Inter',sans-serif;font-size:.9rem;color:#888;line-height:1.6;">72% see significant productivity improvements. Here's how we get you there.</p>
+        <!-- Voice Agents — Featured -->
+        <div class="team-eng-featured fade-up">
+            <div class="team-eng-featured-img">
+                <img src="images/tech-voice-ai.jpg" alt="AI Voice Agents" loading="lazy">
+            </div>
+            <div class="team-eng-featured-content">
+                <div class="team-eng-badge">LIVE IN PRODUCTION</div>
+                <h3>AI Voice Agents</h3>
+                <p>Multilingual conversational AI agents handling real phone calls in English, Bahasa Malaysia, and Mandarin. 24/7 intelligent conversations that handle enquiries, book appointments, qualify leads, and convert prospects.</p>
+                <ul class="team-eng-list">
+                    <li>3 live agents — James, Amila, Mei Lin</li>
+                    <li>Trilingual: English, Bahasa Malaysia, Mandarin</li>
+                    <li>Real-time CRM integration during calls</li>
+                    <li>80% of enquiries handled autonomously</li>
+                </ul>
+                <div class="team-tech-tags">
+                    <span>ElevenLabs</span><span>Claude</span><span>GPT</span><span>WebRTC</span><span>Multilingual</span>
+                </div>
+            </div>
         </div>
 
-        <div class="team-built-grid">
-            <div class="team-built-card">
-                <img src="images/voice-agent-waveform.jpg" alt="AI Voice Agents" class="team-built-img" />
-                <div class="team-built-content">
-                    <h4>AI Voice Agents</h4>
-                    <p>Multilingual AI voice agents in English, Bahasa Malaysia, and Mandarin. 24/7 intelligent conversations that handle enquiries, book appointments, qualify leads, and convert prospects. Already live for enterprise clients across APAC.</p>
+        <!-- On-Premise AI — Featured (reversed) -->
+        <div class="team-eng-featured team-eng-featured--reverse fade-up">
+            <div class="team-eng-featured-img">
+                <img src="images/dgx-spark.jpg" alt="NVIDIA DGX Spark" loading="lazy">
+            </div>
+            <div class="team-eng-featured-content">
+                <div class="team-eng-badge" style="background:rgba(118,185,0,.1);color:#76B900;border-color:#76B900;">NVIDIA POWERED</div>
+                <h3>On-Premise AI (DGX Spark)</h3>
+                <p>NVIDIA DGX Spark infrastructure deployed on-site. Run 200B+ parameter models inside your building. Your data never leaves your premises — complete sovereignty for healthcare, finance, government, and defence.</p>
+                <ul class="team-eng-list">
+                    <li>1 PFLOP FP4 AI performance</li>
+                    <li>128 GB unified memory — run frontier models locally</li>
+                    <li>Air-gapped deployment available</li>
+                    <li>Zero cloud dependency for sensitive operations</li>
+                </ul>
+                <div class="team-tech-tags">
+                    <span>Grace Blackwell</span><span>vLLM</span><span>CUDA</span><span>On-Premise</span><span>PDPA</span>
                 </div>
             </div>
+        </div>
 
+        <!-- Remaining 4 as image cards -->
+        <div class="team-built-grid fade-up" style="margin-top:3rem;">
             <div class="team-built-card">
-                <img src="images/crm-dashboard.jpg" alt="Clarify Sales Platform" class="team-built-img" />
-                <div class="team-built-content">
-                    <h4>Clarify Sales Platform</h4>
-                    <p>AI-native sales CRM with real-time lead scoring, pipeline intelligence, and automated follow-ups. Track leads, predict conversion, and give your sales team superpowers with AI-driven insights.</p>
-                </div>
-            </div>
-
-            <div class="team-built-card">
-                <img src="images/biotech-cells.jpg" alt="Custom AI Models" class="team-built-img" />
+                <img src="images/tech-llm-inference.jpg" alt="Custom AI Models" loading="lazy" class="team-built-img">
                 <div class="team-built-content">
                     <h4>Custom AI Models &amp; Prediction</h4>
-                    <p>We build our own LLM models, prediction-based models, computer vision systems, cell prediction engines, and in-silico models. Custom AI trained on your data — demand forecasting, anomaly detection, predictive maintenance, biotech modelling, and more. Deployed on-premise or cloud.</p>
+                    <p>Custom LLM models, cell prediction engines, in-silico modelling, computer vision. Trained on your data — demand forecasting, anomaly detection, biotech modelling. On-premise or cloud.</p>
                 </div>
             </div>
-
             <div class="team-built-card">
-                <img src="images/dgx-spark.jpg" alt="On-Premise AI DGX Spark" class="team-built-img" />
+                <img src="images/tech-secure-api.jpg" alt="Clarify Sales Platform" loading="lazy" class="team-built-img">
                 <div class="team-built-content">
-                    <h4>On-Premise AI (DGX Spark)</h4>
-                    <p>NVIDIA DGX Spark infrastructure deployed on-site. Run 200B parameter models inside your building. Your data never leaves your premises — complete sovereignty for healthcare, finance, government, and defence.</p>
+                    <h4>Clarify Sales Platform</h4>
+                    <p>AI-native CRM with real-time lead scoring, pipeline intelligence, and automated follow-ups. Track every lead, predict conversion, give your sales team superpowers.</p>
                 </div>
             </div>
-
             <div class="team-built-card">
-                <img src="images/rag-documents.jpg" alt="RAG Document Intelligence" class="team-built-img" />
+                <img src="images/tech-rag.jpg" alt="RAG Document Intelligence" loading="lazy" class="team-built-img">
                 <div class="team-built-content">
                     <h4>RAG Document Intelligence</h4>
-                    <p>Transform your knowledge base into an AI-powered search engine. SOPs, contracts, medical protocols, compliance docs — instantly accessible through natural language queries with source citations.</p>
+                    <p>Transform your knowledge base into an AI search engine. SOPs, contracts, medical protocols — instantly accessible through natural language with source citations.</p>
                 </div>
             </div>
-
             <div class="team-built-card">
-                <img src="images/marketing-analytics.jpg" alt="Marketing OS" class="team-built-img" />
+                <img src="images/tech-embeddings.jpg" alt="Marketing OS" loading="lazy" class="team-built-img">
                 <div class="team-built-content">
                     <h4>Marketing OS</h4>
-                    <p>AI-powered content generation, campaign automation, and performance analytics. Generate on-brand marketing at scale in English, BM, and Mandarin with built-in compliance guardrails.</p>
+                    <p>AI-powered content generation, campaign automation, and performance analytics. On-brand marketing at scale in English, BM, and Mandarin with compliance guardrails.</p>
                 </div>
             </div>
         </div>
