@@ -50,10 +50,19 @@ img { max-width: 100%; display: block; }
     min-height: var(--nav-height);
     background: rgba(0, 0, 0, .75);
     backdrop-filter: blur(20px) saturate(1.2); -webkit-backdrop-filter: blur(20px) saturate(1.2);
-    border-bottom: 1px solid rgba(0, 212, 255, .08);
+    border-bottom: none;
     overflow: visible;
     font-family: var(--ff-body); font-size: .75rem;
     letter-spacing: .12em; text-transform: uppercase;
+}
+.nav::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(0, 212, 255, .15) 20%, rgba(0, 212, 255, .15) 80%, transparent);
+    z-index: 201;
+    pointer-events: none;
 }
 .nav__brand {
     display: flex; align-items: center; gap: .5rem;
@@ -1484,7 +1493,7 @@ select.contact__input {
 }
 /* dropdown trigger styles handled by .nav__links > .nav__dropdown > .nav__dropdown-trigger above */
 .nav__dropdown-menu {
-    position: absolute; top: 100%; left: 50%;
+    position: absolute; top: calc(100% + 1px); left: 50%;
     transform: translateX(-50%) translateY(8px);
     min-width: 220px; padding: .5rem 0;
     background: #111; border: 1px solid rgba(255,255,255,.1);
