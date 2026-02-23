@@ -518,7 +518,7 @@ spline-viewer #logo, spline-viewer [class*="logo"], spline-viewer a[href*="splin
     display: flex; align-items: center; justify-content: space-between;
     flex-wrap: wrap; gap: 1.5rem;
 }
-.footer__brand { display: flex; flex-direction: column; gap: .35rem; }
+.footer__brand { display: flex; flex-direction: column; align-items: center; gap: .35rem; text-align: center; }
 .footer__logo {
     font-family: var(--ff-display); font-weight: 800;
     font-size: .85rem; letter-spacing: .15em;
