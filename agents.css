@@ -111,6 +111,30 @@
     box-shadow: 0 8px 30px rgba(0,212,255,.1);
 }
 .ag-spawn-icon { font-size: 2rem; margin-bottom: 1rem; }
+/* Premium icon containers */
+.ag-icon-circle {
+    width: 48px; height: 48px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--ff-display); font-size: 1rem; font-weight: 800;
+    color: #fff; flex-shrink: 0;
+}
+.ag-icon-circle svg { width: 22px; height: 22px; fill: none; stroke: #fff; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.ag-icon-circle--lg { width: 56px; height: 56px; font-size: 1.1rem; }
+.ag-icon-circle--lg svg { width: 26px; height: 26px; }
+.ag-icon-circle--xl { width: 64px; height: 64px; font-size: 1.2rem; }
+.ag-icon-circle--xl svg { width: 28px; height: 28px; }
+.ag-icon-circle--cyan { background: linear-gradient(135deg, #00D4FF, #0088AA); }
+.ag-icon-circle--purple { background: linear-gradient(135deg, #A855F7, #7C3AED); }
+.ag-icon-circle--green { background: linear-gradient(135deg, #22C55E, #16A34A); }
+.ag-icon-circle--orange { background: linear-gradient(135deg, #FF5C00, #D94500); }
+.ag-icon-circle--blue { background: linear-gradient(135deg, #3B82F6, #2563EB); }
+.ag-icon-circle--red { background: linear-gradient(135deg, #EF4444, #DC2626); }
+.ag-icon-circle--teal { background: linear-gradient(135deg, #14B8A6, #0D9488); }
+.ag-icon-circle--pink { background: linear-gradient(135deg, #EC4899, #DB2777); }
+.ag-spawn-card .ag-icon-circle { margin-bottom: 1rem; }
+.ag-industry-card .ag-icon-circle { margin: 0 auto 1rem; }
+.ag-security-card .ag-security-icon { margin-bottom: .75rem; }
+.ag-org-node-icon .ag-icon-circle { margin: 0 auto; }
 .ag-spawn-card h4 {
     font-family: var(--ff-display); font-size: .95rem; font-weight: 700;
     margin-bottom: .5rem;
