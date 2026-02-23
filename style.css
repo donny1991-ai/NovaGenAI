@@ -299,9 +299,10 @@ spline-viewer #logo, spline-viewer [class*="logo"], spline-viewer a[href*="splin
     text-align: center;
 }
 .eco__heading {
-    font-family: var(--ff-display); font-size: clamp(1.6rem, 3.5vw, 2.4rem);
-    font-weight: 800; color: var(--clr-text);
-    margin-bottom: 2rem;
+    font-family: var(--ff-display); font-size: clamp(2rem, 4.5vw, 3.2rem);
+    font-weight: 900; color: var(--clr-text);
+    text-transform: uppercase; letter-spacing: .04em;
+    margin-bottom: 2.5rem;
 }
 .eco__gold {
     color: var(--clr-gold, #D4A017);
@@ -315,13 +316,13 @@ spline-viewer #logo, spline-viewer [class*="logo"], spline-viewer a[href*="splin
 /* Logo strip */
 .eco__logos {
     display: flex; align-items: center; justify-content: center;
-    gap: 2.5rem; flex-wrap: wrap;
-    margin-bottom: 2rem;
+    gap: 3.5rem; flex-wrap: wrap;
+    margin-bottom: 2.5rem;
 }
 .eco__logos img {
-    height: 36px; width: auto; max-width: 100px;
+    height: 52px; width: auto; max-width: 160px;
     object-fit: contain;
-    filter: brightness(0) invert(1); opacity: .5;
+    filter: brightness(0) invert(1); opacity: .6;
     transition: opacity .3s ease;
 }
 .eco__logos img:hover { opacity: 1; }
@@ -347,7 +348,7 @@ spline-viewer #logo, spline-viewer [class*="logo"], spline-viewer a[href*="splin
 
 @media (max-width: 768px) {
     .eco__logos { gap: 1.5rem; }
-    .eco__logos img { height: 28px; max-width: 80px; }
+    .eco__logos img { height: 38px; max-width: 120px; }
     .eco__pills { gap: .4rem; }
     .eco__pill { font-size: .6rem; padding: .3rem .75rem; }
 }
