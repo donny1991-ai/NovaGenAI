@@ -1,0 +1,49 @@
+{
+  "posts": {
+    "on-premise-ai": {
+      "hero": "on-premise-nvidia-dgx.jpg",
+      "hero_alt": "NVIDIA DGX enterprise AI hardware with NovaGenAI branding",
+      "inline": [
+        "on-premise-data-sovereignty.jpg",
+        "on-premise-airgap-security.jpg",
+        "on-premise-secure-vault.jpg",
+        "on-premise-dgx-sovereignty.jpg"
+      ]
+    },
+    "cell2sentence-biotech": {
+      "hero": "biotech-cell2sentence.jpg",
+      "hero_alt": "Cell2Sentence computational biology visualization with NovaGenAI branding",
+      "inline": [
+        "biotech-dna-computational.jpg",
+        "biotech-in-silico.jpg",
+        "biotech-stem-cell-lab.jpg",
+        "biotech-computational-future.jpg"
+      ]
+    },
+    "vision-2026": {
+      "hero": "vision-neural-city.jpg",
+      "hero_alt": "Futuristic neural city visualization representing NovaGenAI Vision 2026",
+      "inline": [
+        "vision-autonomous-enterprise.jpg",
+        "vision-robot-human.jpg",
+        "vision-ai-orchestration.jpg",
+        "vision-sunday-future.jpg"
+      ]
+    }
+  },
+  "shared": {
+    "logo": "novagenai-logo.png",
+    "logo-nav": "novagenai-logo-nav.png",
+    "default-og": "og-default.jpg"
+  },
+  "metadata": {
+    "generated": "2026-02-28T03:42:00Z",
+    "total_images": 19,
+    "total_size_kb": 1963,
+    "optimization": {
+      "hero_max_width": 1200,
+      "inline_max_width": 800,
+      "quality": 82
+    }
+  }
+}
