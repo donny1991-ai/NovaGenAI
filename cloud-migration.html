@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="64x64" href="images/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <title>Cloud Migration with AI — NovaGenAI</title>
+    <meta name="description" content="AI-assisted cloud migration to AWS, Google Cloud, and Azure. NovaGenAI delivers multi-cloud strategy, hybrid architectures, AI workload optimisation, and PDPA-compliant data sovereignty for Malaysian enterprises."/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;600;700;800;900&display=swap&amp;font-display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="agents.css"/>
+    <meta name="keywords" content="cloud migration, AI cloud migration, AWS, Google Cloud, Azure, hybrid cloud, multi-cloud, PDPA compliance, data sovereignty Malaysia, NVIDIA cloud, enterprise cloud" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Cloud Migration with AI — NovaGenAI" />
+    <meta property="og:description" content="AI-assisted cloud migration to AWS, Google Cloud, and Azure. Multi-cloud strategy, hybrid architectures, and PDPA-compliant data sovereignty." />
+    <meta property="og:image" content="https://novagenai.com.my/images/og-image.png" />
+    <meta property="og:url" content="https://novagenai.com.my/cloud-migration.html" />
+    <meta property="og:site_name" content="NovaGenAI" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@Nova_GenAI" />
+    <meta name="twitter:title" content="Cloud Migration with AI — NovaGenAI" />
+    <meta name="twitter:description" content="AI-assisted cloud migration to AWS, Google Cloud, and Azure. Multi-cloud strategy, hybrid architectures, and PDPA-compliant data sovereignty." />
+    <meta name="twitter:image" content="https://novagenai.com.my/images/og-image.png" />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Cloud Migration with AI",
+      "description": "AI-assisted cloud migration to AWS, Google Cloud, and Azure. NovaGenAI delivers multi-cloud strategy, hybrid architectures, AI workload optimisation, and PDPA-compliant data sovereignty for Malaysian enterprises.",
+      "author": {
+        "@type": "Organization",
+        "name": "NovaGenAI",
+        "url": "https://novagenai.com.my"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "NovaGenAI",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://novagenai.com.my/images/logo.png"
+        }
+      },
+      "datePublished": "2026-02-28",
+      "dateModified": "2026-02-28",
+      "mainEntityOfPage": "https://novagenai.com.my/cloud-migration.html"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Which cloud platforms does NovaGenAI support?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NovaGenAI supports all major cloud platforms including Amazon Web Services (AWS), Google Cloud Platform (GCP), and Microsoft Azure. We design multi-cloud and hybrid architectures that leverage the strengths of each platform while avoiding vendor lock-in."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does AI assist with cloud migration?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our AI agents automate the most complex and error-prone parts of cloud migration: dependency mapping, workload assessment, configuration generation, data migration validation, security policy translation, and post-migration performance monitoring. This reduces migration timelines by 40-60% and dramatically lowers risk."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is my data PDPA-compliant during and after cloud migration?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Absolutely. Data sovereignty is central to every migration we design. We ensure all personal data governed by Malaysia's Personal Data Protection Act (PDPA) remains within compliant jurisdictions. For sensitive workloads, we deploy hybrid architectures where regulated data stays on-premise while non-sensitive workloads scale in the cloud."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is a hybrid cloud architecture?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A hybrid cloud architecture combines on-premise infrastructure with public cloud services. Your most sensitive data and workloads remain on your own servers (or NVIDIA DGX Spark), while scalable, non-sensitive workloads run in the cloud. NovaGenAI designs the connectivity, security, and orchestration layer that makes this seamless."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does NovaGenAI optimise cloud costs?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our AI-powered FinOps agents continuously monitor your cloud spend, identify underutilised resources, recommend right-sizing, manage reserved instance purchasing, and automatically scale workloads based on demand patterns. Clients typically see 25-40% cost reduction within the first quarter after migration."
+          }
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+    <header class="nav" id="nav">
+        <a href="index.html" class="nav__brand">
+<img loading="lazy" src="images/novagenai-logo-new.png" alt="NovaGenAI" class="nav__logo-img"></a>
+        <nav class="nav__links" id="nav-links">
+            <div class="nav__dropdown">
+                <a href="solutions.html" class="nav__dropdown-trigger">SOLUTIONS</a>
+                <div class="nav__dropdown-menu">
+                    <a href="solutions.html">All Solutions</a>
+                    <a href="solutions.html#voice-agents">AI Voice Agents</a>
+                    <a href="solutions.html#clarify">Clarify Sales Platform</a>
+                    <a href="solutions.html#cell-model">Predictive Cell Model</a>
+                    <a href="solutions.html#on-premise">On-Premise AI (DGX Spark)</a>
+                    <a href="solutions.html#rag">RAG Document Intelligence</a>
+                    <a href="solutions.html#marketing-os">Marketing OS</a>
+                </div>
+            </div>
+            <div class="nav__dropdown">
+                <a href="#" class="nav__dropdown-trigger">SERVICES</a>
+                <div class="nav__dropdown-menu">
+                    <a href="erp-consulting.html">ERP Consulting with AI</a>
+                    <a href="cloud-migration.html">Cloud Migration with AI</a>
+                </div>
+            </div>
+            <div class="nav__dropdown">
+                <a href="agents.html" class="nav__dropdown-trigger">AGENTS</a>
+                <div class="nav__dropdown-menu">
+                    <a href="what-are-agents.html">What Are AI Agents?</a>
+                    <a href="agents.html">Agent Platform</a>
+                    <a href="agents.html#swarms">Agent Swarms</a>
+                    <a href="agents.html#orchestration">Multi-Agent Orchestration</a>
+                    <a href="agents.html#org-diagram">Agents by Department</a>
+                    <a href="agents.html#models">Our Model Stack</a>
+                    <a href="agents.html#crm">AI-Native CRM</a>
+                </div>
+            </div>
+            <div class="nav__dropdown">
+                <a href="technology.html" class="nav__dropdown-trigger">TECHNOLOGY</a>
+                <div class="nav__dropdown-menu">
+                    <a href="technology.html">Overview</a>
+                    <a href="technology.html#dgx-spark">NVIDIA DGX Spark</a>
+                    <a href="technology.html#architecture">Architecture</a>
+                    <a href="technology.html#security">Security & Compliance</a>
+                    <a href="agents.html#models">LLM Model Stack</a>
+                </div>
+            </div>
+            <a href="case-studies.html">CASE STUDIES</a>
+            <a href="team.html">OUR TEAM</a>
+            <a href="about.html">ABOUT</a>
+            <a href="blog/">BLOG</a>
+            <a href="contact.html">CONTACT</a>
+        </nav>
+        <a href="contact.html" class="nav__cta" id="nav-cta">GET STARTED&nbsp;<span class="nav__cta-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span></a>
+    </header>
+
+    <!-- ══════ HERO ══════ -->
+    <section class="page-hero" style="position:relative;overflow:hidden;">
+<img src="images/ai-abstract-new.jpg" alt="" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.08;pointer-events:none;">
+        <div class="page-hero__inner">
+            <p class="page-hero__label">// CLOUD MIGRATION</p>
+            <h1 class="page-hero__title">CLOUD <span class="accent">MIGRATION</span><br/>POWERED BY AI</h1>
+            <p class="page-hero__subtitle">Migrate smarter, not harder. AI agents that map dependencies, optimise workloads, and manage costs — across AWS, Google Cloud, and Azure. Your data stays sovereign. Your infrastructure scales without limits.</p>
+        </div>
+    </section>
+
+    <!-- ══════ SECTIONS ══════ -->
+    <section class="solutions" style="padding-top:2rem;">
+
+        <!-- AI-ASSISTED STRATEGY -->
+        <div class="team-eng-featured fade-up" id="cloud-strategy">
+            <div class="team-eng-featured-img">
+<img src="images/tech-secure-api.jpg" alt="AI-Assisted Cloud Migration Strategy" loading="lazy">
+            </div>
+            <div class="team-eng-featured-content">
+                <div class="team-eng-badge">AI-DRIVEN STRATEGY</div>
+                <h3>AI-Assisted Cloud Migration Strategy &amp; Execution</h3>
+                <p>Cloud migration fails when strategy is guesswork. NovaGenAI deploys AI agents that analyse your entire infrastructure — applications, databases, dependencies, traffic patterns, and compliance requirements — then generate a migration blueprint optimised for cost, performance, and risk. Every decision is data-driven.</p>
+                <ul class="team-eng-list">
+                    <li>Automated infrastructure discovery and dependency mapping</li>
+                    <li>AI-generated migration sequencing and prioritisation</li>
+                    <li>Risk scoring for every workload and application</li>
+                    <li>Automated configuration generation for target cloud</li>
+                    <li>Continuous validation during and after migration</li>
+                </ul>
+                <div class="team-tech-tags">
+                    <span>Migration Strategy</span><span>AI Agents</span><span>Risk Assessment</span><span>Automation</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- MULTI-CLOUD -->
+        <div class="team-eng-featured team-eng-featured--reverse fade-up" id="multi-cloud">
+            <div class="team-eng-featured-img">
+<img src="images/tech-embeddings.jpg" alt="Multi-Cloud AWS Google Cloud Azure" loading="lazy">
+            </div>
+            <div class="team-eng-featured-content">
+                <div class="team-eng-badge" style="background:rgba(0,212,255,.1);color:#00D4FF;border-color:#00D4FF;">MULTI-CLOUD</div>
+                <h3>AWS · Google Cloud · Microsoft Azure</h3>
+                <p>No vendor lock-in. NovaGenAI designs multi-cloud architectures that leverage the best of each platform — Google Cloud for AI and data analytics, AWS for compute and global reach, Azure for enterprise integration and Microsoft ecosystem. We architect for portability, resilience, and cost optimisation.</p>
+                <ul class="team-eng-list">
+                    <li>Amazon Web Services — EC2, EKS, S3, SageMaker, Lambda</li>
+                    <li>Google Cloud Platform — Vertex AI, BigQuery, GKE, Cloud Run</li>
+                    <li>Microsoft Azure — Azure AI, Cosmos DB, AKS, Azure Functions</li>
+                    <li>Cross-cloud networking and identity federation</li>
+                    <li>Vendor-agnostic Kubernetes orchestration</li>
+                    <li>Unified monitoring and observability across clouds</li>
+                </ul>
+                <div class="team-tech-tags">
+                    <span>AWS</span><span>Google Cloud</span><span>Azure</span><span>Kubernetes</span><span>Multi-Cloud</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- HYBRID CLOUD -->
+        <div class="team-eng-featured fade-up" id="hybrid-cloud">
+            <div class="team-eng-featured-img">
+<img src="images/dgx-spark.jpg" alt="Hybrid Cloud and On-Premise Architecture" loading="lazy">
+            </div>
+            <div class="team-eng-featured-content">
+                <div class="team-eng-badge" style="background:rgba(118,185,0,.1);color:#76B900;border-color:#76B900;">HYBRID ARCHITECTURE</div>
+                <h3>Hybrid Cloud + On-Premise Architectures</h3>
+                <p>Not everything belongs in the cloud. NovaGenAI designs hybrid architectures where sensitive data and AI workloads run on-premise using NVIDIA DGX Spark, while scalable, non-sensitive workloads leverage public cloud elasticity. The best of both worlds — sovereignty and scale.</p>
+                <ul class="team-eng-list">
+                    <li>NVIDIA DGX Spark for on-premise AI inference</li>
+                    <li>Secure VPN and private connectivity to public clouds</li>
+                    <li>Workload placement based on data sensitivity classification</li>
+                    <li>Unified orchestration across on-premise and cloud</li>
+                    <li>Air-gapped deployment options for regulated industries</li>
+                    <li>Seamless failover and disaster recovery</li>
+                </ul>
+                <div class="team-tech-tags">
+                    <span>Hybrid Cloud</span><span>On-Premise</span><span>DGX Spark</span><span>NVIDIA</span><span>VPN</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- AI WORKLOAD OPTIMISATION -->
+        <div class="team-eng-featured team-eng-featured--reverse fade-up" id="workload-optimisation">
+            <div class="team-eng-featured-img">
+<img src="images/tech-llm-inference.jpg" alt="AI Workload Optimisation and Cost Management" loading="lazy">
+            </div>
+            <div class="team-eng-featured-content">
+                <div class="team-eng-badge" style="background:rgba(212,160,23,.1);color:#D4A017;border-color:#D4A017;">FINOPS & OPTIMISATION</div>
+                <h3>AI Workload Optimisation &amp; Cost Management</h3>
+                <p>Cloud costs spiral without intelligent management. NovaGenAI deploys FinOps AI agents that continuously monitor your infrastructure, right-size resources, schedule workloads for off-peak pricing, and eliminate waste. Our clients typically reduce cloud spend by 25-40% within the first quarter.</p>
+                <ul class="team-eng-list">
+                    <li>Real-time cost monitoring and anomaly detection</li>
+                    <li>AI-driven resource right-sizing recommendations</li>
+                    <li>Reserved instance and savings plan optimisation</li>
+                    <li>Spot/preemptible instance management for batch workloads</li>
+                    <li>GPU workload scheduling for AI training pipelines</li>
+                    <li>Monthly FinOps reports with actionable savings</li>
+                </ul>
+                <div class="team-tech-tags">
+                    <span>FinOps</span><span>Cost Optimisation</span><span>Right-Sizing</span><span>GPU Scheduling</span><span>AI Monitoring</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- DATA SOVEREIGNTY -->
+        <div class="team-eng-featured fade-up" id="data-sovereignty">
+            <div class="team-eng-featured-img">
+<img src="images/tech-rag.jpg" alt="Data Sovereignty and PDPA Compliance" loading="lazy">
+            </div>
+            <div class="team-eng-featured-content">
+                <div class="team-eng-badge" style="background:rgba(239,68,68,.1);color:#EF4444;border-color:#EF4444;">COMPLIANCE</div>
+                <h3>Data Sovereignty &amp; Malaysia PDPA Compliance</h3>
+                <p>In Malaysia, personal data is governed by the Personal Data Protection Act 2010 (PDPA). NovaGenAI ensures every cloud migration respects data residency requirements, consent obligations, and cross-border transfer restrictions. We classify your data, map its flows, and design architectures that are compliant by default.</p>
+                <ul class="team-eng-list">
+                    <li>Data classification and sensitivity mapping</li>
+                    <li>PDPA-compliant data residency architecture</li>
+                    <li>Cross-border data transfer impact assessments</li>
+                    <li>Encryption at rest and in transit (AES-256, TLS 1.3)</li>
+                    <li>Audit logging and compliance reporting</li>
+                    <li>Consent lifecycle management integration</li>
+                </ul>
+                <div class="team-tech-tags">
+                    <span>PDPA</span><span>Data Sovereignty</span><span>Encryption</span><span>Compliance</span><span>Audit</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- GOOGLE CLOUD & NVIDIA PARTNERSHIP -->
+        <div class="team-eng-featured team-eng-featured--reverse fade-up" id="partnerships">
+            <div class="team-eng-featured-img">
+<img src="images/tech-voice-ai.jpg" alt="NovaGenAI Google Cloud and NVIDIA Partner" loading="lazy">
+            </div>
+            <div class="team-eng-featured-content">
+                <div class="team-eng-badge" style="background:rgba(66,133,244,.1);color:#4285F4;border-color:#4285F4;">PARTNER ECOSYSTEM</div>
+                <h3>Google Cloud &amp; NVIDIA Partner</h3>
+                <p>NovaGenAI is a Google Cloud partner and NVIDIA technology partner. This gives our clients access to the most advanced AI infrastructure on the planet — from Google's Vertex AI and TPU clusters to NVIDIA's DGX systems and CUDA-accelerated computing. We bring enterprise-grade partnerships to businesses of every size.</p>
+                <ul class="team-eng-list">
+                    <li>Google Cloud Partner — Vertex AI, BigQuery, GKE expertise</li>
+                    <li>NVIDIA Technology Partner — DGX Spark, Grace Blackwell, CUDA</li>
+                    <li>Access to partner pricing and enterprise support tiers</li>
+                    <li>Joint solution architecture with Google and NVIDIA engineers</li>
+                    <li>Early access to new cloud AI features and hardware</li>
+                </ul>
+                <div class="team-tech-tags">
+                    <span>Google Cloud</span><span>NVIDIA</span><span>Vertex AI</span><span>DGX Spark</span><span>Partner</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════ CTA ══════ -->
+    <section class="sol-cta fade-up">
+        <h2 class="sol-cta__title">Ready to move to the cloud — intelligently?</h2>
+        <p class="sol-cta__desc">Talk to our AI consultants about a migration strategy designed for your business, your data, and your compliance requirements.</p>
+        <a href="contact.html" class="btn-primary">Talk to Our AI Consultant →</a>
+    </section>
+
+    <!-- ══════ FAQ ══════ -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <h2 class="section__title">Frequently Asked Questions</h2>
+            <div class="faq__grid">
+            <div class="faq__item" onclick="this.classList.toggle('faq__item--open')">
+                <div class="faq__question">
+                    <span>Which cloud platforms does NovaGenAI support?</span>
+                    <svg class="faq__icon" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div class="faq__answer"><p>NovaGenAI supports all major cloud platforms including Amazon Web Services (AWS), Google Cloud Platform (GCP), and Microsoft Azure. We design multi-cloud and hybrid architectures that leverage the strengths of each platform while avoiding vendor lock-in.</p></div>
+            </div>
+            <div class="faq__item" onclick="this.classList.toggle('faq__item--open')">
+                <div class="faq__question">
+                    <span>How does AI assist with cloud migration?</span>
+                    <svg class="faq__icon" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div class="faq__answer"><p>Our AI agents automate the most complex and error-prone parts of cloud migration: dependency mapping, workload assessment, configuration generation, data migration validation, security policy translation, and post-migration performance monitoring. This reduces migration timelines by 40-60% and dramatically lowers risk.</p></div>
+            </div>
+            <div class="faq__item" onclick="this.classList.toggle('faq__item--open')">
+                <div class="faq__question">
+                    <span>Is my data PDPA-compliant during and after cloud migration?</span>
+                    <svg class="faq__icon" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div class="faq__answer"><p>Absolutely. Data sovereignty is central to every migration we design. We ensure all personal data governed by Malaysia's Personal Data Protection Act (PDPA) remains within compliant jurisdictions. For sensitive workloads, we deploy hybrid architectures where regulated data stays on-premise while non-sensitive workloads scale in the cloud.</p></div>
+            </div>
+            <div class="faq__item" onclick="this.classList.toggle('faq__item--open')">
+                <div class="faq__question">
+                    <span>What is a hybrid cloud architecture?</span>
+                    <svg class="faq__icon" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div class="faq__answer"><p>A hybrid cloud architecture combines on-premise infrastructure with public cloud services. Your most sensitive data and workloads remain on your own servers (or NVIDIA DGX Spark), while scalable, non-sensitive workloads run in the cloud. NovaGenAI designs the connectivity, security, and orchestration layer that makes this seamless.</p></div>
+            </div>
+            <div class="faq__item" onclick="this.classList.toggle('faq__item--open')">
+                <div class="faq__question">
+                    <span>How does NovaGenAI optimise cloud costs?</span>
+                    <svg class="faq__icon" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div class="faq__answer"><p>Our AI-powered FinOps agents continuously monitor your cloud spend, identify underutilised resources, recommend right-sizing, manage reserved instance purchasing, and automatically scale workloads based on demand patterns. Clients typically see 25-40% cost reduction within the first quarter after migration.</p></div>
+            </div>
+            </div>
+        </div>
+    </section>
+    <style>
+    .faq { padding: 6rem 2rem; background: #0a0a0a; }
+    .faq .container { max-width: 800px; margin: 0 auto; }
+    .faq .section__title { text-align: center; font-family: 'Outfit', sans-serif; font-size: 2.5rem; font-weight: 700; color: #fff; margin-bottom: 3rem; }
+    .faq__grid { display: flex; flex-direction: column; gap: 0; }
+    .faq__item { border-bottom: 1px solid rgba(255,255,255,0.08); cursor: pointer; }
+    .faq__question { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 0; font-family: 'Outfit', sans-serif; font-size: 1.125rem; font-weight: 600; color: #fff; transition: color 0.2s; }
+    .faq__item:hover .faq__question { color: #00D4FF; }
+    .faq__icon { transition: transform 0.3s; flex-shrink: 0; margin-left: 1rem; color: rgba(255,255,255,0.4); }
+    .faq__item--open .faq__icon { transform: rotate(180deg); color: #00D4FF; }
+    .faq__answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease; }
+    .faq__item--open .faq__answer { max-height: 300px; padding-bottom: 1.5rem; }
+    .faq__answer p { font-family: 'Inter', sans-serif; font-size: 1rem; line-height: 1.7; color: rgba(255,255,255,0.7); margin: 0; }
+    </style>
+
+    <!-- ══════ RELATED PAGES ══════ -->
+    <section class="ag-section fade-up" style="text-align:center;padding:4rem 2rem;">
+        <h2 class="ag-heading" style="font-size:1.8rem;">Explore More</h2>
+        <p class="ag-subtext">
+            <a href="solutions.html" class="accent" style="margin:0 1rem;">All Solutions</a>
+            <a href="agents.html" class="accent" style="margin:0 1rem;">AI Agent Platform</a>
+            <a href="technology.html" class="accent" style="margin:0 1rem;">Our Technology</a>
+            <a href="erp-consulting.html" class="accent" style="margin:0 1rem;">ERP Consulting with AI</a>
+        </p>
+    </section>
+
+    <footer class="footer">
+        <div class="footer__inner">
+            <div class="footer__brand">
+                <span class="footer__logo">
+<img loading="lazy" src="images/novagenai-logo-new.png" alt="NovaGenAI" class="footer__logo-img"></span>
+                <p class="footer__tagline">AI Systems for Every Enterprise</p>
+            </div>
+            <div class="footer__links">
+                <a href="solutions.html">Solutions</a>
+                <a href="erp-consulting.html">ERP Consulting</a>
+                <a href="cloud-migration.html">Cloud Migration</a>
+                <a href="agents.html">Agents</a>
+                <a href="technology.html">Technology</a>
+                <a href="case-studies.html">Case Studies</a>
+                <a href="team.html">Our Team</a>
+                <a href="about.html">About</a>
+                <a href="blog/">Blog</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer__social">
+                <a href="https://www.linkedin.com/company/novagenai" target="_blank" rel="noopener" aria-label="LinkedIn" class="footer__social-link footer__social--linkedin"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+                <a href="https://www.instagram.com/nova.genai" target="_blank" rel="noopener" aria-label="Instagram" class="footer__social-link footer__social--instagram"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+                <a href="https://www.facebook.com/NovaGenAI" target="_blank" rel="noopener" aria-label="Facebook" class="footer__social-link footer__social--facebook"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+                <a href="https://x.com/Nova_GenAI" target="_blank" rel="noopener" aria-label="X" class="footer__social-link footer__social--x"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+                <a href="https://www.youtube.com/@Nova_GenAI" target="_blank" rel="noopener" aria-label="YouTube" class="footer__social-link footer__social--youtube"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+                <a href="https://www.tiktok.com/@nova_genai" target="_blank" rel="noopener" aria-label="TikTok" class="footer__social-link footer__social--tiktok"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+                <a href="https://www.threads.net/@nova.genai" target="_blank" rel="noopener" aria-label="Threads" class="footer__social-link footer__social--threads"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.814.822c-1.072-3.854-3.57-5.564-7.465-5.586h-.01c-2.204.013-5.506.85-6.882 4.08-.792 1.86-.792 4.378 0 6.238 1.376 3.23 4.678 4.067 6.882 4.08h.01c1.94-.012 3.514-.404 4.678-1.164.982-.641 1.696-1.578 1.855-2.879-.276-.016-.556-.039-.84-.07-1.602-.172-2.994-.636-4.137-1.38-1.318-.857-2.218-2.086-2.598-3.547-.27-1.037-.188-2.095.231-3.065.538-1.242 1.587-2.152 2.958-2.565 1.088-.328 2.252-.31 3.283-.028-.003-.163-.01-.326-.019-.487l-.003-.052c-.065-1.003-.267-1.772-.616-2.35-.308-.512-.735-.854-1.305-1.044a4.91 4.91 0 00-.747-.188l.588-2.794c.425.069.84.181 1.234.333 1.164.452 2.072 1.241 2.7 2.348.568.998.893 2.165.966 3.467l.003.055c.01.2.017.402.02.604 1.148.555 2.065 1.381 2.646 2.427.754 1.357.836 3.088.227 4.746-.85 2.313-3.087 3.742-5.942 3.892-.293.016-.583.023-.87.023zm1.486-10.031c-.574-.137-1.165-.155-1.681 0-.702.212-1.167.598-1.387 1.107-.2.46-.2.969-.053 1.53.26 1 .87 1.738 1.763 2.13.68.3 1.476.487 2.368.56.46.038.897.057 1.315.057.08-.463.074-.95-.037-1.442-.287-1.269-1.167-2.966-3.488-3.592l-.004-.002c.402.054.8.14 1.189.26l.015-.608z"/></svg></a>
+                <a href="https://wa.me/60111401036" target="_blank" rel="noopener" aria-label="WhatsApp" class="footer__social-link footer__social--whatsapp"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+            </div>
+            <p class="footer__copy">&copy; 2026 NovaGenAI. All rights reserved.</p>
+        </div>
+    </footer>
+    <script type="module" src="script.js"></script>
+    <elevenlabs-convai agent-id="agent_2601khqrpb75ff9azd82e86tmatz" style="position:fixed;bottom:20px;right:20px;z-index:9999;" data-bg-color="#0a0a0a" data-text-color="#ffffff" data-btn-color="#00D4FF" data-btn-text-color="#000000" data-border-color="#1a1a1a"></elevenlabs-convai>
+    <script src="https://elevenlabs.io/convai-widget/index.js" async type="text/javascript"></script>
+</body>
+</html>
