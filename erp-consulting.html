@@ -313,9 +313,15 @@
     }
     .erp-platform:hover::before { opacity: 1; }
     .erp-platform__icon {
-        font-size: 3rem;
         margin-bottom: 1.5rem;
         display: block;
+        height: 48px;
+    }
+    .erp-platform__icon img {
+        height: 48px;
+        width: auto;
+        object-fit: contain;
+        filter: brightness(1.2);
     }
     .erp-platform__name {
         font-family: 'Outfit', sans-serif;
@@ -665,22 +671,22 @@
             </div>
             <div class="erp-platforms">
                 <div class="erp-platform">
-                    <span class="erp-platform__icon">🔷</span>
+                    <span class="erp-platform__icon"><img src="images/logos/sap.svg" alt="SAP Logo"></span>
                     <div class="erp-platform__name">SAP S/4HANA</div>
                     <div class="erp-platform__desc">Full integration with SAP's intelligent suite. AI agents automate FICO, MM, SD, and PP modules. Real-time Fiori dashboard intelligence.</div>
                 </div>
                 <div class="erp-platform">
-                    <span class="erp-platform__icon">🔴</span>
+                    <span class="erp-platform__icon"><img src="images/logos/oracle.svg" alt="Oracle Logo"></span>
                     <div class="erp-platform__name">Oracle Cloud ERP</div>
                     <div class="erp-platform__desc">Native OCI integration with Fusion Cloud. AI-powered financials, procurement automation, and supply chain intelligence across Oracle modules.</div>
                 </div>
                 <div class="erp-platform">
-                    <span class="erp-platform__icon">🟦</span>
+                    <span class="erp-platform__icon"><img src="images/logos/microsoft.svg" alt="Microsoft Logo"></span>
                     <div class="erp-platform__name">Microsoft Dynamics 365</div>
                     <div class="erp-platform__desc">Deep Azure integration with Finance & Operations. AI agents leverage Dataverse, Power Platform, and Copilot to extend Dynamics capabilities.</div>
                 </div>
                 <div class="erp-platform">
-                    <span class="erp-platform__icon">🟣</span>
+                    <span class="erp-platform__icon"><img src="images/logos/odoo.png" alt="Odoo Logo"></span>
                     <div class="erp-platform__name">Odoo</div>
                     <div class="erp-platform__desc">Open-source flexibility with enterprise-grade AI. Custom module development, automated workflows, and predictive analytics on Odoo's modular architecture.</div>
                 </div>
