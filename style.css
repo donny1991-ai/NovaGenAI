@@ -1670,3 +1670,105 @@ elevenlabs-convai::part(button) {
 .footer__social--tiktok:hover { color: #00f2ea; }
 .footer__social--threads:hover { color: #fff; }
 .footer__social--whatsapp:hover { color: #25D366; }
+
+/* ═══════════════════════════════════════════════════════
+   3D PARTICLE HERO — Canvas & Animations
+   ═══════════════════════════════════════════════════════ */
+
+/* Three.js canvas container — fixed behind everything */
+#nova-3d-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+}
+#nova-3d-canvas canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Ensure hero content stays above canvas */
+.hero { position: relative; z-index: 1; }
+.nav { z-index: 100; }
+
+/* ─── Custom Cursor ─────────────────────────────────── */
+.nova-cursor {
+  position: fixed;
+  top: -20px; left: -20px;
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 212, 255, 0.3);
+  pointer-events: none;
+  z-index: 9998;
+  transition: width 0.3s, height 0.3s, top 0.15s, left 0.15s, border-color 0.3s, background 0.3s;
+  mix-blend-mode: screen;
+}
+.nova-cursor--hover {
+  width: 56px; height: 56px;
+  top: -28px; left: -28px;
+  border-color: rgba(0, 212, 255, 0.6);
+  background: rgba(0, 212, 255, 0.05);
+}
+.nova-cursor__dot {
+  position: fixed;
+  top: -3px; left: -3px;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: #00D4FF;
+  pointer-events: none;
+  z-index: 9998;
+  box-shadow: 0 0 8px rgba(0, 212, 255, 0.6), 0 0 20px rgba(0, 212, 255, 0.2);
+}
+
+/* Hide custom cursor on mobile / touch */
+@media (max-width: 768px) {
+  .nova-cursor, .nova-cursor__dot { display: none !important; }
+}
+
+/* ─── Hero Entrance Animations ──────────────────────── */
+.nova-hero-enter {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.nova-hero-enter--delay { transition-delay: 0.3s; }
+.nova-hero-enter--delay2 { transition-delay: 0.6s; }
+.nova-hero-enter--active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─── Scroll-triggered Section Animations ───────────── */
+.nova-animate {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.nova-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered children for card grids */
+.nova-visible .team-built-card:nth-child(1) { transition-delay: 0.05s; }
+.nova-visible .team-built-card:nth-child(2) { transition-delay: 0.1s; }
+.nova-visible .team-built-card:nth-child(3) { transition-delay: 0.15s; }
+.nova-visible .team-built-card:nth-child(4) { transition-delay: 0.2s; }
+
+/* ─── Reduced Motion ────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .nova-hero-enter,
+  .nova-animate {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .nova-cursor, .nova-cursor__dot { display: none !important; }
+  #nova-3d-canvas { display: none !important; }
+}
