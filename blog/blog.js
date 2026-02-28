@@ -2,7 +2,7 @@
    NOVAGENAI BLOG — INTERACTIONS
    ═══════════════════════════════════════════════════════ */
 
-(function () {
+document.addEventListener('DOMContentLoaded', function () {
     'use strict';
 
     /* ── READING PROGRESS BAR ──────────────────────── */
