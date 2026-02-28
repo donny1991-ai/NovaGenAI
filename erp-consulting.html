@@ -31,19 +31,8 @@
       "@type": "Article",
       "headline": "ERP Consulting with AI",
       "description": "AI-powered ERP consulting: implementation, optimisation, and automation for SAP, Oracle, Microsoft Dynamics, and Odoo. NovaGenAI deploys intelligent agents and predictive analytics across your entire ERP stack.",
-      "author": {
-        "@type": "Organization",
-        "name": "NovaGenAI",
-        "url": "https://novagenai.com.my"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "NovaGenAI",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://novagenai.com.my/images/logo.png"
-        }
-      },
+      "author": {"@type": "Organization","name": "NovaGenAI","url": "https://novagenai.com.my"},
+      "publisher": {"@type": "Organization","name": "NovaGenAI","logo": {"@type": "ImageObject","url": "https://novagenai.com.my/images/logo.png"}},
       "datePublished": "2026-02-28",
       "dateModified": "2026-02-28",
       "mainEntityOfPage": "https://novagenai.com.my/erp-consulting.html"
@@ -54,49 +43,475 @@
       "@context": "https://schema.org",
       "@type": "FAQPage",
       "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What ERP systems does NovaGenAI support?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "NovaGenAI provides AI-powered consulting for all major ERP platforms including SAP S/4HANA, Oracle Cloud ERP, Microsoft Dynamics 365, and Odoo. We integrate AI agents and predictive analytics into your existing ERP environment — whether on-premise, cloud, or hybrid."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How do AI agents automate ERP workflows?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Our AI agents sit on top of your ERP and autonomously handle repetitive tasks — purchase order processing, invoice matching, inventory reorder triggers, financial reconciliation, and vendor management. They learn your business rules, execute within guardrails, and escalate exceptions to humans."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Can NovaGenAI deploy ERP AI on-premise?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. Using NVIDIA DGX Spark infrastructure, we deploy AI models directly on your premises. Your ERP data never leaves your building — critical for organisations with strict data sovereignty, PDPA compliance, or air-gapped security requirements."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What is predictive analytics for ERP?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Predictive analytics uses machine learning models trained on your historical ERP data to forecast demand, optimise inventory levels, predict cash flow, identify supply chain risks, and flag financial anomalies before they become problems. NovaGenAI builds custom predictive models tailored to your specific business."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How long does an AI-powered ERP implementation take?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "A typical AI-augmented ERP engagement starts with a 2-week discovery and assessment phase, followed by 4-8 weeks of phased implementation. AI agent deployment can begin delivering value within the first month, with predictive analytics models maturing over 8-12 weeks as they learn from your data."
-          }
-        }
+        {"@type": "Question","name": "What ERP systems does NovaGenAI support?","acceptedAnswer": {"@type": "Answer","text": "NovaGenAI provides AI-powered consulting for all major ERP platforms including SAP S/4HANA, Oracle Cloud ERP, Microsoft Dynamics 365, and Odoo. We integrate AI agents and predictive analytics into your existing ERP environment — whether on-premise, cloud, or hybrid."}},
+        {"@type": "Question","name": "How do AI agents automate ERP workflows?","acceptedAnswer": {"@type": "Answer","text": "Our AI agents sit on top of your ERP and autonomously handle repetitive tasks — purchase order processing, invoice matching, inventory reorder triggers, financial reconciliation, and vendor management. They learn your business rules, execute within guardrails, and escalate exceptions to humans."}},
+        {"@type": "Question","name": "Can NovaGenAI deploy ERP AI on-premise?","acceptedAnswer": {"@type": "Answer","text": "Yes. Using NVIDIA DGX Spark infrastructure, we deploy AI models directly on your premises. Your ERP data never leaves your building — critical for organisations with strict data sovereignty, PDPA compliance, or air-gapped security requirements."}},
+        {"@type": "Question","name": "What is predictive analytics for ERP?","acceptedAnswer": {"@type": "Answer","text": "Predictive analytics uses machine learning models trained on your historical ERP data to forecast demand, optimise inventory levels, predict cash flow, identify supply chain risks, and flag financial anomalies before they become problems. NovaGenAI builds custom predictive models tailored to your specific business."}},
+        {"@type": "Question","name": "How long does an AI-powered ERP implementation take?","acceptedAnswer": {"@type": "Answer","text": "A typical AI-augmented ERP engagement starts with a 2-week discovery and assessment phase, followed by 4-8 weeks of phased implementation. AI agent deployment can begin delivering value within the first month, with predictive analytics models maturing over 8-12 weeks as they learn from your data."}}
       ]
     }
     </script>
+    <style>
+    /* ═══════ ERP PAGE CUSTOM STYLES ═══════ */
+    .erp-hero {
+        position: relative;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+    .erp-hero__bg {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .erp-hero__overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(135deg, rgba(0,0,0,0.85) 0%, rgba(10,10,10,0.6) 50%, rgba(0,0,0,0.8) 100%);
+    }
+    .erp-hero__content {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        max-width: 900px;
+        padding: 2rem;
+    }
+    .erp-hero__label {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.875rem;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        color: #D4A017;
+        margin-bottom: 1.5rem;
+        font-weight: 600;
+    }
+    .erp-hero__title {
+        font-family: 'Outfit', sans-serif;
+        font-size: clamp(3rem, 7vw, 5.5rem);
+        font-weight: 900;
+        line-height: 1.05;
+        color: #fff;
+        margin: 0 0 1.5rem;
+    }
+    .erp-hero__title .gold { color: #D4A017; }
+    .erp-hero__subtitle {
+        font-family: 'Inter', sans-serif;
+        font-size: 1.25rem;
+        line-height: 1.7;
+        color: rgba(255,255,255,0.7);
+        max-width: 700px;
+        margin: 0 auto 2.5rem;
+    }
+    .btn-gold {
+        display: inline-block;
+        padding: 1rem 2.5rem;
+        background: linear-gradient(135deg, #D4A017, #b8860b);
+        color: #000;
+        font-family: 'Outfit', sans-serif;
+        font-weight: 700;
+        font-size: 1.1rem;
+        text-decoration: none;
+        border-radius: 6px;
+        transition: all 0.3s;
+        letter-spacing: 1px;
+    }
+    .btn-gold:hover {
+        background: linear-gradient(135deg, #e6b422, #D4A017);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 30px rgba(212,160,23,0.3);
+    }
+
+    /* ═══ CHALLENGE SECTION ═══ */
+    .erp-challenge {
+        padding: 8rem 2rem;
+        background: #0a0a0a;
+        text-align: center;
+    }
+    .erp-challenge__inner {
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+    .erp-challenge__label {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.8rem;
+        letter-spacing: 4px;
+        color: #D4A017;
+        text-transform: uppercase;
+        font-weight: 600;
+        margin-bottom: 1rem;
+    }
+    .erp-challenge__title {
+        font-family: 'Outfit', sans-serif;
+        font-size: clamp(2rem, 4vw, 3rem);
+        font-weight: 800;
+        color: #fff;
+        margin: 0 0 3rem;
+    }
+    .erp-stats-row {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3rem;
+        margin-bottom: 3rem;
+    }
+    .erp-stat {
+        text-align: center;
+    }
+    .erp-stat__number {
+        font-family: 'Outfit', sans-serif;
+        font-size: clamp(3rem, 6vw, 4.5rem);
+        font-weight: 900;
+        color: #D4A017;
+        line-height: 1;
+        margin-bottom: 0.5rem;
+    }
+    .erp-stat__label {
+        font-family: 'Inter', sans-serif;
+        font-size: 1rem;
+        color: rgba(255,255,255,0.6);
+        line-height: 1.5;
+    }
+    .erp-challenge__text {
+        font-family: 'Inter', sans-serif;
+        font-size: 1.125rem;
+        color: rgba(255,255,255,0.6);
+        line-height: 1.8;
+        max-width: 750px;
+        margin: 0 auto;
+    }
+
+    /* ═══ APPROACH / TIMELINE ═══ */
+    .erp-approach {
+        padding: 8rem 2rem;
+        background: #0d0d0d;
+    }
+    .erp-approach__inner {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    .erp-approach__header {
+        text-align: center;
+        margin-bottom: 4rem;
+    }
+    .erp-approach__grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+    }
+    .erp-timeline {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+    .erp-timeline__step {
+        background: rgba(212,160,23,0.04);
+        border: 1px solid rgba(212,160,23,0.15);
+        border-radius: 12px;
+        padding: 2rem;
+        transition: all 0.3s;
+    }
+    .erp-timeline__step:hover {
+        border-color: rgba(212,160,23,0.4);
+        background: rgba(212,160,23,0.08);
+        transform: translateY(-4px);
+    }
+    .erp-timeline__num {
+        font-family: 'Outfit', sans-serif;
+        font-size: 2.5rem;
+        font-weight: 900;
+        color: #D4A017;
+        line-height: 1;
+        margin-bottom: 0.75rem;
+    }
+    .erp-timeline__title {
+        font-family: 'Outfit', sans-serif;
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 0.5rem;
+    }
+    .erp-timeline__desc {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.9rem;
+        color: rgba(255,255,255,0.6);
+        line-height: 1.6;
+    }
+    .erp-approach__img {
+        border-radius: 16px;
+        overflow: hidden;
+    }
+    .erp-approach__img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 16px;
+    }
+
+    /* ═══ INTEGRATIONS ═══ */
+    .erp-integrations {
+        padding: 8rem 2rem;
+        background: #0a0a0a;
+    }
+    .erp-integrations__inner {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    .erp-integrations__header {
+        text-align: center;
+        margin-bottom: 4rem;
+    }
+    .erp-platforms {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+    }
+    .erp-platform {
+        background: linear-gradient(135deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+        border: 1px solid rgba(255,255,255,0.06);
+        border-radius: 16px;
+        padding: 2.5rem 2rem;
+        text-align: center;
+        transition: all 0.3s;
+        position: relative;
+        overflow: hidden;
+    }
+    .erp-platform::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, transparent, #D4A017, transparent);
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+    .erp-platform:hover {
+        border-color: rgba(212,160,23,0.3);
+        transform: translateY(-6px);
+        box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+    }
+    .erp-platform:hover::before { opacity: 1; }
+    .erp-platform__icon {
+        font-size: 3rem;
+        margin-bottom: 1.5rem;
+        display: block;
+    }
+    .erp-platform__name {
+        font-family: 'Outfit', sans-serif;
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 0.75rem;
+    }
+    .erp-platform__desc {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.9rem;
+        color: rgba(255,255,255,0.5);
+        line-height: 1.6;
+    }
+
+    /* ═══ AI SUPERPOWERS ═══ */
+    .erp-superpowers {
+        position: relative;
+        padding: 8rem 2rem;
+        overflow: hidden;
+    }
+    .erp-superpowers__bg {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.15;
+    }
+    .erp-superpowers__overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(10,10,10,0.9) 0%, rgba(10,10,10,0.7) 50%, rgba(10,10,10,0.95) 100%);
+    }
+    .erp-superpowers__inner {
+        position: relative;
+        z-index: 2;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    .erp-superpowers__header {
+        text-align: center;
+        margin-bottom: 4rem;
+    }
+    .erp-powers-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+    .erp-power {
+        background: rgba(0,0,0,0.5);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(212,160,23,0.15);
+        border-radius: 16px;
+        padding: 2.5rem;
+        transition: all 0.3s;
+    }
+    .erp-power:hover {
+        border-color: rgba(212,160,23,0.4);
+        transform: translateY(-4px);
+    }
+    .erp-power__icon {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        display: block;
+    }
+    .erp-power__title {
+        font-family: 'Outfit', sans-serif;
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: #D4A017;
+        margin-bottom: 0.75rem;
+    }
+    .erp-power__desc {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.95rem;
+        color: rgba(255,255,255,0.6);
+        line-height: 1.7;
+    }
+
+    /* ═══ RESULTS ═══ */
+    .erp-results {
+        padding: 8rem 2rem;
+        background: #0d0d0d;
+        text-align: center;
+    }
+    .erp-results__inner {
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+    .erp-results__grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 3rem;
+        margin-top: 4rem;
+    }
+    .erp-result {
+        position: relative;
+    }
+    .erp-result__number {
+        font-family: 'Outfit', sans-serif;
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-weight: 900;
+        background: linear-gradient(135deg, #D4A017, #e6b422);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        line-height: 1.1;
+        margin-bottom: 0.5rem;
+    }
+    .erp-result__label {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.95rem;
+        color: rgba(255,255,255,0.6);
+        line-height: 1.5;
+    }
+
+    /* ═══ FAQ ═══ */
+    .faq { padding: 6rem 2rem; background: #0a0a0a; }
+    .faq .container { max-width: 800px; margin: 0 auto; }
+    .faq .section__title { text-align: center; font-family: 'Outfit', sans-serif; font-size: 2.5rem; font-weight: 700; color: #fff; margin-bottom: 3rem; }
+    .faq__grid { display: flex; flex-direction: column; gap: 0; }
+    .faq__item { border-bottom: 1px solid rgba(255,255,255,0.08); cursor: pointer; }
+    .faq__question { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 0; font-family: 'Outfit', sans-serif; font-size: 1.125rem; font-weight: 600; color: #fff; transition: color 0.2s; }
+    .faq__item:hover .faq__question { color: #D4A017; }
+    .faq__icon { transition: transform 0.3s; flex-shrink: 0; margin-left: 1rem; color: rgba(255,255,255,0.4); }
+    .faq__item--open .faq__icon { transform: rotate(180deg); color: #D4A017; }
+    .faq__answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease; }
+    .faq__item--open .faq__answer { max-height: 300px; padding-bottom: 1.5rem; }
+    .faq__answer p { font-family: 'Inter', sans-serif; font-size: 1rem; line-height: 1.7; color: rgba(255,255,255,0.7); margin: 0; }
+
+    /* ═══ CTA ═══ */
+    .erp-cta {
+        padding: 8rem 2rem;
+        background: linear-gradient(135deg, #0d0d0d 0%, #111 50%, #0d0d0d 100%);
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+    }
+    .erp-cta::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 600px;
+        height: 600px;
+        background: radial-gradient(circle, rgba(212,160,23,0.08) 0%, transparent 70%);
+        pointer-events: none;
+    }
+    .erp-cta__inner {
+        position: relative;
+        z-index: 2;
+        max-width: 700px;
+        margin: 0 auto;
+    }
+    .erp-cta__title {
+        font-family: 'Outfit', sans-serif;
+        font-size: clamp(2rem, 4vw, 3rem);
+        font-weight: 800;
+        color: #fff;
+        margin: 0 0 1.5rem;
+    }
+    .erp-cta__title .gold { color: #D4A017; }
+    .erp-cta__desc {
+        font-family: 'Inter', sans-serif;
+        font-size: 1.125rem;
+        color: rgba(255,255,255,0.6);
+        line-height: 1.7;
+        margin-bottom: 2.5rem;
+    }
+
+    /* ═══ SECTION HELPERS ═══ */
+    .erp-section-label {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.8rem;
+        letter-spacing: 4px;
+        color: #D4A017;
+        text-transform: uppercase;
+        font-weight: 600;
+        margin-bottom: 1rem;
+    }
+    .erp-section-title {
+        font-family: 'Outfit', sans-serif;
+        font-size: clamp(2rem, 4vw, 3rem);
+        font-weight: 800;
+        color: #fff;
+        margin: 0 0 1rem;
+    }
+    .erp-section-subtitle {
+        font-family: 'Inter', sans-serif;
+        font-size: 1.1rem;
+        color: rgba(255,255,255,0.5);
+        max-width: 650px;
+        margin: 0 auto;
+        line-height: 1.7;
+    }
+
+    /* ═══ RESPONSIVE ═══ */
+    @media (max-width: 1024px) {
+        .erp-approach__grid { grid-template-columns: 1fr; gap: 3rem; }
+        .erp-platforms { grid-template-columns: repeat(2, 1fr); }
+        .erp-results__grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+        .erp-stats-row { grid-template-columns: 1fr; gap: 2rem; }
+        .erp-timeline { grid-template-columns: 1fr; }
+        .erp-platforms { grid-template-columns: 1fr; }
+        .erp-powers-grid { grid-template-columns: 1fr; }
+        .erp-results__grid { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+    }
+    </style>
 </head>
 <body>
     <header class="nav" id="nav">
@@ -149,217 +564,212 @@
         <a href="contact.html" class="nav__cta" id="nav-cta">GET STARTED&nbsp;<span class="nav__cta-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span></a>
     </header>
 
-    <!-- ══════ HERO ══════ -->
-    <section class="page-hero" style="position:relative;overflow:hidden;">
-<img src="images/ai-abstract-new.jpg" alt="" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.08;pointer-events:none;">
-        <div class="page-hero__inner">
-            <p class="page-hero__label">// ERP CONSULTING</p>
-            <h1 class="page-hero__title">ERP <span class="accent">CONSULTING</span><br/>POWERED BY AI</h1>
-            <p class="page-hero__subtitle">We don't just implement ERP systems — we make them intelligent. AI agents that automate workflows, predictive analytics that anticipate demand, and NVIDIA-powered infrastructure that processes your data at scale.</p>
+    <!-- ══════════════════════ HERO ══════════════════════ -->
+    <section class="erp-hero">
+        <img src="images/services/erp-hero.jpg" alt="AI-Powered Smart Factory" class="erp-hero__bg" loading="eager">
+        <div class="erp-hero__overlay"></div>
+        <div class="erp-hero__content">
+            <p class="erp-hero__label">// ERP CONSULTING WITH AI</p>
+            <h1 class="erp-hero__title">Enterprise AI<br>Meets <span class="gold">ERP</span></h1>
+            <p class="erp-hero__subtitle">We don't just implement ERP systems — we make them intelligent. AI agents that automate workflows, predictive analytics that anticipate demand, and NVIDIA-powered infrastructure that processes your data at scale.</p>
+            <a href="contact.html" class="btn-gold">Talk to Our AI Consultant →</a>
         </div>
     </section>
 
-    <!-- ══════ AI-POWERED ERP IMPLEMENTATION ══════ -->
-    <section class="solutions" style="padding-top:2rem;">
-        <div class="team-eng-featured fade-up" id="erp-implementation">
-            <div class="team-eng-featured-img">
-<img src="images/tech-secure-api.jpg" alt="AI-Powered ERP Implementation" loading="lazy">
-            </div>
-            <div class="team-eng-featured-content">
-                <div class="team-eng-badge">AI-POWERED IMPLEMENTATION</div>
-                <h3>Intelligent ERP Implementation &amp; Optimisation</h3>
-                <p>Traditional ERP implementations fail at alarming rates — over-budget, over-time, under-adopted. NovaGenAI changes the equation. We deploy AI agents during every phase of your ERP journey: discovery, configuration, data migration, testing, and go-live. The result is faster implementations, cleaner data, and systems your teams actually use.</p>
-                <ul class="team-eng-list">
-                    <li>AI-assisted requirements gathering and gap analysis</li>
-                    <li>Automated data cleansing and migration pipelines</li>
-                    <li>Intelligent configuration recommendation engines</li>
-                    <li>Continuous post-go-live optimisation with AI monitoring</li>
-                    <li>Change management powered by AI training assistants</li>
-                </ul>
-                <div class="team-tech-tags">
-                    <span>ERP</span><span>AI Agents</span><span>Data Migration</span><span>Automation</span><span>Change Management</span>
+    <!-- ══════════════════════ THE CHALLENGE ══════════════════════ -->
+    <section class="erp-challenge fade-up">
+        <div class="erp-challenge__inner">
+            <p class="erp-challenge__label">The Problem</p>
+            <h2 class="erp-challenge__title">ERP Projects Are Failing — At Scale</h2>
+            <div class="erp-stats-row">
+                <div class="erp-stat">
+                    <div class="erp-stat__number">78%</div>
+                    <div class="erp-stat__label">of ERP implementations fail to meet expectations</div>
+                </div>
+                <div class="erp-stat">
+                    <div class="erp-stat__number">$5.5M</div>
+                    <div class="erp-stat__label">average cost overrun on enterprise ERP projects</div>
+                </div>
+                <div class="erp-stat">
+                    <div class="erp-stat__number">14mo</div>
+                    <div class="erp-stat__label">average schedule overrun beyond original timeline</div>
                 </div>
             </div>
+            <p class="erp-challenge__text">Traditional ERP consulting is broken. Armies of consultants, years of configuration, millions in cost overruns — and at the end, a system your teams barely use. NovaGenAI takes a fundamentally different approach: AI-first ERP that's faster to implement, cheaper to run, and actually gets smarter over time.</p>
         </div>
+    </section>
 
-        <!-- ══════ PLATFORM INTEGRATIONS ══════ -->
-        <div class="team-eng-featured team-eng-featured--reverse fade-up" id="erp-platforms">
-            <div class="team-eng-featured-img">
-<img src="images/tech-embeddings.jpg" alt="SAP Oracle Microsoft Dynamics Odoo Integration" loading="lazy">
+    <!-- ══════════════════════ OUR APPROACH ══════════════════════ -->
+    <section class="erp-approach fade-up">
+        <div class="erp-approach__inner">
+            <div class="erp-approach__header">
+                <p class="erp-section-label">Our Methodology</p>
+                <h2 class="erp-section-title">Four Phases. Zero Guesswork.</h2>
+                <p class="erp-section-subtitle">A battle-tested framework that uses AI at every stage to de-risk your ERP transformation.</p>
             </div>
-            <div class="team-eng-featured-content">
-                <div class="team-eng-badge" style="background:rgba(0,212,255,.1);color:#00D4FF;border-color:#00D4FF;">MULTI-PLATFORM</div>
-                <h3>SAP · Oracle · Microsoft Dynamics · Odoo</h3>
-                <p>We are platform-agnostic. Whether you run SAP S/4HANA, Oracle Cloud ERP, Microsoft Dynamics 365, or Odoo — our AI layer integrates seamlessly. We connect to your ERP's APIs, extend its capabilities with autonomous agents, and unlock intelligence that the native platform cannot provide.</p>
-                <ul class="team-eng-list">
-                    <li>SAP S/4HANA and SAP Business One integration</li>
-                    <li>Oracle Cloud ERP and Oracle NetSuite</li>
-                    <li>Microsoft Dynamics 365 Finance &amp; Operations</li>
-                    <li>Odoo ERP — open-source, fully customisable</li>
-                    <li>Cross-platform data synchronisation and analytics</li>
-                    <li>Custom API connectors for legacy ERP systems</li>
-                </ul>
-                <div class="team-tech-tags">
-                    <span>SAP</span><span>Oracle</span><span>Dynamics 365</span><span>Odoo</span><span>API Integration</span>
+            <div class="erp-approach__grid">
+                <div class="erp-timeline">
+                    <div class="erp-timeline__step">
+                        <div class="erp-timeline__num">01</div>
+                        <div class="erp-timeline__title">Assess</div>
+                        <div class="erp-timeline__desc">AI-powered audit of existing systems, data quality, process bottlenecks, and integration gaps. Full diagnostic in 2 weeks, not 2 months.</div>
+                    </div>
+                    <div class="erp-timeline__step">
+                        <div class="erp-timeline__num">02</div>
+                        <div class="erp-timeline__title">Architect</div>
+                        <div class="erp-timeline__desc">Design the target state with AI agents mapped to every workflow. Configuration recommendations generated by models trained on thousands of ERP deployments.</div>
+                    </div>
+                    <div class="erp-timeline__step">
+                        <div class="erp-timeline__num">03</div>
+                        <div class="erp-timeline__title">Implement</div>
+                        <div class="erp-timeline__desc">Automated data migration, AI-assisted testing, and phased rollout. Our agents handle the grunt work while your team focuses on change management.</div>
+                    </div>
+                    <div class="erp-timeline__step">
+                        <div class="erp-timeline__num">04</div>
+                        <div class="erp-timeline__title">Optimise</div>
+                        <div class="erp-timeline__desc">Post-go-live AI monitoring that continuously tunes configurations, identifies bottlenecks, and recommends improvements. Your ERP gets smarter every day.</div>
+                    </div>
                 </div>
-            </div>
-        </div>
-
-        <!-- ══════ AI AGENTS FOR ERP ══════ -->
-        <div class="team-eng-featured fade-up" id="erp-agents">
-            <div class="team-eng-featured-img">
-<img src="images/tech-voice-ai.jpg" alt="AI Agents Automating ERP Workflows" loading="lazy">
-            </div>
-            <div class="team-eng-featured-content">
-                <div class="team-eng-badge" style="background:rgba(34,197,94,.1);color:#22C55E;border-color:#22C55E;">AUTONOMOUS AGENTS</div>
-                <h3>AI Agents Automating ERP Workflows</h3>
-                <p>Your ERP is only as good as the humans operating it — until now. NovaGenAI deploys autonomous AI agents that live inside your ERP, executing workflows around the clock. No more manual data entry. No more missed purchase orders. No more reconciliation backlogs.</p>
-                <ul class="team-eng-list">
-                    <li>Procurement agents — auto-generate POs, match invoices, manage vendor communications</li>
-                    <li>Finance agents — reconcile accounts, flag anomalies, produce reports on demand</li>
-                    <li>Inventory agents — trigger reorders, optimise stock levels, prevent stockouts</li>
-                    <li>HR agents — process payroll, manage leave, handle onboarding workflows</li>
-                    <li>Quality agents — monitor production metrics, enforce compliance rules</li>
-                </ul>
-                <div class="team-tech-tags">
-                    <span>AI Agents</span><span>Workflow Automation</span><span>Procurement</span><span>Finance</span><span>Inventory</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- ══════ PREDICTIVE ANALYTICS ══════ -->
-        <div class="team-eng-featured team-eng-featured--reverse fade-up" id="erp-analytics">
-            <div class="team-eng-featured-img">
-<img src="images/tech-llm-inference.jpg" alt="Predictive Analytics for ERP" loading="lazy">
-            </div>
-            <div class="team-eng-featured-content">
-                <div class="team-eng-badge" style="background:rgba(212,160,23,.1);color:#D4A017;border-color:#D4A017;">PREDICTIVE INTELLIGENCE</div>
-                <h3>Predictive Analytics for Supply Chain, Inventory &amp; Finance</h3>
-                <p>Stop reacting. Start predicting. NovaGenAI builds custom machine learning models trained on your historical ERP data — forecasting demand, predicting cash flow gaps, identifying supply chain disruptions weeks before they hit, and optimising inventory to the unit level.</p>
-                <ul class="team-eng-list">
-                    <li>Demand forecasting with 90%+ accuracy</li>
-                    <li>Cash flow prediction and working capital optimisation</li>
-                    <li>Supply chain risk scoring and early warning systems</li>
-                    <li>Inventory optimisation — reduce overstock by 30-40%</li>
-                    <li>Financial anomaly detection and fraud prevention</li>
-                </ul>
-                <div class="team-tech-tags">
-                    <span>Machine Learning</span><span>Forecasting</span><span>Supply Chain</span><span>Finance</span><span>Inventory</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- ══════ DEPLOYMENT OPTIONS ══════ -->
-        <div class="team-eng-featured fade-up" id="erp-deployment">
-            <div class="team-eng-featured-img">
-<img src="images/dgx-spark.jpg" alt="On-Premise and Cloud ERP Deployment" loading="lazy">
-            </div>
-            <div class="team-eng-featured-content">
-                <div class="team-eng-badge" style="background:rgba(118,185,0,.1);color:#76B900;border-color:#76B900;">FLEXIBLE DEPLOYMENT</div>
-                <h3>On-Premise &amp; Cloud ERP Deployments</h3>
-                <p>Your data, your rules. NovaGenAI supports every deployment model — fully on-premise for maximum data sovereignty, cloud-native for scalability, or hybrid architectures that give you the best of both worlds. We handle the complexity so you don't have to.</p>
-                <ul class="team-eng-list">
-                    <li>On-premise ERP with local AI inference (NVIDIA DGX Spark)</li>
-                    <li>Cloud ERP on AWS, Google Cloud, or Azure</li>
-                    <li>Hybrid architectures — sensitive data on-premise, scale in the cloud</li>
-                    <li>Air-gapped deployment for regulated industries</li>
-                    <li>PDPA-compliant data handling across all configurations</li>
-                </ul>
-                <div class="team-tech-tags">
-                    <span>On-Premise</span><span>Cloud</span><span>Hybrid</span><span>DGX Spark</span><span>PDPA</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- ══════ NVIDIA STACK ══════ -->
-        <div class="team-eng-featured team-eng-featured--reverse fade-up" id="erp-nvidia">
-            <div class="team-eng-featured-img">
-<img src="images/tech-rag.jpg" alt="NVIDIA AI Stack for ERP Data Processing" loading="lazy">
-            </div>
-            <div class="team-eng-featured-content">
-                <div class="team-eng-badge" style="background:rgba(118,185,0,.1);color:#76B900;border-color:#76B900;">NVIDIA POWERED</div>
-                <h3>Full NVIDIA Stack for ERP Data Processing</h3>
-                <p>NovaGenAI leverages the complete NVIDIA AI stack to process your ERP data at enterprise scale. From Grace Blackwell GPUs running local inference to CUDA-accelerated analytics pipelines, we bring supercomputer-class processing to your ERP operations — without sending a single byte to the cloud.</p>
-                <ul class="team-eng-list">
-                    <li>NVIDIA DGX Spark — 1 PFLOP FP4 compute, 128GB unified memory</li>
-                    <li>Grace Blackwell GB10 chip for local LLM inference</li>
-                    <li>CUDA-accelerated data processing pipelines</li>
-                    <li>vLLM serving for high-throughput ERP agent operations</li>
-                    <li>200B+ parameter models running entirely on-premise</li>
-                </ul>
-                <div class="team-tech-tags">
-                    <span>NVIDIA</span><span>Grace Blackwell</span><span>CUDA</span><span>vLLM</span><span>DGX Spark</span>
+                <div class="erp-approach__img">
+                    <img src="images/services/erp-process.jpg" alt="ERP Process Workflow Visualisation" loading="lazy">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ══════ CTA ══════ -->
-    <section class="sol-cta fade-up">
-        <h2 class="sol-cta__title">Ready to make your ERP intelligent?</h2>
-        <p class="sol-cta__desc">Talk to our AI consultants about transforming your ERP with autonomous agents and predictive analytics.</p>
-        <a href="contact.html" class="btn-primary">Talk to Our AI Consultant →</a>
+    <!-- ══════════════════════ INTEGRATIONS ══════════════════════ -->
+    <section class="erp-integrations fade-up">
+        <div class="erp-integrations__inner">
+            <div class="erp-integrations__header">
+                <p class="erp-section-label">Platform Agnostic</p>
+                <h2 class="erp-section-title">Every Major ERP. One AI Layer.</h2>
+                <p class="erp-section-subtitle">We integrate with your platform — not replace it. Our AI layer sits on top and supercharges what you already have.</p>
+            </div>
+            <div class="erp-platforms">
+                <div class="erp-platform">
+                    <span class="erp-platform__icon">🔷</span>
+                    <div class="erp-platform__name">SAP S/4HANA</div>
+                    <div class="erp-platform__desc">Full integration with SAP's intelligent suite. AI agents automate FICO, MM, SD, and PP modules. Real-time Fiori dashboard intelligence.</div>
+                </div>
+                <div class="erp-platform">
+                    <span class="erp-platform__icon">🔴</span>
+                    <div class="erp-platform__name">Oracle Cloud ERP</div>
+                    <div class="erp-platform__desc">Native OCI integration with Fusion Cloud. AI-powered financials, procurement automation, and supply chain intelligence across Oracle modules.</div>
+                </div>
+                <div class="erp-platform">
+                    <span class="erp-platform__icon">🟦</span>
+                    <div class="erp-platform__name">Microsoft Dynamics 365</div>
+                    <div class="erp-platform__desc">Deep Azure integration with Finance & Operations. AI agents leverage Dataverse, Power Platform, and Copilot to extend Dynamics capabilities.</div>
+                </div>
+                <div class="erp-platform">
+                    <span class="erp-platform__icon">🟣</span>
+                    <div class="erp-platform__name">Odoo</div>
+                    <div class="erp-platform__desc">Open-source flexibility with enterprise-grade AI. Custom module development, automated workflows, and predictive analytics on Odoo's modular architecture.</div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <!-- ══════ FAQ ══════ -->
+    <!-- ══════════════════════ AI SUPERPOWERS ══════════════════════ -->
+    <section class="erp-superpowers fade-up">
+        <img src="images/services/erp-analytics.jpg" alt="AI Command Center" class="erp-superpowers__bg" loading="lazy">
+        <div class="erp-superpowers__overlay"></div>
+        <div class="erp-superpowers__inner">
+            <div class="erp-superpowers__header">
+                <p class="erp-section-label">AI Superpowers</p>
+                <h2 class="erp-section-title">What AI Adds to Your ERP</h2>
+                <p class="erp-section-subtitle">Capabilities that no traditional ERP consultant can deliver — because they require intelligence, not configuration.</p>
+            </div>
+            <div class="erp-powers-grid">
+                <div class="erp-power">
+                    <span class="erp-power__icon">📦</span>
+                    <div class="erp-power__title">Predictive Inventory</div>
+                    <div class="erp-power__desc">ML models trained on your sales, seasonality, and supplier data forecast demand at the SKU level. Reduce overstock by 35% and eliminate stockouts before they happen.</div>
+                </div>
+                <div class="erp-power">
+                    <span class="erp-power__icon">⚡</span>
+                    <div class="erp-power__title">Automated Workflows</div>
+                    <div class="erp-power__desc">AI agents process purchase orders, match invoices to receipts, trigger payments, and handle vendor communications — 24/7, zero manual intervention, with human escalation for exceptions.</div>
+                </div>
+                <div class="erp-power">
+                    <span class="erp-power__icon">🧠</span>
+                    <div class="erp-power__title">Intelligent Routing</div>
+                    <div class="erp-power__desc">Smart allocation of resources, materials, and tasks across departments. AI analyses bottlenecks in real-time and reroutes workflows to optimise throughput and reduce cycle times.</div>
+                </div>
+                <div class="erp-power">
+                    <span class="erp-power__icon">🔍</span>
+                    <div class="erp-power__title">Anomaly Detection</div>
+                    <div class="erp-power__desc">Continuous monitoring of financial transactions, inventory movements, and production metrics. AI flags irregularities — fraud, data entry errors, process deviations — before they cascade.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════ RESULTS ══════════════════════ -->
+    <section class="erp-results fade-up">
+        <div class="erp-results__inner">
+            <p class="erp-section-label">Proven Impact</p>
+            <h2 class="erp-section-title">Results That Speak for Themselves</h2>
+            <div class="erp-results__grid">
+                <div class="erp-result">
+                    <div class="erp-result__number">40%</div>
+                    <div class="erp-result__label">Faster implementation vs traditional consulting</div>
+                </div>
+                <div class="erp-result">
+                    <div class="erp-result__number">3×</div>
+                    <div class="erp-result__label">ROI achieved within the first year</div>
+                </div>
+                <div class="erp-result">
+                    <div class="erp-result__number">85%</div>
+                    <div class="erp-result__label">Reduction in manual data entry tasks</div>
+                </div>
+                <div class="erp-result">
+                    <div class="erp-result__number">99.2%</div>
+                    <div class="erp-result__label">Invoice matching accuracy with AI agents</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════ FAQ ══════════════════════ -->
     <section class="faq" id="faq">
         <div class="container">
             <h2 class="section__title">Frequently Asked Questions</h2>
             <div class="faq__grid">
-            <div class="faq__item" onclick="this.classList.toggle('faq__item--open')">
-                <div class="faq__question">
-                    <span>What ERP systems does NovaGenAI support?</span>
-                    <svg class="faq__icon" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <div class="faq__item" onclick="this.classList.toggle('faq__item--open')">
+                    <div class="faq__question"><span>What ERP systems does NovaGenAI support?</span><svg class="faq__icon" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                    <div class="faq__answer"><p>NovaGenAI provides AI-powered consulting for all major ERP platforms including SAP S/4HANA, Oracle Cloud ERP, Microsoft Dynamics 365, and Odoo. We integrate AI agents and predictive analytics into your existing ERP environment — whether on-premise, cloud, or hybrid.</p></div>
                 </div>
-                <div class="faq__answer"><p>NovaGenAI provides AI-powered consulting for all major ERP platforms including SAP S/4HANA, Oracle Cloud ERP, Microsoft Dynamics 365, and Odoo. We integrate AI agents and predictive analytics into your existing ERP environment — whether on-premise, cloud, or hybrid.</p></div>
-            </div>
-            <div class="faq__item" onclick="this.classList.toggle('faq__item--open')">
-                <div class="faq__question">
-                    <span>How do AI agents automate ERP workflows?</span>
-                    <svg class="faq__icon" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <div class="faq__item" onclick="this.classList.toggle('faq__item--open')">
+                    <div class="faq__question"><span>How do AI agents automate ERP workflows?</span><svg class="faq__icon" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                    <div class="faq__answer"><p>Our AI agents sit on top of your ERP and autonomously handle repetitive tasks — purchase order processing, invoice matching, inventory reorder triggers, financial reconciliation, and vendor management. They learn your business rules, execute within guardrails, and escalate exceptions to humans.</p></div>
                 </div>
-                <div class="faq__answer"><p>Our AI agents sit on top of your ERP and autonomously handle repetitive tasks — purchase order processing, invoice matching, inventory reorder triggers, financial reconciliation, and vendor management. They learn your business rules, execute within guardrails, and escalate exceptions to humans.</p></div>
-            </div>
-            <div class="faq__item" onclick="this.classList.toggle('faq__item--open')">
-                <div class="faq__question">
-                    <span>Can NovaGenAI deploy ERP AI on-premise?</span>
-                    <svg class="faq__icon" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <div class="faq__item" onclick="this.classList.toggle('faq__item--open')">
+                    <div class="faq__question"><span>Can NovaGenAI deploy ERP AI on-premise?</span><svg class="faq__icon" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                    <div class="faq__answer"><p>Yes. Using NVIDIA DGX Spark infrastructure, we deploy AI models directly on your premises. Your ERP data never leaves your building — critical for organisations with strict data sovereignty, PDPA compliance, or air-gapped security requirements.</p></div>
                 </div>
-                <div class="faq__answer"><p>Yes. Using NVIDIA DGX Spark infrastructure, we deploy AI models directly on your premises. Your ERP data never leaves your building — critical for organisations with strict data sovereignty, PDPA compliance, or air-gapped security requirements.</p></div>
-            </div>
-            <div class="faq__item" onclick="this.classList.toggle('faq__item--open')">
-                <div class="faq__question">
-                    <span>What is predictive analytics for ERP?</span>
-                    <svg class="faq__icon" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <div class="faq__item" onclick="this.classList.toggle('faq__item--open')">
+                    <div class="faq__question"><span>What is predictive analytics for ERP?</span><svg class="faq__icon" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                    <div class="faq__answer"><p>Predictive analytics uses machine learning models trained on your historical ERP data to forecast demand, optimise inventory levels, predict cash flow, identify supply chain risks, and flag financial anomalies before they become problems. NovaGenAI builds custom predictive models tailored to your specific business.</p></div>
                 </div>
-                <div class="faq__answer"><p>Predictive analytics uses machine learning models trained on your historical ERP data to forecast demand, optimise inventory levels, predict cash flow, identify supply chain risks, and flag financial anomalies before they become problems. NovaGenAI builds custom predictive models tailored to your specific business.</p></div>
-            </div>
-            <div class="faq__item" onclick="this.classList.toggle('faq__item--open')">
-                <div class="faq__question">
-                    <span>How long does an AI-powered ERP implementation take?</span>
-                    <svg class="faq__icon" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <div class="faq__item" onclick="this.classList.toggle('faq__item--open')">
+                    <div class="faq__question"><span>How long does an AI-powered ERP implementation take?</span><svg class="faq__icon" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                    <div class="faq__answer"><p>A typical AI-augmented ERP engagement starts with a 2-week discovery and assessment phase, followed by 4-8 weeks of phased implementation. AI agent deployment can begin delivering value within the first month, with predictive analytics models maturing over 8-12 weeks as they learn from your data.</p></div>
                 </div>
-                <div class="faq__answer"><p>A typical AI-augmented ERP engagement starts with a 2-week discovery and assessment phase, followed by 4-8 weeks of phased implementation. AI agent deployment can begin delivering value within the first month, with predictive analytics models maturing over 8-12 weeks as they learn from your data.</p></div>
-            </div>
             </div>
         </div>
     </section>
-    <style>
-    .faq { padding: 6rem 2rem; background: #0a0a0a; }
-    .faq .container { max-width: 800px; margin: 0 auto; }
-    .faq .section__title { text-align: center; font-family: 'Outfit', sans-serif; font-size: 2.5rem; font-weight: 700; color: #fff; margin-bottom: 3rem; }
-    .faq__grid { display: flex; flex-direction: column; gap: 0; }
-    .faq__item { border-bottom: 1px solid rgba(255,255,255,0.08); cursor: pointer; }
-    .faq__question { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 0; font-family: 'Outfit', sans-serif; font-size: 1.125rem; font-weight: 600; color: #fff; transition: color 0.2s; }
-    .faq__item:hover .faq__question { color: #00D4FF; }
-    .faq__icon { transition: transform 0.3s; flex-shrink: 0; margin-left: 1rem; color: rgba(255,255,255,0.4); }
-    .faq__item--open .faq__icon { transform: rotate(180deg); color: #00D4FF; }
-    .faq__answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease; }
-    .faq__item--open .faq__answer { max-height: 300px; padding-bottom: 1.5rem; }
-    .faq__answer p { font-family: 'Inter', sans-serif; font-size: 1rem; line-height: 1.7; color: rgba(255,255,255,0.7); margin: 0; }
-    </style>
 
-    <!-- ══════ RELATED PAGES ══════ -->
+    <!-- ══════════════════════ CTA ══════════════════════ -->
+    <section class="erp-cta fade-up">
+        <div class="erp-cta__inner">
+            <h2 class="erp-cta__title">Transform Your ERP<br>with <span class="gold">AI</span></h2>
+            <p class="erp-cta__desc">Stop overpaying for underperforming ERP implementations. Talk to our AI consultants about a smarter, faster, more intelligent approach to enterprise resource planning.</p>
+            <a href="contact.html" class="btn-gold">Get Started →</a>
+        </div>
+    </section>
+
+    <!-- ══════════════════════ EXPLORE MORE ══════════════════════ -->
     <section class="ag-section fade-up" style="text-align:center;padding:4rem 2rem;">
         <h2 class="ag-heading" style="font-size:1.8rem;">Explore More</h2>
         <p class="ag-subtext">
