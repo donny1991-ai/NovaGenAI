@@ -1,0 +1,46 @@
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://novagenai.com.my/blog/POST_SLUG/"
+  },
+  "headline": "POST_TITLE",
+  "description": "POST_DESCRIPTION",
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://novagenai.com.my/blog/POST_SLUG/featured-image.jpg",
+    "width": 1200,
+    "height": 630
+  },
+  "author": {
+    "@type": "Person",
+    "@id": "https://novagenai.com.my/#don-calaki",
+    "name": "Don Calaki",
+    "jobTitle": "CEO",
+    "url": "https://novagenai.com.my/team.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://novagenai.com.my/#organization",
+    "name": "NovaGenAI",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://novagenai.com.my/images/logo.png",
+      "width": 512,
+      "height": 512
+    }
+  },
+  "datePublished": "YYYY-MM-DD",
+  "dateModified": "YYYY-MM-DD",
+  "inLanguage": "en",
+  "keywords": ["keyword1", "keyword2", "keyword3"],
+  "articleSection": "CATEGORY",
+  "wordCount": 0,
+  "isPartOf": {
+    "@type": "Blog",
+    "@id": "https://novagenai.com.my/blog/#blog",
+    "name": "NovaGenAI Blog",
+    "url": "https://novagenai.com.my/blog/"
+  }
+}

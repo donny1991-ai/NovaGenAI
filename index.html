@@ -30,64 +30,152 @@
     <meta name="twitter:description" content="NovaGenAI builds enterprise AI systems — autonomous agents, voice AI, computational biotech intelligence, and custom software. Based in Cyberjaya, Malaysia." />
     <meta name="twitter:image" content="https://novagenai.com.my/images/og-image.png" />
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "NovaGenAI",
-      "legalName": "NovaGenAI Sdn. Bhd.",
-      "url": "https://novagenai.com.my",
-      "logo": "https://novagenai.com.my/images/logo.png",
-      "description": "Enterprise AI systems company specializing in autonomous AI agents, computational biotech intelligence, and next-generation software architecture.",
-      "foundingDate": "2025-11-25",
-      "founder": {
+    [
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "@id": "https://novagenai.com.my/#organization",
+        "name": "NovaGenAI",
+        "legalName": "NOVAGENAI SDN. BHD.",
+        "alternateName": "NovaGenAI Sdn. Bhd.",
+        "url": "https://novagenai.com.my",
+        "logo": {"@type":"ImageObject","url":"https://novagenai.com.my/images/logo.png","width":512,"height":512},
+        "image": "https://novagenai.com.my/images/og-image.png",
+        "description": "NovaGenAI is a Malaysian enterprise AI company building production-grade autonomous AI agents, voice AI systems, computational biotech intelligence, AI-native CRM platforms, and custom enterprise software. Headquartered in Cyberjaya with operations in Australia and Singapore.",
+        "foundingDate": "2025-11-25",
+        "taxID": "202501055020",
+        "founder": [{"@type":"Person","@id":"https://novagenai.com.my/#don-calaki","name":"Don Calaki","jobTitle":"Chief Executive Officer","worksFor":{"@id":"https://novagenai.com.my/#organization"}}],
+        "member": [{"@type":"Person","name":"John Olino","jobTitle":"Chief Financial Officer","worksFor":{"@id":"https://novagenai.com.my/#organization"}}],
+        "address": {"@type":"PostalAddress","streetAddress":"Suite 1-1, 1st Floor, Bio-X Centre, Persiaran Cyberpoint Selatan, Cyber 8","addressLocality":"Cyberjaya","addressRegion":"Selangor","postalCode":"63000","addressCountry":"MY"},
+        "geo": {"@type":"GeoCoordinates","latitude":2.9213,"longitude":101.6559},
+        "contactPoint": [
+          {"@type":"ContactPoint","telephone":"+60-11-1401-0362","email":"enquiries@novagenai.com.my","contactType":"sales","availableLanguage":["English","Malay","Chinese"]},
+          {"@type":"ContactPoint","telephone":"+60-11-1401-0362","contactType":"customer support","availableLanguage":["English","Malay","Chinese"]}
+        ],
+        "sameAs": ["https://www.linkedin.com/company/novagenai","https://www.instagram.com/nova.genai","https://x.com/Nova_GenAI","https://www.youtube.com/@Nova_GenAI","https://www.threads.net/@nova.genai","https://www.facebook.com/NovaGenAI","https://github.com/donny1991-ai/NovaGenAI","https://wa.me/60111401036"],
+        "numberOfEmployees": {"@type":"QuantitativeValue","value":5},
+        "foundingLocation": {"@type":"Place","name":"Cyberjaya, Selangor, Malaysia"},
+        "areaServed": [{"@type":"Country","name":"Malaysia"},{"@type":"Country","name":"Australia"},{"@type":"Country","name":"Singapore"}],
+        "knowsAbout": ["Enterprise AI","Autonomous AI Agents","Computational Biotech","Voice AI","LLM Engineering","Document Intelligence","In-Silico Modelling","Retrieval-Augmented Generation","AI-Native CRM","Marketing Automation","Drug Discovery","Natural Language Processing"],
+        "slogan": "Intelligence That Transforms Business",
+        "naics": "511210"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "@id": "https://novagenai.com.my/#website",
+        "name": "NovaGenAI",
+        "alternateName": "NovaGenAI — AI Systems for Every Enterprise",
+        "url": "https://novagenai.com.my",
+        "description": "NovaGenAI builds enterprise AI systems — autonomous agents, voice AI, computational biotech intelligence, and custom software. Based in Cyberjaya, Malaysia.",
+        "publisher": {"@id":"https://novagenai.com.my/#organization"},
+        "inLanguage": ["en","ms","zh"],
+        "potentialAction": {"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://novagenai.com.my/search?q={search_term_string}"},"query-input":"required name=search_term_string"}
+      },
+      {
+        "@context": "https://schema.org",
         "@type": "Person",
+        "@id": "https://novagenai.com.my/#don-calaki",
         "name": "Don Calaki",
-        "jobTitle": "CEO"
+        "jobTitle": "Chief Executive Officer",
+        "description": "Founder and CEO of NovaGenAI Sdn. Bhd., a Malaysian enterprise AI company specializing in autonomous agents, voice AI, and computational biotech intelligence.",
+        "worksFor": {"@id":"https://novagenai.com.my/#organization"},
+        "affiliation": {"@id":"https://novagenai.com.my/#organization"},
+        "knowsAbout": ["Artificial Intelligence","Enterprise Software","Biotech","Voice AI","LLM Engineering","Startup Leadership"],
+        "sameAs": ["https://www.linkedin.com/company/novagenai","https://x.com/Nova_GenAI"]
       },
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Suite 1-1, 1st Floor, Bio-X Centre, Persiaran Cyberpoint Selatan, Cyber 8",
-        "addressLocality": "Cyberjaya",
-        "addressRegion": "Selangor",
-        "postalCode": "63000",
-        "addressCountry": "MY"
+      {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "@id": "https://novagenai.com.my/#ai-concierge-platform",
+        "name": "AI Concierge Platform",
+        "description": "White-label voice AI platform with Retrieval-Augmented Generation (RAG) for enterprises. Multilingual conversational AI agents handling real phone calls in English, Bahasa Malaysia, and Mandarin. 24/7 intelligent conversations that handle enquiries, book appointments, qualify leads, and convert prospects.",
+        "brand": {"@id":"https://novagenai.com.my/#organization"},
+        "url": "https://novagenai.com.my/solutions.html#voice-agents",
+        "image": "https://novagenai.com.my/images/tech-voice-ai.jpg",
+        "category": "Enterprise AI Software",
+        "offers": {"@type":"Offer","availability":"https://schema.org/InStock","priceCurrency":"MYR","url":"https://novagenai.com.my/contact.html"}
       },
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "email": "enquiries@novagenai.com.my",
-        "contactType": "sales"
+      {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "@id": "https://novagenai.com.my/#clarify",
+        "name": "Clarify",
+        "description": "AI-native CRM and sales platform with real-time lead scoring, pipeline intelligence, automated follow-ups, and conversion prediction. Built for modern sales teams.",
+        "brand": {"@id":"https://novagenai.com.my/#organization"},
+        "url": "https://novagenai.com.my/solutions.html#clarify",
+        "image": "https://novagenai.com.my/images/tech-secure-api.jpg",
+        "category": "CRM Software",
+        "offers": {"@type":"Offer","availability":"https://schema.org/InStock","priceCurrency":"MYR","url":"https://novagenai.com.my/contact.html"}
       },
-      "sameAs": [
-        "https://www.linkedin.com/company/novagenai",
-        "https://www.instagram.com/nova.genai",
-        "https://x.com/Nova_GenAI",
-        "https://www.youtube.com/@Nova_GenAI",
-        "https://www.threads.net/@nova.genai",
-        "https://www.facebook.com/NovaGenAI",
-        "https://www.tiktok.com/@novagenai"
-      ],
-      "numberOfEmployees": {
-        "@type": "QuantitativeValue",
-        "value": 5
+      {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "@id": "https://novagenai.com.my/#document-intelligence",
+        "name": "Document Intelligence",
+        "description": "RAG-powered document analysis platform that transforms your knowledge base into an AI search engine. Query SOPs, contracts, medical protocols through natural language with source citations.",
+        "brand": {"@id":"https://novagenai.com.my/#organization"},
+        "url": "https://novagenai.com.my/solutions.html#rag",
+        "image": "https://novagenai.com.my/images/tech-rag.jpg",
+        "category": "Enterprise AI Software",
+        "offers": {"@type":"Offer","availability":"https://schema.org/InStock","priceCurrency":"MYR","url":"https://novagenai.com.my/contact.html"}
       },
-      "knowsAbout": [
-        "Enterprise AI",
-        "Autonomous AI Agents",
-        "Computational Biotech",
-        "Voice AI",
-        "LLM Engineering",
-        "Document Intelligence",
-        "In-Silico Training"
-      ]
-    }
-    </script>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "NovaGenAI",
-      "url": "https://novagenai.com.my"
-    }
+      {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "@id": "https://novagenai.com.my/#marketing-os",
+        "name": "Marketing OS",
+        "description": "AI-powered marketing automation platform with content generation, campaign automation, and performance analytics in English, Bahasa Malaysia, and Mandarin with compliance guardrails.",
+        "brand": {"@id":"https://novagenai.com.my/#organization"},
+        "url": "https://novagenai.com.my/solutions.html#marketing-os",
+        "image": "https://novagenai.com.my/images/tech-embeddings.jpg",
+        "category": "Marketing Automation Software",
+        "offers": {"@type":"Offer","availability":"https://schema.org/InStock","priceCurrency":"MYR","url":"https://novagenai.com.my/contact.html"}
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "@id": "https://novagenai.com.my/#in-silico-modelling",
+        "name": "In-Silico Modelling",
+        "description": "Computational biotech and drug discovery platform using AI-driven in-silico modelling. Cell prediction engines, molecular simulations, and biotech modelling on NVIDIA DGX infrastructure.",
+        "brand": {"@id":"https://novagenai.com.my/#organization"},
+        "url": "https://novagenai.com.my/solutions.html#cell-model",
+        "image": "https://novagenai.com.my/images/tech-llm-inference.jpg",
+        "category": "Computational Biotech Software",
+        "offers": {"@type":"Offer","availability":"https://schema.org/InStock","priceCurrency":"MYR","url":"https://novagenai.com.my/contact.html"}
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "@id": "https://novagenai.com.my/#breadcrumb",
+        "itemListElement": [
+          {"@type":"ListItem","position":1,"name":"Home","item":"https://novagenai.com.my/"},
+          {"@type":"ListItem","position":2,"name":"Solutions","item":"https://novagenai.com.my/solutions.html"},
+          {"@type":"ListItem","position":3,"name":"Agents","item":"https://novagenai.com.my/agents.html"},
+          {"@type":"ListItem","position":4,"name":"Technology","item":"https://novagenai.com.my/technology.html"},
+          {"@type":"ListItem","position":5,"name":"Case Studies","item":"https://novagenai.com.my/case-studies.html"},
+          {"@type":"ListItem","position":6,"name":"Our Team","item":"https://novagenai.com.my/team.html"},
+          {"@type":"ListItem","position":7,"name":"About","item":"https://novagenai.com.my/about.html"},
+          {"@type":"ListItem","position":8,"name":"Blog","item":"https://novagenai.com.my/blog/"},
+          {"@type":"ListItem","position":9,"name":"Contact","item":"https://novagenai.com.my/contact.html"}
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "@id": "https://novagenai.com.my/#solutions-list",
+        "name": "NovaGenAI Solutions",
+        "description": "Complete suite of enterprise AI solutions by NovaGenAI",
+        "numberOfItems": 5,
+        "itemListElement": [
+          {"@type":"ListItem","position":1,"name":"AI Concierge Platform","url":"https://novagenai.com.my/solutions.html#voice-agents"},
+          {"@type":"ListItem","position":2,"name":"Clarify","url":"https://novagenai.com.my/solutions.html#clarify"},
+          {"@type":"ListItem","position":3,"name":"Document Intelligence","url":"https://novagenai.com.my/solutions.html#rag"},
+          {"@type":"ListItem","position":4,"name":"Marketing OS","url":"https://novagenai.com.my/solutions.html#marketing-os"},
+          {"@type":"ListItem","position":5,"name":"In-Silico Modelling","url":"https://novagenai.com.my/solutions.html#cell-model"}
+        ]
+      }
+    ]
     </script>
 </head>
 
