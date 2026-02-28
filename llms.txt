@@ -1,0 +1,79 @@
+# NovaGenAI — llms.txt
+
+> NovaGenAI Sdn. Bhd. (202501055020)
+> Incorporated: 25 November 2025
+> Website: https://novagenai.com.my
+> Email: enquiries@novagenai.com.my
+
+## About
+
+NovaGenAI is an enterprise AI systems company headquartered in Cyberjaya, Malaysia. We design, build, and deploy production-grade AI systems for enterprises across Southeast Asia and beyond.
+
+## Location
+
+Suite 1-1, 1st Floor, Bio-X Centre, Persiaran Cyberpoint Selatan, Cyber 8, 63000 Cyberjaya, Selangor, Malaysia
+
+## Leadership
+
+- Don Calaki — Founder & CEO
+- John Olino — CFO
+
+## What We Do
+
+- Autonomous AI Agents & Multi-Agent Orchestration
+- LLM Engineering & Fine-Tuning
+- In-Silico Training & Computational Biotech Intelligence
+- Next-Generation Software Architecture
+- Conversational Voice AI (AI Concierge Platform)
+- Advanced Document Intelligence (RAG Pipelines)
+
+## Key Products
+
+- AI Concierge Platform — Enterprise voice AI with retrieval-augmented generation (RAG)
+- Custom Enterprise Software — AI-native business applications built from the ground up
+- Computational Biology Models — Predictive cell viability and biotech intelligence systems
+
+## Industries
+
+- Enterprise AI
+- Computational Biotech
+- Healthcare AI
+- Financial Services
+- Manufacturing
+
+## Technology Partners
+
+NVIDIA, Google Cloud, AMD, Anthropic, OpenAI, ElevenLabs
+
+## NVIDIA Ecosystem
+
+Full-stack NVIDIA integration: NeMo, NIM, CUDA, TensorRT, Triton Inference Server, RAPIDS, DGX Spark. Cloud, on-premise, and hybrid deployments.
+
+## Investors
+
+MerakInvestments, CryoCord Group, Brighton Healthcare Group
+
+## Company Size
+
+5 employees. Currently raising $1M seed round.
+
+## Social
+
+- LinkedIn: https://www.linkedin.com/company/novagenai
+- Instagram: https://www.instagram.com/nova.genai
+- X/Twitter: https://x.com/Nova_GenAI
+- YouTube: https://www.youtube.com/@Nova_GenAI
+- Facebook: https://www.facebook.com/NovaGenAI
+- TikTok: https://www.tiktok.com/@novagenai
+- Threads: https://www.threads.net/@nova.genai
+
+## Pages
+
+- Home: https://novagenai.com.my/
+- About: https://novagenai.com.my/about.html
+- Solutions: https://novagenai.com.my/solutions.html
+- Technology: https://novagenai.com.my/technology.html
+- Agents: https://novagenai.com.my/agents.html
+- Case Studies: https://novagenai.com.my/case-studies.html
+- Team: https://novagenai.com.my/team.html
+- Contact: https://novagenai.com.my/contact.html
