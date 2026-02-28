@@ -29,7 +29,7 @@ Suite 1-1, 1st Floor, Bio-X Centre, Persiaran Cyberpoint Selatan, Cyber 8, 63000
 
 ## Key Products
 
-- AI Concierge Platform — Enterprise voice AI with retrieval-augmented generation (RAG)
+- AI Concierge Platform — White-label enterprise voice AI with RAG document intelligence. Trilingual (English, Bahasa Malaysia, Mandarin). Deploy to any client in 5-7 days. First pilot: CryoCord (live March 2026).
 - Custom Enterprise Software — AI-native business applications built from the ground up
 - Computational Biology Models — Predictive cell viability and biotech intelligence systems
 
@@ -43,7 +43,7 @@ Suite 1-1, 1st Floor, Bio-X Centre, Persiaran Cyberpoint Selatan, Cyber 8, 63000
 
 ## Technology Partners
 
-NVIDIA, Google Cloud, AMD, Anthropic, OpenAI, ElevenLabs
+NVIDIA (Inception Program Member), Google Cloud (Partner Network), AMD (AI Developer Program), Anthropic, OpenAI, ElevenLabs
 
 ## NVIDIA Ecosystem
 
@@ -55,7 +55,7 @@ MerakInvestments, CryoCord Group, Brighton Healthcare Group
 
 ## Company Size
 
-5 employees. Currently raising $1M seed round.
+6 employees. ML engineer joined February 2026. Currently raising $1M seed round.
 
 ## Social
 
