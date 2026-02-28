@@ -20,126 +20,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style.css">
-    <style>
-        .blog-hero {
-            padding: 10rem 2rem 4rem;
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        .blog-hero__label {
-            font-family: 'Inter', sans-serif;
-            font-size: .75rem;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            color: #00D4FF;
-            margin-bottom: 1rem;
-        }
-        .blog-hero__title {
-            font-family: 'Outfit', sans-serif;
-            font-size: clamp(2rem, 5vw, 3.5rem);
-            font-weight: 800;
-            color: #fff;
-            margin: 0 0 1rem;
-            line-height: 1.1;
-        }
-        .blog-hero__desc {
-            font-family: 'Inter', sans-serif;
-            font-size: 1.05rem;
-            color: #999;
-            line-height: 1.6;
-            max-width: 560px;
-            margin: 0 auto;
-        }
-        .blog-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-            max-width: 960px;
-            margin: 0 auto 4rem;
-            padding: 0 2rem;
-        }
-        @media (max-width: 700px) {
-            .blog-grid { grid-template-columns: 1fr; }
-        }
-        .blog-card {
-            background: #111;
-            border: 1px solid rgba(255,255,255,.06);
-            border-radius: 12px;
-            overflow: hidden;
-            transition: border-color .3s, transform .3s;
-            text-decoration: none;
-            display: flex;
-            flex-direction: column;
-        }
-        .blog-card:hover {
-            border-color: rgba(0,212,255,.25);
-            transform: translateY(-4px);
-        }
-        .blog-card__img {
-            width: 100%;
-            height: 200px;
-            background: linear-gradient(135deg, #0d0d0d 0%, #1a1a2e 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-        }
-        .blog-card__img-icon {
-            font-size: 2.5rem;
-            opacity: .3;
-        }
-        .blog-card__body {
-            padding: 1.5rem;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-        }
-        .blog-card__tag {
-            font-family: 'Inter', sans-serif;
-            font-size: .65rem;
-            font-weight: 600;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            color: #D4A017;
-            margin-bottom: .75rem;
-        }
-        .blog-card__title {
-            font-family: 'Outfit', sans-serif;
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: #fff;
-            margin: 0 0 .75rem;
-            line-height: 1.3;
-        }
-        .blog-card__excerpt {
-            font-family: 'Inter', sans-serif;
-            font-size: .875rem;
-            color: #999;
-            line-height: 1.6;
-            margin-bottom: 1.25rem;
-            flex: 1;
-        }
-        .blog-card__meta {
-            font-family: 'Inter', sans-serif;
-            font-size: .75rem;
-            color: #666;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-        .blog-card__meta span { white-space: nowrap; }
-        .blog-pagination {
-            text-align: center;
-            padding: 0 2rem 5rem;
-        }
-        .blog-pagination__text {
-            font-family: 'Inter', sans-serif;
-            font-size: .85rem;
-            color: #555;
-        }
-    </style>
+    <link rel="stylesheet" href="blog.css">
 </head>
 <body>
     <!-- NAV -->
@@ -199,49 +80,69 @@
 
     <!-- BLOG HERO -->
     <section class="blog-hero">
-        <p class="blog-hero__label">// Insights &amp; Research</p>
-        <h1 class="blog-hero__title">The NovaGenAI Blog</h1>
-        <p class="blog-hero__desc">Research, analysis, and perspectives on enterprise AI, computational biotech, and the future of on-premise intelligence.</p>
+        <h1 class="blog-hero__title"><span>Insights</span> & Research</h1>
+        <p class="blog-hero__subtitle">Research, analysis, and perspectives on enterprise AI, computational biotech, and the future of on-premise intelligence.</p>
     </section>
 
-    <!-- BLOG GRID -->
-    <section class="blog-grid">
-        <a href="cell2sentence-computational-biotech.html" class="blog-card">
-            <div class="blog-card__img">
-                <span class="blog-card__img-icon">🧬</span>
+    <!-- FEATURED POST -->
+    <div class="blog-container">
+        <a href="novagenai-vision-2026.html" class="blog-featured">
+            <div class="blog-featured__image">
+                <img src="images/vision-neural-city.jpg" alt="NovaGenAI Vision 2026" loading="eager" />
+                <span class="blog-featured__badge">★ Featured</span>
             </div>
-            <div class="blog-card__body">
-                <span class="blog-card__tag">Computational Biotech</span>
-                <h2 class="blog-card__title">Custom AI Models for Biology: How NovaGenAI Is Making Biological Data Machine-Readable</h2>
-                <p class="blog-card__excerpt">NovaGenAI builds custom AI models that convert biological datasets into machine-readable formats, enabling in-silico modelling, drug target prediction, and personalised medicine.</p>
-                <div class="blog-card__meta">
-                    <span>28 Feb 2026</span>
-                    <span>·</span>
-                    <span>9 min read</span>
+            <div class="blog-featured__content">
+                <span class="blog-featured__category">Company Vision</span>
+                <h2 class="blog-featured__title">The NovaGenAI Vision: Building the Future of Enterprise AI</h2>
+                <p class="blog-featured__excerpt">Security. Intelligence. Biology. Three pillars define our 2026 vision — watch the story unfold through immersive video and visual storytelling.</p>
+                <div class="blog-featured__meta">
+                    <img src="images/don-calaki.jpg" alt="NovaGenAI" class="blog-featured__avatar" />
+                    <div class="blog-featured__meta-text">
+                        <span class="blog-featured__author">NovaGenAI</span>
+                        <span class="blog-featured__date">February 28, 2026 · 4 min read</span>
+                    </div>
                 </div>
             </div>
         </a>
 
-        <a href="why-on-premise-ai-matters.html" class="blog-card">
-            <div class="blog-card__img">
-                <span class="blog-card__img-icon">🔒</span>
-            </div>
-            <div class="blog-card__body">
-                <span class="blog-card__tag">Enterprise Infrastructure</span>
-                <h2 class="blog-card__title">Why On-Premise AI Is the Future for Regulated Industries</h2>
-                <p class="blog-card__excerpt">Regulated industries can't afford to send sensitive data to the cloud. Here's why on-premise AI — powered by NVIDIA DGX Spark — is the infrastructure shift they've been waiting for.</p>
-                <div class="blog-card__meta">
-                    <span>27 Feb 2026</span>
-                    <span>·</span>
-                    <span>8 min read</span>
+        <!-- BLOG GRID -->
+        <div class="blog-grid">
+            <a href="when-biology-becomes-code.html" class="blog-card visible">
+                <div class="blog-card__image">
+                    <img src="images/biotech-cell2sentence.jpg" alt="Cell2Sentence computational biology visualization" loading="lazy" />
                 </div>
-            </div>
-        </a>
-    </section>
+                <div class="blog-card__body">
+                    <span class="blog-card__category">Computational Biotech</span>
+                    <h2 class="blog-card__title">When Biology Becomes Code: Custom AI Models for Biological Data</h2>
+                    <p class="blog-card__excerpt">NovaGenAI builds custom AI models that convert biological datasets into machine-readable formats, enabling drug discovery and personalised medicine.</p>
+                    <div class="blog-card__meta">
+                        <img src="images/don-calaki.jpg" alt="Don Calaki" class="blog-card__avatar" />
+                        <div class="blog-card__meta-text">
+                            <span class="blog-card__author">Don Calaki</span>
+                            <span class="blog-card__date-read">Feb 28, 2026 · 7 min read</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
 
-    <!-- PAGINATION -->
-    <div class="blog-pagination">
-        <p class="blog-pagination__text">Showing all 2 posts</p>
+            <a href="why-on-premise-ai-matters.html" class="blog-card visible">
+                <div class="blog-card__image">
+                    <img src="images/on-premise-nvidia-dgx.jpg" alt="NVIDIA DGX Spark on-premise AI" loading="lazy" />
+                </div>
+                <div class="blog-card__body">
+                    <span class="blog-card__category">Enterprise Infrastructure</span>
+                    <h2 class="blog-card__title">Why On-Premise AI Matters for Regulated Industries</h2>
+                    <p class="blog-card__excerpt">Regulated industries can't send sensitive data to the cloud. Here's why on-premise AI powered by NVIDIA DGX Spark is the infrastructure shift they've been waiting for.</p>
+                    <div class="blog-card__meta">
+                        <img src="images/don-calaki.jpg" alt="Don Calaki" class="blog-card__avatar" />
+                        <div class="blog-card__meta-text">
+                            <span class="blog-card__author">Don Calaki</span>
+                            <span class="blog-card__date-read">Feb 28, 2026 · 7 min read</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
     </div>
 
     <!-- FOOTER -->
@@ -271,6 +172,7 @@
             <p class="footer__copy">&copy; 2026 NovaGenAI. All rights reserved.</p>
         </div>
     </footer>
-    <script type="module" src="../script.js"></script>
+
+    <script src="blog.js"></script>
 </body>
 </html>

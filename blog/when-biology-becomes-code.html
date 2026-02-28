@@ -116,7 +116,7 @@
 <body>
 
     <!-- Reading Progress Bar -->
-    <div class="reading-progress" id="reading-progress"></div>
+    <div class="blog-progress" id="reading-progress"></div>
 
     <!-- ════════════════════════════════════════════════════════ NAV -->
     <header class="nav" id="nav">
@@ -174,229 +174,195 @@
         </div>
     </header>
 
-    <!-- ════════════════════════════════════════════════════════ ARTICLE -->
-    <article class="blog-post">
-        <header class="blog-post__header">
-            <div class="blog-post__meta">
-                <span class="blog-post__category">Computational Biotech</span>
-                <time class="blog-post__date" datetime="2026-02-28">February 28, 2026</time>
-                <span class="blog-post__read-time">12 min read</span>
+    <!-- ════════════════════════════════════════════════════════ HERO -->
+    <section class="post-hero">
+        <div class="post-hero__bg">
+            <img src="images/biotech-cell2sentence.jpg" alt="Cell2Sentence computational biology visualization with NovaGenAI branding" loading="eager" />
+        </div>
+        <div class="post-hero__content">
+            <span class="post-hero__category">Computational Biotech</span>
+            <h1 class="post-hero__title">When Biology Becomes Code</h1>
+            <div class="post-hero__meta">
+                <img src="images/don-calaki.jpg" alt="Don Calaki" class="post-hero__avatar" />
+                <span class="post-hero__author-name">Don Calaki</span>
+                <span class="post-hero__sep"></span>
+                <time datetime="2026-02-28">February 28, 2026</time>
+                <span class="post-hero__sep"></span>
+                <span>7 min read</span>
             </div>
-            <h1 class="blog-post__title">When Biology Becomes Code: Custom AI Models for Biological Data</h1>
-            <p class="blog-post__subtitle">Biology has a language. NovaGenAI is building the AI models that can read it — training custom LLMs on proprietary biological datasets to accelerate drug discovery, personalised medicine, and in-silico modelling.</p>
-            <figure class="blog-post__hero-image">
-                <img src="images/biology-code-hero.jpg" alt="Luminous stem cell sphere with golden data strands representing the convergence of biology and AI" loading="eager" />
-            </figure>
-        </header>
+        </div>
+    </section>
 
-        <!-- Social Share Buttons -->
-        <div class="blog-post__share">
-            <span class="blog-post__share-label">Share</span>
-            <a href="#" class="blog-post__share-btn blog-post__share-btn--linkedin" aria-label="Share on LinkedIn" data-share="linkedin">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-            </a>
-            <a href="#" class="blog-post__share-btn blog-post__share-btn--x" aria-label="Share on X" data-share="x">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-            </a>
-            <button class="blog-post__share-btn blog-post__share-btn--copy" aria-label="Copy link" data-share="copy">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
-            </button>
+    <!-- ════════════════════════════════════════════════════════ SHARE SIDEBAR -->
+    <aside class="post-share">
+        <button class="post-share__btn" aria-label="Share on LinkedIn" data-share="linkedin"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></button>
+        <button class="post-share__btn" aria-label="Share on X" data-share="x"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></button>
+        <button class="post-share__btn" aria-label="Copy link" data-share="copy"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></button>
+    </aside>
+
+    <!-- ════════════════════════════════════════════════════════ ARTICLE BODY -->
+    <article class="post-body">
+
+        <p>Biology has a language. It's written in nucleotide sequences, expressed through protein structures, and manifested in the transcriptomic profile of every living cell. <strong>At NovaGenAI, we build custom AI models that make biology machine-readable.</strong></p>
+
+        <h2>AI Reading Biology Like Language</h2>
+
+        <p>Large language models are sequence-processing engines. They ingest ordered tokens, learn statistical relationships, and generate predictions. This architecture was designed for human language — but biology can be expressed as meaningful sequences too.</p>
+
+        <p>Pioneering research like Google's <strong>Cell2Sentence</strong> demonstrated that multi-dimensional biological data can be converted into structured sequences that LLMs can ingest and reason about. We're building on these foundations — training custom models on proprietary biological datasets to solve specific enterprise problems.</p>
+
+        <figure>
+            <img src="images/biotech-dna-computational.jpg" alt="Computational DNA analysis visualization" loading="lazy" />
+            <figcaption>AI models learning to read the language of cellular biology</figcaption>
+        </figure>
+
+        <div class="post-pull-quote">
+            "A model that understands the full multi-omics landscape can tell you not just what a cell is doing — but why."
         </div>
 
-        <div class="blog-post__content">
+        <h2>Multi-Omics: The Full Picture</h2>
 
-            <!-- Section 1: The Core Insight -->
-            <section>
-                <p class="blog-post__lede">Biology has a language. It's written in nucleotide sequences, expressed through protein structures, regulated by epigenetic marks, and manifested in the transcriptomic profile of every living cell. At NovaGenAI, we build custom AI models that make biology machine-readable.</p>
+        <p>Our models integrate multiple biological data layers: <strong>transcriptomics</strong> (gene expression), <strong>genomics</strong> (DNA sequences), <strong>epigenomics</strong> (gene regulation), <strong>proteomics</strong> (protein expression), and <strong>metabolomics</strong> (small molecule profiles).</p>
 
-                <p>For decades, the scientists who study this language relied on statistical models, manual annotation, and domain intuition to extract meaning from biological data. That era is ending. Not through traditional bioinformatics pipelines, but through the same class of large language models that have transformed how machines process human language.</p>
-            </section>
+        <p>The relationships <em>between</em> these layers — how epigenetic state influences transcription, how transcription drives protein expression — are precisely the kind of complex dependencies that transformer architectures excel at modelling.</p>
 
-            <!-- Section 2: How Can AI Read Biology Like Language? -->
-            <section>
-                <h2>How Can AI Models Read Biological Data Like Human Language?</h2>
+        <figure>
+            <img src="images/biotech-in-silico.jpg" alt="In-silico biological modelling" loading="lazy" />
+            <figcaption>In-silico modelling accelerates drug discovery by orders of magnitude</figcaption>
+        </figure>
 
-                <p>Large language models are sequence-processing engines. They ingest ordered tokens, learn statistical relationships between them, and generate predictions. This architecture was designed for human language, but language isn't the only system that can be expressed as meaningful sequences.</p>
+        <h2>Why Stem Cells Are Ideal Training Data</h2>
 
-                <p>A single human cell contains a transcriptomic profile — a quantitative record of which genes are active and at what levels. This profile can include expression data for over 20,000 genes. It defines the cell's identity, its state, its trajectory, and its potential.</p>
+        <p>Stem cells are uniquely information-rich. They exist in dynamic states — proliferating, differentiating, responding to signals, making fate decisions. A single culture can produce thousands of distinct cellular states, creating an extraordinarily rich training corpus.</p>
 
-                <p>Pioneering research like Google's Cell2Sentence has demonstrated that multi-dimensional biological data can be converted into structured sequences that large language models can ingest, learn from, and reason about. We're building on these foundations — <strong>training custom models on proprietary biological datasets</strong> to solve specific enterprise problems.</p>
+        <p>Where a static tissue sample gives you a snapshot, stem cell data gives you <strong>narratives</strong> — trajectories of cellular change the model can learn to predict.</p>
 
-                <p>The conversion isn't trivial. Raw gene expression data is high-dimensional, sparse, and noisy. Our models apply transformations that preserve biological relationships while producing sequences with the statistical properties that make LLM training effective. The result: AI models that have learned to "read" cells the way GPT learned to read English.</p>
-            </section>
-
-            <!-- Section 3: Multi-Omics -->
-            <section>
-                <h2>What Is Multi-Omics AI and Why Does It Matter?</h2>
-
-                <p>Our first-generation models focus on transcriptomics — gene expression data from single-cell RNA sequencing. This alone opens significant capabilities: cell type classification, state prediction, and perturbation response modelling.</p>
-
-                <p>But a cell's identity isn't defined by transcriptomics alone. We're extending our models to integrate multiple omics layers:</p>
-
-                <ul>
-                    <li><strong>Genomics</strong> — DNA sequences and structural variants</li>
-                    <li><strong>Epigenomics</strong> — chemical modifications regulating gene activity</li>
-                    <li><strong>Proteomics</strong> — the protein expression landscape</li>
-                    <li><strong>Metabolomics</strong> — small molecule profiles reflecting biochemical activity</li>
-                </ul>
-
-                <p>The relationships <em>between</em> layers — how epigenetic state influences transcription, how transcription drives protein expression — are precisely the kind of complex, contextual dependencies that transformer architectures excel at modelling.</p>
-
-                <p>A model that understands only transcriptomics can tell you what a cell is doing. A model that understands the full multi-omics landscape can tell you <em>why</em> — and predict what it will do next.</p>
-            </section>
-
-            <!-- Section 4: Why Stem Cells -->
-            <section>
-                <h2>Why Are Stem Cells the Ideal Training Data for Biological AI?</h2>
-
-                <p>Our primary data domain is stem cell biology, and this choice is deliberate. Stem cells are uniquely information-rich. They exist in dynamic states — proliferating, differentiating, responding to signals, making fate decisions. A single stem cell culture can produce thousands of distinct cellular states.</p>
-
-                <p>This dynamism creates an extraordinarily rich training corpus for language models. Where a static tissue sample gives you a snapshot, stem cell data gives you narratives — trajectories of cellular change that the model can learn to predict.</p>
-
-                <p>The practical applications are immediate:</p>
-
-                <h3>How Does AI Transform Cord Blood and Tissue Banking?</h3>
-                <p>Understanding stem cell quality, potency, and differentiation potential at the molecular level — through AI rather than slow, expensive functional assays — transforms how these materials are characterised, stored, and matched to therapeutic applications. Clients like CryoCord, one of NovaGenAI's customers, benefit from these capabilities directly.</p>
-
-                <h3>What Role Does AI Play in Regenerative Medicine?</h3>
-                <p>Predicting differentiation outcomes from early molecular signatures means identifying which culture conditions will produce the desired result before committing weeks of laboratory time. This accelerates research cycles dramatically.</p>
-
-                <h3>Can AI Enable In-Silico Disease Modelling?</h3>
-                <p>Patient-derived stem cells can be profiled and their responses to perturbations predicted <em>in silico</em> — computationally — before a single compound is pipetted. This reduces experimental costs and accelerates the path from hypothesis to validation.</p>
-            </section>
-
-            <!-- Section 5: Drug Discovery -->
-            <section>
-                <h2>How Does AI Accelerate Drug Discovery?</h2>
-
-                <p>The pharmaceutical industry spends an average of <strong>$2.6 billion and 10 to 15 years</strong> to bring a single drug to market. The majority of that cost is failure. Our models attack this failure rate at its root.</p>
-
-                <p>A model that has learned the language of cellular biology can predict how cells will respond to novel compounds without running physical experiments. It can screen millions of potential drug candidates in hours rather than months. It can identify off-target effects by modelling the full downstream biological cascade.</p>
-
-                <p>This isn't a replacement for wet lab biology. No computational model eliminates the need for physical validation. But it's a radical acceleration of the discovery funnel — entering the laboratory with higher-confidence candidates and fewer dead ends.</p>
-
-                <p>If our models reduce the failure rate of preclinical candidates by even a modest percentage, the savings per successful drug are measured in <strong>hundreds of millions of dollars</strong>.</p>
-            </section>
-
-            <!-- Section 6: Infrastructure -->
-            <section>
-                <h2>What Infrastructure Powers Biological AI at Scale?</h2>
-
-                <p>The same hardware that powers frontier language models — GPU clusters, high-bandwidth memory architectures, distributed training frameworks — is now available for biological sequence modelling. We train our models on NVIDIA infrastructure, leveraging the full ecosystem: <strong>NeMo</strong> for model training and customisation, <strong>CUDA</strong> for GPU-accelerated compute, <strong>TensorRT</strong> for optimised inference, <strong>Triton</strong> for scalable model serving, and <strong>RAPIDS</strong> for accelerated data processing pipelines.</p>
-
-                <p>NovaGenAI operates at the intersection of two worlds. We have deep partnerships with NVIDIA for compute infrastructure, with Anthropic and OpenAI for foundational model research, and with Google Cloud for scalable data processing. We also work directly with stem cell laboratories and biobanks, giving us access to high-quality, clinically annotated biological data.</p>
-
-                <p>This dual positioning — feet in both the AI infrastructure world and the biological research world — is the entire thesis of the company. We deploy across cloud, on-premise, and hybrid configurations depending on the sensitivity of the data and the requirements of the client.</p>
-            </section>
-
-            <!-- Section 7: What We Are Not Claiming -->
-            <section>
-                <h2>What Are the Limitations of Biological AI Models?</h2>
-
-                <p>Scientific integrity demands precision. Our models are <strong>not</strong> diagnostic tools. They don't make clinical decisions. They're not replacements for clinical trials, regulatory approval, or physician expertise.</p>
-
-                <p>They are research platforms — new ways of representing and reasoning about biological data that accelerate discovery and improve prediction accuracy. Their outputs are hypotheses to be tested, not conclusions to act on without validation.</p>
-            </section>
-
-            <!-- Section 8: Road Ahead -->
-            <section>
-                <h2>What's Next for NovaGenAI's Computational Biotech Platform?</h2>
-
-                <p>Our current models demonstrate strong performance on cell type classification, perturbation prediction, and cross-tissue generalisation. Over the next 12 months, we will:</p>
-
-                <ul>
-                    <li>Scale training to larger and more diverse multi-omics datasets</li>
-                    <li>Publish benchmark results against established computational biology methods</li>
-                    <li>Deploy inference capabilities to partner laboratories for validation</li>
-                    <li>Extend the framework to additional biological domains</li>
-                </ul>
-
-                <p><strong>We're building at the frontier of two fields simultaneously — and that's exactly where the most important work happens.</strong></p>
-            </section>
-
-            <!-- CTA -->
-            <section class="blog-post__cta">
-                <h2>Interested in Computational Biotech or Partnership Opportunities?</h2>
-                <p>NovaGenAI is a computational biotech and enterprise AI company operating across Malaysia, Singapore, and Australia. We build custom AI models for biological data, enterprise voice agents, and production AI systems. Let's explore what's possible.</p>
-                <a href="../contact.html" class="blog-post__cta-btn">Get in Touch</a>
-            </section>
+        <!-- Video Embed -->
+        <div class="post-video">
+            <div class="post-video__wrapper">
+                <video preload="metadata" poster="media/poster-biotech.jpg" playsinline controls>
+                    <source src="media/computational-biotech-dna.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="post-video__caption">Computational biotech: where AI meets the building blocks of life</div>
         </div>
+
+        <h2>Accelerating Drug Discovery</h2>
+
+        <p>The pharmaceutical industry spends <strong>$2.6 billion and 10–15 years</strong> per drug. Most of that cost is failure. Our models attack the failure rate at its root.</p>
+
+        <p>A model that has learned cellular biology can predict drug responses without physical experiments — screening millions of candidates in hours, identifying off-target effects, and entering the lab with higher-confidence leads. Even a modest reduction in preclinical failure rates means <strong>hundreds of millions in savings</strong>.</p>
+
+        <figure>
+            <img src="images/biotech-stem-cell-lab.jpg" alt="Stem cell laboratory research" loading="lazy" />
+            <figcaption>From wet lab to AI lab — accelerating the path from hypothesis to validation</figcaption>
+        </figure>
+
+        <div class="post-pull-quote">
+            "We're building at the frontier of two fields simultaneously — and that's exactly where the most important work happens."
+        </div>
+
+        <h2>What We're Not Claiming</h2>
+
+        <p>Our models are <strong>not</strong> diagnostic tools. They don't make clinical decisions. They're research platforms — new ways of representing and reasoning about biological data. Their outputs are hypotheses to be tested, not conclusions to act on without validation.</p>
+
+        <figure>
+            <img src="images/biotech-computational-future.jpg" alt="The future of computational biology" loading="lazy" />
+            <figcaption>The convergence of AI and biology is just beginning</figcaption>
+        </figure>
+
+        <h2>What's Next</h2>
+
+        <p>Over the next 12 months, we will scale training to larger multi-omics datasets, publish benchmark results, deploy inference to partner laboratories, and extend the framework to additional biological domains. The future is computational — and it's closer than you think.</p>
 
         <!-- Author Bio -->
-        <aside class="blog-post__author">
-            <img src="images/don-calaki.jpg" alt="Don Calaki, CEO of NovaGenAI" class="blog-post__author-img" loading="lazy" />
-            <div class="blog-post__author-info">
-                <p class="blog-post__author-name">Don Calaki</p>
-                <p class="blog-post__author-role">CEO &amp; Founder, NovaGenAI</p>
-                <p class="blog-post__author-bio">Don leads NovaGenAI at the intersection of computational biology and enterprise AI. With operations spanning Malaysia, Singapore, and Australia, he's building a company that makes biological data machine-readable — and turns AI research into production systems that deliver results.</p>
+        <div class="post-author">
+            <img src="images/don-calaki.jpg" alt="Don Calaki" class="post-author__avatar" loading="lazy" />
+            <div class="post-author__info">
+                <p class="post-author__name">Don Calaki</p>
+                <p class="post-author__title">CEO & Founder, NovaGenAI</p>
+                <p class="post-author__bio">Don leads NovaGenAI at the intersection of computational biology and enterprise AI. With operations spanning Malaysia, Singapore, and Australia, he's building a company that makes biological data machine-readable.</p>
             </div>
-        </aside>
+        </div>
 
-        <!-- FAQ Accordion -->
-        <section class="blog-post__faq">
-            <h2>Frequently Asked Questions</h2>
-            <div class="blog-post__faq-list">
-                <div class="blog-post__faq-item" onclick="this.classList.toggle('blog-post__faq-item--open')">
-                    <div class="blog-post__faq-question">
-                        <span>How can AI models read biological data like human language?</span>
-                        <svg class="blog-post__faq-icon" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </div>
-                    <div class="blog-post__faq-answer"><p>Large language models are sequence-processing engines. Biological data — gene expression profiles, protein structures, epigenetic marks — can be converted into structured sequences that LLMs can ingest and learn from. Google's Cell2Sentence research demonstrated this approach. NovaGenAI builds custom models trained on proprietary biological datasets to solve specific enterprise problems.</p></div>
-                </div>
-                <div class="blog-post__faq-item" onclick="this.classList.toggle('blog-post__faq-item--open')">
-                    <div class="blog-post__faq-question">
-                        <span>What is Cell2Sentence and how does NovaGenAI use it?</span>
-                        <svg class="blog-post__faq-icon" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </div>
-                    <div class="blog-post__faq-answer"><p>Cell2Sentence is Google's research demonstrating that multi-dimensional biological data can be converted into structured sequences for LLM processing. NovaGenAI builds on these foundations by training custom models on proprietary biological datasets from stem cell laboratories and biobanks to solve specific problems in drug discovery and personalised medicine.</p></div>
-                </div>
-                <div class="blog-post__faq-item" onclick="this.classList.toggle('blog-post__faq-item--open')">
-                    <div class="blog-post__faq-question">
-                        <span>How does AI accelerate drug discovery?</span>
-                        <svg class="blog-post__faq-icon" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </div>
-                    <div class="blog-post__faq-answer"><p>AI models that have learned cellular biology can predict how cells respond to novel compounds without physical experiments. They screen millions of candidates in hours rather than months and identify off-target effects — potentially saving hundreds of millions per successful drug.</p></div>
-                </div>
-                <div class="blog-post__faq-item" onclick="this.classList.toggle('blog-post__faq-item--open')">
-                    <div class="blog-post__faq-question">
-                        <span>What biological data types can NovaGenAI's models process?</span>
-                        <svg class="blog-post__faq-icon" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </div>
-                    <div class="blog-post__faq-answer"><p>Our models process multiple omics layers: transcriptomics (gene expression), genomics (DNA sequences), epigenomics (gene regulation), proteomics (protein expression), and metabolomics (small molecule profiles). Multi-omics integration predicts not just what a cell is doing, but why.</p></div>
-                </div>
-                <div class="blog-post__faq-item" onclick="this.classList.toggle('blog-post__faq-item--open')">
-                    <div class="blog-post__faq-question">
-                        <span>Is NovaGenAI's AI a diagnostic or clinical tool?</span>
-                        <svg class="blog-post__faq-icon" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </div>
-                    <div class="blog-post__faq-answer"><p>No. Our models are research platforms that accelerate discovery and improve prediction accuracy. They are not diagnostic tools, clinical decision-makers, or replacements for clinical trials and regulatory approval. Their outputs are hypotheses to be tested, not conclusions to act on without validation.</p></div>
-                </div>
-            </div>
-        </section>
+        <!-- FAQ Section -->
+        <div class="post-faq">
+            <h2 class="post-faq__title">Frequently Asked Questions</h2>
 
-        <!-- Related Posts -->
-        <section class="blog-post__related">
-            <h2>Related Articles</h2>
-            <div class="blog-post__related-grid">
-                <a href="why-on-premise-ai-matters.html" class="blog-post__related-card">
-                    <img src="images/on-premise-ai-thumb.jpg" alt="On-Premise AI for Regulated Industries" loading="lazy" />
-                    <div class="blog-post__related-content">
-                        <span class="blog-post__related-category">Enterprise AI</span>
-                        <h3>Why On-Premise AI Matters for Regulated Industries</h3>
-                        <time datetime="2026-02-28">February 28, 2026</time>
-                    </div>
-                </a>
-                <a href="novagenai-launch-video.html" class="blog-post__related-card">
-                    <img src="images/launch-video-thumb.jpg" alt="NovaGenAI Launch" loading="lazy" />
-                    <div class="blog-post__related-content">
-                        <span class="blog-post__related-category">Company News</span>
-                        <h3>Watch: NovaGenAI — The Future of Enterprise AI</h3>
-                        <time datetime="2026-02-28">February 28, 2026</time>
-                    </div>
-                </a>
+            <div class="faq-item">
+                <button class="faq-item__question" onclick="this.parentElement.classList.toggle('open')">
+                    <span>How can AI models read biological data like human language?</span>
+                    <span class="faq-item__icon"></span>
+                </button>
+                <div class="faq-item__answer">
+                    <div class="faq-item__answer-inner">Biological data — gene expression, protein structures, epigenetic marks — can be converted into structured sequences that LLMs ingest and learn from. Google's Cell2Sentence research demonstrated this. NovaGenAI builds custom models on proprietary biological datasets.</div>
+                </div>
             </div>
-        </section>
+
+            <div class="faq-item">
+                <button class="faq-item__question" onclick="this.parentElement.classList.toggle('open')">
+                    <span>How does AI accelerate drug discovery?</span>
+                    <span class="faq-item__icon"></span>
+                </button>
+                <div class="faq-item__answer">
+                    <div class="faq-item__answer-inner">AI models predict how cells respond to novel compounds without physical experiments, screening millions of candidates in hours and identifying off-target effects — potentially saving hundreds of millions per successful drug.</div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-item__question" onclick="this.parentElement.classList.toggle('open')">
+                    <span>What biological data types can NovaGenAI's models process?</span>
+                    <span class="faq-item__icon"></span>
+                </button>
+                <div class="faq-item__answer">
+                    <div class="faq-item__answer-inner">Multiple omics layers: transcriptomics, genomics, epigenomics, proteomics, and metabolomics. Multi-omics integration predicts not just what a cell is doing, but why.</div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-item__question" onclick="this.parentElement.classList.toggle('open')">
+                    <span>Is NovaGenAI's AI a diagnostic or clinical tool?</span>
+                    <span class="faq-item__icon"></span>
+                </button>
+                <div class="faq-item__answer">
+                    <div class="faq-item__answer-inner">No. Our models are research platforms that accelerate discovery. They are not diagnostic tools or replacements for clinical trials and regulatory approval.</div>
+                </div>
+            </div>
+        </div>
+
     </article>
+
+    <!-- ════════════════════════════════════════════════════════ MOBILE SHARE -->
+    <div class="post-share-mobile">
+        <button class="post-share__btn" aria-label="Share on LinkedIn" data-share="linkedin"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></button>
+        <button class="post-share__btn" aria-label="Share on X" data-share="x"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></button>
+        <button class="post-share__btn" aria-label="Copy link" data-share="copy"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></button>
+    </div>
+
+    <!-- ════════════════════════════════════════════════════════ RELATED -->
+    <section class="post-related">
+        <div class="post-related__container">
+            <h2 class="post-related__heading">Related Articles</h2>
+            <div class="post-related__grid">
+                <a href="why-on-premise-ai-matters.html" class="blog-card visible">
+                    <div class="blog-card__image"><img src="images/on-premise-nvidia-dgx.jpg" alt="On-Premise AI" loading="lazy" /></div>
+                    <div class="blog-card__body">
+                        <span class="blog-card__category">Enterprise AI</span>
+                        <h3 class="blog-card__title">Why On-Premise AI Matters for Regulated Industries</h3>
+                        <div class="blog-card__meta"><span class="blog-card__date-read">Feb 28, 2026 · 7 min</span></div>
+                    </div>
+                </a>
+                <a href="novagenai-vision-2026.html" class="blog-card visible">
+                    <div class="blog-card__image"><img src="images/vision-neural-city.jpg" alt="NovaGenAI Vision 2026" loading="lazy" /></div>
+                    <div class="blog-card__body">
+                        <span class="blog-card__category">Company Vision</span>
+                        <h3 class="blog-card__title">The NovaGenAI Vision: Building the Future of Enterprise AI</h3>
+                        <div class="blog-card__meta"><span class="blog-card__date-read">Feb 28, 2026 · 4 min</span></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
 
     <!-- ════════════════════════════════════════════════════════ FOOTER -->
     <footer class="footer">

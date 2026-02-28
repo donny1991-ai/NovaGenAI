@@ -116,7 +116,7 @@
 <body>
 
     <!-- Reading Progress Bar -->
-    <div class="reading-progress" id="reading-progress"></div>
+    <div class="blog-progress" id="reading-progress"></div>
 
     <!-- ════════════════════════════════════════════════════════ NAV -->
     <header class="nav" id="nav">
@@ -174,239 +174,211 @@
         </div>
     </header>
 
-    <!-- ════════════════════════════════════════════════════════ ARTICLE -->
-    <article class="blog-post">
-        <header class="blog-post__header">
-            <div class="blog-post__meta">
-                <span class="blog-post__category">Enterprise AI</span>
-                <time class="blog-post__date" datetime="2026-02-28">February 28, 2026</time>
-                <span class="blog-post__read-time">10 min read</span>
+    <!-- ════════════════════════════════════════════════════════ HERO -->
+    <section class="post-hero">
+        <div class="post-hero__bg">
+            <img src="images/on-premise-nvidia-dgx.jpg" alt="NVIDIA DGX enterprise AI hardware with NovaGenAI branding" loading="eager" />
+        </div>
+        <div class="post-hero__content">
+            <span class="post-hero__category">Enterprise AI</span>
+            <h1 class="post-hero__title">Why On-Premise AI Matters for Regulated Industries</h1>
+            <div class="post-hero__meta">
+                <img src="images/don-calaki.jpg" alt="Don Calaki" class="post-hero__avatar" />
+                <span class="post-hero__author-name">Don Calaki</span>
+                <span class="post-hero__sep"></span>
+                <time datetime="2026-02-28">February 28, 2026</time>
+                <span class="post-hero__sep"></span>
+                <span>7 min read</span>
             </div>
-            <h1 class="blog-post__title">Why On-Premise AI Matters for Regulated Industries</h1>
-            <p class="blog-post__subtitle">Every enterprise wants AI. Not every enterprise can afford to send its most sensitive data to someone else's server. Here's why the infrastructure shift is happening now.</p>
-            <figure class="blog-post__hero-image">
-                <img src="images/on-premise-ai-hero.jpg" alt="Secure on-premise AI server infrastructure with NVIDIA DGX Spark in a regulated enterprise environment" loading="eager" />
-            </figure>
-        </header>
+        </div>
+    </section>
 
-        <!-- Social Share Buttons -->
-        <div class="blog-post__share">
-            <span class="blog-post__share-label">Share</span>
-            <a href="#" class="blog-post__share-btn blog-post__share-btn--linkedin" aria-label="Share on LinkedIn" data-share="linkedin">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-            </a>
-            <a href="#" class="blog-post__share-btn blog-post__share-btn--x" aria-label="Share on X" data-share="x">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-            </a>
-            <button class="blog-post__share-btn blog-post__share-btn--copy" aria-label="Copy link" data-share="copy">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
-            </button>
+    <!-- ════════════════════════════════════════════════════════ SHARE SIDEBAR -->
+    <aside class="post-share">
+        <button class="post-share__btn" aria-label="Share on LinkedIn" data-share="linkedin"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></button>
+        <button class="post-share__btn" aria-label="Share on X" data-share="x"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></button>
+        <button class="post-share__btn" aria-label="Copy link" data-share="copy"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></button>
+    </aside>
+
+    <!-- ════════════════════════════════════════════════════════ ARTICLE BODY -->
+    <article class="post-body">
+
+        <p>Every enterprise wants AI. Not every enterprise can send its most sensitive data to someone else's server. <strong>The future belongs to organisations that deploy AI where it matters most</strong> — on-premise, in the cloud, or in hybrid configurations tailored to their regulatory reality.</p>
+
+        <h2>The Data Sovereignty Problem</h2>
+
+        <p>When a hospital deploys a cloud AI assistant, every patient query leaves the building. Every name, diagnosis, and genomic marker travels to a data centre that may sit in another jurisdiction entirely.</p>
+
+        <p>For regulated industries, this is an existential risk. Malaysia's PDPA, Singapore's PDPA, Australia's Privacy Act, and the EU AI Act all impose strict obligations on data processing and transfer.</p>
+
+        <figure>
+            <img src="images/on-premise-data-sovereignty.jpg" alt="Data sovereignty visualization" loading="lazy" />
+            <figcaption>Data sovereignty isn't optional — it's the law</figcaption>
+        </figure>
+
+        <div class="post-pull-quote">
+            "The question is no longer whether AI will transform these industries. The question is where the computation happens."
         </div>
 
-        <div class="blog-post__content">
+        <h2>Three Sectors That Can't Compromise</h2>
 
-            <!-- Section 1: The Tension -->
-            <section>
-                <p class="blog-post__lede">The tension between the transformative potential of large language models and the non-negotiable requirements of data sovereignty defines the current moment for healthcare systems, financial institutions, and defence organisations across Southeast Asia and beyond.</p>
+        <p><strong>Healthcare</strong> generates the most sensitive data on earth — patient records, genomic sequences, treatment histories. AI delivers compelling value here, but cloud forces an impossible choice: adopt AI and accept regulatory risk, or maintain compliance and fall behind.</p>
 
-                <p>The cloud was the answer for the last decade. It is not the answer for the next one — at least not on its own. The future belongs to organisations that can deploy AI where it matters most: on-premise, in the cloud, or in hybrid configurations tailored to their regulatory reality.</p>
-            </section>
+        <p><strong>Financial services</strong> across ASEAN hold data that's both commercially sensitive and personally identifiable. Regulators are increasingly explicit: data residency requirements are tightening.</p>
 
-            <!-- Section 2: The Sovereignty Problem -->
-            <section>
-                <h2>Why Is Data Sovereignty the Defining Challenge for Enterprise AI?</h2>
+        <p><strong>Defence and national security</strong> demand air-gapped environments by definition. What's changed is the capability now available within those environments.</p>
 
-                <p>When a hospital deploys a cloud-based AI assistant to help clinicians interpret patient records, every query leaves the building. Every patient name, every diagnosis, every genomic marker travels across a network to a data centre that may sit in another jurisdiction entirely.</p>
+        <figure>
+            <img src="images/on-premise-airgap-security.jpg" alt="Air-gapped security infrastructure" loading="lazy" />
+            <figcaption>Air-gapped AI: full capability, zero exposure</figcaption>
+        </figure>
 
-                <p>For most consumer applications, this is an acceptable trade-off. For regulated industries, it is an existential risk.</p>
+        <h2>The DGX Spark Inflection Point</h2>
 
-                <p>Malaysia's Personal Data Protection Act (PDPA) imposes strict obligations on the processing and transfer of personal data. Singapore's PDPA carries similar weight. Australia's Privacy Act — currently undergoing its most significant reform in decades — is tightening controls on cross-border data flows. The European Union's AI Act layers additional compliance burdens on any system processing sensitive personal information.</p>
+        <p>NVIDIA's DGX Spark changes everything. <strong>1 petaflop of AI compute. 128GB unified memory.</strong> Fits on a desk. Runs on standard power. No specialised cooling required.</p>
 
-                <p>These are not theoretical constraints. They are operational realities that determine what technology regulated organisations can legally deploy. The question is no longer <em>whether</em> AI will transform these industries. The question is <em>where the computation happens</em>.</p>
-            </section>
+        <ul>
+            <li><strong>A hospital</strong> can deploy clinical AI with zero external data transmission</li>
+            <li><strong>A bank</strong> can run fraud detection on-site with full regulatory compliance</li>
+            <li><strong>A defence installation</strong> can operate air-gapped AI with cloud-scale capabilities</li>
+        </ul>
 
-            <!-- Section 3: Three Sectors -->
-            <section>
-                <h2>Which Industries Cannot Compromise on Data Location?</h2>
+        <p>This is not a compromise. This is full-capability AI, deployed where the data lives.</p>
 
-                <h3>Why Does Healthcare Need On-Premise AI?</h3>
-
-                <p>Healthcare generates some of the most sensitive data on earth — patient records, diagnostic imaging, genomic sequences, treatment histories. This information is protected by law in every jurisdiction where modern medicine is practised.</p>
-
-                <p>Yet healthcare is also where AI delivers its most compelling value: diagnostic assistance, drug interaction analysis, clinical trial matching, and administrative automation. The use cases are proven and the ROI is measurable.</p>
-
-                <p>Cloud-based AI forces healthcare organisations into an impossible choice: adopt transformative technology and accept regulatory risk, or maintain compliance and fall behind. On-premise AI eliminates that choice entirely. The data never leaves the facility. The models run where the patients are.</p>
-
-                <h3>How Does On-Premise AI Solve Financial Services Compliance?</h3>
-
-                <p>Banks and insurers across ASEAN hold data that is both commercially sensitive and personally identifiable. Transaction histories, credit assessments, fraud detection models, customer profiling — all subject to regulatory oversight from Bank Negara Malaysia, the Monetary Authority of Singapore, and their equivalents across the region.</p>
-
-                <p>Financial regulators are increasingly explicit: data residency requirements are tightening, audit trails must be demonstrable, and model decisions must be explainable within the jurisdiction where they are made. On-premise AI gives financial institutions the ability to run sophisticated models — risk scoring, anomaly detection, natural language processing — without exposing regulated data to third-party infrastructure.</p>
-
-                <h3>What About Defence and National Security?</h3>
-
-                <p>Classified information cannot traverse public cloud infrastructure. Intelligence analysis, logistics optimisation, communications processing, and strategic modelling demand air-gapped environments by definition. What has changed is the capability available within those environments. Until recently, air-gapped AI meant limited models on constrained hardware. That limitation has been removed.</p>
-            </section>
-
-            <!-- Section 4: Hardware Inflection -->
-            <section>
-                <h2>What Makes NVIDIA DGX Spark a Game-Changer for On-Premise AI?</h2>
-
-                <p>The reason on-premise AI was impractical for most organisations until now was simple: the hardware didn't exist at the right scale. Running frontier-class models required data centre infrastructure — racks of GPUs, specialised cooling, dedicated engineering teams.</p>
-
-                <p>NVIDIA's DGX Spark changes the calculus entirely. A single DGX Spark unit delivers up to <strong>1 petaflop of AI compute</strong> with <strong>128GB of unified memory</strong> — enough to run, fine-tune, and serve large language models locally. It fits on a desk. It runs on standard power. It requires no specialised cooling.</p>
-
-                <p>The implications are transformative:</p>
-
-                <ul>
-                    <li><strong>A hospital</strong> can deploy a clinical AI assistant that processes patient data entirely within its own network, with zero external data transmission.</li>
-                    <li><strong>A bank</strong> can run fraud detection and customer intelligence models on-site, maintaining full regulatory compliance without sacrificing model sophistication.</li>
-                    <li><strong>A defence installation</strong> can operate air-gapped AI systems with capabilities that previously required cloud-scale infrastructure.</li>
-                </ul>
-
-                <p>This is not a compromise. This is full-capability AI, deployed where the data lives.</p>
-            </section>
-
-            <!-- Section 5: Full Stack -->
-            <section>
-                <h2>What Does a Complete On-Premise AI Stack Look Like?</h2>
-
-                <p>Hardware alone does not solve the problem. An NVIDIA DGX Spark sitting in a server room is a powerful machine. An NVIDIA DGX Spark integrated into an enterprise AI stack is a transformation engine. Here's what a production deployment requires:</p>
-
-                <h3>Custom Language Models</h3>
-                <p>Not every organisation needs a 70-billion-parameter general-purpose model. Purpose-built models, fine-tuned on domain-specific data, deliver superior performance at lower computational cost. A healthcare LLM trained on clinical literature and local treatment protocols will outperform a general model on every relevant metric.</p>
-
-                <h3>RAG Document Intelligence</h3>
-                <p>Retrieval-Augmented Generation allows models to query live document repositories — policy manuals, regulatory filings, clinical guidelines, internal knowledge bases — without retraining. This keeps the model current and grounded in organisational knowledge, all within the on-premise environment.</p>
-
-                <h3>Inference Optimisation with the Full NVIDIA Ecosystem</h3>
-                <p>Running models efficiently on local hardware requires careful optimisation — quantisation, batching strategies, memory management. NovaGenAI leverages the complete NVIDIA software ecosystem: <strong>NeMo</strong> for model training, <strong>NIM</strong> for optimised inference microservices, <strong>CUDA</strong> for GPU acceleration, <strong>TensorRT</strong> for inference optimisation, <strong>Triton</strong> for model serving, and <strong>RAPIDS</strong> for accelerated data processing. The difference between a well-optimised deployment and a naive one can be an order of magnitude in throughput.</p>
-
-                <h3>Security Architecture</h3>
-                <p>On-premise does not automatically mean secure. Network segmentation, access controls, audit logging, encryption at rest and in transit — the security layer must be designed with the same rigour as the AI layer.</p>
-
-                <h3>Monitoring and Governance</h3>
-                <p>Regulated industries need to demonstrate not just that their AI is compliant today, but that it remains compliant over time. Model drift detection, output monitoring, and governance dashboards are essential components of any production deployment.</p>
-
-                <p>NovaGenAI delivers this complete stack. We partner with NVIDIA on hardware, and we build everything above it: the models, the retrieval systems, the optimisation layer, the security architecture, and the governance framework. Our deployments span healthcare, financial services, and government clients across Malaysia, Singapore, and Australia — on-premise, cloud, or hybrid.</p>
-            </section>
-
-            <!-- Section 6: Economics -->
-            <section>
-                <h2>Is On-Premise AI More Expensive Than Cloud?</h2>
-
-                <p>The objection to on-premise AI has historically been cost. Cloud infrastructure offers elastic scaling and operational expenditure models that appeal to CFOs. That argument is weakening.</p>
-
-                <p>For organisations running AI workloads at consistent volume — which describes most enterprise deployments after the initial experimentation phase — on-premise infrastructure delivers <strong>lower total cost of ownership within 18 to 24 months</strong>. The capital expenditure is higher upfront. The ongoing costs are dramatically lower.</p>
-
-                <p>More importantly, the <em>risk-adjusted</em> cost comparison isn't close. A single data breach involving regulated personal information carries penalties, remediation costs, and reputational damage that dwarf any infrastructure savings the cloud might offer. For a healthcare provider or financial institution, the question is not whether on-premise AI costs more. The question is whether cloud AI costs more than you think.</p>
-            </section>
-
-            <!-- Section 7: Regulatory Trajectory -->
-            <section>
-                <h2>Where Is Regulation Heading — And What Does It Mean for Your AI Strategy?</h2>
-
-                <p>Every regulatory trend points in one direction: more control, more accountability, more data localisation.</p>
-
-                <p>Malaysia's PDPA is under active review with stronger enforcement mechanisms expected. Singapore continues to refine its AI governance framework. Australia's Privacy Act reforms explicitly address AI and automated decision-making. The EU's AI Act creates a compliance template that other jurisdictions are studying and adapting.</p>
-
-                <p>Organisations that build their AI infrastructure around cloud-first assumptions will find themselves repeatedly adapting to tightening regulations. Organisations that build around sovereignty-first assumptions — with the flexibility to deploy on-premise, cloud, or hybrid — will find themselves already compliant.</p>
-            </section>
-
-            <!-- Section 8: What Comes Next -->
-            <section>
-                <h2>Why Should Your Organisation Move Now?</h2>
-
-                <p>The organisations that move first on on-premise AI will compound their advantage. They will build proprietary datasets that improve their models. They will develop institutional expertise in AI deployment. They will establish compliance postures that become competitive moats.</p>
-
-                <p>The organisations that wait will face higher costs, steeper learning curves, and stricter regulatory environments when they eventually make the same move.</p>
-
-                <p><strong>The hardware is ready. The software stack is mature. The regulatory environment demands it. The only variable is timing.</strong></p>
-            </section>
-
-            <!-- CTA -->
-            <section class="blog-post__cta">
-                <h2>Ready to Explore On-Premise AI for Your Organisation?</h2>
-                <p>NovaGenAI deploys enterprise-grade AI infrastructure for regulated industries across Southeast Asia and Australia. Our solutions integrate NVIDIA DGX Spark hardware with custom language models, RAG document intelligence, and comprehensive governance frameworks — on-premise, cloud, or hybrid. Your data stays where it belongs.</p>
-                <a href="../contact.html" class="blog-post__cta-btn">Schedule an Architecture Consultation</a>
-            </section>
+        <!-- Video Embed -->
+        <div class="post-video">
+            <div class="post-video__wrapper">
+                <video preload="metadata" poster="media/poster-security.jpg" playsinline controls>
+                    <source src="media/enterprise-security-vault.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="post-video__caption">Enterprise-grade security: vault-level protection for your AI infrastructure</div>
         </div>
+
+        <h2>The Complete On-Premise Stack</h2>
+
+        <p>Hardware alone doesn't solve the problem. A production deployment requires:</p>
+
+        <ul>
+            <li><strong>Custom language models</strong> fine-tuned on domain-specific data</li>
+            <li><strong>RAG document intelligence</strong> for querying live knowledge bases</li>
+            <li><strong>Inference optimisation</strong> via the full NVIDIA stack (NeMo, NIM, CUDA, TensorRT, Triton, RAPIDS)</li>
+            <li><strong>Security architecture</strong> with encryption, access controls, and audit logging</li>
+            <li><strong>Governance dashboards</strong> for continuous compliance monitoring</li>
+        </ul>
+
+        <figure>
+            <img src="images/on-premise-secure-vault.jpg" alt="Secure vault infrastructure" loading="lazy" />
+            <figcaption>NovaGenAI delivers the complete stack — from hardware to governance</figcaption>
+        </figure>
+
+        <div class="post-pull-quote">
+            "For a healthcare provider, the question isn't whether on-premise costs more. It's whether cloud AI costs more than you think."
+        </div>
+
+        <h2>The Economics Favour On-Premise</h2>
+
+        <p>On-premise delivers <strong>lower total cost of ownership within 18–24 months</strong> for consistent AI workloads. When you factor in risk-adjusted costs of a single data breach — penalties, remediation, reputational damage — the economics aren't even close.</p>
+
+        <figure>
+            <img src="images/on-premise-dgx-sovereignty.jpg" alt="DGX Spark sovereignty deployment" loading="lazy" />
+            <figcaption>Full sovereignty, full capability — the new standard for regulated AI</figcaption>
+        </figure>
+
+        <h2>Move Now or Move Later</h2>
+
+        <p>Every regulatory trend points one direction: more control, more accountability, more data localisation. Organisations that build sovereignty-first will find themselves already compliant. Those that wait will face higher costs, steeper curves, and stricter rules.</p>
+
+        <p><strong>The hardware is ready. The software stack is mature. The regulatory environment demands it. The only variable is timing.</strong></p>
 
         <!-- Author Bio -->
-        <aside class="blog-post__author">
-            <img src="images/don-calaki.jpg" alt="Don Calaki, CEO of NovaGenAI" class="blog-post__author-img" loading="lazy" />
-            <div class="blog-post__author-info">
-                <p class="blog-post__author-name">Don Calaki</p>
-                <p class="blog-post__author-role">CEO &amp; Founder, NovaGenAI</p>
-                <p class="blog-post__author-bio">Don leads NovaGenAI's mission to build production-grade AI systems for enterprises across Southeast Asia and Australia. With deep expertise in AI infrastructure, computational biotech, and enterprise deployment, he's building the new standard for how regulated industries adopt AI.</p>
+        <div class="post-author">
+            <img src="images/don-calaki.jpg" alt="Don Calaki" class="post-author__avatar" loading="lazy" />
+            <div class="post-author__info">
+                <p class="post-author__name">Don Calaki</p>
+                <p class="post-author__title">CEO & Founder, NovaGenAI</p>
+                <p class="post-author__bio">Don leads NovaGenAI's mission to build production-grade AI systems for enterprises across Southeast Asia and Australia. Deep expertise in AI infrastructure, computational biotech, and enterprise deployment.</p>
             </div>
-        </aside>
+        </div>
 
-        <!-- FAQ Accordion -->
-        <section class="blog-post__faq">
-            <h2>Frequently Asked Questions</h2>
-            <div class="blog-post__faq-list">
-                <div class="blog-post__faq-item" onclick="this.classList.toggle('blog-post__faq-item--open')">
-                    <div class="blog-post__faq-question">
-                        <span>Why does on-premise AI matter for regulated industries?</span>
-                        <svg class="blog-post__faq-icon" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </div>
-                    <div class="blog-post__faq-answer"><p>Regulated industries like healthcare, finance, and defence handle sensitive data that cannot legally or safely leave their premises. On-premise AI enables these organisations to deploy powerful AI models while maintaining full data sovereignty and compliance with regulations like Malaysia's PDPA, Singapore's PDPA, and the EU AI Act.</p></div>
-                </div>
-                <div class="blog-post__faq-item" onclick="this.classList.toggle('blog-post__faq-item--open')">
-                    <div class="blog-post__faq-question">
-                        <span>What is NVIDIA DGX Spark and how does it enable on-premise AI?</span>
-                        <svg class="blog-post__faq-icon" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </div>
-                    <div class="blog-post__faq-answer"><p>NVIDIA DGX Spark is a compact AI supercomputer delivering up to 1 petaflop of AI compute with 128GB unified memory. It fits on a desk, runs on standard power, and enables organisations to run, fine-tune, and serve large language models locally without cloud dependency.</p></div>
-                </div>
-                <div class="blog-post__faq-item" onclick="this.classList.toggle('blog-post__faq-item--open')">
-                    <div class="blog-post__faq-question">
-                        <span>Is on-premise AI more expensive than cloud AI?</span>
-                        <svg class="blog-post__faq-icon" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </div>
-                    <div class="blog-post__faq-answer"><p>While on-premise AI has higher upfront capital expenditure, it typically delivers lower total cost of ownership within 18-24 months for organisations with consistent AI workloads. When factoring in risk-adjusted costs of potential data breaches, the economics strongly favour on-premise for regulated industries.</p></div>
-                </div>
-                <div class="blog-post__faq-item" onclick="this.classList.toggle('blog-post__faq-item--open')">
-                    <div class="blog-post__faq-question">
-                        <span>Can NovaGenAI deploy in cloud, on-premise, and hybrid configurations?</span>
-                        <svg class="blog-post__faq-icon" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </div>
-                    <div class="blog-post__faq-answer"><p>Yes. NovaGenAI deploys enterprise AI across cloud, on-premise, and hybrid infrastructure. We leverage the full NVIDIA ecosystem — NeMo, NIM, CUDA, TensorRT, Triton, and RAPIDS — alongside partnerships with Google Cloud, AWS, and Microsoft to deliver the right architecture for each client.</p></div>
-                </div>
-                <div class="blog-post__faq-item" onclick="this.classList.toggle('blog-post__faq-item--open')">
-                    <div class="blog-post__faq-question">
-                        <span>What does a complete on-premise AI stack include?</span>
-                        <svg class="blog-post__faq-icon" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </div>
-                    <div class="blog-post__faq-answer"><p>A complete deployment includes custom language models fine-tuned on domain-specific data, RAG document intelligence, inference optimisation with the full NVIDIA stack, security architecture with encryption and access controls, and continuous monitoring and governance dashboards for regulatory compliance.</p></div>
-                </div>
-            </div>
-        </section>
+        <!-- FAQ Section -->
+        <div class="post-faq">
+            <h2 class="post-faq__title">Frequently Asked Questions</h2>
 
-        <!-- Related Posts -->
-        <section class="blog-post__related">
-            <h2>Related Articles</h2>
-            <div class="blog-post__related-grid">
-                <a href="when-biology-becomes-code.html" class="blog-post__related-card">
-                    <img src="images/biology-code-thumb.jpg" alt="Custom AI Models for Biology" loading="lazy" />
-                    <div class="blog-post__related-content">
-                        <span class="blog-post__related-category">Computational Biotech</span>
-                        <h3>When Biology Becomes Code: Custom AI Models for Biological Data</h3>
-                        <time datetime="2026-02-28">February 28, 2026</time>
-                    </div>
-                </a>
-                <a href="novagenai-launch-video.html" class="blog-post__related-card">
-                    <img src="images/launch-video-thumb.jpg" alt="NovaGenAI Launch" loading="lazy" />
-                    <div class="blog-post__related-content">
-                        <span class="blog-post__related-category">Company News</span>
-                        <h3>Watch: NovaGenAI — The Future of Enterprise AI</h3>
-                        <time datetime="2026-02-28">February 28, 2026</time>
-                    </div>
-                </a>
+            <div class="faq-item">
+                <button class="faq-item__question" onclick="this.parentElement.classList.toggle('open')">
+                    <span>Why does on-premise AI matter for regulated industries?</span>
+                    <span class="faq-item__icon"></span>
+                </button>
+                <div class="faq-item__answer">
+                    <div class="faq-item__answer-inner">Regulated industries handle sensitive data that cannot legally leave their premises. On-premise AI enables powerful models while maintaining full data sovereignty and compliance with PDPA, EU AI Act, and similar regulations.</div>
+                </div>
             </div>
-        </section>
+
+            <div class="faq-item">
+                <button class="faq-item__question" onclick="this.parentElement.classList.toggle('open')">
+                    <span>What is NVIDIA DGX Spark?</span>
+                    <span class="faq-item__icon"></span>
+                </button>
+                <div class="faq-item__answer">
+                    <div class="faq-item__answer-inner">A compact AI supercomputer delivering up to 1 petaflop of compute with 128GB unified memory. Fits on a desk, runs on standard power, and enables local LLM deployment without cloud dependency.</div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-item__question" onclick="this.parentElement.classList.toggle('open')">
+                    <span>Is on-premise AI more expensive than cloud?</span>
+                    <span class="faq-item__icon"></span>
+                </button>
+                <div class="faq-item__answer">
+                    <div class="faq-item__answer-inner">Higher upfront cost, but lower total cost of ownership within 18–24 months for consistent workloads. Risk-adjusted costs (data breaches, penalties) strongly favour on-premise for regulated industries.</div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-item__question" onclick="this.parentElement.classList.toggle('open')">
+                    <span>Can NovaGenAI deploy cloud, on-premise, and hybrid?</span>
+                    <span class="faq-item__icon"></span>
+                </button>
+                <div class="faq-item__answer">
+                    <div class="faq-item__answer-inner">Yes. We deploy across all configurations using the full NVIDIA ecosystem alongside Google Cloud, AWS, and Microsoft — tailored to each client's regulatory and operational requirements.</div>
+                </div>
+            </div>
+        </div>
+
     </article>
+
+    <!-- ════════════════════════════════════════════════════════ MOBILE SHARE -->
+    <div class="post-share-mobile">
+        <button class="post-share__btn" aria-label="Share on LinkedIn" data-share="linkedin"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></button>
+        <button class="post-share__btn" aria-label="Share on X" data-share="x"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></button>
+        <button class="post-share__btn" aria-label="Copy link" data-share="copy"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></button>
+    </div>
+
+    <!-- ════════════════════════════════════════════════════════ RELATED -->
+    <section class="post-related">
+        <div class="post-related__container">
+            <h2 class="post-related__heading">Related Articles</h2>
+            <div class="post-related__grid">
+                <a href="when-biology-becomes-code.html" class="blog-card visible">
+                    <div class="blog-card__image"><img src="images/biotech-cell2sentence.jpg" alt="Computational Biotech" loading="lazy" /></div>
+                    <div class="blog-card__body">
+                        <span class="blog-card__category">Computational Biotech</span>
+                        <h3 class="blog-card__title">When Biology Becomes Code: Custom AI for Biological Data</h3>
+                        <div class="blog-card__meta"><span class="blog-card__date-read">Feb 28, 2026 · 7 min</span></div>
+                    </div>
+                </a>
+                <a href="novagenai-vision-2026.html" class="blog-card visible">
+                    <div class="blog-card__image"><img src="images/vision-neural-city.jpg" alt="NovaGenAI Vision 2026" loading="lazy" /></div>
+                    <div class="blog-card__body">
+                        <span class="blog-card__category">Company Vision</span>
+                        <h3 class="blog-card__title">The NovaGenAI Vision: Building the Future of Enterprise AI</h3>
+                        <div class="blog-card__meta"><span class="blog-card__date-read">Feb 28, 2026 · 4 min</span></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
 
     <!-- ════════════════════════════════════════════════════════ FOOTER -->
     <footer class="footer">

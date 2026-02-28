@@ -13,6 +13,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="blog.css">
     <meta property="og:type" content="article">
     <meta property="og:title" content="The NovaGenAI Vision: Building the Future of Enterprise AI">
     <meta property="og:description" content="Enterprise security. AI intelligence. Computational biotech. Watch NovaGenAI's 2026 vision come to life.">
@@ -90,55 +91,11 @@
       ]
     }
     </script>
-
-    <style>
-        /* ── Vision Post Styles ── */
-        .vision-post { max-width: 960px; margin: 0 auto; padding: 120px 24px 80px; }
-        .vision-post__badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(0,212,255,.08); border: 1px solid rgba(0,212,255,.2); border-radius: 100px; padding: 6px 16px; font-size: .75rem; font-family: 'Inter', sans-serif; color: #00D4FF; text-transform: uppercase; letter-spacing: .1em; margin-bottom: 24px; }
-        .vision-post__badge::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: #00D4FF; animation: pulse-dot 2s infinite; }
-        @keyframes pulse-dot { 0%, 100% { opacity: 1; } 50% { opacity: .3; } }
-        .vision-post__title { font-family: 'Outfit', sans-serif; font-size: clamp(2rem, 6vw, 3.5rem); font-weight: 800; line-height: 1.1; color: #fff; margin-bottom: 16px; }
-        .vision-post__title span { color: #00D4FF; }
-        .vision-post__meta { font-family: 'Inter', sans-serif; font-size: .8rem; color: rgba(255,255,255,.4); margin-bottom: 48px; }
-        .vision-post__intro { font-family: 'Inter', sans-serif; font-size: 1.1rem; line-height: 1.8; color: rgba(255,255,255,.7); margin-bottom: 64px; max-width: 680px; }
-
-        /* ── Video Player Wrapper ── */
-        .video-section { margin-bottom: 80px; }
-        .video-section__label { display: inline-block; font-family: 'Inter', sans-serif; font-size: .65rem; text-transform: uppercase; letter-spacing: .15em; color: #00D4FF; margin-bottom: 12px; padding: 4px 12px; border-left: 2px solid #00D4FF; }
-        .video-section__heading { font-family: 'Outfit', sans-serif; font-size: clamp(1.4rem, 4vw, 2rem); font-weight: 700; color: #fff; margin-bottom: 12px; }
-        .video-section__desc { font-family: 'Inter', sans-serif; font-size: .95rem; line-height: 1.7; color: rgba(255,255,255,.6); margin-bottom: 24px; max-width: 640px; }
-
-        .video-player { position: relative; border-radius: 12px; overflow: hidden; background: #111; border: 1px solid rgba(255,255,255,.06); transition: border-color .3s; }
-        .video-player:hover { border-color: rgba(0,212,255,.3); }
-        .video-player video { display: block; width: 100%; border-radius: 12px; }
-        .video-player__overlay { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,.35); cursor: pointer; transition: background .3s; }
-        .video-player__overlay:hover { background: rgba(0,0,0,.15); }
-        .video-player__overlay.hidden { display: none; }
-        .video-player__play { width: 72px; height: 72px; border-radius: 50%; background: rgba(0,212,255,.15); border: 2px solid rgba(0,212,255,.6); display: flex; align-items: center; justify-content: center; transition: transform .2s, background .2s; backdrop-filter: blur(8px); }
-        .video-player__play:hover { transform: scale(1.1); background: rgba(0,212,255,.25); }
-        .video-player__play svg { width: 28px; height: 28px; fill: #00D4FF; margin-left: 4px; }
-        .video-player__duration { position: absolute; bottom: 12px; right: 12px; background: rgba(0,0,0,.7); color: #fff; font-family: 'Inter', sans-serif; font-size: .7rem; padding: 3px 8px; border-radius: 4px; backdrop-filter: blur(4px); }
-
-        /* ── Divider ── */
-        .vision-divider { height: 1px; background: linear-gradient(90deg, transparent, rgba(0,212,255,.2), transparent); margin: 64px 0; }
-
-        /* ── FAQ Section ── */
-        .faq-section { margin-top: 80px; }
-        .faq-section__title { font-family: 'Outfit', sans-serif; font-size: 1.5rem; font-weight: 700; color: #fff; margin-bottom: 32px; }
-        .faq-item { border-bottom: 1px solid rgba(255,255,255,.06); padding: 20px 0; }
-        .faq-item__q { font-family: 'Inter', sans-serif; font-size: .95rem; font-weight: 600; color: rgba(255,255,255,.9); margin-bottom: 8px; }
-        .faq-item__a { font-family: 'Inter', sans-serif; font-size: .9rem; line-height: 1.7; color: rgba(255,255,255,.5); }
-
-        /* ── CTA ── */
-        .vision-cta { text-align: center; margin-top: 80px; padding: 48px 24px; background: linear-gradient(135deg, rgba(0,212,255,.05), rgba(212,160,23,.03)); border: 1px solid rgba(0,212,255,.1); border-radius: 16px; }
-        .vision-cta__text { font-family: 'Inter', sans-serif; font-size: 1rem; color: rgba(255,255,255,.6); margin-bottom: 20px; }
-        .vision-cta__btn { display: inline-block; padding: 14px 36px; font-family: 'Outfit', sans-serif; font-size: .9rem; font-weight: 600; color: #0a0a0a; background: #00D4FF; border-radius: 8px; text-decoration: none; transition: transform .2s, box-shadow .2s; }
-        .vision-cta__btn:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(0,212,255,.3); }
-
-        body { background: #0a0a0a; }
-    </style>
 </head>
 <body>
+
+    <!-- Reading Progress Bar -->
+    <div class="blog-progress" id="reading-progress"></div>
 
     <!-- NAV -->
     <header class="nav" id="nav">
@@ -152,9 +109,10 @@
                     <a href="../solutions.html">All Solutions</a>
                     <a href="../solutions.html#voice-agents">AI Voice Agents</a>
                     <a href="../solutions.html#clarify">Clarify Sales Platform</a>
-                    <a href="../solutions.html#cell-model">Predictive Analytics</a>
-                    <a href="../solutions.html#on-premise">On-Premise AI</a>
+                    <a href="../solutions.html#cell-model">Predictive Analytics &amp; AI Modelling</a>
+                    <a href="../solutions.html#on-premise">On-Premise AI (DGX Spark)</a>
                     <a href="../solutions.html#rag">RAG Document Intelligence</a>
+                    <a href="../solutions.html#marketing-os">Marketing OS</a>
                 </div>
             </div>
             <div class="nav__dropdown">
@@ -163,139 +121,251 @@
                     <a href="../what-are-agents.html">What Are AI Agents?</a>
                     <a href="../agents.html">Agent Platform</a>
                     <a href="../agents.html#swarms">Agent Swarms</a>
+                    <a href="../agents.html#orchestration">Multi-Agent Orchestration</a>
+                    <a href="../agents.html#org-diagram">Agents by Department</a>
+                    <a href="../agents.html#models">Our Model Stack</a>
+                    <a href="../agents.html#crm">AI-Native CRM</a>
                 </div>
             </div>
-            <a href="../technology.html">TECHNOLOGY</a>
+            <div class="nav__dropdown">
+                <a href="../technology.html" class="nav__dropdown-trigger">TECHNOLOGY</a>
+                <div class="nav__dropdown-menu">
+                    <a href="../technology.html">Overview</a>
+                    <a href="../technology.html#dgx-spark">NVIDIA DGX Spark</a>
+                    <a href="../technology.html#architecture">Architecture</a>
+                    <a href="../technology.html#security">Security &amp; Compliance</a>
+                    <a href="../agents.html#models">LLM Model Stack</a>
+                </div>
+            </div>
             <a href="../case-studies.html">CASE STUDIES</a>
+            <a href="../team.html">OUR TEAM</a>
             <a href="../about.html">ABOUT</a>
             <a href="../contact.html">CONTACT</a>
         </nav>
+        <div class="nav__social">
+            <a href="https://www.linkedin.com/company/novagenai" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+            <a href="https://x.com/Nova_GenAI" target="_blank" rel="noopener" aria-label="X"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+            <a href="https://www.youtube.com/@Nova_GenAI" target="_blank" rel="noopener" aria-label="YouTube"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+        </div>
     </header>
 
-    <!-- ARTICLE -->
-    <article class="vision-post">
-        <div class="vision-post__badge">Vision 2026</div>
-        <h1 class="vision-post__title">The NovaGenAI Vision:<br><span>Building the Future</span> of Enterprise AI</h1>
-        <p class="vision-post__meta">February 28, 2026 · NovaGenAI · 4 min read</p>
-        <p class="vision-post__intro">
-            We're building AI systems that don't just automate — they protect, reason, and transform.
-            Three pillars define our vision: impenetrable security, autonomous intelligence, and the convergence
-            of AI with life sciences. This is where we're going.
-        </p>
+    <!-- ════════════════════════════════════════════════════════ HERO -->
+    <section class="post-hero">
+        <div class="post-hero__bg">
+            <img src="images/vision-neural-city.jpg" alt="Futuristic neural city visualization representing NovaGenAI Vision 2026" loading="eager" />
+        </div>
+        <div class="post-hero__content">
+            <span class="post-hero__category">Company Vision</span>
+            <h1 class="post-hero__title">The NovaGenAI Vision: Building the Future of Enterprise AI</h1>
+            <div class="post-hero__meta">
+                <span class="post-hero__author-name">NovaGenAI</span>
+                <span class="post-hero__sep"></span>
+                <time datetime="2026-02-28">February 28, 2026</time>
+                <span class="post-hero__sep"></span>
+                <span>4 min read</span>
+            </div>
+        </div>
+    </section>
 
-        <!-- ═══ PILLAR 1: SECURITY ═══ -->
-        <section class="video-section" id="security">
-            <span class="video-section__label">Pillar I — Security</span>
-            <h2 class="video-section__heading">Enterprise-Grade AI Security</h2>
-            <p class="video-section__desc">
-                Your data is sovereign. Our AI systems deploy behind your firewall, with vault-level encryption,
-                on-premise inference via NVIDIA DGX Spark, and zero-trust architecture. No data leaves your control — ever.
-            </p>
-            <div class="video-player" id="vp-security">
-                <video preload="metadata" poster="media/poster-security.jpg" playsinline>
+    <!-- ════════════════════════════════════════════════════════ SHARE SIDEBAR -->
+    <aside class="post-share">
+        <button class="post-share__btn" aria-label="Share on LinkedIn" data-share="linkedin"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></button>
+        <button class="post-share__btn" aria-label="Share on X" data-share="x"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></button>
+        <button class="post-share__btn" aria-label="Copy link" data-share="copy"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></button>
+    </aside>
+
+    <!-- ════════════════════════════════════════════════════════ ARTICLE BODY -->
+    <article class="post-body">
+
+        <p>We're building AI systems that don't just automate — they <strong>protect, reason, and transform</strong>. Three pillars define our vision for 2026 and beyond.</p>
+
+        <h2>Pillar I — Enterprise-Grade Security</h2>
+
+        <p>Your data is sovereign. Our AI systems deploy behind your firewall, with vault-level encryption, on-premise inference via NVIDIA DGX Spark, and zero-trust architecture. <strong>No data leaves your control — ever.</strong></p>
+
+        <figure>
+            <img src="images/vision-autonomous-enterprise.jpg" alt="Autonomous enterprise AI" loading="lazy" />
+            <figcaption>AI infrastructure built for the most demanding security requirements</figcaption>
+        </figure>
+
+        <!-- Video: Security -->
+        <div class="post-video">
+            <div class="post-video__wrapper">
+                <video preload="metadata" poster="media/poster-security.jpg" playsinline controls>
                     <source src="media/enterprise-security-vault.mp4" type="video/mp4">
                 </video>
-                <div class="video-player__overlay" onclick="playVideo('vp-security')">
-                    <div class="video-player__play">
-                        <svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg>
-                    </div>
-                </div>
-                <span class="video-player__duration">0:09</span>
             </div>
-        </section>
+            <div class="post-video__caption">Enterprise security: vault-level protection for AI infrastructure</div>
+        </div>
 
-        <div class="vision-divider"></div>
+        <div class="post-pull-quote">
+            "The future belongs to organisations that deploy AI where it matters most — where the data lives."
+        </div>
 
-        <!-- ═══ PILLAR 2: INTELLIGENCE ═══ -->
-        <section class="video-section" id="intelligence">
-            <span class="video-section__label">Pillar II — Intelligence</span>
-            <h2 class="video-section__heading">Autonomous AI That Sees &amp; Reasons</h2>
-            <p class="video-section__desc">
-                Beyond simple automation. Our multi-agent swarms orchestrate dozens of specialised AI models —
-                perceiving context, reasoning through complexity, and acting with precision. The eye that never blinks.
-            </p>
-            <div class="video-player" id="vp-intelligence">
-                <video preload="metadata" poster="media/poster-intelligence.jpg" playsinline>
+        <h2>Pillar II — Autonomous Intelligence</h2>
+
+        <p>Beyond simple automation. Our multi-agent swarms orchestrate dozens of specialised AI models — perceiving context, reasoning through complexity, acting with precision.</p>
+
+        <figure>
+            <img src="images/vision-robot-human.jpg" alt="Human-AI collaboration" loading="lazy" />
+            <figcaption>The eye that never blinks — AI that sees, reasons, and acts</figcaption>
+        </figure>
+
+        <!-- Video: Intelligence -->
+        <div class="post-video">
+            <div class="post-video__wrapper">
+                <video preload="metadata" poster="media/poster-intelligence.jpg" playsinline controls>
                     <source src="media/ai-intelligence-eye.mp4" type="video/mp4">
                 </video>
-                <div class="video-player__overlay" onclick="playVideo('vp-intelligence')">
-                    <div class="video-player__play">
-                        <svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg>
-                    </div>
-                </div>
-                <span class="video-player__duration">0:09</span>
             </div>
-        </section>
+            <div class="post-video__caption">Autonomous AI: multi-agent swarms that reason and act</div>
+        </div>
 
-        <div class="vision-divider"></div>
+        <figure>
+            <img src="images/vision-ai-orchestration.jpg" alt="AI orchestration platform" loading="lazy" />
+            <figcaption>Orchestrating intelligence across the enterprise</figcaption>
+        </figure>
 
-        <!-- ═══ PILLAR 3: BIOTECH ═══ -->
-        <section class="video-section" id="biotech">
-            <span class="video-section__label">Pillar III — Computational Biotech</span>
-            <h2 class="video-section__heading">Where AI Meets Life Sciences</h2>
-            <p class="video-section__desc">
-                The next frontier isn't just digital — it's biological. We're building AI that models cellular behaviour,
-                predicts cryopreservation outcomes, and accelerates biotech research. DNA-level intelligence for the enterprise.
-            </p>
-            <div class="video-player" id="vp-biotech">
-                <video preload="metadata" poster="media/poster-biotech.jpg" playsinline>
+        <h2>Pillar III — Computational Biotech</h2>
+
+        <p>The next frontier isn't just digital — it's biological. We're building AI that models cellular behaviour, predicts cryopreservation outcomes, and accelerates biotech research. <strong>DNA-level intelligence for the enterprise.</strong></p>
+
+        <!-- Video: Biotech -->
+        <div class="post-video">
+            <div class="post-video__wrapper">
+                <video preload="metadata" poster="media/poster-biotech.jpg" playsinline controls>
                     <source src="media/computational-biotech-dna.mp4" type="video/mp4">
                 </video>
-                <div class="video-player__overlay" onclick="playVideo('vp-biotech')">
-                    <div class="video-player__play">
-                        <svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg>
-                    </div>
-                </div>
-                <span class="video-player__duration">0:11</span>
             </div>
-        </section>
-
-        <div class="vision-divider"></div>
-
-        <!-- ═══ FAQ ═══ -->
-        <section class="faq-section">
-            <h2 class="faq-section__title">Frequently Asked Questions</h2>
-            <div class="faq-item">
-                <p class="faq-item__q">What is NovaGenAI's vision for 2026?</p>
-                <p class="faq-item__a">NovaGenAI's 2026 vision centres on three pillars: enterprise-grade AI security, autonomous AI intelligence systems, and computational biotech — building AI that protects, thinks, and transforms industries.</p>
-            </div>
-            <div class="faq-item">
-                <p class="faq-item__q">How does NovaGenAI approach enterprise AI security?</p>
-                <p class="faq-item__a">We implement vault-level data protection, on-premise deployment via NVIDIA DGX Spark, encrypted model inference, and zero-trust AI architectures to ensure enterprise data never leaves your control.</p>
-            </div>
-            <div class="faq-item">
-                <p class="faq-item__q">What is computational biotech AI?</p>
-                <p class="faq-item__a">Computational biotech AI uses machine learning to model biological processes — from predicting cell viability to optimising cryopreservation protocols. NovaGenAI applies this at the intersection of AI and life sciences.</p>
-            </div>
-            <div class="faq-item">
-                <p class="faq-item__q">Where is NovaGenAI based?</p>
-                <p class="faq-item__a">NovaGenAI is headquartered in Cyberjaya, Malaysia, with operations in Australia and Singapore, serving enterprise clients across Asia-Pacific and globally.</p>
-            </div>
-        </section>
-
-        <!-- ═══ CTA ═══ -->
-        <div class="vision-cta">
-            <p class="vision-cta__text">Ready to see what enterprise AI can do for your organisation?</p>
-            <a href="../contact.html" class="vision-cta__btn">Get in Touch →</a>
+            <div class="post-video__caption">Computational biotech: where AI meets the building blocks of life</div>
         </div>
+
+        <figure>
+            <img src="images/vision-sunday-future.jpg" alt="The future of AI" loading="lazy" />
+            <figcaption>Security. Intelligence. Biology. The three pillars of NovaGenAI.</figcaption>
+        </figure>
+
+        <div class="post-pull-quote">
+            "We're not building tools. We're building the infrastructure layer for the next decade of enterprise intelligence."
+        </div>
+
+        <!-- Author Bio -->
+        <div class="post-author">
+            <img src="images/don-calaki.jpg" alt="Don Calaki" class="post-author__avatar" loading="lazy" />
+            <div class="post-author__info">
+                <p class="post-author__name">NovaGenAI Team</p>
+                <p class="post-author__title">Enterprise AI · Cyberjaya, Malaysia</p>
+                <p class="post-author__bio">NovaGenAI builds production-grade AI systems for enterprises across Asia-Pacific. Security. Intelligence. Biology. Three pillars, one mission.</p>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="post-faq">
+            <h2 class="post-faq__title">Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <button class="faq-item__question" onclick="this.parentElement.classList.toggle('open')">
+                    <span>What is NovaGenAI's vision for 2026?</span>
+                    <span class="faq-item__icon"></span>
+                </button>
+                <div class="faq-item__answer">
+                    <div class="faq-item__answer-inner">Three pillars: enterprise-grade AI security, autonomous AI intelligence systems, and computational biotech — building AI that protects, thinks, and transforms industries.</div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-item__question" onclick="this.parentElement.classList.toggle('open')">
+                    <span>How does NovaGenAI approach enterprise AI security?</span>
+                    <span class="faq-item__icon"></span>
+                </button>
+                <div class="faq-item__answer">
+                    <div class="faq-item__answer-inner">Vault-level data protection, on-premise deployment via NVIDIA DGX Spark, encrypted model inference, and zero-trust AI architectures ensure your data never leaves your control.</div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-item__question" onclick="this.parentElement.classList.toggle('open')">
+                    <span>What is computational biotech AI?</span>
+                    <span class="faq-item__icon"></span>
+                </button>
+                <div class="faq-item__answer">
+                    <div class="faq-item__answer-inner">Machine learning applied to biological processes — predicting cell viability, optimising cryopreservation, and accelerating biotech research at the intersection of AI and life sciences.</div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-item__question" onclick="this.parentElement.classList.toggle('open')">
+                    <span>Where is NovaGenAI based?</span>
+                    <span class="faq-item__icon"></span>
+                </button>
+                <div class="faq-item__answer">
+                    <div class="faq-item__answer-inner">Headquartered in Cyberjaya, Malaysia, with operations in Australia and Singapore, serving enterprise clients across Asia-Pacific and globally.</div>
+                </div>
+            </div>
+        </div>
+
     </article>
 
-    <!-- FOOTER -->
-    <footer style="text-align:center; padding:48px 24px; border-top:1px solid rgba(255,255,255,.06);">
-        <img loading="lazy" src="../images/novagenai-logo-new.png" alt="NovaGenAI" style="height:28px; margin-bottom:12px;">
-        <p style="font-family:'Inter',sans-serif; font-size:.75rem; color:rgba(255,255,255,.3);">© 2026 NovaGenAI. All rights reserved.</p>
-        <p style="font-family:'Inter',sans-serif; font-size:.65rem; color:rgba(255,255,255,.2); margin-top:4px;">Malaysia · Australia · Singapore</p>
+    <!-- ════════════════════════════════════════════════════════ MOBILE SHARE -->
+    <div class="post-share-mobile">
+        <button class="post-share__btn" aria-label="Share on LinkedIn" data-share="linkedin"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></button>
+        <button class="post-share__btn" aria-label="Share on X" data-share="x"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></button>
+        <button class="post-share__btn" aria-label="Copy link" data-share="copy"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></button>
+    </div>
+
+    <!-- ════════════════════════════════════════════════════════ RELATED -->
+    <section class="post-related">
+        <div class="post-related__container">
+            <h2 class="post-related__heading">Related Articles</h2>
+            <div class="post-related__grid">
+                <a href="when-biology-becomes-code.html" class="blog-card visible">
+                    <div class="blog-card__image"><img src="images/biotech-cell2sentence.jpg" alt="Computational Biotech" loading="lazy" /></div>
+                    <div class="blog-card__body">
+                        <span class="blog-card__category">Computational Biotech</span>
+                        <h3 class="blog-card__title">When Biology Becomes Code: Custom AI for Biological Data</h3>
+                        <div class="blog-card__meta"><span class="blog-card__date-read">Feb 28, 2026 · 7 min</span></div>
+                    </div>
+                </a>
+                <a href="why-on-premise-ai-matters.html" class="blog-card visible">
+                    <div class="blog-card__image"><img src="images/on-premise-nvidia-dgx.jpg" alt="On-Premise AI" loading="lazy" /></div>
+                    <div class="blog-card__body">
+                        <span class="blog-card__category">Enterprise AI</span>
+                        <h3 class="blog-card__title">Why On-Premise AI Matters for Regulated Industries</h3>
+                        <div class="blog-card__meta"><span class="blog-card__date-read">Feb 28, 2026 · 7 min</span></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════ FOOTER -->
+    <footer class="footer">
+        <div class="footer__inner">
+            <div class="footer__brand">
+                <span class="footer__logo">
+                    <img loading="lazy" src="../images/novagenai-logo-new.png" alt="NovaGenAI" class="footer__logo-img">
+                </span>
+                <p class="footer__tagline">Enterprise AI Systems — Asia-Pacific &amp; Global</p>
+                <p class="footer__tagline" style="margin-top:.25rem;font-size:.7rem;opacity:.6;">Malaysia · Australia · Singapore</p>
+            </div>
+            <div class="footer__links">
+                <a href="../solutions.html">Solutions</a>
+                <a href="../agents.html">Agents</a>
+                <a href="../technology.html">Technology</a>
+                <a href="../case-studies.html">Case Studies</a>
+                <a href="../team.html">Our Team</a>
+                <a href="../about.html">About</a>
+                <a href="../contact.html">Contact</a>
+            </div>
+            <div class="footer__social">
+                <a href="https://www.linkedin.com/company/novagenai" target="_blank" rel="noopener" aria-label="LinkedIn" class="footer__social-link footer__social--linkedin"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+                <a href="https://x.com/Nova_GenAI" target="_blank" rel="noopener" aria-label="X" class="footer__social-link footer__social--x"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+                <a href="https://www.youtube.com/@Nova_GenAI" target="_blank" rel="noopener" aria-label="YouTube" class="footer__social-link footer__social--youtube"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+            </div>
+            <p class="footer__copy">&copy; 2026 NovaGenAI. All rights reserved.</p>
+        </div>
     </footer>
 
-    <script>
-    function playVideo(id) {
-        const wrapper = document.getElementById(id);
-        const video = wrapper.querySelector('video');
-        const overlay = wrapper.querySelector('.video-player__overlay');
-        overlay.classList.add('hidden');
-        video.play();
-        video.setAttribute('controls', '');
-    }
-    </script>
+    <script src="blog.js"></script>
 </body>
 </html>
