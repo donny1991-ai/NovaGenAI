@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/png" sizes="64x64" href="../images/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
+    <title>AI Document Intelligence: Turning Unstructured Data into Enterprise Decisions</title>
+    <meta name="description" content="How AI document intelligence and RAG pipelines transform unstructured enterprise data — PDFs, contracts, medical records, invoices — into actionable decisions. Deep dive into vector embeddings, chunking strategies, and on-premise deployment." />
+    <meta name="keywords" content="AI document intelligence, RAG, retrieval augmented generation, unstructured data, vector embeddings, enterprise AI, document processing, OCR vs AI, NovaGenAI" />
+    <link rel="canonical" href="https://novagenai.com.my/blog/ai-document-intelligence" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="AI Document Intelligence: Turning Unstructured Data into Enterprise Decisions" />
+    <meta property="og:description" content="80% of enterprise data is unstructured. Learn how RAG pipelines and AI document intelligence turn PDFs, contracts, and medical records into actionable insights." />
+    <meta property="og:image" content="https://novagenai.com.my/blog/images/vision-ai-orchestration.jpg" />
+    <meta property="og:url" content="https://novagenai.com.my/blog/ai-document-intelligence" />
+    <meta property="og:site_name" content="NovaGenAI" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@Nova_GenAI" />
+    <meta name="twitter:title" content="AI Document Intelligence: Turning Unstructured Data into Enterprise Decisions" />
+    <meta name="twitter:description" content="80% of enterprise data is unstructured. Learn how RAG pipelines and AI document intelligence turn PDFs, contracts, and medical records into actionable insights." />
+    <meta name="twitter:image" content="https://novagenai.com.my/blog/images/vision-ai-orchestration.jpg" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="blog.css" />
+
+    <!-- Article JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "AI Document Intelligence: Turning Unstructured Data into Enterprise Decisions",
+      "author": {"@type": "Person", "name": "Don Calaki"},
+      "publisher": {
+        "@type": "Organization",
+        "name": "NovaGenAI",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://novagenai.com.my/images/logo.png"
+        }
+      },
+      "datePublished": "2026-02-28",
+      "dateModified": "2026-02-28",
+      "image": "https://novagenai.com.my/blog/images/vision-ai-orchestration.jpg",
+      "description": "How AI document intelligence and RAG pipelines transform unstructured enterprise data into actionable decisions.",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://novagenai.com.my/blog/ai-document-intelligence"
+      }
+    }
+    </script>
+
+    <!-- FAQ JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is AI document intelligence?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "AI document intelligence is a category of enterprise AI that goes beyond traditional OCR to understand, extract, and reason over unstructured documents — PDFs, contracts, emails, medical records, and invoices — using large language models, vector embeddings, and retrieval-augmented generation (RAG) pipelines."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does RAG differ from fine-tuning for enterprise documents?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "RAG retrieves relevant document chunks at query time and feeds them to the LLM as context, keeping the model's knowledge current without retraining. Fine-tuning permanently modifies model weights, requiring retraining when documents change. For dynamic enterprise document sets, RAG is more practical, cost-effective, and auditable."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can AI document intelligence be deployed on-premise?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. NovaGenAI deploys complete RAG document intelligence pipelines on-premise using NVIDIA DGX infrastructure. Documents never leave the client's network — critical for healthcare, legal, financial, and defence organisations bound by data sovereignty regulations like Malaysia's PDPA."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you prevent hallucinations in document AI?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Hallucination mitigation involves multiple strategies: grounding every response in retrieved source chunks with citations, confidence scoring and retrieval quality thresholds, answer validation against source documents, human-in-the-loop review for high-stakes decisions, and continuous evaluation benchmarks against known-good answers."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What types of documents can AI document intelligence process?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Modern AI document intelligence handles virtually any document type: PDFs, scanned images, Word documents, emails, spreadsheets, contracts, medical records, invoices, legal filings, regulatory submissions, technical manuals, and even handwritten notes — in multiple languages and formats simultaneously."
+          }
+        }
+      ]
+    }
+    </script>
+</head>
+
+<body>
+
+    <!-- Reading Progress Bar -->
+    <div class="blog-progress" id="reading-progress"></div>
+
+    <!-- ════════════════════════════════════════════════════════ NAV -->
+    <header class="nav" id="nav">
+        <a href="../index.html" class="nav__brand">
+            <img loading="lazy" src="../images/novagenai-logo-new.png" alt="NovaGenAI" class="nav__logo-img">
+        </a>
+
+        <nav class="nav__links" id="nav-links">
+            <div class="nav__dropdown">
+                <a href="../solutions.html" class="nav__dropdown-trigger">SOLUTIONS</a>
+                <div class="nav__dropdown-menu">
+                    <a href="../solutions.html">All Solutions</a>
+                    <a href="../solutions.html#voice-agents">AI Voice Agents</a>
+                    <a href="../solutions.html#clarify">Clarify Sales Platform</a>
+                    <a href="../solutions.html#cell-model">Predictive Analytics &amp; AI Modelling</a>
+                    <a href="../solutions.html#on-premise">On-Premise AI (DGX Spark)</a>
+                    <a href="../solutions.html#rag">RAG Document Intelligence</a>
+                    <a href="../solutions.html#marketing-os">Marketing OS</a>
+                </div>
+            </div>
+            <div class="nav__dropdown">
+                <a href="../agents.html" class="nav__dropdown-trigger">AGENTS</a>
+                <div class="nav__dropdown-menu">
+                    <a href="../what-are-agents.html">What Are AI Agents?</a>
+                    <a href="../agents.html">Agent Platform</a>
+                    <a href="../agents.html#swarms">Agent Swarms</a>
+                    <a href="../agents.html#orchestration">Multi-Agent Orchestration</a>
+                    <a href="../agents.html#org-diagram">Agents by Department</a>
+                    <a href="../agents.html#models">Our Model Stack</a>
+                    <a href="../agents.html#crm">AI-Native CRM</a>
+                </div>
+            </div>
+            <div class="nav__dropdown">
+                <a href="../technology.html" class="nav__dropdown-trigger">TECHNOLOGY</a>
+                <div class="nav__dropdown-menu">
+                    <a href="../technology.html">Overview</a>
+                    <a href="../technology.html#dgx-spark">NVIDIA DGX Spark</a>
+                    <a href="../technology.html#architecture">Architecture</a>
+                    <a href="../technology.html#security">Security & Compliance</a>
+                    <a href="../agents.html#models">LLM Model Stack</a>
+                </div>
+            </div>
+            <a href="../case-studies.html">CASE STUDIES</a>
+            <a href="../team.html">OUR TEAM</a>
+            <a href="../about.html">ABOUT</a>
+            <a href="../contact.html">CONTACT</a>
+        </nav>
+
+        <div class="nav__social">
+            <a href="https://www.linkedin.com/company/novagenai" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+            <a href="https://www.instagram.com/nova.genai" target="_blank" rel="noopener" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+            <a href="https://x.com/Nova_GenAI" target="_blank" rel="noopener" aria-label="X"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+            <a href="https://www.youtube.com/@Nova_GenAI" target="_blank" rel="noopener" aria-label="YouTube"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+            <a href="https://wa.me/60111401036" target="_blank" rel="noopener" aria-label="WhatsApp"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+        </div>
+    </header>
+
+    <!-- ════════════════════════════════════════════════════════ HERO -->
+    <section class="post-hero">
+        <div class="post-hero__bg">
+            <img src="images/vision-ai-orchestration.jpg" alt="AI document intelligence pipeline processing enterprise data" loading="eager" />
+        </div>
+        <div class="post-hero__content">
+            <span class="post-hero__category">Enterprise AI</span>
+            <h1 class="post-hero__title">AI Document Intelligence: Turning Unstructured Data into Enterprise Decisions</h1>
+            <div class="post-hero__meta">
+                <img src="images/don-calaki.jpg" alt="Don Calaki" class="post-hero__avatar" />
+                <span class="post-hero__author-name">Don Calaki</span>
+                <span class="post-hero__sep"></span>
+                <time datetime="2026-02-28">February 28, 2026</time>
+                <span class="post-hero__sep"></span>
+                <span>12 min read</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════ SHARE SIDEBAR -->
+    <aside class="post-share">
+        <a href="https://www.linkedin.com/company/novagenai" target="_blank" class="post-share__btn" aria-label="NovaGenAI on LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+        <a href="https://x.com/Nova_GenAI" target="_blank" class="post-share__btn" aria-label="NovaGenAI on X"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="https://www.instagram.com/nova.genai" target="_blank" class="post-share__btn" aria-label="NovaGenAI on Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+    </aside>
+
+    <!-- ════════════════════════════════════════════════════════ ARTICLE BODY -->
+    <article class="post-body">
+
+        <p>Eighty percent of enterprise data is unstructured. It lives in PDFs, email threads, scanned contracts, medical records, invoices, and regulatory filings — formats that traditional software cannot query, reason over, or act upon. <strong>This is the single largest untapped resource in every organisation</strong>, and until recently, unlocking it required armies of analysts doing manual extraction.</p>
+
+        <p>AI document intelligence changes this equation entirely. Not by digitising text — OCR has done that for decades — but by <em>understanding</em> documents the way a domain expert would: grasping context, identifying relationships, extracting structured decisions from unstructured chaos.</p>
+
+        <p>This article is the definitive guide to how it works, why it matters, and how enterprises deploy it in production — particularly in regulated industries where documents never leave the building.</p>
+
+        <h2>What Is the Difference Between Traditional OCR and AI Document Intelligence?</h2>
+
+        <p>Traditional Optical Character Recognition (OCR) converts images of text into machine-readable characters. It's been around since the 1990s and it solves exactly one problem: turning pixels into strings. OCR doesn't understand what those strings mean. It can't distinguish a contract termination clause from a payment term. It can't summarise a 200-page regulatory filing. It can't answer questions about a medical record.</p>
+
+        <p>AI document intelligence represents a fundamental architectural shift. It combines multiple AI capabilities into an integrated pipeline:</p>
+
+        <ul>
+            <li><strong>Document parsing</strong> — extracting text, tables, images, and layout structure from any format (PDF, DOCX, scanned images, emails)</li>
+            <li><strong>Semantic understanding</strong> — using large language models to comprehend meaning, context, and relationships within and across documents</li>
+            <li><strong>Information extraction</strong> — identifying entities, dates, monetary values, obligations, and structured data from unstructured text</li>
+            <li><strong>Reasoning and inference</strong> — answering complex questions that require synthesis across multiple document sections or multiple documents</li>
+            <li><strong>Action generation</strong> — triggering workflows, flagging compliance issues, generating summaries, or routing documents based on content</li>
+        </ul>
+
+        <p>The gap between OCR and AI document intelligence is the gap between a photocopier and an analyst. One reproduces; the other understands.</p>
+
+        <h2>How Does Retrieval-Augmented Generation (RAG) Work?</h2>
+
+        <p>RAG is the architectural pattern that makes enterprise document intelligence possible at scale. It solves a fundamental limitation of large language models: LLMs are trained on public data up to a cutoff date. They don't know about your contracts, your policies, your patient records, or your financial reports. RAG bridges this gap by retrieving relevant information from your documents and feeding it to the LLM at query time.</p>
+
+        <p>Here's how a production RAG pipeline works, step by step:</p>
+
+        <p><strong>Step 1: Document Ingestion and Parsing.</strong> Raw documents — PDFs, Word files, emails, scanned images — are processed through document parsers that extract clean text while preserving structure. Tables are converted to structured formats. Images are described. Headers and sections are identified. This stage uses specialised models for layout detection, table extraction, and OCR where needed.</p>
+
+        <p><strong>Step 2: Chunking.</strong> Parsed documents are split into chunks — discrete passages that each contain a coherent unit of information. Chunking strategy is critical and often underestimated. The main approaches include:</p>
+
+        <ul>
+            <li><strong>Fixed-size chunking</strong> — splitting every N tokens (simple but breaks semantic boundaries)</li>
+            <li><strong>Semantic chunking</strong> — splitting at natural topic boundaries using embedding similarity</li>
+            <li><strong>Recursive chunking</strong> — splitting hierarchically by headings, paragraphs, then sentences</li>
+            <li><strong>Document-aware chunking</strong> — respecting document structure (sections, clauses, articles) so legal and regulatory content stays intact</li>
+        </ul>
+
+        <p>Chunk size matters enormously. Too large, and retrieval returns irrelevant noise. Too small, and critical context is lost. Production systems typically use 512–1024 token chunks with 10–20% overlap, but optimal sizing depends on document type and query patterns.</p>
+
+        <p><strong>Step 3: Embedding.</strong> Each chunk is converted into a vector embedding — a high-dimensional numerical representation that captures semantic meaning. Two passages about "contract termination for breach" will have similar embeddings even if they use completely different words. Embedding models like those available through NVIDIA NeMo or open-source alternatives (e.g., BGE, E5, GTE) map text into 768–4096 dimensional vector spaces where semantic similarity corresponds to geometric proximity.</p>
+
+        <p><strong>Step 4: Vector Storage.</strong> Embeddings are stored in a vector database — purpose-built systems optimised for similarity search across millions or billions of vectors. Production options include Milvus, Qdrant, Weaviate, Chroma, and pgvector. The choice depends on scale, latency requirements, and deployment constraints (cloud vs. on-premise).</p>
+
+        <p><strong>Step 5: Retrieval.</strong> When a user asks a question, the query is embedded using the same model, and the vector database returns the most semantically similar chunks. Production systems typically use hybrid retrieval — combining dense vector search with sparse keyword matching (BM25) — to capture both semantic and lexical relevance. Re-ranking models then score the top candidates for final relevance before passing them to the LLM.</p>
+
+        <p><strong>Step 6: Generation.</strong> The retrieved chunks are inserted into the LLM's context window along with the user's question and system instructions. The LLM generates an answer grounded in the retrieved evidence, with citations pointing back to source documents and specific passages.</p>
+
+        <div class="post-pull-quote">
+            "RAG doesn't make the model smarter. It makes the model informed — with your data, your documents, your institutional knowledge."
+        </div>
+
+        <h2>Why Does RAG Beat Fine-Tuning for Enterprise Documents?</h2>
+
+        <p>This is one of the most common questions we encounter at NovaGenAI, and the answer is nuanced. RAG and fine-tuning solve different problems, but for enterprise document intelligence, RAG wins on nearly every dimension that matters.</p>
+
+        <p><strong>Currency.</strong> Enterprise documents change constantly — new contracts are signed, policies are updated, regulations are amended. RAG reflects changes immediately: ingest the new document, embed it, and it's queryable. Fine-tuning requires retraining, which takes hours to days and costs GPU compute each time. For a legal team that needs to query yesterday's contract, RAG is the only viable option.</p>
+
+        <p><strong>Auditability.</strong> RAG provides citations. Every answer points to specific source documents and passages. This is non-negotiable for regulated industries — healthcare, legal, financial services — where decisions must be traceable. Fine-tuned models produce answers from learned weights with no clear provenance trail.</p>
+
+        <p><strong>Data governance.</strong> With RAG, your documents stay in your vector database. Access controls can be applied at the document level — a user only retrieves chunks they're authorised to see. Fine-tuning bakes information into model weights, making it impossible to selectively restrict access or delete specific data points (the "right to be forgotten" problem).</p>
+
+        <p><strong>Cost.</strong> A production RAG pipeline costs a fraction of continuous fine-tuning. Embedding a new document takes seconds. Fine-tuning a 7B parameter model takes hours on enterprise GPUs. For organisations with thousands of documents changing weekly, the economics aren't even close.</p>
+
+        <p><strong>Hallucination control.</strong> RAG constrains the model's outputs to retrieved evidence. If the answer isn't in the documents, the system can say so. Fine-tuned models blend training data with the original pre-training knowledge, making hallucinations harder to detect and prevent.</p>
+
+        <p>That said, fine-tuning has its place — particularly for teaching a model domain-specific reasoning patterns, terminology, or output formats. The most effective enterprise deployments combine both: a <a href="building-custom-llms.html">fine-tuned base model</a> that understands the domain, augmented with RAG for real-time document access. NovaGenAI builds exactly this architecture for clients across healthcare, legal, and financial services.</p>
+
+        <h2>What Are the Key Enterprise Use Cases for AI Document Intelligence?</h2>
+
+        <p>Document intelligence isn't a solution looking for a problem. Every enterprise department drowns in unstructured data. Here are the use cases delivering measurable ROI today:</p>
+
+        <p><strong>Legal Contract Analysis.</strong> Law firms and corporate legal teams process thousands of contracts annually. AI document intelligence extracts key terms, identifies obligations, flags non-standard clauses, compares terms across contract portfolios, and answers natural-language questions like "Which supplier contracts expire in Q3 with auto-renewal clauses?" Tasks that took paralegals days take seconds — with citations to specific clause numbers.</p>
+
+        <p><strong>Medical Record Summarisation.</strong> A patient's medical history might span hundreds of pages across multiple providers — discharge summaries, lab results, imaging reports, specialist notes. AI document intelligence creates structured summaries, identifies medication interactions, flags missing screenings, and enables clinicians to ask "What was this patient's most recent HbA1c result and which provider ordered it?" This is transformative for continuity of care, and it's precisely the kind of application that demands <a href="voice-ai-enterprise.html">on-premise deployment</a> — patient data cannot leave hospital infrastructure.</p>
+
+        <p><strong>Financial Report Extraction.</strong> Analysts spend hours extracting data points from quarterly earnings reports, annual filings, and market research. RAG pipelines ingest these documents and answer questions like "What was Company X's EBITDA margin trend over the last four quarters?" with source citations — eliminating manual spreadsheet entry and reducing errors.</p>
+
+        <p><strong>HR Policy Q&A.</strong> Every organisation has employee handbooks, leave policies, benefits guides, and compliance manuals that employees rarely read. A RAG-powered internal assistant lets staff ask natural-language questions — "How many days of paternity leave am I entitled to?" "What's the process for reporting a workplace safety concern?" — and get instant, accurate answers with policy references.</p>
+
+        <p><strong>Compliance Monitoring.</strong> Regulated industries must continuously monitor their operations against evolving regulatory requirements. AI document intelligence can ingest regulatory updates, compare them against current policies, and flag gaps. When a new data protection guideline is published, the system identifies which internal policies need updating and what specific changes are required.</p>
+
+        <p>The pattern across all these use cases is the same: humans are doing cognitively demanding, repetitive document work that AI can do faster, more consistently, and at scale — while keeping humans in the loop for judgment calls. <a href="what-are-autonomous-ai-agents.html">Autonomous AI agents</a> can orchestrate these document intelligence pipelines end-to-end, routing documents, triggering analyses, and escalating exceptions to human reviewers.</p>
+
+        <figure>
+            <img src="images/on-premise-data-sovereignty.jpg" alt="Enterprise data sovereignty with on-premise AI document processing" loading="lazy" />
+            <figcaption>For regulated industries, document intelligence must run where the data lives</figcaption>
+        </figure>
+
+        <h2>How Do You Prevent Hallucinations in Document AI Systems?</h2>
+
+        <p>Hallucination — the model generating plausible but incorrect information — is the single biggest concern enterprise buyers raise about AI document intelligence. It's a legitimate concern. In healthcare, a hallucinated drug interaction could harm a patient. In legal, a fabricated clause reference could invalidate an argument. In finance, an incorrect figure could drive a bad investment.</p>
+
+        <p>Production-grade document intelligence systems mitigate hallucination through multiple layers:</p>
+
+        <p><strong>Retrieval quality gates.</strong> Before the LLM ever generates an answer, the retrieval pipeline scores the relevance of returned chunks. If no chunk scores above a confidence threshold, the system responds with "I don't have enough information to answer this question" rather than guessing. This is the single most effective hallucination prevention mechanism.</p>
+
+        <p><strong>Grounded generation with citations.</strong> The LLM is instructed to answer only from provided context and to cite specific source passages. Every claim in the response maps to a retrievable chunk. Users can click through to verify — and the system flags any generated text that lacks a source citation.</p>
+
+        <p><strong>Answer validation.</strong> A secondary model or rule-based system checks the generated answer against the source chunks. Does the answer contain claims not supported by the retrieved evidence? Are numerical values correctly extracted? Do date references match the source? Validation catches errors the generation model misses.</p>
+
+        <p><strong>Confidence scoring.</strong> Each answer is assigned a confidence score based on retrieval relevance, source coverage, and answer consistency. Low-confidence answers are flagged for human review rather than presented as authoritative.</p>
+
+        <p><strong>Continuous evaluation.</strong> Production systems maintain evaluation benchmarks — curated question-answer pairs with known-good answers verified by domain experts. The system is regularly tested against these benchmarks, and accuracy degradation triggers alerts. This is not a "deploy and forget" technology.</p>
+
+        <p><strong>Human-in-the-loop.</strong> For high-stakes decisions — clinical recommendations, legal opinions, financial advice — the system presents its analysis with sources, but a qualified human makes the final call. AI augments expertise; it doesn't replace judgment.</p>
+
+        <h2>What Infrastructure Does Enterprise Document Intelligence Require?</h2>
+
+        <p>A production RAG pipeline is not a weekend project. It requires purpose-built infrastructure across several layers:</p>
+
+        <p><strong>Compute.</strong> Embedding models and LLM inference require GPU acceleration. NVIDIA's ecosystem provides the foundation: <strong>CUDA</strong> for parallel computation, <strong>TensorRT</strong> for inference optimisation (delivering 2–6x speedup over unoptimised models), and <strong>Triton Inference Server</strong> for production model serving with batching, queuing, and multi-model management. For on-premise deployments, NVIDIA DGX Spark provides 1 petaflop of AI compute in a desk-side form factor.</p>
+
+        <p><strong>Vector database.</strong> At enterprise scale — millions of document chunks — the vector database must handle high-throughput queries with sub-100ms latency while supporting filtering, access controls, and real-time ingestion. This is a specialised infrastructure component, not a feature you bolt onto PostgreSQL.</p>
+
+        <p><strong>Document processing pipeline.</strong> Ingestion, parsing, chunking, embedding, and indexing must run as a reliable, observable pipeline with error handling, retry logic, and monitoring. New documents should be queryable within minutes of ingestion, not hours.</p>
+
+        <p><strong>Security and access control.</strong> Document-level permissions must propagate through the entire pipeline. If a user doesn't have access to a confidential HR document in the source system, the RAG pipeline must not retrieve chunks from that document. This requires integration with enterprise identity providers (Active Directory, SAML, OAuth) and fine-grained access control at the vector database level.</p>
+
+        <p><strong>Observability.</strong> Every query, retrieval, and generation must be logged for audit, debugging, and continuous improvement. Retrieval quality metrics, latency percentiles, and accuracy benchmarks must be tracked in real time. For regulated industries, these logs are compliance artefacts.</p>
+
+        <h2>How Does NovaGenAI Deploy Document Intelligence for Regulated Industries?</h2>
+
+        <p>NovaGenAI builds custom RAG pipelines engineered for industries where data sovereignty is non-negotiable. Our approach is defined by three principles:</p>
+
+        <p><strong>Documents never leave client infrastructure.</strong> For healthcare providers, law firms, financial institutions, and government agencies, we deploy the complete pipeline — embedding models, vector databases, LLM inference, and application layer — on-premise or in the client's private cloud. No document, no chunk, no embedding, no query ever touches external infrastructure. This isn't a preference; it's an architectural guarantee.</p>
+
+        <p><strong>Full NVIDIA ecosystem optimisation.</strong> We build on NVIDIA NeMo for model customisation, NIM for optimised inference microservices, TensorRT for inference acceleration, Triton for production serving, and RAPIDS for data preprocessing at GPU speed. This isn't using one tool — it's leveraging the entire stack for maximum performance per watt and per dollar.</p>
+
+        <p><strong>Domain-specific pipeline engineering.</strong> A medical record RAG pipeline is fundamentally different from a legal contract pipeline. Chunk strategies, embedding models, retrieval configurations, prompt engineering, and validation logic must be tuned to the specific document types, query patterns, and accuracy requirements of each domain. We don't deploy generic solutions — we engineer pipelines that domain experts trust.</p>
+
+        <p>The result: enterprise document intelligence that delivers analyst-quality insights in seconds, with full audit trails, at a fraction of the cost of manual document review — deployed exactly where each client's regulatory framework demands.</p>
+
+        <div class="post-pull-quote">
+            "The question isn't whether your organisation will adopt AI document intelligence. It's whether your competitors will adopt it first."
+        </div>
+
+        <!-- Author Bio -->
+        <div class="post-author">
+            <img src="images/don-calaki.jpg" alt="Don Calaki" class="post-author__avatar" loading="lazy" />
+            <div class="post-author__info">
+                <p class="post-author__name">Don Calaki</p>
+                <p class="post-author__title">CEO & Founder, NovaGenAI</p>
+                <p class="post-author__bio">Don leads NovaGenAI's mission to build production-grade AI systems for enterprises across Southeast Asia and Australia. Deep expertise in AI infrastructure, computational biotech, and enterprise deployment.</p>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="post-faq">
+            <h2 class="post-faq__title">Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <button class="faq-item__question">
+                    <span>What is AI document intelligence?</span>
+                    <span class="faq-item__icon"></span>
+                </button>
+                <div class="faq-item__answer">
+                    <div class="faq-item__answer-inner">AI document intelligence goes beyond traditional OCR to understand, extract, and reason over unstructured documents — PDFs, contracts, emails, medical records, and invoices — using large language models, vector embeddings, and retrieval-augmented generation (RAG) pipelines.</div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-item__question">
+                    <span>How does RAG differ from fine-tuning for enterprise documents?</span>
+                    <span class="faq-item__icon"></span>
+                </button>
+                <div class="faq-item__answer">
+                    <div class="faq-item__answer-inner">RAG retrieves relevant document chunks at query time and feeds them to the LLM as context, keeping knowledge current without retraining. Fine-tuning modifies model weights, requiring retraining when documents change. For dynamic enterprise document sets, RAG is more practical, cost-effective, and auditable.</div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-item__question">
+                    <span>Can AI document intelligence be deployed on-premise?</span>
+                    <span class="faq-item__icon"></span>
+                </button>
+                <div class="faq-item__answer">
+                    <div class="faq-item__answer-inner">Yes. NovaGenAI deploys complete RAG document intelligence pipelines on-premise using NVIDIA DGX infrastructure. Documents never leave the client's network — critical for healthcare, legal, financial, and defence organisations bound by data sovereignty regulations.</div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-item__question">
+                    <span>How do you prevent hallucinations in document AI?</span>
+                    <span class="faq-item__icon"></span>
+                </button>
+                <div class="faq-item__answer">
+                    <div class="faq-item__answer-inner">Through multiple layers: retrieval quality gates that reject low-confidence results, grounded generation with mandatory citations, answer validation against source documents, confidence scoring, continuous evaluation benchmarks, and human-in-the-loop review for high-stakes decisions.</div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-item__question">
+                    <span>What types of documents can AI document intelligence process?</span>
+                    <span class="faq-item__icon"></span>
+                </button>
+                <div class="faq-item__answer">
+                    <div class="faq-item__answer-inner">Modern AI document intelligence handles virtually any document type: PDFs, scanned images, Word documents, emails, spreadsheets, contracts, medical records, invoices, legal filings, regulatory submissions, technical manuals, and even handwritten notes — in multiple languages and formats simultaneously.</div>
+                </div>
+            </div>
+        </div>
+
+    </article>
+
+    <!-- ════════════════════════════════════════════════════════ MOBILE SHARE -->
+    <div class="post-share-mobile">
+        <a href="https://www.linkedin.com/company/novagenai" target="_blank" class="post-share__btn" aria-label="NovaGenAI on LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+        <a href="https://x.com/Nova_GenAI" target="_blank" class="post-share__btn" aria-label="NovaGenAI on X"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="https://www.instagram.com/nova.genai" target="_blank" class="post-share__btn" aria-label="NovaGenAI on Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+    </div>
+
+    <!-- ════════════════════════════════════════════════════════ RELATED -->
+    <section class="post-related">
+        <div class="post-related__container">
+            <h2 class="post-related__heading">Related Articles</h2>
+            <div class="post-related__grid">
+                <a href="building-custom-llms.html" class="blog-card visible">
+                    <div class="blog-card__image"><img src="images/biotech-computational-future.jpg" alt="Building Custom LLMs" loading="lazy" /></div>
+                    <div class="blog-card__body">
+                        <span class="blog-card__category">Enterprise AI</span>
+                        <h3 class="blog-card__title">Building Custom LLMs on Proprietary Data: A Complete Enterprise Guide</h3>
+                        <div class="blog-card__meta"><span class="blog-card__date-read">Feb 28, 2026 · 14 min</span></div>
+                    </div>
+                </a>
+                <a href="nvidia-ai-stack-explained.html" class="blog-card visible">
+                    <div class="blog-card__image"><img src="images/on-premise-nvidia-dgx.jpg" alt="NVIDIA AI Stack Explained" loading="lazy" /></div>
+                    <div class="blog-card__body">
+                        <span class="blog-card__category">Technology</span>
+                        <h3 class="blog-card__title">The NVIDIA AI Stack Explained: NeMo, NIM, CUDA, TensorRT, Triton, and RAPIDS</h3>
+                        <div class="blog-card__meta"><span class="blog-card__date-read">Feb 28, 2026 · 13 min</span></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════ FOOTER -->
+    <footer class="footer">
+        <div class="footer__inner">
+            <div class="footer__brand">
+                <span class="footer__logo">
+                    <img loading="lazy" src="../images/novagenai-logo-new.png" alt="NovaGenAI" class="footer__logo-img">
+                </span>
+                <p class="footer__tagline">Enterprise AI Systems — Asia-Pacific &amp; Global</p>
+                <p class="footer__tagline" style="margin-top:.25rem;font-size:.7rem;opacity:.6;">Malaysia · Australia · Singapore</p>
+            </div>
+            <div class="footer__links">
+                <a href="../solutions.html">Solutions</a>
+                <a href="../agents.html">Agents</a>
+                <a href="../technology.html">Technology</a>
+                <a href="../case-studies.html">Case Studies</a>
+                <a href="../team.html">Our Team</a>
+                <a href="../about.html">About</a>
+                <a href="../contact.html">Contact</a>
+            </div>
+            <div class="footer__social">
+                <a href="https://www.linkedin.com/company/novagenai" target="_blank" rel="noopener" aria-label="LinkedIn" class="footer__social-link footer__social--linkedin"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+                <a href="https://www.instagram.com/nova.genai" target="_blank" rel="noopener" aria-label="Instagram" class="footer__social-link footer__social--instagram"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+                <a href="https://x.com/Nova_GenAI" target="_blank" rel="noopener" aria-label="X" class="footer__social-link footer__social--x"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+                <a href="https://www.youtube.com/@Nova_GenAI" target="_blank" rel="noopener" aria-label="YouTube" class="footer__social-link footer__social--youtube"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+                <a href="https://wa.me/60111401036" target="_blank" rel="noopener" aria-label="WhatsApp" class="footer__social-link footer__social--whatsapp"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+            </div>
+            <p class="footer__copy">&copy; 2026 NovaGenAI. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="blog.js"></script>
+</body>
+</html>

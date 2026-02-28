@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/png" sizes="64x64" href="../images/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
+    <title>Building Custom LLMs on Proprietary Data: A Complete Enterprise Guide</title>
+    <meta name="description" content="The complete enterprise guide to building custom large language models on proprietary data. From prompt engineering to training from scratch — when each approach makes sense, what it costs, and how to avoid common pitfalls." />
+    <meta name="keywords" content="custom LLM, fine-tuning, enterprise AI, proprietary data, NVIDIA NeMo, DGX Spark, model training, RAG, continued pre-training, NovaGenAI" />
+    <link rel="canonical" href="https://novagenai.com.my/blog/building-custom-llms" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Building Custom LLMs on Proprietary Data: A Complete Enterprise Guide" />
+    <meta property="og:description" content="Why off-the-shelf LLMs aren't enough. The complete customisation spectrum from prompt engineering to training from scratch — costs, timelines, and pitfalls." />
+    <meta property="og:image" content="https://novagenai.com.my/blog/images/biotech-computational-future.jpg" />
+    <meta property="og:url" content="https://novagenai.com.my/blog/building-custom-llms" />
+    <meta property="og:site_name" content="NovaGenAI" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@Nova_GenAI" />
+    <meta name="twitter:title" content="Building Custom LLMs on Proprietary Data: A Complete Enterprise Guide" />
+    <meta name="twitter:description" content="Why off-the-shelf LLMs aren't enough. The complete customisation spectrum from prompt engineering to training from scratch — costs, timelines, and pitfalls." />
+    <meta name="twitter:image" content="https://novagenai.com.my/blog/images/biotech-computational-future.jpg" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="blog.css" />
+
+    <!-- Article JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Building Custom LLMs on Proprietary Data: A Complete Enterprise Guide",
+      "author": {"@type": "Person", "name": "Don Calaki"},
+      "publisher": {
+        "@type": "Organization",
+        "name": "NovaGenAI",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://novagenai.com.my/images/logo.png"
+        }
+      },
+      "datePublished": "2026-02-28",
+      "dateModified": "2026-02-28",
+      "image": "https://novagenai.com.my/blog/images/biotech-computational-future.jpg",
+      "description": "The complete enterprise guide to building custom large language models on proprietary data.",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://novagenai.com.my/blog/building-custom-llms"
+      }
+    }
+    </script>
+
+    <!-- FAQ JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Why aren't off-the-shelf LLMs enough for enterprises?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Off-the-shelf LLMs are trained on public internet data. They don't know your products, policies, terminology, compliance requirements, or institutional knowledge. They can't reason over proprietary data, follow organisation-specific workflows, or meet the accuracy thresholds regulated industries demand. Custom LLMs trained on proprietary data close these gaps."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between fine-tuning and RAG?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Fine-tuning permanently modifies a model's weights by training on domain-specific data, teaching it new reasoning patterns and terminology. RAG retrieves relevant documents at query time and provides them as context. Fine-tuning changes what the model knows; RAG changes what information it can access. Most enterprise deployments benefit from combining both approaches."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much data do you need to fine-tune an LLM?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It depends on the approach. Prompt engineering needs zero training data. Few-shot learning needs 10-50 examples. LoRA fine-tuning can work with 1,000-10,000 high-quality examples. Full fine-tuning typically requires 10,000-100,000 examples. Continued pre-training needs millions of tokens of domain text. Quality matters far more than quantity at every level."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does it cost to build a custom LLM?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Costs vary dramatically by approach. Prompt engineering and RAG can be deployed for $10K-50K. LoRA fine-tuning of a 7B model typically costs $20K-100K including data preparation. Full fine-tuning of larger models runs $100K-500K. Training from scratch starts at $1M+. The right approach depends on the gap between off-the-shelf performance and your requirements."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can custom LLMs be deployed on-premise for data sovereignty?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. NovaGenAI deploys custom LLMs on-premise using NVIDIA DGX infrastructure. Models are trained and served entirely within client infrastructure, ensuring proprietary data never leaves the premises. This is essential for healthcare, financial services, legal, and defence organisations with strict data residency requirements."
+          }
+        }
+      ]
+    }
+    </script>
+</head>
+
+<body>
+
+    <!-- Reading Progress Bar -->
+    <div class="blog-progress" id="reading-progress"></div>
+
+    <!-- ════════════════════════════════════════════════════════ NAV -->
+    <header class="nav" id="nav">
+        <a href="../index.html" class="nav__brand">
+            <img loading="lazy" src="../images/novagenai-logo-new.png" alt="NovaGenAI" class="nav__logo-img">
+        </a>
+
+        <nav class="nav__links" id="nav-links">
+            <div class="nav__dropdown">
+                <a href="../solutions.html" class="nav__dropdown-trigger">SOLUTIONS</a>
+                <div class="nav__dropdown-menu">
+                    <a href="../solutions.html">All Solutions</a>
+                    <a href="../solutions.html#voice-agents">AI Voice Agents</a>
+                    <a href="../solutions.html#clarify">Clarify Sales Platform</a>
+                    <a href="../solutions.html#cell-model">Predictive Analytics &amp; AI Modelling</a>
+                    <a href="../solutions.html#on-premise">On-Premise AI (DGX Spark)</a>
+                    <a href="../solutions.html#rag">RAG Document Intelligence</a>
+                    <a href="../solutions.html#marketing-os">Marketing OS</a>
+                </div>
+            </div>
+            <div class="nav__dropdown">
+                <a href="../agents.html" class="nav__dropdown-trigger">AGENTS</a>
+                <div class="nav__dropdown-menu">
+                    <a href="../what-are-agents.html">What Are AI Agents?</a>
+                    <a href="../agents.html">Agent Platform</a>
+                    <a href="../agents.html#swarms">Agent Swarms</a>
+                    <a href="../agents.html#orchestration">Multi-Agent Orchestration</a>
+                    <a href="../agents.html#org-diagram">Agents by Department</a>
+                    <a href="../agents.html#models">Our Model Stack</a>
+                    <a href="../agents.html#crm">AI-Native CRM</a>
+                </div>
+            </div>
+            <div class="nav__dropdown">
+                <a href="../technology.html" class="nav__dropdown-trigger">TECHNOLOGY</a>
+                <div class="nav__dropdown-menu">
+                    <a href="../technology.html">Overview</a>
+                    <a href="../technology.html#dgx-spark">NVIDIA DGX Spark</a>
+                    <a href="../technology.html#architecture">Architecture</a>
+                    <a href="../technology.html#security">Security & Compliance</a>
+                    <a href="../agents.html#models">LLM Model Stack</a>
+                </div>
+            </div>
+            <a href="../case-studies.html">CASE STUDIES</a>
+            <a href="../team.html">OUR TEAM</a>
+            <a href="../about.html">ABOUT</a>
+            <a href="../contact.html">CONTACT</a>
+        </nav>
+
+        <div class="nav__social">
+            <a href="https://www.linkedin.com/company/novagenai" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+            <a href="https://www.instagram.com/nova.genai" target="_blank" rel="noopener" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+            <a href="https://x.com/Nova_GenAI" target="_blank" rel="noopener" aria-label="X"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+            <a href="https://www.youtube.com/@Nova_GenAI" target="_blank" rel="noopener" aria-label="YouTube"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+            <a href="https://wa.me/60111401036" target="_blank" rel="noopener" aria-label="WhatsApp"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+        </div>
+    </header>
+
+    <!-- ════════════════════════════════════════════════════════ HERO -->
+    <section class="post-hero">
+        <div class="post-hero__bg">
+            <img src="images/biotech-computational-future.jpg" alt="Custom LLM training on proprietary enterprise data" loading="eager" />
+        </div>
+        <div class="post-hero__content">
+            <span class="post-hero__category">Enterprise AI</span>
+            <h1 class="post-hero__title">Building Custom LLMs on Proprietary Data: A Complete Enterprise Guide</h1>
+            <div class="post-hero__meta">
+                <img src="images/don-calaki.jpg" alt="Don Calaki" class="post-hero__avatar" />
+                <span class="post-hero__author-name">Don Calaki</span>
+                <span class="post-hero__sep"></span>
+                <time datetime="2026-02-28">February 28, 2026</time>
+                <span class="post-hero__sep"></span>
+                <span>14 min read</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════ SHARE SIDEBAR -->
+    <aside class="post-share">
+        <a href="https://www.linkedin.com/company/novagenai" target="_blank" class="post-share__btn" aria-label="NovaGenAI on LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+        <a href="https://x.com/Nova_GenAI" target="_blank" class="post-share__btn" aria-label="NovaGenAI on X"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="https://www.instagram.com/nova.genai" target="_blank" class="post-share__btn" aria-label="NovaGenAI on Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+    </aside>
+
+    <!-- ════════════════════════════════════════════════════════ ARTICLE BODY -->
+    <article class="post-body">
+
+        <p>Every enterprise is experimenting with large language models. Most are using them wrong. They're feeding sensitive corporate data into public APIs, accepting generic outputs that miss domain nuances, and wondering why the ROI isn't materialising. <strong>The gap between a demo and a production AI system is a custom model trained on your data, deployed on your infrastructure, governed by your policies.</strong></p>
+
+        <p>This guide walks through the complete spectrum of LLM customisation — from zero-effort prompt engineering to training a model from scratch — with honest assessments of when each approach makes sense, what it costs, what it requires, and where enterprises get it wrong.</p>
+
+        <h2>Why Aren't Off-the-Shelf LLMs Enough for Enterprise Use?</h2>
+
+        <p>General-purpose LLMs like GPT-4, Claude, and Gemini are trained on internet-scale public data. They're remarkably capable at general tasks, but they share fundamental limitations for enterprise deployment:</p>
+
+        <ul>
+            <li><strong>No proprietary knowledge.</strong> They don't know your products, internal processes, customer history, regulatory obligations, or institutional knowledge. A healthcare LLM that doesn't know your hospital's clinical protocols is a liability, not an asset.</li>
+            <li><strong>Generic domain understanding.</strong> They use general terminology when your industry has specific, consequential vocabulary. In legal, financial, and medical contexts, the difference between synonyms can be the difference between compliance and violation.</li>
+            <li><strong>No data sovereignty.</strong> Using cloud APIs means your queries — and the proprietary data they contain — leave your infrastructure. For regulated industries, this is often a non-starter under PDPA, HIPAA, or equivalent frameworks.</li>
+            <li><strong>Inconsistent output quality.</strong> Without domain-specific training, outputs require heavy human review. The 80% accuracy that impresses in demos falls apart in production, where every edge case matters.</li>
+            <li><strong>No competitive moat.</strong> If your AI uses the same model as your competitors, with the same training data, your AI capabilities are identical. Custom models on proprietary data create defensible advantage.</li>
+        </ul>
+
+        <p>The good news: you don't need to build a model from scratch to close these gaps. The customisation spectrum offers multiple on-ramps at different cost, complexity, and capability levels.</p>
+
+        <h2>What Is the LLM Customisation Spectrum?</h2>
+
+        <p>Think of LLM customisation as a spectrum from lightweight to heavyweight. Each level requires more data, more compute, more expertise, and more time — but delivers deeper customisation. The art is choosing the minimum intervention that meets your requirements.</p>
+
+        <p><strong>Level 1: Prompt Engineering.</strong> Zero training required. You craft system prompts, few-shot examples, and chain-of-thought instructions that guide the base model toward your desired behaviour. This is where every enterprise should start. It costs nothing beyond engineering time, can be iterated in minutes, and often gets you 60–70% of the way to production quality. The limitation: the model's knowledge and reasoning patterns don't change. You're steering, not teaching.</p>
+
+        <p><strong>Level 2: Few-Shot Learning.</strong> You provide 5–50 examples of desired input-output pairs within the prompt context. The model learns the pattern from examples without any weight updates. Effective for format standardisation, classification tasks, and output style. Limited by context window size — you can't fit thousands of examples in a prompt.</p>
+
+        <p><strong>Level 3: Retrieval-Augmented Generation (RAG).</strong> Instead of training the model on your data, you build a retrieval pipeline that fetches relevant documents at query time and provides them as context. The model's weights don't change, but it can now answer questions about your proprietary data with citations. RAG is the sweet spot for most <a href="ai-document-intelligence.html">enterprise document intelligence</a> use cases — current, auditable, and cost-effective. We've covered RAG architecture in depth in our <a href="ai-document-intelligence.html">AI Document Intelligence</a> guide.</p>
+
+        <p><strong>Level 4: Parameter-Efficient Fine-Tuning (LoRA/QLoRA).</strong> This is where you start modifying model weights — but surgically. LoRA (Low-Rank Adaptation) adds small trainable matrices alongside the frozen base model, typically updating less than 1% of parameters. QLoRA adds quantisation for memory efficiency. This teaches the model domain-specific reasoning patterns, output formats, and terminology without the compute cost of full fine-tuning. You need 1,000–10,000 high-quality training examples. Training a 7B model with LoRA takes hours on a single GPU, not weeks on a cluster.</p>
+
+        <p><strong>Level 5: Full Fine-Tuning.</strong> All model parameters are unfrozen and updated on your domain-specific data. This delivers deeper customisation than LoRA but requires significantly more compute — multiple high-end GPUs for days to weeks — and 10,000–100,000 training examples. Risk of catastrophic forgetting (the model loses general capabilities while learning domain-specific ones) is real and must be managed through careful data mixing and evaluation.</p>
+
+        <p><strong>Level 6: Continued Pre-Training.</strong> You take a pre-trained base model and continue its pre-training on a large corpus of domain-specific text (millions of tokens). This doesn't use instruction-response pairs — it's raw text that teaches the model domain language, concepts, and relationships at a fundamental level. Think of it as making the model "natively fluent" in your domain before fine-tuning for specific tasks. This requires substantial compute and data but produces models with genuinely deep domain understanding.</p>
+
+        <p><strong>Level 7: Training from Scratch.</strong> You pre-train a model from random weights on your curated dataset. This is the nuclear option — billions of tokens of training data, clusters of GPUs running for weeks or months, millions of dollars in compute. Almost no enterprise needs this. It makes sense only when your domain is so specialised that no existing model provides a viable starting point, or when you need complete control over every byte of training data for regulatory reasons.</p>
+
+        <div class="post-pull-quote">
+            "The most expensive mistake in enterprise AI isn't choosing the wrong model. It's choosing the wrong level of customisation — usually going too heavy when lightweight approaches would suffice."
+        </div>
+
+        <h2>How Do You Decide Which Customisation Level Is Right?</h2>
+
+        <p>The decision framework is surprisingly straightforward. Answer these questions in order:</p>
+
+        <p><strong>Can prompt engineering close the gap?</strong> If the base model understands your domain but needs formatting, tone, or workflow guidance, start here. Test rigorously before moving to heavier approaches. Many enterprises skip this step and overspend on fine-tuning for problems solvable with better prompts.</p>
+
+        <p><strong>Does the model need access to proprietary data?</strong> If yes, RAG is almost always the right next step. It's cheaper, faster to deploy, keeps data current, and provides auditability. Don't fine-tune when what you actually need is retrieval.</p>
+
+        <p><strong>Does the model need to reason differently?</strong> If the model has access to the right information (via RAG) but still produces inadequate analysis, reasoning, or outputs, fine-tuning is warranted. LoRA first — full fine-tuning only if LoRA proves insufficient after proper hyperparameter tuning.</p>
+
+        <p><strong>Is the domain fundamentally different from the model's training distribution?</strong> Highly specialised domains — biomedical, materials science, legal in non-English languages — may require continued pre-training to build baseline domain fluency before fine-tuning is effective.</p>
+
+        <p><strong>Do regulatory requirements demand full data provenance?</strong> Some regulated environments require demonstrating exactly what data trained the model. Training from scratch — or continued pre-training from a known checkpoint on fully audited data — may be a compliance requirement, not a performance one.</p>
+
+        <h2>What Data Do You Need for Each Level of Customisation?</h2>
+
+        <p>Data requirements scale with customisation depth, but quality always trumps quantity:</p>
+
+        <ul>
+            <li><strong>Prompt engineering:</strong> Zero training data. You need deep domain understanding to write effective prompts, plus a test set of 50–100 representative queries for evaluation.</li>
+            <li><strong>Few-shot:</strong> 10–50 high-quality input-output examples that represent the diversity of your use case.</li>
+            <li><strong>RAG:</strong> Your document corpus, cleaned and structured. Quality of chunking and embedding matters more than volume. A well-chunked 10,000-document corpus outperforms a poorly chunked 100,000-document one.</li>
+            <li><strong>LoRA fine-tuning:</strong> 1,000–10,000 instruction-response pairs. Each must be expert-validated. Bad training examples teach bad behaviour — there's no fixing garbage data with more epochs.</li>
+            <li><strong>Full fine-tuning:</strong> 10,000–100,000 examples plus a carefully curated mix of general-capability data to prevent catastrophic forgetting. Data preparation typically takes 2–3x longer than the training itself.</li>
+            <li><strong>Continued pre-training:</strong> 1–100 million tokens of domain-specific text. Internal documents, industry publications, technical standards, regulatory texts. This is the most data-intensive approach short of training from scratch.</li>
+            <li><strong>Training from scratch:</strong> Billions of tokens. Curated, deduplicated, quality-filtered. This is a dataset engineering project in its own right.</li>
+        </ul>
+
+        <h2>What Infrastructure Is Required for LLM Training and Deployment?</h2>
+
+        <p>Infrastructure requirements vary dramatically across the customisation spectrum. Here's what each level demands:</p>
+
+        <p><strong>Prompt engineering and RAG</strong> need inference infrastructure only. A capable GPU (NVIDIA A100, H100, or DGX Spark) running the base model, plus a vector database for RAG. <a href="nvidia-ai-stack-explained.html">NVIDIA's TensorRT</a> optimises inference throughput by 2–6x, and Triton Inference Server handles production model serving with batching, queuing, and multi-model management.</p>
+
+        <p><strong>LoRA fine-tuning</strong> is remarkably efficient. A single NVIDIA A100 (80GB) can fine-tune a 7B parameter model in hours. QLoRA pushes this further — fine-tuning a 70B model on a single GPU via 4-bit quantisation. NVIDIA NeMo provides the framework, handling distributed training, checkpointing, and experiment tracking. <a href="dgx-spark-complete-guide.html">DGX Spark</a> with its 128GB unified memory makes this accessible on-premise without a data centre.</p>
+
+        <p><strong>Full fine-tuning of large models</strong> requires multi-GPU setups. A 70B model needs 4–8 A100s for full fine-tuning. Training time ranges from days to weeks depending on dataset size and model architecture. NeMo and DeepSpeed handle distributed training across GPUs with data parallelism, tensor parallelism, and pipeline parallelism.</p>
+
+        <p><strong>Continued pre-training and training from scratch</strong> require GPU clusters. We're talking 32–256+ GPUs running for weeks. This is DGX SuperPOD territory, or equivalent cloud compute on AWS, Google Cloud, or Azure. PyTorch FSDP, NeMo Megatron, and DeepSpeed ZeRO manage the distributed computation.</p>
+
+        <p>For deployment, the <a href="nvidia-ai-stack-explained.html">full NVIDIA stack</a> is critical: CUDA for GPU computation, cuDNN for neural network primitives, TensorRT for inference optimisation, Triton for production serving, and NIM for pre-packaged, optimised inference microservices. RAPIDS accelerates data preprocessing at GPU speed.</p>
+
+        <h2>What Are the Common Pitfalls in Enterprise LLM Customisation?</h2>
+
+        <p>We see the same mistakes repeatedly across enterprise engagements. Here are the ones that cost the most time and money:</p>
+
+        <p><strong>Catastrophic forgetting.</strong> Fine-tuning on domain data causes the model to lose general capabilities — it can now answer domain questions but can't write a coherent paragraph or follow basic instructions. Mitigation: mix domain-specific training data with general instruction-following data at a 70:30 to 80:20 ratio. Evaluate on both domain benchmarks and general capability benchmarks throughout training.</p>
+
+        <p><strong>Overfitting on small datasets.</strong> With 1,000 training examples and 7 billion parameters, overfitting is essentially guaranteed without regularisation. The model memorises your examples instead of learning patterns. Mitigation: LoRA with low rank (r=8–16), early stopping based on validation loss, and data augmentation where possible.</p>
+
+        <p><strong>Evaluation debt.</strong> Enterprises build and deploy custom models without robust evaluation frameworks. They don't know if the model is getting better or worse, can't quantify accuracy for different query types, and can't detect regression. Before training a single example, build your evaluation pipeline: curated test sets, automated scoring, domain expert review protocols, and continuous monitoring in production.</p>
+
+        <p><strong>Data quality neglect.</strong> The excitement of model training overshadows the unglamorous work of data preparation. Inconsistent formats, contradictory examples, outdated information, and label noise in training data produce unreliable models. Budget 60% of project time for data preparation and quality assurance.</p>
+
+        <p><strong>Ignoring the deployment gap.</strong> A model that runs in a Jupyter notebook is not a production system. Inference latency, throughput, memory efficiency, model versioning, A/B testing, monitoring, and rollback capabilities are all engineering challenges that must be solved before users see the model. This is where TensorRT, Triton, and NIM earn their place in the stack.</p>
+
+        <h2>How Do You Handle Data Governance and Compliance?</h2>
+
+        <p>For regulated industries, data governance isn't a feature — it's a prerequisite. Custom LLM development must address:</p>
+
+        <p><strong>Data residency.</strong> Training data, model weights, and inference queries must remain within jurisdictional boundaries. Malaysia's PDPA, Singapore's PDPA, and similar frameworks impose strict data localisation requirements. On-premise training on NVIDIA DGX infrastructure guarantees data never leaves client premises.</p>
+
+        <p><strong>Training data provenance.</strong> Every data point used in training must be traceable — origin, consent status, processing history, and retention policy. This is non-negotiable for healthcare and financial services. NeMo's experiment tracking provides the foundation, but enterprise-grade provenance requires integration with data cataloguing and governance tools.</p>
+
+        <p><strong>Model auditability.</strong> Regulators increasingly require explainability — not just what the model outputs, but why. For fine-tuned models, this means documenting training data composition, hyperparameters, evaluation results, and known limitations. For RAG-augmented models, citation trails provide auditability by design.</p>
+
+        <p><strong>Right to deletion.</strong> If a data subject requests deletion under PDPA or GDPR, their data must be removed from training datasets and — potentially — the model retrained without it. This is architecturally simpler with RAG (delete the document, re-index) than with fine-tuned models (retrain entirely). Factor this into your architecture decisions.</p>
+
+        <p><strong>Access controls.</strong> Different users should access different model capabilities based on role. A clinician querying a medical LLM should access different data than an administrator. Fine-grained access control must be implemented at the application and retrieval layers.</p>
+
+        <h2>How Does NovaGenAI Build Custom LLMs for Enterprises?</h2>
+
+        <p>NovaGenAI's approach to custom LLM development is defined by pragmatism, not hype. We follow a systematic methodology:</p>
+
+        <p><strong>Start with the minimum effective intervention.</strong> We evaluate prompt engineering and RAG before recommending fine-tuning. We've seen engagements where 80% of the value was delivered by a well-architected RAG pipeline, with fine-tuning adding the remaining 20% for edge cases. We never prescribe heavy customisation when lightweight approaches deliver equivalent outcomes.</p>
+
+        <p><strong>Build on NVIDIA NeMo.</strong> Our training infrastructure uses NVIDIA NeMo for model customisation — LoRA, full fine-tuning, and continued pre-training. NeMo provides distributed training, mixed-precision computation, experiment tracking, and seamless integration with TensorRT for inference optimisation. We leverage NIM for deployment-ready inference microservices that include pre-built health checks, scaling, and monitoring.</p>
+
+        <p><strong>Deploy on client infrastructure.</strong> Models are trained and deployed on-premise using NVIDIA DGX systems or in the client's private cloud. Proprietary data never leaves client infrastructure. For organisations with existing cloud commitments, we deploy hybrid architectures with sensitive workloads on-premise and non-sensitive workloads in the cloud.</p>
+
+        <p><strong>Continuous evaluation and improvement.</strong> Every deployed model is continuously monitored against domain-specific benchmarks. Accuracy degradation triggers automated alerts and retraining workflows. Models improve over time as new data becomes available and evaluation criteria sharpen.</p>
+
+        <p>The result: enterprise LLMs that understand your domain, run on your infrastructure, comply with your regulations, and get better every month. Not a demo — a production system.</p>
+
+        <div class="post-pull-quote">
+            "The goal isn't the most customised model. It's the most effective model for your specific problem, deployed at the right cost, on the right infrastructure, with the right governance."
+        </div>
+
+        <!-- Author Bio -->
+        <div class="post-author">
+            <img src="images/don-calaki.jpg" alt="Don Calaki" class="post-author__avatar" loading="lazy" />
+            <div class="post-author__info">
+                <p class="post-author__name">Don Calaki</p>
+                <p class="post-author__title">CEO & Founder, NovaGenAI</p>
+                <p class="post-author__bio">Don leads NovaGenAI's mission to build production-grade AI systems for enterprises across Southeast Asia and Australia. Deep expertise in AI infrastructure, computational biotech, and enterprise deployment.</p>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="post-faq">
+            <h2 class="post-faq__title">Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <button class="faq-item__question">
+                    <span>Why aren't off-the-shelf LLMs enough for enterprises?</span>
+                    <span class="faq-item__icon"></span>
+                </button>
+                <div class="faq-item__answer">
+                    <div class="faq-item__answer-inner">Off-the-shelf LLMs lack proprietary knowledge, domain-specific reasoning, and data sovereignty guarantees. They can't reason over your internal data, follow organisation-specific workflows, or meet the accuracy and compliance thresholds regulated industries demand.</div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-item__question">
+                    <span>What is the difference between fine-tuning and RAG?</span>
+                    <span class="faq-item__icon"></span>
+                </button>
+                <div class="faq-item__answer">
+                    <div class="faq-item__answer-inner">Fine-tuning modifies model weights by training on domain-specific data, teaching new reasoning patterns. RAG retrieves relevant documents at query time as context. Fine-tuning changes what the model knows; RAG changes what it can access. Most enterprise deployments benefit from combining both.</div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-item__question">
+                    <span>How much data do you need to fine-tune an LLM?</span>
+                    <span class="faq-item__icon"></span>
+                </button>
+                <div class="faq-item__answer">
+                    <div class="faq-item__answer-inner">LoRA fine-tuning works with 1,000–10,000 high-quality examples. Full fine-tuning needs 10,000–100,000. Continued pre-training requires millions of tokens. Quality always matters more than quantity — expert-validated examples are essential.</div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-item__question">
+                    <span>How much does it cost to build a custom LLM?</span>
+                    <span class="faq-item__icon"></span>
+                </button>
+                <div class="faq-item__answer">
+                    <div class="faq-item__answer-inner">Prompt engineering and RAG: $10K–50K. LoRA fine-tuning: $20K–100K. Full fine-tuning: $100K–500K. Training from scratch: $1M+. The right approach depends on the gap between off-the-shelf performance and your specific requirements.</div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-item__question">
+                    <span>Can custom LLMs be deployed on-premise?</span>
+                    <span class="faq-item__icon"></span>
+                </button>
+                <div class="faq-item__answer">
+                    <div class="faq-item__answer-inner">Yes. NovaGenAI deploys custom LLMs on-premise using NVIDIA DGX infrastructure. Models are trained and served entirely within client infrastructure, ensuring proprietary data never leaves the premises — essential for healthcare, financial services, legal, and defence organisations.</div>
+                </div>
+            </div>
+        </div>
+
+    </article>
+
+    <!-- ════════════════════════════════════════════════════════ MOBILE SHARE -->
+    <div class="post-share-mobile">
+        <a href="https://www.linkedin.com/company/novagenai" target="_blank" class="post-share__btn" aria-label="NovaGenAI on LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+        <a href="https://x.com/Nova_GenAI" target="_blank" class="post-share__btn" aria-label="NovaGenAI on X"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="https://www.instagram.com/nova.genai" target="_blank" class="post-share__btn" aria-label="NovaGenAI on Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+    </div>
+
+    <!-- ════════════════════════════════════════════════════════ RELATED -->
+    <section class="post-related">
+        <div class="post-related__container">
+            <h2 class="post-related__heading">Related Articles</h2>
+            <div class="post-related__grid">
+                <a href="nvidia-ai-stack-explained.html" class="blog-card visible">
+                    <div class="blog-card__image"><img src="images/on-premise-nvidia-dgx.jpg" alt="NVIDIA AI Stack" loading="lazy" /></div>
+                    <div class="blog-card__body">
+                        <span class="blog-card__category">Technology</span>
+                        <h3 class="blog-card__title">The NVIDIA AI Stack Explained: NeMo, NIM, CUDA, TensorRT, Triton, and RAPIDS</h3>
+                        <div class="blog-card__meta"><span class="blog-card__date-read">Feb 28, 2026 · 13 min</span></div>
+                    </div>
+                </a>
+                <a href="ai-document-intelligence.html" class="blog-card visible">
+                    <div class="blog-card__image"><img src="images/vision-ai-orchestration.jpg" alt="AI Document Intelligence" loading="lazy" /></div>
+                    <div class="blog-card__body">
+                        <span class="blog-card__category">Enterprise AI</span>
+                        <h3 class="blog-card__title">AI Document Intelligence: Turning Unstructured Data into Enterprise Decisions</h3>
+                        <div class="blog-card__meta"><span class="blog-card__date-read">Feb 28, 2026 · 12 min</span></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════ FOOTER -->
+    <footer class="footer">
+        <div class="footer__inner">
+            <div class="footer__brand">
+                <span class="footer__logo">
+                    <img loading="lazy" src="../images/novagenai-logo-new.png" alt="NovaGenAI" class="footer__logo-img">
+                </span>
+                <p class="footer__tagline">Enterprise AI Systems — Asia-Pacific &amp; Global</p>
+                <p class="footer__tagline" style="margin-top:.25rem;font-size:.7rem;opacity:.6;">Malaysia · Australia · Singapore</p>
+            </div>
+            <div class="footer__links">
+                <a href="../solutions.html">Solutions</a>
+                <a href="../agents.html">Agents</a>
+                <a href="../technology.html">Technology</a>
+                <a href="../case-studies.html">Case Studies</a>
+                <a href="../team.html">Our Team</a>
+                <a href="../about.html">About</a>
+                <a href="../contact.html">Contact</a>
+            </div>
+            <div class="footer__social">
+                <a href="https://www.linkedin.com/company/novagenai" target="_blank" rel="noopener" aria-label="LinkedIn" class="footer__social-link footer__social--linkedin"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+                <a href="https://www.instagram.com/nova.genai" target="_blank" rel="noopener" aria-label="Instagram" class="footer__social-link footer__social--instagram"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+                <a href="https://x.com/Nova_GenAI" target="_blank" rel="noopener" aria-label="X" class="footer__social-link footer__social--x"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+                <a href="https://www.youtube.com/@Nova_GenAI" target="_blank" rel="noopener" aria-label="YouTube" class="footer__social-link footer__social--youtube"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+                <a href="https://wa.me/60111401036" target="_blank" rel="noopener" aria-label="WhatsApp" class="footer__social-link footer__social--whatsapp"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+            </div>
+            <p class="footer__copy">&copy; 2026 NovaGenAI. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="blog.js"></script>
+</body>
+</html>

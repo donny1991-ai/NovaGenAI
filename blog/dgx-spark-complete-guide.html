@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/png" sizes="64x64" href="../images/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
+    <title>What is NVIDIA DGX Spark? The Complete Enterprise Guide | NovaGenAI</title>
+    <meta name="description" content="NVIDIA DGX Spark specs, pricing, use cases: 1 petaflop, 128GB unified memory, Grace Blackwell desktop AI. The definitive enterprise deployment guide." />
+    <meta name="keywords" content="NVIDIA DGX Spark, DGX Spark specs, DGX Spark price, Grace Blackwell, enterprise AI hardware, on-premise AI, local LLM, AI inference, NovaGenAI, DGX SuperPOD" />
+    <link rel="canonical" href="https://novagenai.com.my/blog/dgx-spark-complete-guide" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="What is NVIDIA DGX Spark? The Complete Enterprise Guide" />
+    <meta property="og:description" content="1 petaflop of AI compute on your desk. Full specs, use cases, cost analysis, and how DGX Spark fits into enterprise AI infrastructure." />
+    <meta property="og:image" content="https://novagenai.com.my/blog/images/on-premise-dgx-sovereignty.jpg" />
+    <meta property="og:url" content="https://novagenai.com.my/blog/dgx-spark-complete-guide" />
+    <meta property="og:site_name" content="NovaGenAI" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@Nova_GenAI" />
+    <meta name="twitter:title" content="What is NVIDIA DGX Spark? The Complete Enterprise Guide" />
+    <meta name="twitter:description" content="1 petaflop of AI compute on your desk. Full specs, use cases, cost analysis, and how DGX Spark fits into enterprise AI infrastructure." />
+    <meta name="twitter:image" content="https://novagenai.com.my/blog/images/on-premise-dgx-sovereignty.jpg" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="blog.css" />
+
+    <!-- Article JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "What is NVIDIA DGX Spark? The Complete Enterprise Guide",
+      "author": {"@type": "Person", "name": "Don Calaki"},
+      "publisher": {
+        "@type": "Organization",
+        "name": "NovaGenAI",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://novagenai.com.my/images/logo.png"
+        }
+      },
+      "datePublished": "2026-02-28",
+      "dateModified": "2026-02-28",
+      "image": "https://novagenai.com.my/blog/images/on-premise-dgx-sovereignty.jpg",
+      "description": "NVIDIA DGX Spark specs, pricing, use cases, and enterprise deployment guide. 1 petaflop, 128GB unified memory, Grace Blackwell architecture.",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://novagenai.com.my/blog/dgx-spark-complete-guide"
+      }
+    }
+    </script>
+
+    <!-- FAQ JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What are the full specs of NVIDIA DGX Spark?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NVIDIA DGX Spark delivers up to 1 petaflop of AI compute using the Grace Blackwell architecture. It features 128GB of unified memory shared between the Grace CPU and Blackwell GPU, NVLink-C2C interconnect, up to 4TB NVMe SSD storage, ConnectX-7 networking, and fits in a compact desktop form factor running on standard power — no specialised cooling or data centre infrastructure required."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does NVIDIA DGX Spark cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NVIDIA has positioned DGX Spark with a starting price around USD $3,000-$4,999 for the base configuration, with enterprise-configured systems reaching higher depending on storage, memory, and support packages. Compared to cloud GPU costs of $2-8 per hour for comparable compute, DGX Spark typically reaches cost parity within 6-12 months of consistent use and delivers lower TCO within 18-24 months."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What models can run on DGX Spark?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "DGX Spark's 128GB unified memory can run models up to approximately 200 billion parameters at reduced precision (INT4/INT8). This includes Llama 3.1 70B at full FP16, Llama 3.1 405B at INT4 quantisation, Mixtral 8x22B, and most production-grade enterprise models. For fine-tuning, efficient techniques like LoRA and QLoRA enable adaptation of 70B+ parameter models within the memory envelope."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who is DGX Spark designed for?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "DGX Spark is designed for enterprises that need local AI compute without data centre infrastructure: healthcare organisations running clinical AI on patient data, financial institutions deploying fraud detection on-premise, government agencies requiring air-gapped AI, research teams fine-tuning domain-specific models, and any organisation where data sovereignty prevents cloud AI adoption."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does DGX Spark compare to cloud GPU instances?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "DGX Spark offers comparable compute to cloud instances like AWS p5.xlarge or Google Cloud a3-highgpu, but with zero data transfer, no per-hour billing, complete data sovereignty, and no internet dependency. Cloud wins for burst workloads and experimentation. DGX Spark wins for consistent inference workloads, regulated data, latency-sensitive applications, and air-gapped environments."
+          }
+        }
+      ]
+    }
+    </script>
+</head>
+
+<body>
+
+    <!-- Reading Progress Bar -->
+    <div class="blog-progress" id="reading-progress"></div>
+
+    <!-- ════════════════════════════════════════════════════════ NAV -->
+    <header class="nav" id="nav">
+        <a href="../index.html" class="nav__brand">
+            <img loading="lazy" src="../images/novagenai-logo-new.png" alt="NovaGenAI" class="nav__logo-img">
+        </a>
+
+        <nav class="nav__links" id="nav-links">
+            <div class="nav__dropdown">
+                <a href="../solutions.html" class="nav__dropdown-trigger">SOLUTIONS</a>
+                <div class="nav__dropdown-menu">
+                    <a href="../solutions.html">All Solutions</a>
+                    <a href="../solutions.html#voice-agents">AI Voice Agents</a>
+                    <a href="../solutions.html#clarify">Clarify Sales Platform</a>
+                    <a href="../solutions.html#cell-model">Predictive Analytics &amp; AI Modelling</a>
+                    <a href="../solutions.html#on-premise">On-Premise AI (DGX Spark)</a>
+                    <a href="../solutions.html#rag">RAG Document Intelligence</a>
+                    <a href="../solutions.html#marketing-os">Marketing OS</a>
+                </div>
+            </div>
+            <div class="nav__dropdown">
+                <a href="../agents.html" class="nav__dropdown-trigger">AGENTS</a>
+                <div class="nav__dropdown-menu">
+                    <a href="../what-are-agents.html">What Are AI Agents?</a>
+                    <a href="../agents.html">Agent Platform</a>
+                    <a href="../agents.html#swarms">Agent Swarms</a>
+                    <a href="../agents.html#orchestration">Multi-Agent Orchestration</a>
+                    <a href="../agents.html#org-diagram">Agents by Department</a>
+                    <a href="../agents.html#models">Our Model Stack</a>
+                    <a href="../agents.html#crm">AI-Native CRM</a>
+                </div>
+            </div>
+            <div class="nav__dropdown">
+                <a href="../technology.html" class="nav__dropdown-trigger">TECHNOLOGY</a>
+                <div class="nav__dropdown-menu">
+                    <a href="../technology.html">Overview</a>
+                    <a href="../technology.html#dgx-spark">NVIDIA DGX Spark</a>
+                    <a href="../technology.html#architecture">Architecture</a>
+                    <a href="../technology.html#security">Security & Compliance</a>
+                    <a href="../agents.html#models">LLM Model Stack</a>
+                </div>
+            </div>
+            <a href="../case-studies.html">CASE STUDIES</a>
+            <a href="../team.html">OUR TEAM</a>
+            <a href="../about.html">ABOUT</a>
+            <a href="../contact.html">CONTACT</a>
+        </nav>
+
+        <div class="nav__social">
+            <a href="https://www.linkedin.com/company/novagenai" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+            <a href="https://www.instagram.com/nova.genai" target="_blank" rel="noopener" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+            <a href="https://x.com/Nova_GenAI" target="_blank" rel="noopener" aria-label="X"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+            <a href="https://www.youtube.com/@Nova_GenAI" target="_blank" rel="noopener" aria-label="YouTube"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+            <a href="https://wa.me/60111401036" target="_blank" rel="noopener" aria-label="WhatsApp"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+        </div>
+    </header>
+
+    <!-- ════════════════════════════════════════════════════════ HERO -->
+    <section class="post-hero">
+        <div class="post-hero__bg">
+            <img src="images/on-premise-dgx-sovereignty.jpg" alt="NVIDIA DGX Spark desktop AI supercomputer" loading="eager" />
+        </div>
+        <div class="post-hero__content">
+            <span class="post-hero__category">Enterprise AI Hardware</span>
+            <h1 class="post-hero__title">What is NVIDIA DGX Spark? The Complete Enterprise Guide</h1>
+            <div class="post-hero__meta">
+                <img src="images/don-calaki.jpg" alt="Don Calaki" class="post-hero__avatar" />
+                <span class="post-hero__author-name">Don Calaki</span>
+                <span class="post-hero__sep"></span>
+                <time datetime="2026-02-28">February 28, 2026</time>
+                <span class="post-hero__sep"></span>
+                <span>14 min read</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════ SHARE SIDEBAR -->
+    <aside class="post-share">
+        <a href="https://www.linkedin.com/company/novagenai" target="_blank" class="post-share__btn" aria-label="NovaGenAI on LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+        <a href="https://x.com/Nova_GenAI" target="_blank" class="post-share__btn" aria-label="NovaGenAI on X"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="https://www.instagram.com/nova.genai" target="_blank" class="post-share__btn" aria-label="NovaGenAI on Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+    </aside>
+
+    <!-- ════════════════════════════════════════════════════════ ARTICLE BODY -->
+    <article class="post-body">
+
+        <p>NVIDIA DGX Spark is the most significant shift in enterprise AI hardware since the introduction of the GPU for deep learning. <strong>One petaflop of AI compute. 128GB of unified memory. Desktop form factor. Standard power.</strong> It puts capabilities that previously required a data centre rack into a system that sits next to your monitor.</p>
+
+        <p>This is the definitive guide to DGX Spark — full technical specifications, real-world use cases, cost analysis, cloud comparison, and how it fits into the broader NVIDIA ecosystem. If you're evaluating DGX Spark for your enterprise, this is the resource you need.</p>
+
+        <h2>What Is NVIDIA DGX Spark?</h2>
+
+        <p>NVIDIA DGX Spark is a compact AI supercomputer built on the Grace Blackwell architecture. It combines NVIDIA's Grace CPU and Blackwell GPU into a single unified system with shared memory, delivering up to 1 petaflop (1,000 teraflops) of AI performance in a form factor roughly the size of a Mac Studio.</p>
+
+        <p>Announced at CES 2025 and shipping in the first half of 2025, DGX Spark represents NVIDIA's push to bring enterprise-grade AI compute out of the data centre and onto the desktop. It's not a consumer GPU. It's not a workstation graphics card. It's a purpose-built AI system designed for running, fine-tuning, and serving large language models locally.</p>
+
+        <p>The "Spark" name positions it as the entry point in NVIDIA's DGX family — above consumer hardware but designed for departmental deployment, edge AI, and sovereign compute scenarios where data cannot leave the premises.</p>
+
+        <h2>What Are the Full Technical Specifications of DGX Spark?</h2>
+
+        <p>Here are the key specifications that matter for enterprise AI workloads:</p>
+
+        <ul>
+            <li><strong>Architecture:</strong> NVIDIA Grace Blackwell — ARM-based Grace CPU + Blackwell GPU on a single module</li>
+            <li><strong>AI Performance:</strong> Up to 1 petaflop (1,000 TFLOPS) of AI compute at FP4 precision</li>
+            <li><strong>Memory:</strong> 128GB unified memory shared between CPU and GPU via NVLink-C2C, with up to 273 GB/s memory bandwidth</li>
+            <li><strong>Storage:</strong> Up to 4TB NVMe SSD</li>
+            <li><strong>Networking:</strong> ConnectX-7 for high-speed networking, supporting multiple DGX Spark units in cluster configurations</li>
+            <li><strong>Form Factor:</strong> Compact desktop — approximately the size of a Mac Studio</li>
+            <li><strong>Power:</strong> Standard wall power — no specialised electrical infrastructure required</li>
+            <li><strong>Cooling:</strong> Air-cooled — no liquid cooling, no raised floors, no data centre HVAC</li>
+            <li><strong>Operating System:</strong> NVIDIA DGX OS (Ubuntu-based Linux) with the full NVIDIA AI Enterprise software stack</li>
+            <li><strong>Software Stack:</strong> Pre-installed with NeMo, NIM, CUDA, TensorRT, Triton Inference Server, RAPIDS</li>
+        </ul>
+
+        <p>The unified memory architecture is the specification that matters most. Traditional systems separate CPU and GPU memory, forcing data transfers across PCIe that create bottlenecks for large models. Grace Blackwell's NVLink-C2C interconnect provides coherent shared memory at 900 GB/s — meaning a 70-billion-parameter model doesn't need to be partitioned or optimised for data movement. It simply fits.</p>
+
+        <figure>
+            <img src="images/on-premise-nvidia-dgx.jpg" alt="NVIDIA DGX Spark hardware showing compact desktop form factor" loading="lazy" />
+            <figcaption>DGX Spark: 1 petaflop of AI compute in a desktop form factor — no data centre required</figcaption>
+        </figure>
+
+        <h2>What Models Can Run on DGX Spark?</h2>
+
+        <p>The 128GB unified memory envelope determines what's possible. Here's the practical breakdown:</p>
+
+        <p><strong>Full precision (FP16/BF16) inference:</strong></p>
+        <ul>
+            <li>Llama 3.1 70B — fits comfortably with room for KV cache and context</li>
+            <li>Mistral Large (123B) — requires careful memory management but runs</li>
+            <li>Mixtral 8x22B — sparse mixture-of-experts architecture fits within 128GB</li>
+            <li>Most enterprise models under 70B — with generous context windows</li>
+        </ul>
+
+        <p><strong>Quantised inference (INT4/INT8):</strong></p>
+        <ul>
+            <li>Llama 3.1 405B at INT4 — the largest open model, quantised to fit</li>
+            <li>Any model under 200B parameters at INT4 precision</li>
+            <li>Multiple smaller models running simultaneously for multi-agent architectures</li>
+        </ul>
+
+        <p><strong>Fine-tuning:</strong></p>
+        <ul>
+            <li>Full fine-tuning of models up to approximately 13B parameters</li>
+            <li>LoRA/QLoRA fine-tuning of 70B+ parameter models — the dominant enterprise fine-tuning approach</li>
+            <li>Adapter training for domain-specific customisation of any model that fits in memory</li>
+        </ul>
+
+        <p>For enterprise deployments, this means a single DGX Spark can run a production-grade 70B language model serving multiple concurrent users, a domain-specific fine-tuned model for clinical decision support or financial analysis, or a multi-model pipeline combining a retrieval model with a generation model for RAG applications.</p>
+
+        <div class="post-pull-quote">
+            "128GB of unified memory isn't just a spec. It's the difference between running a toy demo and deploying a production AI system that handles real enterprise workloads."
+        </div>
+
+        <h2>Who Is DGX Spark Designed For?</h2>
+
+        <p>DGX Spark serves a specific enterprise segment that previously fell between two chairs: too sensitive for cloud, too sophisticated for consumer GPUs.</p>
+
+        <p><strong>Healthcare organisations.</strong> Hospitals, pathology labs, genomics companies, and pharmaceutical firms that need to run AI on patient data without it ever leaving the facility. A DGX Spark in a hospital's server room enables clinical AI — diagnostic assistance, drug interaction checking, radiology analysis, clinical document summarisation — with complete <a href="./why-on-premise-ai-matters.html">data sovereignty</a>.</p>
+
+        <p><strong>Financial institutions.</strong> Banks, insurance companies, and investment firms that need on-premise fraud detection, risk modelling, and customer analytics. Regulatory requirements under Bank Negara Malaysia's RMiT framework and similar ASEAN regulations make local compute a compliance necessity, not a preference.</p>
+
+        <p><strong>Government and defence.</strong> Agencies requiring air-gapped AI for classified operations, intelligence analysis, document processing, and cybersecurity. DGX Spark enables these capabilities in physically isolated environments.</p>
+
+        <p><strong>Legal firms.</strong> Law firms deploying AI-powered document review, contract analysis, and legal research on privileged client data that absolutely cannot touch a third-party cloud.</p>
+
+        <p><strong>Research teams.</strong> Data scientists and ML engineers who need to iterate on model development, run experiments on proprietary datasets, and fine-tune models without uploading sensitive data to cloud environments. DGX Spark gives a single researcher more AI compute than entire departments had five years ago.</p>
+
+        <p><strong>Edge and remote deployments.</strong> Operations in locations with limited or no internet connectivity — mining sites, offshore platforms, remote military installations, field hospitals — where AI must run completely locally.</p>
+
+        <h2>How Much Does DGX Spark Cost?</h2>
+
+        <p>NVIDIA has positioned DGX Spark starting around <strong>USD $3,000–$4,999</strong> for the base configuration. Enterprise-configured systems with expanded storage, enhanced support packages, and NVIDIA AI Enterprise licensing reach higher price points.</p>
+
+        <p>The critical comparison isn't sticker price versus cloud hourly rates — it's total cost of ownership over the system's useful life:</p>
+
+        <p><strong>Cloud GPU comparison (3-year TCO):</strong></p>
+        <ul>
+            <li><strong>AWS p5.xlarge</strong> (1x H100, 80GB): ~$4.50/hour → $39,420/year → <strong>$118,260 over 3 years</strong></li>
+            <li><strong>Google Cloud a3-highgpu-1g</strong> (1x H100): ~$3.80/hour → $33,288/year → <strong>$99,864 over 3 years</strong></li>
+            <li><strong>Azure ND H100 v5</strong>: ~$4.00/hour → $35,040/year → <strong>$105,120 over 3 years</strong></li>
+            <li><strong>DGX Spark</strong> (enterprise configured): ~$5,000–$10,000 upfront + ~$2,000/year support → <strong>$11,000–$16,000 over 3 years</strong></li>
+        </ul>
+
+        <p>For consistent workloads — inference serving, daily fine-tuning runs, production model deployment — <strong>DGX Spark delivers 6–10x lower TCO than cloud GPU instances over three years</strong>. The breakeven typically occurs within 6–12 months.</p>
+
+        <p>Cloud retains its cost advantage for sporadic workloads (less than 10–15% utilisation), burst training runs, and experimental work where you don't yet know your compute requirements.</p>
+
+        <figure>
+            <img src="images/on-premise-secure-vault.jpg" alt="Enterprise AI infrastructure cost comparison" loading="lazy" />
+            <figcaption>For consistent AI workloads, on-premise delivers dramatically lower TCO than cloud</figcaption>
+        </figure>
+
+        <h2>How Does DGX Spark Compare to Cloud GPU Instances?</h2>
+
+        <p>Beyond cost, the comparison involves several dimensions that matter differently depending on your use case:</p>
+
+        <p><strong>Data sovereignty.</strong> DGX Spark: data never leaves your premises. Cloud: data transits to and is processed in a third-party data centre, potentially in another jurisdiction. For regulated industries, this alone decides the question.</p>
+
+        <p><strong>Latency.</strong> DGX Spark: sub-millisecond inference latency with no network round-trip. Cloud: 50–200ms minimum depending on region, plus network variability. For real-time applications — clinical decision support, live fraud detection, voice agents — local inference is materially faster.</p>
+
+        <p><strong>Availability.</strong> DGX Spark: available whenever the power is on. No GPU capacity shortages, no spot instance preemptions, no regional outages. Cloud: subject to capacity constraints (H100 instances remain scarce in many regions), provider outages, and network connectivity.</p>
+
+        <p><strong>Scalability.</strong> Cloud wins here. Need 100 GPUs for a training run? Cloud delivers elastic scale that on-premise cannot match without massive capital investment. DGX Spark scales modestly — you can cluster multiple units via ConnectX-7, and NVIDIA's DGX SuperPOD provides rack-scale expansion — but elastic, on-demand scaling is cloud's structural advantage.</p>
+
+        <p><strong>Operational complexity.</strong> DGX Spark requires local administration: OS updates, hardware monitoring, physical security. Cloud abstracts this away. The trade-off is control versus convenience. For organisations with IT teams (or managed service partners like NovaGenAI), this operational overhead is manageable and often preferred.</p>
+
+        <h2>How Does DGX Spark Fit into the Broader NVIDIA Ecosystem?</h2>
+
+        <p>DGX Spark isn't an isolated product. It's the entry point in a coherent ecosystem designed to scale from desktop to data centre to cloud:</p>
+
+        <p><strong>DGX Spark → DGX Station → DGX SuperPOD.</strong> This is the on-premise scaling path. DGX Spark for departmental AI and edge deployment. DGX Station for workgroup-scale compute. DGX SuperPOD for enterprise-scale training and inference clusters. The software stack is identical across all three — models developed on Spark deploy to SuperPOD without modification.</p>
+
+        <p><strong>DGX Cloud.</strong> NVIDIA's cloud-hosted DGX infrastructure, available through partnerships with Google Cloud, Microsoft Azure, and Oracle Cloud. DGX Cloud gives enterprises burst compute capacity without building their own data centre. A typical hybrid architecture uses DGX Spark for sensitive data and inference, with DGX Cloud for large-scale training runs on non-sensitive data.</p>
+
+        <p><strong>NVIDIA AI Enterprise.</strong> The software platform that runs across all DGX hardware and cloud instances. It includes:</p>
+        <ul>
+            <li><strong>NeMo:</strong> Framework for training, fine-tuning, and customising large language models and multimodal AI</li>
+            <li><strong>NIM (NVIDIA Inference Microservices):</strong> Pre-optimised, containerised inference endpoints for production deployment</li>
+            <li><strong>CUDA:</strong> The foundational GPU computing platform — every AI framework runs on CUDA</li>
+            <li><strong>TensorRT:</strong> Inference optimisation engine delivering up to 40x speedup over CPU inference through kernel fusion, precision calibration, and memory optimisation</li>
+            <li><strong>Triton Inference Server:</strong> Production model serving with dynamic batching, multi-model support, and GPU/CPU scheduling</li>
+            <li><strong>RAPIDS:</strong> GPU-accelerated data science — pandas, scikit-learn, and graph analytics at GPU speed for data preprocessing and feature engineering</li>
+        </ul>
+
+        <p>This ecosystem coherence is DGX Spark's strategic advantage. You're not buying a box — you're entering an ecosystem where every piece of software, every optimisation, and every model format works seamlessly from your desk to the data centre to the cloud.</p>
+
+        <h2>How Does NovaGenAI Deploy and Manage DGX Spark?</h2>
+
+        <p>NovaGenAI is not a hardware reseller. We deploy DGX Spark as part of complete, production-grade AI systems. Here's what that means in practice:</p>
+
+        <p><strong>Pre-deployment.</strong> We assess your workload requirements, data sensitivity classification, regulatory obligations, and existing infrastructure. We size the deployment correctly — DGX Spark for departmental AI, multiple units for higher throughput, or DGX SuperPOD for enterprise-scale requirements. We architect the complete system, not just the hardware.</p>
+
+        <p><strong>Model development.</strong> We build custom AI models fine-tuned on your proprietary data, running entirely within your infrastructure. These aren't off-the-shelf models with a prompt template — they're purpose-built systems trained on your domain data: your clinical records, your financial transaction patterns, your operational documents. The models understand your business because they were built on your data.</p>
+
+        <p><strong>Stack optimisation.</strong> We deploy and tune the full NVIDIA AI stack: NeMo for model management, NIM for optimised inference, TensorRT for maximum throughput, Triton for production serving, RAPIDS for data pipelines. The difference between a default installation and an optimised deployment can be 3–5x in inference performance.</p>
+
+        <p><strong>Integration.</strong> DGX Spark connects to your existing systems: RAG pipelines pulling from your document management systems, API endpoints for your applications, SSO integration with your identity provider, audit logging to your SIEM. AI isn't useful in isolation — it must be woven into your operational workflow.</p>
+
+        <p><strong>Ongoing management.</strong> Continuous monitoring, performance optimisation, model updates, security patching, and compliance reporting. We deploy and we stay. Your DGX Spark infrastructure is managed, monitored, and maintained as a production system — because that's what it is.</p>
+
+        <p>We also architect <a href="./cloud-vs-onpremise-vs-hybrid.html">hybrid deployments</a> where DGX Spark handles sensitive data on-premise while cloud infrastructure (Google Cloud, AWS, Azure) provides burst compute for training and non-sensitive workloads. The right architecture matches your regulatory reality, not a vendor's preference.</p>
+
+        <h2>What Are the Limitations of DGX Spark?</h2>
+
+        <p>No technology is a silver bullet. Understanding DGX Spark's limitations is essential for making the right deployment decision:</p>
+
+        <ul>
+            <li><strong>Training ceiling.</strong> 128GB unified memory limits full training to models around 13B parameters. For training larger models from scratch, you need DGX SuperPOD or cloud compute. However, the vast majority of enterprise AI involves fine-tuning, not training from scratch — and LoRA fine-tuning of 70B+ models works well within the memory envelope.</li>
+            <li><strong>Single-GPU throughput.</strong> For high-concurrency production serving (thousands of simultaneous users), a single DGX Spark will hit throughput limits. Multiple units can be clustered, or the inference layer can be scaled with additional hardware.</li>
+            <li><strong>No elastic scaling.</strong> If your workload is highly variable — massive training runs one week, minimal inference the next — cloud provides elasticity that on-premise cannot match without over-provisioning.</li>
+            <li><strong>Operational responsibility.</strong> You (or your managed service partner) are responsible for hardware health, software updates, and physical security. This is a feature for sovereignty — but it's also a responsibility.</li>
+        </ul>
+
+        <div class="post-pull-quote">
+            "DGX Spark isn't for everyone. It's for enterprises that need serious AI compute where the data lives — and that's a market that grows every quarter as regulations tighten."
+        </div>
+
+        <h2>What Does the Future of DGX Spark Look Like?</h2>
+
+        <p>NVIDIA's product cadence suggests DGX Spark will follow the same rapid improvement trajectory as the data centre DGX line. The Grace Blackwell architecture is NVIDIA's current generation — the next generation (Rubin, expected 2026–2027) will likely bring significantly more memory and compute to the same form factor.</p>
+
+        <p>Three trends will accelerate DGX Spark adoption:</p>
+
+        <p><strong>Model efficiency gains.</strong> Techniques like speculative decoding, sparse attention, and improved quantisation mean that models which require 128GB today will require 64GB tomorrow. The effective capability of DGX Spark is increasing even without hardware upgrades.</p>
+
+        <p><strong>Regulatory expansion.</strong> Every major economy is tightening data sovereignty requirements. ASEAN's AI governance frameworks, Australia's Privacy Act reform, and sector-specific regulations in healthcare and finance all push more workloads toward <a href="./why-on-premise-ai-matters.html">on-premise deployment</a>.</p>
+
+        <p><strong>Enterprise AI maturity.</strong> As organisations move from AI experimentation to production deployment, the predictable economics and sovereignty guarantees of on-premise hardware become increasingly attractive. DGX Spark is positioned exactly at this inflection point.</p>
+
+        <p><strong>The bottom line:</strong> DGX Spark puts genuine enterprise AI capability on your desk, under your control, with economics that beat cloud for consistent workloads. For organisations in regulated industries — or any enterprise that takes data sovereignty seriously — it's the most important piece of AI hardware released this decade.</p>
+
+        <!-- Author Bio -->
+        <div class="post-author">
+            <img src="images/don-calaki.jpg" alt="Don Calaki" class="post-author__avatar" loading="lazy" />
+            <div class="post-author__info">
+                <p class="post-author__name">Don Calaki</p>
+                <p class="post-author__title">CEO & Founder, NovaGenAI</p>
+                <p class="post-author__bio">Don leads NovaGenAI's mission to build production-grade AI systems for enterprises across Southeast Asia and Australia. As an NVIDIA partner, NovaGenAI deploys DGX Spark infrastructure with custom models, optimised stacks, and managed services for regulated industries.</p>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="post-faq">
+            <h2 class="post-faq__title">Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <button class="faq-item__question">
+                    <span>What are the full specs of NVIDIA DGX Spark?</span>
+                    <span class="faq-item__icon"></span>
+                </button>
+                <div class="faq-item__answer">
+                    <div class="faq-item__answer-inner">DGX Spark delivers up to 1 petaflop of AI compute using Grace Blackwell architecture, with 128GB unified memory, NVLink-C2C interconnect, up to 4TB NVMe SSD, ConnectX-7 networking, in a compact desktop form factor running on standard power with air cooling.</div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-item__question">
+                    <span>How much does NVIDIA DGX Spark cost?</span>
+                    <span class="faq-item__icon"></span>
+                </button>
+                <div class="faq-item__answer">
+                    <div class="faq-item__answer-inner">Base configurations start around USD $3,000–$4,999, with enterprise-configured systems reaching higher. Compared to cloud GPU instances at $2–8/hour, DGX Spark typically reaches cost parity within 6–12 months and delivers 6–10x lower TCO over three years for consistent workloads.</div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-item__question">
+                    <span>What models can run on DGX Spark?</span>
+                    <span class="faq-item__icon"></span>
+                </button>
+                <div class="faq-item__answer">
+                    <div class="faq-item__answer-inner">128GB unified memory supports Llama 3.1 70B at full precision, Llama 3.1 405B at INT4 quantisation, Mixtral 8x22B, and most enterprise models. LoRA/QLoRA fine-tuning works on 70B+ parameter models. Multiple smaller models can run simultaneously for multi-agent architectures.</div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-item__question">
+                    <span>Who is DGX Spark designed for?</span>
+                    <span class="faq-item__icon"></span>
+                </button>
+                <div class="faq-item__answer">
+                    <div class="faq-item__answer-inner">Enterprises needing local AI compute: healthcare organisations running clinical AI on patient data, financial institutions deploying on-premise fraud detection, government agencies requiring air-gapped AI, research teams fine-tuning models on proprietary data, and any organisation where data sovereignty prevents cloud adoption.</div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-item__question">
+                    <span>How does DGX Spark compare to cloud GPU instances?</span>
+                    <span class="faq-item__icon"></span>
+                </button>
+                <div class="faq-item__answer">
+                    <div class="faq-item__answer-inner">DGX Spark offers comparable compute with zero data transfer, no per-hour billing, complete data sovereignty, sub-millisecond latency, and no internet dependency. Cloud wins for burst workloads, elastic scaling, and experimentation. DGX Spark wins for consistent inference, regulated data, and air-gapped environments.</div>
+                </div>
+            </div>
+        </div>
+
+    </article>
+
+    <!-- ════════════════════════════════════════════════════════ MOBILE SHARE -->
+    <div class="post-share-mobile">
+        <a href="https://www.linkedin.com/company/novagenai" target="_blank" class="post-share__btn" aria-label="NovaGenAI on LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+        <a href="https://x.com/Nova_GenAI" target="_blank" class="post-share__btn" aria-label="NovaGenAI on X"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="https://www.instagram.com/nova.genai" target="_blank" class="post-share__btn" aria-label="NovaGenAI on Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+    </div>
+
+    <!-- ════════════════════════════════════════════════════════ RELATED -->
+    <section class="post-related">
+        <div class="post-related__container">
+            <h2 class="post-related__heading">Related Articles</h2>
+            <div class="post-related__grid">
+                <a href="why-on-premise-ai-matters.html" class="blog-card visible">
+                    <div class="blog-card__image"><img src="images/on-premise-airgap-security.jpg" alt="On-Premise AI for Regulated Industries" loading="lazy" /></div>
+                    <div class="blog-card__body">
+                        <span class="blog-card__category">Enterprise AI</span>
+                        <h3 class="blog-card__title">Why On-Premise AI Matters for Regulated Industries</h3>
+                        <div class="blog-card__meta"><span class="blog-card__date-read">Feb 28, 2026 · 12 min</span></div>
+                    </div>
+                </a>
+                <a href="cloud-vs-onpremise-vs-hybrid.html" class="blog-card visible">
+                    <div class="blog-card__image"><img src="images/vision-ai-orchestration.jpg" alt="Cloud vs On-Premise vs Hybrid AI" loading="lazy" /></div>
+                    <div class="blog-card__body">
+                        <span class="blog-card__category">AI Strategy</span>
+                        <h3 class="blog-card__title">Cloud vs On-Premise vs Hybrid AI: Which Deployment is Right?</h3>
+                        <div class="blog-card__meta"><span class="blog-card__date-read">Feb 28, 2026 · 13 min</span></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════ FOOTER -->
+    <footer class="footer">
+        <div class="footer__inner">
+            <div class="footer__brand">
+                <span class="footer__logo">
+                    <img loading="lazy" src="../images/novagenai-logo-new.png" alt="NovaGenAI" class="footer__logo-img">
+                </span>
+                <p class="footer__tagline">Enterprise AI Systems — Asia-Pacific &amp; Global</p>
+                <p class="footer__tagline" style="margin-top:.25rem;font-size:.7rem;opacity:.6;">Malaysia · Australia · Singapore</p>
+            </div>
+            <div class="footer__links">
+                <a href="../solutions.html">Solutions</a>
+                <a href="../agents.html">Agents</a>
+                <a href="../technology.html">Technology</a>
+                <a href="../case-studies.html">Case Studies</a>
+                <a href="../team.html">Our Team</a>
+                <a href="../about.html">About</a>
+                <a href="../contact.html">Contact</a>
+            </div>
+            <div class="footer__social">
+                <a href="https://www.linkedin.com/company/novagenai" target="_blank" rel="noopener" aria-label="LinkedIn" class="footer__social-link footer__social--linkedin"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+                <a href="https://www.instagram.com/nova.genai" target="_blank" rel="noopener" aria-label="Instagram" class="footer__social-link footer__social--instagram"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+                <a href="https://x.com/Nova_GenAI" target="_blank" rel="noopener" aria-label="X" class="footer__social-link footer__social--x"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+                <a href="https://www.youtube.com/@Nova_GenAI" target="_blank" rel="noopener" aria-label="YouTube" class="footer__social-link footer__social--youtube"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+                <a href="https://wa.me/60111401036" target="_blank" rel="noopener" aria-label="WhatsApp" class="footer__social-link footer__social--whatsapp"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+            </div>
+            <p class="footer__copy">&copy; 2026 NovaGenAI. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="blog.js"></script>
+</body>
+</html>
