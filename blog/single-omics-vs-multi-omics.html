@@ -95,4 +95,235 @@
         {
           "@type": "Question",
           "name": "How do LLMs enable multi-omics integration?",
-          "
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Large language models can learn unified representations across omics layers through techniques like Cell2Sentence, which converts single-cell expression profiles into text sequences. This allows transformer architectures to jointly model multiple data types, discover cross-layer relationships, and generate predictions that integrate information from all available omics layers."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are the clinical applications of multi-omics AI?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Multi-omics AI enables cancer subtyping beyond traditional histology, drug response prediction based on individual molecular profiles, early disease detection through multi-modal biomarker panels, identification of therapeutic targets by mapping disease mechanisms across biological layers, and personalised treatment selection in precision medicine."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does NovaGenAI work with multi-omics data?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NovaGenAI builds computational biology models that integrate multi-omics data using transformer-based architectures. Our systems process scRNA-seq, genomic, and proteomic data to predict cell viability, identify disease subtypes, and support drug discovery — deployed on NVIDIA infrastructure for enterprise-grade performance and data sovereignty."
+          }
+        }
+      ]
+    }
+    </script>
+</head>
+
+<body>
+    <!-- ════════════════════════════════════════════════════════ NAV -->
+    <nav class="nav">
+        <div class="nav__inner">
+            <a href="../index.html" class="nav__logo">
+                <img src="../images/novagenai-logo-new.png" alt="NovaGenAI" class="nav__logo-img" />
+            </a>
+            <button class="nav__toggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+            <div class="nav__links">
+                <a href="../solutions.html">Solutions</a>
+                <a href="../agents.html">Agents</a>
+                <a href="../technology.html">Technology</a>
+                <a href="../case-studies.html">Case Studies</a>
+                <a href="../team.html">Our Team</a>
+                <a href="../about.html">About</a>
+                <a href="index.html" class="nav__link--active">Blog</a>
+                <a href="../contact.html" class="btn btn--nav">Get Started</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ════════════════════════════════════════════════════════ HERO -->
+    <header class="post-hero">
+        <div class="post-hero__inner">
+            <span class="post-hero__category">Computational Biotech</span>
+            <h1 class="post-hero__title">Single-Omics vs Multi-Omics AI: What's the Difference and Why Does It Matter?</h1>
+            <div class="post-hero__meta">
+                <img src="images/don-calaki.jpg" alt="Don Calaki" class="post-hero__avatar" loading="lazy" />
+                <div>
+                    <span class="post-hero__author">Don Calaki</span>
+                    <span class="post-hero__date">Feb 28, 2026 · 14 min read</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ════════════════════════════════════════════════════════ ARTICLE -->
+    <article class="post-body">
+
+        <p class="post-body__lead">Biology doesn't operate in silos — but for decades, most computational analysis has. Single-omics approaches analyse one data layer at a time: just gene expression, or just DNA sequences, or just protein levels. Multi-omics integration changes this by combining multiple biological data layers to build a complete picture of how cells actually function.</p>
+
+        <h2>What Is Single-Omics Analysis?</h2>
+        <p>Single-omics means studying one layer of biological data in isolation. The most common single-omics approaches are:</p>
+        <ul>
+            <li><strong>Genomics</strong> — DNA sequences, variants, mutations, structural changes</li>
+            <li><strong>Transcriptomics</strong> — Gene expression levels via RNA sequencing (including scRNA-seq)</li>
+            <li><strong>Epigenomics</strong> — DNA methylation patterns, histone modifications, chromatin accessibility</li>
+            <li><strong>Proteomics</strong> — Protein expression, post-translational modifications, protein-protein interactions</li>
+            <li><strong>Metabolomics</strong> — Small molecule metabolites and metabolic pathway activity</li>
+        </ul>
+        <p>Each layer provides valuable but incomplete information. A genomic variant might show a mutation — but transcriptomics reveals whether that gene is actually expressed. Proteomics shows whether the protein is made. Metabolomics shows the downstream functional impact.</p>
+
+        <h2>The Limitations of Single-Omics</h2>
+        <p>Single-omics analysis works well for focused questions but fails for complex biological problems. Cancer subtyping based on gene expression alone misses epigenetic drivers. Drug response prediction from genomics alone ignores the protein and metabolic context that determines actual drug efficacy. Single-omics provides correlation; multi-omics provides mechanism.</p>
+
+        <h2>What Is Multi-Omics Integration?</h2>
+        <p>Multi-omics integration combines data from two or more omics layers to build a unified model of cellular biology. The goal: understand not just what genes are mutated, but how those mutations cascade through gene expression, protein production, and metabolic activity to produce disease phenotypes.</p>
+        <p>Integration methods range from simple concatenation (combining features from different layers) to sophisticated approaches like multi-modal autoencoders, graph neural networks, and transformer-based architectures that learn cross-layer relationships.</p>
+
+        <h2>How LLMs Are Transforming Multi-Omics</h2>
+        <p>The breakthrough insight is that biological data can be treated as language. Techniques like <a href="./what-is-cell2sentence.html">Cell2Sentence</a> convert single-cell expression profiles into text sequences, enabling LLMs to process biological data with the same transformer architectures that power GPT and Claude.</p>
+        <p>This approach allows models to learn unified representations across omics layers, discover cross-layer relationships that statistical methods miss, and generate predictions that integrate information from all available biological data types. The result is a new class of foundation models for biology.</p>
+
+        <h2>Clinical Applications</h2>
+        <p>Multi-omics AI is already delivering clinical value:</p>
+        <ul>
+            <li><strong>Cancer subtyping</strong> — Identifying tumour subtypes that transcend traditional histological classification</li>
+            <li><strong>Drug response prediction</strong> — Predicting which patients will respond to specific therapies based on their multi-modal molecular profile</li>
+            <li><strong>Early detection</strong> — Multi-modal biomarker panels that catch disease earlier than any single marker</li>
+            <li><strong>Target identification</strong> — Mapping disease mechanisms across biological layers to find new therapeutic targets</li>
+            <li><strong>Personalised medicine</strong> — Treatment selection based on the complete molecular picture of each patient</li>
+        </ul>
+
+        <h2>NovaGenAI's Approach</h2>
+        <p>At NovaGenAI, we build computational biology models that integrate multi-omics data using transformer-based architectures. Our systems process scRNA-seq, genomic, and proteomic data to predict cell viability, identify disease subtypes, and support drug discovery pipelines — all deployed on NVIDIA infrastructure for enterprise-grade performance and data sovereignty.</p>
+
+        <!-- Author Bio -->
+        <div class="post-author">
+            <img src="images/don-calaki.jpg" alt="Don Calaki" class="post-author__avatar" loading="lazy" />
+            <div class="post-author__info">
+                <p class="post-author__name">Don Calaki</p>
+                <p class="post-author__title">CEO & Founder, NovaGenAI</p>
+                <p class="post-author__bio">Don leads NovaGenAI's mission to build production-grade AI systems for enterprises across Southeast Asia and Australia. Deep expertise in AI infrastructure, computational biotech, and enterprise deployment across cloud, on-premise, and hybrid configurations.</p>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="post-faq">
+            <h2 class="post-faq__title">Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <button class="faq-item__question">
+                    <span>What is the difference between single-omics and multi-omics?</span>
+                    <span class="faq-item__icon"></span>
+                </button>
+                <div class="faq-item__answer">
+                    <div class="faq-item__answer-inner">Single-omics analyses one biological data layer at a time (e.g., only gene expression or only DNA sequences). Multi-omics integrates multiple layers — transcriptomics, genomics, epigenomics, proteomics, and metabolomics — to build a more complete picture of biological systems and disease mechanisms.</div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-item__question">
+                    <span>What are the main types of omics data?</span>
+                    <span class="faq-item__icon"></span>
+                </button>
+                <div class="faq-item__answer">
+                    <div class="faq-item__answer-inner">The five main omics layers are: genomics (DNA sequences and variants), transcriptomics (gene expression via RNA), epigenomics (DNA methylation and histone modifications), proteomics (protein expression and interactions), and metabolomics (small molecule metabolites).</div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-item__question">
+                    <span>Why is multi-omics integration difficult?</span>
+                    <span class="faq-item__icon"></span>
+                </button>
+                <div class="faq-item__answer">
+                    <div class="faq-item__answer-inner">Multi-omics integration faces challenges including different data types and scales across layers, missing data, batch effects between technologies, computational complexity, and the need for sophisticated alignment methods to map entities across layers.</div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-item__question">
+                    <span>How do LLMs enable multi-omics integration?</span>
+                    <span class="faq-item__icon"></span>
+                </button>
+                <div class="faq-item__answer">
+                    <div class="faq-item__answer-inner">Large language models can learn unified representations across omics layers through techniques like Cell2Sentence, which converts single-cell expression profiles into text sequences. This allows transformer architectures to jointly model multiple data types and discover cross-layer relationships.</div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-item__question">
+                    <span>What are the clinical applications of multi-omics AI?</span>
+                    <span class="faq-item__icon"></span>
+                </button>
+                <div class="faq-item__answer">
+                    <div class="faq-item__answer-inner">Clinical applications include cancer subtyping beyond traditional histology, drug response prediction, early disease detection through multi-modal biomarker panels, therapeutic target identification, and personalised treatment selection in precision medicine.</div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-item__question">
+                    <span>How does NovaGenAI work with multi-omics data?</span>
+                    <span class="faq-item__icon"></span>
+                </button>
+                <div class="faq-item__answer">
+                    <div class="faq-item__answer-inner">NovaGenAI builds computational biology models that integrate multi-omics data using transformer-based architectures. Our systems process scRNA-seq, genomic, and proteomic data to predict cell viability, identify disease subtypes, and support drug discovery — deployed on NVIDIA infrastructure.</div>
+                </div>
+            </div>
+        </div>
+
+    </article>
+
+    <!-- ════════════════════════════════════════════════════════ RELATED -->
+    <section class="post-related">
+        <div class="post-related__container">
+            <h2 class="post-related__heading">Related Articles</h2>
+            <div class="post-related__grid">
+                <a href="what-is-cell2sentence.html" class="blog-card visible">
+                    <div class="blog-card__image"><img src="images/biotech-computational-future.jpg" alt="What is Cell2Sentence?" loading="lazy" /></div>
+                    <div class="blog-card__body">
+                        <span class="blog-card__category">Computational Biotech</span>
+                        <h3 class="blog-card__title">What Is Cell2Sentence? Turning Single-Cell Data Into Language</h3>
+                        <div class="blog-card__meta"><span class="blog-card__date-read">Feb 28, 2026 · 12 min</span></div>
+                    </div>
+                </a>
+                <a href="in-silico-modelling.html" class="blog-card visible">
+                    <div class="blog-card__image"><img src="images/biotech-computational-future.jpg" alt="In-Silico Modelling" loading="lazy" /></div>
+                    <div class="blog-card__body">
+                        <span class="blog-card__category">Computational Biotech</span>
+                        <h3 class="blog-card__title">In-Silico Modelling: The Future of Computational Biology</h3>
+                        <div class="blog-card__meta"><span class="blog-card__date-read">Feb 28, 2026 · 13 min</span></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════ FOOTER -->
+    <footer class="footer">
+        <div class="footer__inner">
+            <div class="footer__brand">
+                <span class="footer__logo">
+                    <img loading="lazy" src="../images/novagenai-logo-new.png" alt="NovaGenAI" class="footer__logo-img">
+                </span>
+                <p class="footer__tagline">Enterprise AI Systems — Asia-Pacific &amp; Global</p>
+                <p class="footer__tagline" style="margin-top:.25rem;font-size:.7rem;opacity:.6;">Malaysia · Australia · Singapore</p>
+            </div>
+            <div class="footer__links">
+                <a href="../solutions.html">Solutions</a>
+                <a href="../agents.html">Agents</a>
+                <a href="../technology.html">Technology</a>
+                <a href="../case-studies.html">Case Studies</a>
+                <a href="../team.html">Our Team</a>
+                <a href="../about.html">About</a>
+                <a href="../contact.html">Contact</a>
+            </div>
+            <p class="footer__copy">&copy; 2026 NovaGenAI. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="blog.js"></script>
+</body>
+</html>

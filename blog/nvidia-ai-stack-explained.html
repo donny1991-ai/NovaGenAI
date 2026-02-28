@@ -30,4 +30,296 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;600;700
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="blog.css" />
+
+    <!-- Article JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "The NVIDIA AI Stack Explained: NeMo, NIM, CUDA, TensorRT, Triton, and RAPIDS",
+      "author": {"@type": "Person", "name": "Don Calaki"},
+      "publisher": {
+        "@type": "Organization",
+        "name": "NovaGenAI",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://novagenai.com.my/images/logo.png"
+        }
+      },
+      "datePublished": "2026-02-28",
+      "dateModified": "2026-02-28",
+      "image": "https://novagenai.com.my/blog/images/on-premise-nvidia-dgx.jpg",
+      "description": "A deep technical guide to the NVIDIA AI stack: CUDA, cuDNN, TensorRT, Triton Inference Server, NeMo, NIM, and RAPIDS.",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://novagenai.com.my/blog/nvidia-ai-stack-explained"
+      }
+    }
+    </script>
+
+    <!-- FAQ JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the NVIDIA AI stack?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The NVIDIA AI stack is a vertically integrated ecosystem of hardware and software for building, training, and deploying AI models. It includes CUDA (GPU programming), cuDNN (deep learning primitives), TensorRT (inference optimization), Triton Inference Server (model serving), NeMo (LLM training framework), NIM (microservices for deployment), and RAPIDS (GPU-accelerated data science)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between NeMo and NIM?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NeMo is NVIDIA's framework for training, fine-tuning, and customizing large language models. NIM (NVIDIA Inference Microservices) is for deploying those models as optimized, containerized microservices. NeMo handles the training side; NIM handles the inference and serving side."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does TensorRT optimize AI inference?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "TensorRT optimizes trained neural networks for inference by applying layer fusion, kernel auto-tuning, precision calibration (FP16/INT8), and dynamic tensor memory management. It can deliver 2-6x faster inference compared to running models in native frameworks like PyTorch."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is Triton Inference Server used for?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Triton Inference Server is NVIDIA's open-source model serving platform. It supports multiple frameworks (TensorRT, PyTorch, TensorFlow, ONNX), enables dynamic batching, model ensembles, A/B testing, and concurrent model execution on GPUs. It's the production serving layer for enterprise AI deployments."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is RAPIDS and how does it relate to AI?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "RAPIDS is NVIDIA's suite of GPU-accelerated data science libraries including cuDF (DataFrames), cuML (machine learning), cuGraph (graph analytics), and cuSpatial. It accelerates the data preprocessing and feature engineering pipeline that feeds AI models, delivering 10-100x speedups over CPU-based tools like pandas and scikit-learn."
+          }
+        }
+      ]
+    }
+    </script>
+</head>
+
+<body>
+    <!-- ════════════════════════════════════════════════════════ NAV -->
+    <nav class="nav">
+        <div class="nav__inner">
+            <a href="../index.html" class="nav__logo">
+                <img src="../images/novagenai-logo-new.png" alt="NovaGenAI" class="nav__logo-img" />
+            </a>
+            <button class="nav__toggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+            <div class="nav__links">
+                <a href="../solutions.html">Solutions</a>
+                <a href="../agents.html">Agents</a>
+                <a href="../technology.html">Technology</a>
+                <a href="../case-studies.html">Case Studies</a>
+                <a href="../team.html">Our Team</a>
+                <a href="../about.html">About</a>
+                <a href="index.html" class="nav__link--active">Blog</a>
+                <a href="../contact.html" class="btn btn--nav">Get Started</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ════════════════════════════════════════════════════════ HERO -->
+    <header class="post-hero">
+        <div class="post-hero__inner">
+            <span class="post-hero__category">Enterprise AI</span>
+            <h1 class="post-hero__title">The NVIDIA AI Stack Explained: NeMo, NIM, CUDA, TensorRT, Triton, and RAPIDS</h1>
+            <div class="post-hero__meta">
+                <img src="images/don-calaki.jpg" alt="Don Calaki" class="post-hero__avatar" loading="lazy" />
+                <div>
+                    <span class="post-hero__author">Don Calaki</span>
+                    <span class="post-hero__date">Feb 28, 2026 · 16 min read</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ════════════════════════════════════════════════════════ ARTICLE -->
+    <article class="post-body">
+
+        <p class="post-body__lead">NVIDIA doesn't just make GPUs. They've built the most comprehensive AI software ecosystem in existence — a vertically integrated stack that spans from silicon-level compute through to production model serving. Understanding this stack is essential for any enterprise deploying AI at scale.</p>
+
+        <h2>The Stack at a Glance</h2>
+        <p>The NVIDIA AI stack has seven major layers, each building on the one below:</p>
+        <ol>
+            <li><strong>CUDA</strong> — GPU programming foundation</li>
+            <li><strong>cuDNN</strong> — Deep learning primitives</li>
+            <li><strong>TensorRT</strong> — Inference optimization engine</li>
+            <li><strong>Triton Inference Server</strong> — Production model serving</li>
+            <li><strong>NeMo</strong> — LLM training and fine-tuning framework</li>
+            <li><strong>NIM</strong> — Inference microservices for deployment</li>
+            <li><strong>RAPIDS</strong> — GPU-accelerated data science</li>
+        </ol>
+
+        <h2>Layer 1: CUDA — The Foundation</h2>
+        <p>CUDA (Compute Unified Device Architecture) is the programming model that allows developers to write code that runs on NVIDIA GPUs. Every other layer in the stack ultimately compiles down to CUDA kernels. With over 4 million developers and 15+ years of ecosystem development, CUDA's moat is arguably NVIDIA's most valuable asset.</p>
+        <p>CUDA provides parallel computing primitives — thousands of threads executing simultaneously across GPU cores. For AI workloads, this means matrix multiplications that would take seconds on a CPU complete in milliseconds on a GPU.</p>
+
+        <h2>Layer 2: cuDNN — Deep Learning Primitives</h2>
+        <p>cuDNN (CUDA Deep Neural Network library) provides highly optimized implementations of standard deep learning operations: convolutions, pooling, normalization, activation functions, and recurrent neural networks. Rather than writing CUDA kernels from scratch, frameworks like PyTorch and TensorFlow call cuDNN for their GPU-accelerated operations.</p>
+
+        <h2>Layer 3: TensorRT — Inference Optimization</h2>
+        <p>TensorRT takes a trained neural network and optimizes it specifically for inference. The optimizations include: layer fusion (combining multiple operations into single kernels), precision calibration (converting FP32 to FP16 or INT8 with minimal accuracy loss), kernel auto-tuning (selecting the fastest kernel for each operation on the target GPU), and dynamic tensor memory management.</p>
+        <p>The result: 2-6x faster inference compared to running models in native PyTorch or TensorFlow. For enterprise deployments serving millions of requests, this translates directly to lower latency and reduced infrastructure cost.</p>
+
+        <h2>Layer 4: Triton Inference Server — Production Serving</h2>
+        <p>Triton is NVIDIA's open-source inference serving platform. It handles the production complexity of serving AI models: dynamic batching (grouping requests for efficient GPU utilization), model ensembles (chaining multiple models), A/B testing, model versioning, and health monitoring.</p>
+        <p>Triton supports models from any framework — TensorRT, PyTorch, TensorFlow, ONNX Runtime, and custom backends. This flexibility is critical for enterprises running diverse model portfolios.</p>
+
+        <h2>Layer 5: NeMo — LLM Training Framework</h2>
+        <p>NeMo is NVIDIA's end-to-end framework for training, fine-tuning, and customizing large language models. It supports multi-GPU and multi-node training with parallelism strategies (tensor, pipeline, data), efficient fine-tuning methods (LoRA, P-tuning, RLHF), and integration with NVIDIA's model zoo.</p>
+        <p>For enterprises, NeMo enables domain-specific model customization — training LLMs on proprietary data while maintaining the base capabilities of foundation models.</p>
+
+        <h2>Layer 6: NIM — Inference Microservices</h2>
+        <p>NVIDIA Inference Microservices (NIM) package optimized models as containerized microservices with standard API endpoints. NIM handles the complexity of model optimization (automatically applying TensorRT), scaling, and deployment. Developers get a simple API call; NIM handles GPU allocation, batching, and model management behind the scenes.</p>
+        <p>NIM containers can run on any NVIDIA GPU — from a desktop DGX Spark to cloud instances — making it the deployment layer for hybrid and on-premise architectures.</p>
+
+        <h2>Layer 7: RAPIDS — GPU-Accelerated Data Science</h2>
+        <p>RAPIDS accelerates the entire data pipeline: cuDF for DataFrames (pandas replacement), cuML for machine learning (scikit-learn replacement), cuGraph for graph analytics, and cuSpatial for geospatial data. RAPIDS delivers 10-100x speedups over CPU-based tools, compressing data preparation cycles from hours to minutes.</p>
+
+        <h2>How NovaGenAI Uses the Full Stack</h2>
+        <p>At NovaGenAI, we deploy the complete NVIDIA stack for our enterprise clients:</p>
+        <ul>
+            <li><strong>Training:</strong> NeMo for domain-specific LLM fine-tuning on client data</li>
+            <li><strong>Optimization:</strong> TensorRT for production inference optimization</li>
+            <li><strong>Serving:</strong> Triton for high-throughput, low-latency model serving</li>
+            <li><strong>Deployment:</strong> NIM microservices on DGX Spark for on-premise installations</li>
+            <li><strong>Data Pipeline:</strong> RAPIDS for GPU-accelerated feature engineering and analytics</li>
+        </ul>
+        <p>This full-stack approach ensures our clients get maximum performance, security, and efficiency from their AI infrastructure — whether deployed in the cloud, on-premise, or in hybrid configurations.</p>
+
+        <!-- Author Bio -->
+        <div class="post-author">
+            <img src="images/don-calaki.jpg" alt="Don Calaki" class="post-author__avatar" loading="lazy" />
+            <div class="post-author__info">
+                <p class="post-author__name">Don Calaki</p>
+                <p class="post-author__title">CEO & Founder, NovaGenAI</p>
+                <p class="post-author__bio">Don leads NovaGenAI's mission to build production-grade AI systems for enterprises across Southeast Asia and Australia. Deep expertise in AI infrastructure, computational biotech, and enterprise deployment across cloud, on-premise, and hybrid configurations.</p>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="post-faq">
+            <h2 class="post-faq__title">Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <button class="faq-item__question">
+                    <span>What is the NVIDIA AI stack?</span>
+                    <span class="faq-item__icon"></span>
+                </button>
+                <div class="faq-item__answer">
+                    <div class="faq-item__answer-inner">The NVIDIA AI stack is a vertically integrated ecosystem of hardware and software for building, training, and deploying AI models. It includes CUDA (GPU programming), cuDNN (deep learning primitives), TensorRT (inference optimization), Triton Inference Server (model serving), NeMo (LLM training framework), NIM (microservices for deployment), and RAPIDS (GPU-accelerated data science).</div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-item__question">
+                    <span>What is the difference between NeMo and NIM?</span>
+                    <span class="faq-item__icon"></span>
+                </button>
+                <div class="faq-item__answer">
+                    <div class="faq-item__answer-inner">NeMo is NVIDIA's framework for training, fine-tuning, and customizing large language models. NIM (NVIDIA Inference Microservices) is for deploying those models as optimized, containerized microservices. NeMo handles the training side; NIM handles the inference and serving side.</div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-item__question">
+                    <span>How does TensorRT optimize AI inference?</span>
+                    <span class="faq-item__icon"></span>
+                </button>
+                <div class="faq-item__answer">
+                    <div class="faq-item__answer-inner">TensorRT optimizes trained neural networks for inference by applying layer fusion, kernel auto-tuning, precision calibration (FP16/INT8), and dynamic tensor memory management. It can deliver 2-6x faster inference compared to running models in native frameworks like PyTorch.</div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-item__question">
+                    <span>What is Triton Inference Server used for?</span>
+                    <span class="faq-item__icon"></span>
+                </button>
+                <div class="faq-item__answer">
+                    <div class="faq-item__answer-inner">Triton Inference Server is NVIDIA's open-source model serving platform. It supports multiple frameworks (TensorRT, PyTorch, TensorFlow, ONNX), enables dynamic batching, model ensembles, A/B testing, and concurrent model execution on GPUs. It's the production serving layer for enterprise AI deployments.</div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-item__question">
+                    <span>What is RAPIDS and how does it relate to AI?</span>
+                    <span class="faq-item__icon"></span>
+                </button>
+                <div class="faq-item__answer">
+                    <div class="faq-item__answer-inner">RAPIDS is NVIDIA's suite of GPU-accelerated data science libraries including cuDF (DataFrames), cuML (machine learning), cuGraph (graph analytics), and cuSpatial. It accelerates the data preprocessing and feature engineering pipeline that feeds AI models, delivering 10-100x speedups over CPU-based tools like pandas and scikit-learn.</div>
+                </div>
+            </div>
+        </div>
+
+    </article>
+
+    <!-- ════════════════════════════════════════════════════════ RELATED -->
+    <section class="post-related">
+        <div class="post-related__container">
+            <h2 class="post-related__heading">Related Articles</h2>
+            <div class="post-related__grid">
+                <a href="dgx-spark-complete-guide.html" class="blog-card visible">
+                    <div class="blog-card__image"><img src="images/on-premise-dgx-sovereignty.jpg" alt="NVIDIA DGX Spark Complete Guide" loading="lazy" /></div>
+                    <div class="blog-card__body">
+                        <span class="blog-card__category">Enterprise AI</span>
+                        <h3 class="blog-card__title">What is NVIDIA DGX Spark? The Complete Enterprise Guide</h3>
+                        <div class="blog-card__meta"><span class="blog-card__date-read">Feb 28, 2026 · 14 min</span></div>
+                    </div>
+                </a>
+                <a href="why-on-premise-ai-matters.html" class="blog-card visible">
+                    <div class="blog-card__image"><img src="images/on-premise-ai-og.jpg" alt="Why On-Premise AI Matters" loading="lazy" /></div>
+                    <div class="blog-card__body">
+                        <span class="blog-card__category">Enterprise AI</span>
+                        <h3 class="blog-card__title">Why On-Premise AI Matters for Regulated Industries</h3>
+                        <div class="blog-card__meta"><span class="blog-card__date-read">Feb 28, 2026 · 12 min</span></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════ FOOTER -->
+    <footer class="footer">
+        <div class="footer__inner">
+            <div class="footer__brand">
+                <span class="footer__logo">
+                    <img loading="lazy" src="../images/novagenai-logo-new.png" alt="NovaGenAI" class="footer__logo-img">
+                </span>
+                <p class="footer__tagline">Enterprise AI Systems — Asia-Pacific &amp; Global</p>
+                <p class="footer__tagline" style="margin-top:.25rem;font-size:.7rem;opacity:.6;">Malaysia · Australia · Singapore</p>
+            </div>
+            <div class="footer__links">
+                <a href="../solutions.html">Solutions</a>
+                <a href="../agents.html">Agents</a>
+                <a href="../technology.html">Technology</a>
+                <a href="../case-studies.html">Case Studies</a>
+                <a href="../team.html">Our Team</a>
+                <a href="../about.html">About</a>
+                <a href="../contact.html">Contact</a>
+            </div>
+            <p class="footer__copy">&copy; 2026 NovaGenAI. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="blog.js"></script>
+</body>
+</html>

@@ -1,0 +1,242 @@
+# NovaGenAI — llms-full.txt
+# Comprehensive AI-readable company profile for advanced AI crawlers
+
+> NovaGenAI Sdn. Bhd. (Company No. 202501055020)
+> Incorporated: 25 November 2025
+> Website: https://novagenai.com.my
+> Email: enquiries@novagenai.com.my
+> Phone: +60 11-1401 036
+
+## Company Description
+
+NovaGenAI is an enterprise AI systems company headquartered in Cyberjaya, Malaysia. Founded in November 2025 by Don Calaki, we design, build, and deploy production-grade AI systems for enterprises across Southeast Asia, Australia, and beyond. Our mission is to make enterprise AI accessible, secure, and deployable — particularly for regulated industries that cannot rely on public cloud AI services.
+
+We specialise in three core domains:
+1. **Enterprise AI Infrastructure** — Autonomous AI agents, multi-agent orchestration, LLM engineering, voice AI, and document intelligence deployed on cloud, on-premise, or hybrid infrastructure.
+2. **Computational Biotech Intelligence** — AI models for single-cell biology, multi-omics integration, in-silico modelling, drug discovery, and predictive cell viability.
+3. **On-Premise AI Deployment** — Full-stack NVIDIA infrastructure (DGX Spark, NeMo, NIM, TensorRT, Triton) for air-gapped and data-sovereign environments.
+
+NovaGenAI is backed by MerakInvestments, CryoCord Group, and Brighton Healthcare Group. We are currently raising a $1M seed round.
+
+## Location
+
+Suite 1-1, 1st Floor, Bio-X Centre, Persiaran Cyberpoint Selatan, Cyber 8, 63000 Cyberjaya, Selangor, Malaysia.
+
+Markets: Malaysia, Singapore, Australia, Asia-Pacific, Global.
+
+## Products and Services
+
+### AI Concierge Platform
+Enterprise voice AI with retrieval-augmented generation (RAG). Handles customer interactions through natural conversation with real-time knowledge retrieval from business databases, documents, and CRM systems. Built on ElevenLabs voice synthesis, custom LLMs, and NovaGenAI's RAG pipeline. Deployed on-premise for data sovereignty or cloud for scale. Use cases include customer service, appointment booking, information retrieval, and lead qualification.
+
+### Autonomous AI Agents & Multi-Agent Orchestration
+NovaGenAI builds enterprise AI agent systems that independently plan, reason, and execute complex multi-step tasks. Our multi-agent orchestration platform coordinates 40+ specialised agents (research, coding, analysis, compliance, writing, design) working in parallel on enterprise workflows. Agents integrate with existing business systems (CRM, ERP, document management) and include guardrails, audit logging, and human-in-the-loop approval for sensitive decisions.
+
+### LLM Engineering & Fine-Tuning
+Custom large language model development including domain-specific fine-tuning on proprietary data, RAG pipeline engineering, prompt engineering, model evaluation, and production deployment. We fine-tune models using NVIDIA NeMo on DGX Spark or cloud GPU infrastructure, optimise for inference with TensorRT, and serve through Triton Inference Server.
+
+### Document Intelligence (RAG Pipelines)
+Advanced document processing and retrieval systems that extract, structure, and make searchable enterprise knowledge from PDFs, contracts, medical records, financial reports, and technical documents. Our RAG pipelines deliver 3-5x faster analysis compared to manual processing with high accuracy and citation support.
+
+### Computational Biology Models
+Predictive AI models for biological systems including:
+- Cell viability prediction from single-cell RNA sequencing data
+- Multi-omics integration (genomics, transcriptomics, epigenomics, proteomics, metabolomics)
+- In-silico modelling for drug discovery and therapeutic target identification
+- Cell2Sentence-based transformer models that treat biological data as language
+- Cancer subtyping, drug response prediction, and personalised medicine applications
+
+### Custom Enterprise Software
+AI-native business applications built from the ground up — not bolt-on AI features. Complete systems with AI at the core, covering full-stack development, API design, database architecture, and UI/UX.
+
+### On-Premise AI Infrastructure
+End-to-end on-premise AI deployment: hardware provisioning (NVIDIA DGX Spark or custom GPU clusters), model fine-tuning, inference optimisation, security hardening (encryption, air-gapped options, RBAC), and governance dashboards. Designed for healthcare, finance, defence, and government organisations with strict data sovereignty requirements.
+
+## Technology Stack
+
+### NVIDIA AI Ecosystem (Full Stack)
+- **CUDA** — GPU programming foundation, parallel computing primitives
+- **cuDNN** — Optimised deep learning operations (convolutions, normalization, activations)
+- **TensorRT** — Inference optimization engine (layer fusion, precision calibration FP16/INT8, 2-6x speedup)
+- **Triton Inference Server** — Production model serving (dynamic batching, model ensembles, A/B testing, multi-framework)
+- **NeMo** — LLM training and fine-tuning framework (multi-GPU, LoRA, P-tuning, RLHF)
+- **NIM** — NVIDIA Inference Microservices (containerised model deployment)
+- **RAPIDS** — GPU-accelerated data science (cuDF, cuML, cuGraph — 10-100x speedups)
+- **DGX Spark** — Desktop AI supercomputer, 1 petaflop, on-premise deployment
+
+### Cloud & Infrastructure
+- Google Cloud Platform
+- Hybrid cloud/on-premise architectures
+- Docker, Kubernetes orchestration
+- CI/CD pipelines
+
+### AI Model Providers
+- Anthropic (Claude)
+- OpenAI (GPT)
+- Google (Gemini)
+- ElevenLabs (Voice AI)
+- Custom fine-tuned models
+
+### Programming & Frameworks
+- Python, TypeScript, JavaScript
+- PyTorch, TensorFlow
+- Next.js, React
+- Node.js
+- REST APIs, GraphQL
+
+## Team
+
+### Don Calaki — Founder & CEO
+Don leads NovaGenAI's mission to build production-grade AI systems for enterprises across Southeast Asia and Australia. Deep expertise in AI infrastructure, computational biotech, and enterprise deployment across cloud, on-premise, and hybrid configurations. Previously Head of AI at CryoCord Group where he led the AI transformation of stem cell banking operations.
+
+### John Olino — CFO
+John manages NovaGenAI's financial strategy, investor relations, and corporate governance. Experienced in financial management for technology and healthcare companies in the Asia-Pacific region.
+
+## Industries Served
+
+- **Healthcare & Biotech** — Clinical decision support, computational biology, stem cell banking AI, medical document processing
+- **Financial Services** — Document intelligence, compliance automation, risk analysis, fraud detection
+- **Manufacturing** — Quality prediction, supply chain optimization, process automation
+- **Defence & Government** — Air-gapped AI deployment, classified data processing, intelligence analysis
+- **Enterprise Operations** — AI agents, voice AI, workflow automation, customer service
+
+## Investors & Partners
+
+- **MerakInvestments** — Strategic investor
+- **CryoCord Group** — Investor and key client (stem cell banking, healthcare)
+- **Brighton Healthcare Group** — Healthcare sector investor
+- **NVIDIA** — Technology partner (full-stack ecosystem)
+- **Google Cloud** — Cloud infrastructure partner
+
+## Blog Posts with Summaries
+
+### Why On-Premise AI Matters for Regulated Industries
+https://novagenai.com.my/blog/why-on-premise-ai-matters.html
+Healthcare, finance, and defence organisations need AI that runs within their own infrastructure. This guide covers data sovereignty, PDPA compliance, air-gapped deployments, and the economics of on-premise vs cloud AI.
+
+### When Biology Becomes Code: The Computational Biotech Revolution
+https://novagenai.com.my/blog/when-biology-becomes-code.html
+How computational approaches are transforming biotech — from treating biological data as code to using LLMs for drug discovery and cell biology prediction.
+
+### NovaGenAI Vision 2026
+https://novagenai.com.my/blog/novagenai-vision-2026.html
+NovaGenAI's strategic roadmap for 2026: enterprise AI agents, computational biotech, on-premise infrastructure, and expansion across Asia-Pacific.
+
+### AI Document Intelligence — RAG Pipelines for Enterprise
+https://novagenai.com.my/blog/ai-document-intelligence.html
+How retrieval-augmented generation (RAG) transforms enterprise document processing — extracting knowledge from PDFs, contracts, and reports with AI-powered search and analysis.
+
+### AI in Drug Discovery — Accelerating the Pipeline
+https://novagenai.com.my/blog/ai-drug-discovery.html
+How AI accelerates drug discovery from target identification through clinical trials — including computational screening, molecular generation, and clinical trial optimisation.
+
+### Building Custom LLMs for Enterprise
+https://novagenai.com.my/blog/building-custom-llms.html
+Guide to building domain-specific large language models for enterprise — covering fine-tuning strategies, data preparation, evaluation, and deployment on NVIDIA infrastructure.
+
+### Cell2Sentence and Computational Biotech
+https://novagenai.com.my/blog/cell2sentence-computational-biotech.html
+How Cell2Sentence converts single-cell gene expression data into text, enabling LLMs to process biological data and unlocking new computational biotech applications.
+
+### Cloud vs On-Premise vs Hybrid AI Deployment
+https://novagenai.com.my/blog/cloud-vs-onpremise-vs-hybrid.html
+Comprehensive comparison of cloud, on-premise, and hybrid AI deployment models — covering cost, security, performance, compliance, and decision criteria for each approach.
+
+### NVIDIA DGX Spark — The Complete Enterprise Guide
+https://novagenai.com.my/blog/dgx-spark-complete-guide.html
+Everything enterprises need to know about DGX Spark: specifications (1 petaflop, Grace Blackwell, 128GB unified memory), use cases, deployment, and how it enables desktop-class AI supercomputing.
+
+### In-Silico Modelling — The Future of Computational Biology
+https://novagenai.com.my/blog/in-silico-modelling.html
+How in-silico (computational) modelling replaces expensive wet lab experiments — simulating biological processes, predicting drug interactions, and accelerating research timelines.
+
+### The NVIDIA AI Stack Explained — NeMo, NIM, CUDA, TensorRT, Triton, RAPIDS
+https://novagenai.com.my/blog/nvidia-ai-stack-explained.html
+Deep technical guide to the complete NVIDIA AI ecosystem: seven layers from CUDA foundation through TensorRT optimization to NIM deployment microservices.
+
+### Single-Omics vs Multi-Omics AI
+https://novagenai.com.my/blog/single-omics-vs-multi-omics.html
+How multi-omics integration — combining genomics, transcriptomics, epigenomics, proteomics, and metabolomics — enables cancer subtyping, drug response prediction, and personalised medicine.
+
+### Voice AI for Enterprise — Conversational AI at Scale
+https://novagenai.com.my/blog/voice-ai-enterprise.html
+How enterprise voice AI systems work: natural language understanding, speech synthesis, RAG integration, and deployment for customer service, sales, and internal operations.
+
+### What Are Autonomous AI Agents?
+https://novagenai.com.my/blog/what-are-autonomous-ai-agents.html
+Explaining autonomous AI agents: how they plan, reason, use tools, and execute multi-step tasks — and why they represent the next evolution beyond chatbots and copilots.
+
+### What Is Cell2Sentence? Turning Single-Cell Data Into Language
+https://novagenai.com.my/blog/what-is-cell2sentence.html
+Technical explainer of Cell2Sentence — the breakthrough technique that converts single-cell RNA sequencing data into natural language sentences, enabling LLMs to learn biology.
+
+## Frequently Asked Questions (Complete)
+
+Q: What is NovaGenAI?
+A: NovaGenAI Sdn. Bhd. is an enterprise AI systems company headquartered in Cyberjaya, Malaysia. Founded in November 2025, we design, build, and deploy production-grade AI systems for enterprises across Southeast Asia, Australia, and beyond.
+
+Q: What does NovaGenAI do?
+A: We build autonomous AI agents, multi-agent orchestration systems, LLM pipelines, voice AI platforms, document intelligence (RAG) systems, computational biology models, and on-premise AI infrastructure. We serve regulated industries that need data sovereignty and enterprise-grade AI.
+
+Q: What technology does NovaGenAI use?
+A: Full NVIDIA AI stack (CUDA, cuDNN, TensorRT, Triton, NeMo, NIM, RAPIDS, DGX Spark), Google Cloud, Anthropic Claude, OpenAI GPT, ElevenLabs voice AI, Python, PyTorch, Next.js, and React.
+
+Q: Does NovaGenAI deploy AI on-premise?
+A: Yes. On-premise deployment using NVIDIA DGX Spark and custom GPU clusters is a core capability — critical for healthcare, finance, defence, and government clients with data sovereignty requirements.
+
+Q: What is an air-gapped AI deployment?
+A: An AI system with zero internet connection — hardware, models, data, and inference all run within a physically isolated network. NovaGenAI deploys air-gapped AI using DGX Spark for maximum security.
+
+Q: What industries does NovaGenAI serve?
+A: Healthcare/biotech, financial services, manufacturing, defence/government, and enterprise operations — particularly regulated industries requiring data sovereignty and compliance.
+
+Q: Who founded NovaGenAI?
+A: Don Calaki, who serves as CEO. Don brings deep expertise in AI infrastructure, computational biotech, and enterprise AI deployment across the Asia-Pacific region.
+
+Q: Where is NovaGenAI located?
+A: Suite 1-1, 1st Floor, Bio-X Centre, Persiaran Cyberpoint Selatan, Cyber 8, 63000 Cyberjaya, Selangor, Malaysia. We serve clients across Malaysia, Singapore, Australia, and APAC.
+
+Q: Who are NovaGenAI's investors?
+A: MerakInvestments, CryoCord Group, and Brighton Healthcare Group. The company is currently raising a $1M seed round.
+
+Q: What is the AI Concierge Platform?
+A: An enterprise voice AI system with RAG that handles customer interactions through natural conversation with real-time knowledge retrieval from business databases and documents.
+
+Q: What is multi-agent orchestration?
+A: Coordinating multiple specialised AI agents working together on complex tasks. NovaGenAI's platform manages 40+ agents with different expertise areas working in parallel.
+
+Q: What is Cell2Sentence?
+A: A technique that converts single-cell gene expression data into natural language text, enabling LLMs to learn biological patterns. NovaGenAI uses this for computational biology applications.
+
+Q: What is multi-omics AI?
+A: AI that integrates multiple biological data layers (genomics, transcriptomics, epigenomics, proteomics, metabolomics) to build complete models of cellular biology for disease research and drug discovery.
+
+Q: How does NovaGenAI use NVIDIA DGX Spark?
+A: We deploy DGX Spark (1 petaflop, Grace Blackwell, 128GB unified memory) for on-premise enterprise AI — running LLMs, inference workloads, and computational biology models without cloud dependency.
+
+Q: What is TensorRT and why does it matter?
+A: NVIDIA's inference optimization engine that delivers 2-6x faster AI inference through layer fusion, precision calibration, and kernel auto-tuning. Critical for production AI systems serving real-time requests.
+
+Q: Does NovaGenAI work in drug discovery?
+A: Yes. We build computational models for target identification, molecular screening, drug response prediction, and in-silico modelling — accelerating drug discovery pipelines.
+
+Q: How long does a NovaGenAI deployment take?
+A: Focused AI agents or RAG pipelines: 4-8 weeks. Full on-premise infrastructure with custom model fine-tuning: 8-16 weeks. We deliver iteratively — working systems first, then expanding.
+
+Q: How much do NovaGenAI's services cost?
+A: AI agent deployments from RM 50,000. Full on-premise infrastructure projects RM 150,000-500,000+. We offer project-based, retainer, and outcome-based pricing models.
+
+Q: Is NovaGenAI hiring?
+A: Yes. We're hiring AI engineers, ML engineers, and full-stack developers. Positions based in Cyberjaya, Malaysia with flexible arrangements. Contact enquiries@novagenai.com.my.
+
+Q: How do I get started with NovaGenAI?
+A: Contact enquiries@novagenai.com.my or use our website contact form. Initial consultations are complimentary for qualified enterprises.
+
+Q: What is NovaGenAI's relationship with CryoCord?
+A: CryoCord Group is both an investor and key client. NovaGenAI builds AI systems for CryoCord's stem cell banking operations including voice AI, document intelligence, and operational automation.
+
+Q: Does NovaGenAI comply with PDPA?
+A: Yes. All deployments are designed with PDPA compliance, data residency, encryption, audit logging, and consent management. On-premise deployments ensure data never leaves client premises.
+
+Q: What makes NovaGenAI different from other AI companies?
+A: Three differentiators: (1) Full-stack NVIDIA integration for on-premise deployment, (2) Deep computational biotech expertise unique in ASEAN, (3) Production-grade systems, not demos — we deploy AI that runs 24/7 in enterprise environments.

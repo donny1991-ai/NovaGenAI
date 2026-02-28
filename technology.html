@@ -77,6 +77,52 @@
       ]
     }
     </script>
+
+    <!-- FAQ JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What technology stack does NovaGenAI use?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NovaGenAI uses a full-stack NVIDIA AI ecosystem including CUDA, cuDNN, TensorRT, Triton Inference Server, NeMo, NIM, and RAPIDS. We also integrate with Google Cloud, AMD processors, and leading AI model providers including Anthropic, OpenAI, and ElevenLabs for voice AI."
+          }
+        },\n        {
+          "@type": "Question",
+          "name": "What is NVIDIA DGX Spark and how does NovaGenAI use it?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NVIDIA DGX Spark is a desktop-class AI supercomputer delivering 1 petaflop of performance. NovaGenAI deploys DGX Spark for on-premise enterprise AI installations, enabling organisations to run large language models and inference workloads without sending data to the cloud — critical for regulated industries."
+          }
+        },\n        {
+          "@type": "Question",
+          "name": "Does NovaGenAI support on-premise AI deployment?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. On-premise deployment is a core capability. We deploy AI infrastructure using NVIDIA DGX Spark and custom GPU clusters within client facilities, ensuring full data sovereignty, PDPA compliance, and air-gapped security for sensitive workloads in healthcare, finance, and defence."
+          }
+        },\n        {
+          "@type": "Question",
+          "name": "How does NovaGenAI ensure AI security?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NovaGenAI implements enterprise-grade security including encrypted data at rest and in transit, air-gapped deployment options, role-based access control, audit logging, model governance dashboards, and compliance with Malaysia's PDPA, GDPR, and sector-specific regulations."
+          }
+        },\n        {
+          "@type": "Question",
+          "name": "What AI models can NovaGenAI deploy?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We deploy and fine-tune a wide range of AI models including large language models (LLMs), vision models, speech and voice AI, and domain-specific models for computational biology. Models can be deployed on cloud, on-premise, or hybrid infrastructure depending on security and performance requirements."
+          }
+        }
+      ]
+    }
+    </script>
 </head>
 <body>
     <header class="nav" id="nav">
@@ -325,6 +371,62 @@
         <h2 class="sol-cta__title">See Our Technology in Action</h2>
         <p class="sol-cta__desc">Book a demo and experience enterprise AI infrastructure first-hand.</p>
         <a href="contact.html" class="btn-primary">Book a Demo →</a>
+    </section>
+
+
+    <!-- ════════════════════════════════════════════════════════ FAQ -->
+    <section class="faq-section" style="max-width:800px;margin:0 auto;padding:4rem 1.5rem;">
+        <h2 style="font-family:Outfit,sans-serif;font-size:2rem;margin-bottom:2rem;text-align:center;">Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <button class="faq-item__question">
+                    <span>What technology stack does NovaGenAI use?</span>
+                    <span class="faq-item__icon"></span>
+                </button>
+                <div class="faq-item__answer">
+                    <div class="faq-item__answer-inner">NovaGenAI uses a full-stack NVIDIA AI ecosystem including CUDA, cuDNN, TensorRT, Triton Inference Server, NeMo, NIM, and RAPIDS. We also integrate with Google Cloud, AMD processors, and leading AI model providers including Anthropic, OpenAI, and ElevenLabs for voice AI.</div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-item__question">
+                    <span>What is NVIDIA DGX Spark and how does NovaGenAI use it?</span>
+                    <span class="faq-item__icon"></span>
+                </button>
+                <div class="faq-item__answer">
+                    <div class="faq-item__answer-inner">NVIDIA DGX Spark is a desktop-class AI supercomputer delivering 1 petaflop of performance. NovaGenAI deploys DGX Spark for on-premise enterprise AI installations, enabling organisations to run large language models and inference workloads without sending data to the cloud — critical for regulated industries.</div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-item__question">
+                    <span>Does NovaGenAI support on-premise AI deployment?</span>
+                    <span class="faq-item__icon"></span>
+                </button>
+                <div class="faq-item__answer">
+                    <div class="faq-item__answer-inner">Yes. On-premise deployment is a core capability. We deploy AI infrastructure using NVIDIA DGX Spark and custom GPU clusters within client facilities, ensuring full data sovereignty, PDPA compliance, and air-gapped security for sensitive workloads in healthcare, finance, and defence.</div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-item__question">
+                    <span>How does NovaGenAI ensure AI security?</span>
+                    <span class="faq-item__icon"></span>
+                </button>
+                <div class="faq-item__answer">
+                    <div class="faq-item__answer-inner">NovaGenAI implements enterprise-grade security including encrypted data at rest and in transit, air-gapped deployment options, role-based access control, audit logging, model governance dashboards, and compliance with Malaysia's PDPA, GDPR, and sector-specific regulations.</div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-item__question">
+                    <span>What AI models can NovaGenAI deploy?</span>
+                    <span class="faq-item__icon"></span>
+                </button>
+                <div class="faq-item__answer">
+                    <div class="faq-item__answer-inner">We deploy and fine-tune a wide range of AI models including large language models (LLMs), vision models, speech and voice AI, and domain-specific models for computational biology. Models can be deployed on cloud, on-premise, or hybrid infrastructure depending on security and performance requirements.</div>
+                </div>
+            </div>
     </section>
 
     <footer class="footer">

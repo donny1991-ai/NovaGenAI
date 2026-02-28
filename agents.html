@@ -77,6 +77,52 @@
       ]
     }
     </script>
+
+    <!-- FAQ JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What are autonomous AI agents?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Autonomous AI agents are AI systems that can independently plan, reason, and execute multi-step tasks. Unlike simple chatbots that respond to single prompts, agents can break down complex objectives into sub-tasks, use tools and APIs, make decisions, and adapt their approach based on results — operating with minimal human oversight."
+          }
+        },\n        {
+          "@type": "Question",
+          "name": "What is multi-agent orchestration?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Multi-agent orchestration coordinates multiple specialised AI agents working together on complex tasks. Each agent has specific expertise (research, coding, analysis, compliance) and the orchestration layer manages task assignment, inter-agent communication, conflict resolution, and result synthesis. NovaGenAI's systems can coordinate 40+ specialised agents simultaneously."
+          }
+        },\n        {
+          "@type": "Question",
+          "name": "How does NovaGenAI deploy AI agents for enterprises?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NovaGenAI deploys enterprise AI agents as production systems integrated with existing business infrastructure. This includes connecting agents to internal databases, CRM systems, document repositories, and communication platforms. Agents are deployed on-premise or in hybrid configurations to maintain data sovereignty."
+          }
+        },\n        {
+          "@type": "Question",
+          "name": "What can AI agents do for my business?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "AI agents can automate complex workflows including customer service, document processing, research and analysis, code generation, sales enablement, compliance monitoring, and operational decision-making. They reduce manual effort by 60-80% on knowledge-intensive tasks while maintaining quality and consistency."
+          }
+        },\n        {
+          "@type": "Question",
+          "name": "Are AI agents secure for enterprise use?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. NovaGenAI's enterprise agents include guardrails, audit logging, human-in-the-loop approval for sensitive decisions, role-based access control, and full data sovereignty. Agents can be deployed in air-gapped environments for maximum security, and all agent actions are logged for compliance and governance."
+          }
+        }
+      ]
+    }
+    </script>
 </head>
 <body>
     <header class="nav" id="nav">
@@ -737,6 +783,62 @@
     </section>
 
     <!-- ══════ FOOTER ══════ -->
+
+    <!-- ════════════════════════════════════════════════════════ FAQ -->
+    <section class="faq-section" style="max-width:800px;margin:0 auto;padding:4rem 1.5rem;">
+        <h2 style="font-family:Outfit,sans-serif;font-size:2rem;margin-bottom:2rem;text-align:center;">Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <button class="faq-item__question">
+                    <span>What are autonomous AI agents?</span>
+                    <span class="faq-item__icon"></span>
+                </button>
+                <div class="faq-item__answer">
+                    <div class="faq-item__answer-inner">Autonomous AI agents are AI systems that can independently plan, reason, and execute multi-step tasks. Unlike simple chatbots that respond to single prompts, agents can break down complex objectives into sub-tasks, use tools and APIs, make decisions, and adapt their approach based on results — operating with minimal human oversight.</div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-item__question">
+                    <span>What is multi-agent orchestration?</span>
+                    <span class="faq-item__icon"></span>
+                </button>
+                <div class="faq-item__answer">
+                    <div class="faq-item__answer-inner">Multi-agent orchestration coordinates multiple specialised AI agents working together on complex tasks. Each agent has specific expertise (research, coding, analysis, compliance) and the orchestration layer manages task assignment, inter-agent communication, conflict resolution, and result synthesis. NovaGenAI's systems can coordinate 40+ specialised agents simultaneously.</div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-item__question">
+                    <span>How does NovaGenAI deploy AI agents for enterprises?</span>
+                    <span class="faq-item__icon"></span>
+                </button>
+                <div class="faq-item__answer">
+                    <div class="faq-item__answer-inner">NovaGenAI deploys enterprise AI agents as production systems integrated with existing business infrastructure. This includes connecting agents to internal databases, CRM systems, document repositories, and communication platforms. Agents are deployed on-premise or in hybrid configurations to maintain data sovereignty.</div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-item__question">
+                    <span>What can AI agents do for my business?</span>
+                    <span class="faq-item__icon"></span>
+                </button>
+                <div class="faq-item__answer">
+                    <div class="faq-item__answer-inner">AI agents can automate complex workflows including customer service, document processing, research and analysis, code generation, sales enablement, compliance monitoring, and operational decision-making. They reduce manual effort by 60-80% on knowledge-intensive tasks while maintaining quality and consistency.</div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-item__question">
+                    <span>Are AI agents secure for enterprise use?</span>
+                    <span class="faq-item__icon"></span>
+                </button>
+                <div class="faq-item__answer">
+                    <div class="faq-item__answer-inner">Yes. NovaGenAI's enterprise agents include guardrails, audit logging, human-in-the-loop approval for sensitive decisions, role-based access control, and full data sovereignty. Agents can be deployed in air-gapped environments for maximum security, and all agent actions are logged for compliance and governance.</div>
+                </div>
+            </div>
+    </section>
+
     <footer class="footer">
         <div class="footer__inner">
             <div class="footer__brand">

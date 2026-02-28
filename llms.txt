@@ -77,3 +77,53 @@ MerakInvestments, CryoCord Group, Brighton Healthcare Group
 - Case Studies: https://novagenai.com.my/case-studies.html
 - Team: https://novagenai.com.my/team.html
 - Contact: https://novagenai.com.my/contact.html
+
+## Blog Posts
+
+- Why On-Premise AI Matters for Regulated Industries: https://novagenai.com.my/blog/why-on-premise-ai-matters.html
+- When Biology Becomes Code: The Computational Biotech Revolution: https://novagenai.com.my/blog/when-biology-becomes-code.html
+- NovaGenAI Vision 2026: https://novagenai.com.my/blog/novagenai-vision-2026.html
+- AI Document Intelligence — RAG Pipelines for Enterprise: https://novagenai.com.my/blog/ai-document-intelligence.html
+- AI in Drug Discovery — Accelerating the Pipeline: https://novagenai.com.my/blog/ai-drug-discovery.html
+- Building Custom LLMs for Enterprise: https://novagenai.com.my/blog/building-custom-llms.html
+- Cell2Sentence and Computational Biotech: https://novagenai.com.my/blog/cell2sentence-computational-biotech.html
+- Cloud vs On-Premise vs Hybrid AI Deployment: https://novagenai.com.my/blog/cloud-vs-onpremise-vs-hybrid.html
+- NVIDIA DGX Spark — The Complete Enterprise Guide: https://novagenai.com.my/blog/dgx-spark-complete-guide.html
+- In-Silico Modelling — The Future of Computational Biology: https://novagenai.com.my/blog/in-silico-modelling.html
+- The NVIDIA AI Stack Explained — NeMo, NIM, CUDA, TensorRT, Triton, RAPIDS: https://novagenai.com.my/blog/nvidia-ai-stack-explained.html
+- Single-Omics vs Multi-Omics AI: https://novagenai.com.my/blog/single-omics-vs-multi-omics.html
+- Voice AI for Enterprise — Conversational AI at Scale: https://novagenai.com.my/blog/voice-ai-enterprise.html
+- What Are Autonomous AI Agents?: https://novagenai.com.my/blog/what-are-autonomous-ai-agents.html
+- What Is Cell2Sentence? Turning Single-Cell Data Into Language: https://novagenai.com.my/blog/what-is-cell2sentence.html
+
+## Frequently Asked Questions
+
+Q: What is NovaGenAI?
+A: NovaGenAI is an enterprise AI systems company based in Cyberjaya, Malaysia. We build and deploy production-grade AI systems including autonomous agents, LLM pipelines, voice AI, and computational biology models for enterprises across Asia-Pacific.
+
+Q: What technology does NovaGenAI use?
+A: We use the full NVIDIA AI stack (CUDA, TensorRT, Triton, NeMo, NIM, RAPIDS, DGX Spark) along with Google Cloud, Anthropic, OpenAI, and ElevenLabs. We support cloud, on-premise, and hybrid deployments.
+
+Q: Does NovaGenAI deploy AI on-premise?
+A: Yes. On-premise AI deployment is a core capability, using NVIDIA DGX Spark and custom GPU clusters for data sovereignty, PDPA compliance, and air-gapped security in regulated industries.
+
+Q: What industries does NovaGenAI serve?
+A: Healthcare/biotech, financial services, manufacturing, defence, and government — particularly regulated industries requiring data sovereignty.
+
+Q: Who are NovaGenAI's investors?
+A: MerakInvestments, CryoCord Group, and Brighton Healthcare Group. The company is raising a $1M seed round.
+
+Q: What is NovaGenAI's AI Concierge Platform?
+A: An enterprise voice AI system with RAG (retrieval-augmented generation) that handles customer interactions with natural conversation, real-time knowledge retrieval, and integration with business systems.
+
+Q: What is multi-agent orchestration?
+A: NovaGenAI's approach to coordinating multiple specialised AI agents working together on complex enterprise tasks — each agent has specific expertise and the orchestration layer manages task assignment and result synthesis.
+
+Q: Does NovaGenAI work in computational biology?
+A: Yes. We build models for predictive cell viability, multi-omics integration, in-silico training, and drug discovery pipelines using transformer architectures on biological data.
+
+Q: Where is NovaGenAI located?
+A: Cyberjaya, Malaysia — in the Bio-X Centre. We serve clients across Malaysia, Singapore, Australia, and the broader Asia-Pacific region.
+
+Q: How can I work with NovaGenAI?
+A: Contact enquiries@novagenai.com.my for a complimentary consultation. We'll assess your AI needs and propose a solution architecture.
