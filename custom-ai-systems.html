@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="64x64" href="images/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <title>Custom AI-Powered Websites, CRM Systems & Local LLMs — NovaGenAI</title>
+    <meta name="description" content="NovaGenAI builds custom AI-powered websites, AI-native CRM systems, local LLM deployments on NVIDIA infrastructure, and advanced cloud AI functions. Ground-up AI systems — not plugins."/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;600;700;800;900&display=swap&amp;font-display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="agents.css"/>
+    <meta name="keywords" content="custom AI websites, AI-native CRM, local LLM deployment, NVIDIA DGX, on-premise AI, serverless AI, cloud AI functions, enterprise AI systems, Malaysia AI company" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Custom AI-Powered Websites, CRM Systems & Local LLMs — NovaGenAI" />
+    <meta property="og:description" content="NovaGenAI builds custom AI-powered websites, AI-native CRM systems, local LLM deployments, and cloud AI functions. Ground-up AI systems — not plugins." />
+    <meta property="og:image" content="https://novagenai.com.my/images/og-image.png" />
+    <meta property="og:url" content="https://novagenai.com.my/custom-ai-systems.html" />
+    <meta property="og:site_name" content="NovaGenAI" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@Nova_GenAI" />
+    <meta name="twitter:title" content="Custom AI-Powered Websites, CRM Systems & Local LLMs — NovaGenAI" />
+    <meta name="twitter:description" content="NovaGenAI builds custom AI-powered websites, AI-native CRM systems, local LLM deployments, and cloud AI functions." />
+    <meta name="twitter:image" content="https://novagenai.com.my/images/og-image.png" />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "NovaGenAI",
+      "legalName": "NovaGenAI Sdn. Bhd.",
+      "url": "https://novagenai.com.my",
+      "logo": "https://novagenai.com.my/images/logo.png",
+      "description": "Enterprise AI systems company specializing in autonomous AI agents, computational biotech intelligence, and next-generation software architecture.",
+      "foundingDate": "2025-11-25",
+      "founder": {
+        "@type": "Person",
+        "name": "Don Calaki",
+        "jobTitle": "CEO"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Suite 1-1, 1st Floor, Bio-X Centre, Persiaran Cyberpoint Selatan, Cyber 8",
+        "addressLocality": "Cyberjaya",
+        "addressRegion": "Selangor",
+        "postalCode": "63000",
+        "addressCountry": "MY"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "enquiries@novagenai.com.my",
+        "contactType": "sales"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/novagenai",
+        "https://www.instagram.com/nova.genai",
+        "https://x.com/Nova_GenAI",
+        "https://www.youtube.com/@Nova_GenAI",
+        "https://www.threads.net/@nova.genai",
+        "https://www.facebook.com/NovaGenAI",
+        "https://www.tiktok.com/@novagenai"
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Custom AI-Powered Websites, CRM Systems & Local LLMs",
+      "description": "NovaGenAI builds custom AI-powered websites, AI-native CRM systems, local LLM deployments on NVIDIA infrastructure, and advanced cloud AI functions for enterprises.",
+      "author": {
+        "@type": "Organization",
+        "name": "NovaGenAI"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "NovaGenAI",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://novagenai.com.my/images/logo.png"
+        }
+      },
+      "datePublished": "2026-02-28",
+      "dateModified": "2026-02-28",
+      "mainEntityOfPage": "https://novagenai.com.my/custom-ai-systems.html"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What makes an AI-powered website different from a regular website?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "An AI-powered website has intelligence built into its core — not bolted on as a plugin. This includes AI chatbots that understand context and qualify leads, smart search that learns from user behaviour, personalised content that adapts to each visitor, and AI analytics that optimise conversion rates in real-time. The AI runs across the entire user journey, not just in a chat widget."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why build a custom CRM instead of using Salesforce or HubSpot with AI plugins?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Off-the-shelf CRMs with AI plugins are limited by the platform's architecture. A ground-up AI-native CRM has intelligence embedded in every layer — lead scoring uses real-time ML models trained on your data, automated follow-ups are handled by AI agents across email, WhatsApp, and voice, and pipeline predictions are genuinely predictive rather than rule-based. You get a system designed around how your business actually works, not a generic platform you force-fit."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is a local LLM deployment and why would my company need one?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A local LLM deployment runs a large language model on your own infrastructure — inside your building, on your servers. Nothing leaves your network. This is critical for organisations handling sensitive data (healthcare, finance, legal, government) where data sovereignty is non-negotiable. It also becomes cheaper long-term than paying per-API-call to providers like OpenAI or Anthropic, especially at scale."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What NVIDIA hardware do you use for on-premise AI deployments?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We deploy across the full NVIDIA ecosystem — DGX Spark, DGX systems, and custom GPU infrastructure. We use NVIDIA NeMo for model fine-tuning, NIM for optimised inference, CUDA for acceleration, and TensorRT for production deployment. The specific hardware depends on your model size, throughput requirements, and budget. We design the right infrastructure for your use case."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can you deploy AI workloads across multiple cloud providers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. We build multi-cloud AI architectures across AWS, Google Cloud, and Azure. This includes serverless AI endpoints via Lambda, Cloud Functions, and Azure Functions, edge computing for low-latency inference, and auto-scaling infrastructure that handles traffic spikes without manual intervention. We go where your data and compliance requirements need us."
+          }
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+    <header class="nav" id="nav">
+        <a href="index.html" class="nav__brand">
+<img loading="lazy" src="images/novagenai-logo-new.png" alt="NovaGenAI" class="nav__logo-img"></a>
+        <nav class="nav__links" id="nav-links">
+            <div class="nav__dropdown">
+                <a href="solutions.html" class="nav__dropdown-trigger">SOLUTIONS</a>
+                <div class="nav__dropdown-menu">
+                    <a href="solutions.html">All Solutions</a>
+                    <a href="solutions.html#voice-agents">AI Voice Agents</a>
+                    <a href="solutions.html#clarify">Clarify Sales Platform</a>
+                    <a href="solutions.html#cell-model">Predictive Cell Model</a>
+                    <a href="solutions.html#on-premise">On-Premise AI (DGX Spark)</a>
+                    <a href="solutions.html#rag">RAG Document Intelligence</a>
+                    <a href="solutions.html#marketing-os">Marketing OS</a>
+                </div>
+            </div>
+            <div class="nav__dropdown">
+                <a href="agents.html" class="nav__dropdown-trigger">AGENTS</a>
+                <div class="nav__dropdown-menu">
+                    <a href="what-are-agents.html">What Are AI Agents?</a>
+                    <a href="agents.html">Agent Platform</a>
+                    <a href="agents.html#swarms">Agent Swarms</a>
+                    <a href="agents.html#orchestration">Multi-Agent Orchestration</a>
+                    <a href="agents.html#org-diagram">Agents by Department</a>
+                    <a href="agents.html#models">Our Model Stack</a>
+                    <a href="agents.html#crm">AI-Native CRM</a>
+                </div>
+            </div>
+            <div class="nav__dropdown">
+                <a href="technology.html" class="nav__dropdown-trigger">TECHNOLOGY</a>
+                <div class="nav__dropdown-menu">
+                    <a href="technology.html">Overview</a>
+                    <a href="technology.html#dgx-spark">NVIDIA DGX Spark</a>
+                    <a href="technology.html#architecture">Architecture</a>
+                    <a href="technology.html#security">Security & Compliance</a>
+                    <a href="agents.html#models">LLM Model Stack</a>
+                </div>
+            </div>
+            <a href="case-studies.html">CASE STUDIES</a>
+            <a href="team.html">OUR TEAM</a>
+            <a href="about.html">ABOUT</a>
+            <a href="blog/">BLOG</a>
+            <a href="contact.html">CONTACT</a>
+        </nav>
+        <a href="contact.html" class="nav__cta" id="nav-cta">GET STARTED&nbsp;<span class="nav__cta-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span></a>
+    </header>
+
+    <!-- ══════ HERO ══════ -->
+    <section class="page-hero" style="position:relative;overflow:hidden;">
+<img src="images/ai-abstract-new.jpg" alt="" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.08;pointer-events:none;">
+        <div class="page-hero__inner">
+            <p class="page-hero__label">// CUSTOM AI SYSTEMS</p>
+            <h1 class="page-hero__title">AI-NATIVE SYSTEMS.<br/><span class="accent">BUILT FROM SCRATCH.</span></h1>
+            <p class="page-hero__subtitle">Custom AI-powered websites, intelligent CRM platforms, on-premise LLM deployments, and cloud AI infrastructure — engineered ground-up for your business. Not plugins. Not templates. Real AI systems.</p>
+        </div>
+    </section>
+
+    <!-- ══════ SECTION 1: AI-POWERED WEBSITES ══════ -->
+    <section class="solutions" style="padding-top:2rem;">
+        <div class="team-eng-featured fade-up" id="ai-websites">
+            <div class="team-eng-featured-img">
+                <img src="images/tech-secure-api.jpg" alt="Custom AI-Powered Websites" loading="lazy">
+            </div>
+            <div class="team-eng-featured-content">
+                <div class="team-eng-badge">AI-POWERED WEBSITES</div>
+                <h3>Websites That Think, Convert, and Learn</h3>
+                <p>We build websites with AI woven into every interaction — not a chatbot widget stuck in the corner. From intelligent search that understands intent to personalised content that adapts per visitor, every element is designed to convert. Built on modern architecture that scales.</p>
+                <ul class="team-eng-list">
+                    <li>AI chatbots with RAG — answers from your actual data</li>
+                    <li>Smart search that understands natural language queries</li>
+                    <li>Personalised content — dynamic pages per visitor profile</li>
+                    <li>AI lead capture — qualifies visitors in real-time</li>
+                    <li>Conversion optimisation via AI analytics</li>
+                    <li>Built on Next.js, React, serverless architecture</li>
+                </ul>
+                <div class="team-tech-tags">
+                    <span>Next.js</span><span>React</span><span>RAG</span><span>Serverless</span><span>AI Analytics</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ══════ SECTION 2: AI-NATIVE CRM ══════ -->
+        <div class="team-eng-featured team-eng-featured--reverse fade-up" id="ai-crm">
+            <div class="team-eng-featured-img">
+                <img src="images/tech-embeddings.jpg" alt="Custom AI-Native CRM Systems" loading="lazy">
+            </div>
+            <div class="team-eng-featured-content">
+                <div class="team-eng-badge" style="background:rgba(34,197,94,.1);color:#22C55E;border-color:#22C55E;">AI-NATIVE CRM</div>
+                <h3>CRM Systems with Intelligence at Every Layer</h3>
+                <p>Not Salesforce with a plugin. We build CRM platforms from the ground up with AI embedded in every function — lead scoring powered by real-time ML, automated follow-ups via AI agents across email, WhatsApp, and voice, and pipeline intelligence that genuinely predicts deal outcomes.</p>
+                <ul class="team-eng-list">
+                    <li>AI lead scoring &amp; qualification — real-time ML, not static rules</li>
+                    <li>Automated follow-ups via AI agents (email, WhatsApp, voice)</li>
+                    <li>Pipeline intelligence — AI predicts deal outcomes and timing</li>
+                    <li>Customer health scoring — churn risk before it happens</li>
+                    <li>Natural language queries: "Show me stale leads in KL"</li>
+                    <li>Integration with ERP, email, WhatsApp, phone systems</li>
+                </ul>
+                <div class="team-tech-tags">
+                    <span>Machine Learning</span><span>WhatsApp API</span><span>Voice AI</span><span>ERP Integration</span><span>Real-time Analytics</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ══════ SECTION 3: LOCAL LLM DEPLOYMENT ══════ -->
+        <div class="team-eng-featured fade-up" id="local-llm">
+            <div class="team-eng-featured-img">
+                <img src="images/dgx-spark.jpg" alt="Local LLM Deployment — On-Premise AI" loading="lazy">
+            </div>
+            <div class="team-eng-featured-content">
+                <div class="team-eng-badge" style="background:rgba(118,185,0,.1);color:#76B900;border-color:#76B900;">NVIDIA POWERED</div>
+                <h3>Your Own AI Model. Your Own Infrastructure.</h3>
+                <p>Deploy large language models inside your building on your own hardware. Complete data sovereignty — nothing leaves your network. Fine-tuned on your proprietary data, powered by NVIDIA's full ecosystem. Cheaper long-term than paying per-API-call to OpenAI or Anthropic, and your competitors never see your data.</p>
+                <ul class="team-eng-list">
+                    <li>Complete data sovereignty — air-gapped deployment available</li>
+                    <li>Fine-tuned on your proprietary documents and data</li>
+                    <li>Powered by NVIDIA DGX, NeMo, NIM, TensorRT</li>
+                    <li>Use cases: knowledge base, document search, code assistant</li>
+                    <li>Internal customer service AI — fully private</li>
+                    <li>Cheaper at scale than cloud API subscriptions</li>
+                </ul>
+                <div class="team-tech-tags">
+                    <span>NVIDIA DGX</span><span>NeMo</span><span>NIM</span><span>vLLM</span><span>CUDA</span><span>On-Premise</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ══════ SECTION 4: CLOUD AI FUNCTIONS ══════ -->
+        <div class="team-eng-featured team-eng-featured--reverse fade-up" id="cloud-ai">
+            <div class="team-eng-featured-img">
+                <img src="images/tech-rag.jpg" alt="Advanced Cloud AI Functions" loading="lazy">
+            </div>
+            <div class="team-eng-featured-content">
+                <div class="team-eng-badge" style="background:rgba(0,212,255,.1);color:#00D4FF;border-color:#00D4FF;">MULTI-CLOUD</div>
+                <h3>Cloud AI That Scales Automatically</h3>
+                <p>Serverless AI endpoints that spin up on demand, process requests at the edge for minimal latency, and scale to handle millions of requests without you thinking about infrastructure. We deploy across AWS, Google Cloud, and Azure — wherever your compliance and performance requirements need us.</p>
+                <ul class="team-eng-list">
+                    <li>Serverless AI endpoints — pay only for what you use</li>
+                    <li>Edge computing for sub-100ms AI inference</li>
+                    <li>Auto-scaling workloads — zero to millions seamlessly</li>
+                    <li>AWS Lambda + Google Cloud Functions + Azure Functions</li>
+                    <li>Hybrid architectures — on-premise + cloud together</li>
+                    <li>Multi-region deployment for global coverage</li>
+                </ul>
+                <div class="team-tech-tags">
+                    <span>AWS Lambda</span><span>Cloud Functions</span><span>Azure</span><span>Edge AI</span><span>Serverless</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════ WHY BUILD CUSTOM ══════ -->
+    <section class="ag-section ag-section--surface fade-up">
+        <p class="ag-label">// THE NOVAGENAI DIFFERENCE</p>
+        <h2 class="ag-heading">Why <span class="accent">Custom-Built</span> Beats Off-the-Shelf</h2>
+        <p class="ag-subtext">Every system we build is engineered for your specific business — not a template with your logo on it.</p>
+
+        <div class="ag-spawn-grid">
+            <div class="ag-spawn-card">
+                <div class="ag-icon-circle ag-icon-circle--lg ag-icon-circle--cyan"><svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+                <h4>AI-First Architecture</h4>
+                <p>Intelligence isn't bolted on — it's the foundation. Every data flow, every user interaction, every business process has AI built into its core from day one.</p>
+            </div>
+            <div class="ag-spawn-card">
+                <div class="ag-icon-circle ag-icon-circle--lg ag-icon-circle--green"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+                <h4>Data Sovereignty</h4>
+                <p>Your data stays where you need it — on-premise, in your cloud, or hybrid. No third-party platform has access to your proprietary intelligence. PDPA compliant by architecture.</p>
+            </div>
+            <div class="ag-spawn-card">
+                <div class="ag-icon-circle ag-icon-circle--lg ag-icon-circle--purple"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div>
+                <h4>Your Workflows, Not Theirs</h4>
+                <p>Off-the-shelf tools force you into their workflow. We build around yours — your sales process, your approval chains, your terminology, your edge cases.</p>
+            </div>
+            <div class="ag-spawn-card">
+                <div class="ag-icon-circle ag-icon-circle--lg ag-icon-circle--orange"><svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+                <h4>Shipping Speed</h4>
+                <p>AI accelerates our own development. We use agent swarms to build, test, and deploy — delivering production systems in weeks, not quarters. See our <a href="agents.html" class="accent">agent platform</a>.</p>
+            </div>
+            <div class="ag-spawn-card">
+                <div class="ag-icon-circle ag-icon-circle--lg ag-icon-circle--red"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+                <h4>Full Integration</h4>
+                <p>We connect to your existing systems — ERP, email, WhatsApp, phone, databases, legacy software. No rip-and-replace. AI enhances what you already have.</p>
+            </div>
+            <div class="ag-spawn-card">
+                <div class="ag-icon-circle ag-icon-circle--lg ag-icon-circle--teal"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+                <h4>Deploy Anywhere</h4>
+                <p>On-premise, cloud, hybrid, multi-cloud, edge. We deploy where your compliance and performance requirements demand — across NVIDIA, AWS, Google Cloud, and Azure.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════ CTA ══════ -->
+    <section class="sol-cta fade-up">
+        <h2 class="sol-cta__title">Let's Build Your AI System</h2>
+        <p class="sol-cta__desc">Tell us what you need — a smarter website, an AI-native CRM, a private LLM, or cloud AI infrastructure. We'll architect the right solution for your business.</p>
+        <a href="contact.html" class="btn-primary">Start the Conversation →</a>
+    </section>
+
+    <!-- ══════ FAQ ══════ -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <h2 class="section__title">Frequently Asked Questions</h2>
+            <div class="faq__grid">
+            <div class="faq__item" onclick="this.classList.toggle('faq__item--open')">
+                <div class="faq__question">
+                    <span>What makes an AI-powered website different from a regular website?</span>
+                    <svg class="faq__icon" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div class="faq__answer"><p>An AI-powered website has intelligence built into its core — not bolted on as a plugin. This includes AI chatbots that understand context and qualify leads, smart search that learns from user behaviour, personalised content that adapts to each visitor, and AI analytics that optimise conversion rates in real-time. The AI runs across the entire user journey, not just in a chat widget.</p></div>
+            </div>
+            <div class="faq__item" onclick="this.classList.toggle('faq__item--open')">
+                <div class="faq__question">
+                    <span>Why build a custom CRM instead of using Salesforce or HubSpot?</span>
+                    <svg class="faq__icon" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div class="faq__answer"><p>Off-the-shelf CRMs with AI plugins are limited by the platform's architecture. A ground-up AI-native CRM has intelligence embedded in every layer — lead scoring uses real-time ML models trained on your data, automated follow-ups are handled by AI agents across email, WhatsApp, and voice, and pipeline predictions are genuinely predictive rather than rule-based. You get a system designed around how your business actually works.</p></div>
+            </div>
+            <div class="faq__item" onclick="this.classList.toggle('faq__item--open')">
+                <div class="faq__question">
+                    <span>What is a local LLM deployment and why would my company need one?</span>
+                    <svg class="faq__icon" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div class="faq__answer"><p>A local LLM deployment runs a large language model on your own infrastructure — inside your building, on your servers. Nothing leaves your network. This is critical for organisations handling sensitive data where data sovereignty is non-negotiable. It also becomes cheaper long-term than paying per-API-call to cloud providers, especially at scale.</p></div>
+            </div>
+            <div class="faq__item" onclick="this.classList.toggle('faq__item--open')">
+                <div class="faq__question">
+                    <span>What NVIDIA hardware do you use for on-premise AI?</span>
+                    <svg class="faq__icon" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div class="faq__answer"><p>We deploy across the full NVIDIA ecosystem — DGX Spark, DGX systems, and custom GPU infrastructure. We use NeMo for model fine-tuning, NIM for optimised inference, CUDA for acceleration, and TensorRT for production deployment. The specific hardware depends on your model size, throughput requirements, and budget.</p></div>
+            </div>
+            <div class="faq__item" onclick="this.classList.toggle('faq__item--open')">
+                <div class="faq__question">
+                    <span>Can you deploy AI workloads across multiple cloud providers?</span>
+                    <svg class="faq__icon" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div class="faq__answer"><p>Yes. We build multi-cloud AI architectures across AWS, Google Cloud, and Azure. This includes serverless AI endpoints, edge computing for low-latency inference, and auto-scaling infrastructure that handles traffic spikes without manual intervention. We go where your data and compliance requirements need us.</p></div>
+            </div>
+            </div>
+        </div>
+    </section>
+    <style>
+    .faq { padding: 6rem 2rem; background: #0a0a0a; }
+    .faq .container { max-width: 800px; margin: 0 auto; }
+    .faq .section__title { text-align: center; font-family: 'Outfit', sans-serif; font-size: 2.5rem; font-weight: 700; color: #fff; margin-bottom: 3rem; }
+    .faq__grid { display: flex; flex-direction: column; gap: 0; }
+    .faq__item { border-bottom: 1px solid rgba(255,255,255,0.08); cursor: pointer; }
+    .faq__question { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 0; font-family: 'Outfit', sans-serif; font-size: 1.125rem; font-weight: 600; color: #fff; transition: color 0.2s; }
+    .faq__item:hover .faq__question { color: #00D4FF; }
+    .faq__icon { transition: transform 0.3s; flex-shrink: 0; margin-left: 1rem; color: rgba(255,255,255,0.4); }
+    .faq__item--open .faq__icon { transform: rotate(180deg); color: #00D4FF; }
+    .faq__answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease; }
+    .faq__item--open .faq__answer { max-height: 300px; padding-bottom: 1.5rem; }
+    .faq__answer p { font-family: 'Inter', sans-serif; font-size: 1rem; line-height: 1.7; color: rgba(255,255,255,0.7); margin: 0; }
+    </style>
+
+    <footer class="footer">
+        <div class="footer__inner">
+            <div class="footer__brand">
+                <span class="footer__logo">
+<img loading="lazy" src="images/novagenai-logo-new.png" alt="NovaGenAI" class="footer__logo-img"></span>
+                <p class="footer__tagline">AI Systems for Every Enterprise</p>
+            </div>
+            <div class="footer__links">
+                <a href="solutions.html">Solutions</a>
+                <a href="agents.html">Agents</a>
+                <a href="technology.html">Technology</a>
+                <a href="case-studies.html">Case Studies</a>
+                <a href="team.html">Our Team</a>
+                <a href="about.html">About</a>
+                <a href="blog/">Blog</a>
+                <a href="contact.html">Contact</a>
+            </div>
+                        <div class="footer__social">
+                <a href="https://www.linkedin.com/company/novagenai" target="_blank" rel="noopener" aria-label="LinkedIn" class="footer__social-link footer__social--linkedin"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+                <a href="https://www.instagram.com/nova.genai" target="_blank" rel="noopener" aria-label="Instagram" class="footer__social-link footer__social--instagram"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+                <a href="https://www.facebook.com/NovaGenAI" target="_blank" rel="noopener" aria-label="Facebook" class="footer__social-link footer__social--facebook"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+                <a href="https://x.com/Nova_GenAI" target="_blank" rel="noopener" aria-label="X" class="footer__social-link footer__social--x"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+                <a href="https://www.youtube.com/@Nova_GenAI" target="_blank" rel="noopener" aria-label="YouTube" class="footer__social-link footer__social--youtube"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+                <a href="https://www.tiktok.com/@nova_genai" target="_blank" rel="noopener" aria-label="TikTok" class="footer__social-link footer__social--tiktok"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+                <a href="https://www.threads.net/@nova.genai" target="_blank" rel="noopener" aria-label="Threads" class="footer__social-link footer__social--threads"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.814.822c-1.072-3.854-3.57-5.564-7.465-5.586h-.01c-2.204.013-5.506.85-6.882 4.08-.792 1.86-.792 4.378 0 6.238 1.376 3.23 4.678 4.067 6.882 4.08h.01c1.94-.012 3.514-.404 4.678-1.164.982-.641 1.696-1.578 1.855-2.879-.276-.016-.556-.039-.84-.07-1.602-.172-2.994-.636-4.137-1.38-1.318-.857-2.218-2.086-2.598-3.547-.27-1.037-.188-2.095.231-3.065.538-1.242 1.587-2.152 2.958-2.565 1.088-.328 2.252-.31 3.283-.028-.003-.163-.01-.326-.019-.487l-.003-.052c-.065-1.003-.267-1.772-.616-2.35-.308-.512-.735-.854-1.305-1.044a4.91 4.91 0 00-.747-.188l.588-2.794c.425.069.84.181 1.234.333 1.164.452 2.072 1.241 2.7 2.348.568.998.893 2.165.966 3.467l.003.055c.01.2.017.402.02.604 1.148.555 2.065 1.381 2.646 2.427.754 1.357.836 3.088.227 4.746-.85 2.313-3.087 3.742-5.942 3.892-.293.016-.583.023-.87.023zm1.486-10.031c-.574-.137-1.165-.155-1.681 0-.702.212-1.167.598-1.387 1.107-.2.46-.2.969-.053 1.53.26 1 .87 1.738 1.763 2.13.68.3 1.476.487 2.368.56.46.038.897.057 1.315.057.08-.463.074-.95-.037-1.442-.287-1.269-1.167-2.966-3.488-3.592l-.004-.002c.402.054.8.14 1.189.26l.015-.608z"/></svg></a>
+                <a href="https://wa.me/60111401036" target="_blank" rel="noopener" aria-label="WhatsApp" class="footer__social-link footer__social--whatsapp"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+            </div>
+            <p class="footer__copy">&copy; 2026 NovaGenAI. All rights reserved.</p>
+        </div>
+    </footer>
+    <script type="module" src="script.js"></script>
+    <!-- ElevenLabs Voice Agent Widget -->
+    <script src="https://elevenlabs.io/convai-widget/index.js" async type="text/javascript"></script>
+    <elevenlabs-convai agent-id="agent_2601khqrpb75ff9azd82e86tmatz" style="position:fixed;bottom:20px;right:20px;z-index:9999;" data-bg-color="#0a0a0a" data-text-color="#ffffff" data-btn-color="#00D4FF" data-btn-text-color="#000000" data-border-color="#1a1a1a"></elevenlabs-convai>
+</body>
+</html>
