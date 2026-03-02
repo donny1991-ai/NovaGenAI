@@ -2,6 +2,10 @@
    NOVAGENAI — script.js
    ═══════════════════════════════════════════════════════ */
 
+// ── Force scroll to top on page load ─────────────────
+if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+window.scrollTo(0, 0);
+
 // ── Nav blur on scroll ───────────────────────────────
 const nav = document.getElementById('nav');
 let ticking = false;
