@@ -12,11 +12,31 @@ NovaGenAI is an enterprise AI systems company headquartered in Cyberjaya, Malays
 ## Location
 
 Suite 1-1, 1st Floor, Bio-X Centre, Persiaran Cyberpoint Selatan, Cyber 8, 63000 Cyberjaya, Selangor, Malaysia
+Phone: +60 11-1401 0362
+Hours: Monday–Friday 9:00 AM – 6:00 PM (MYT), Saturday–Sunday Closed
+Google Business Profile: NovaGenAI on Google Maps — Cyberjaya, Selangor
+
+## Service Areas
+
+Kuala Lumpur, Selangor, Cyberjaya, Putrajaya, Penang, Johor Bahru, Petaling Jaya (Malaysia), Singapore, Australia
 
 ## Leadership
 
 - Don Calaki — Founder & CEO
 - John Olino — CFO
+
+## Services
+
+1. AI Consulting — Strategic AI consulting, readiness assessments, and deployment roadmaps
+2. Voice AI Agent Development — Multilingual autonomous voice agents (English, BM, Mandarin) for 24/7 customer service
+3. Custom LLM Engineering — Fine-tuned large language models for domain-specific business use cases
+4. RAG Document Intelligence — Transform document libraries into AI-searchable knowledge bases
+5. ERP & CRM AI Integration — AI-powered automation for enterprise systems
+6. On-Premise AI Deployment — NVIDIA DGX Spark on-site with full data sovereignty
+7. Cloud Migration & AI Infrastructure — Legacy to AI-ready cloud architecture
+8. Custom AI Systems Development — Bespoke AI solutions for complex business challenges
+9. Conversational AI Platform — White-label voice AI concierge, 3 languages, 24/7
+10. Computational Biotech Intelligence — AI for drug discovery, genomics, clinical workflows
 
 ## What We Do
 
