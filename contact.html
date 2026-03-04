@@ -272,6 +272,10 @@
                         <input class="contact__input" type="tel" id="contact-phone" name="phone" placeholder="+60 12-345 6789"/>
                     </div>
                     <div class="contact__field">
+                        <label class="contact__label" for="contact-address">Company Address</label>
+                        <input class="contact__input" type="text" id="contact-address" name="address" placeholder="Start typing your address..." autocomplete="off"/>
+                    </div>
+                    <div class="contact__field">
                         <label class="contact__label" for="contact-industry">Industry</label>
                         <select class="contact__input" id="contact-industry" name="industry">
                             <option value="" disabled selected>Select your industry</option>
@@ -413,11 +417,12 @@
         const email = document.getElementById('contact-email').value;
         const company = document.getElementById('contact-company').value || 'Not provided';
         const phone = document.getElementById('contact-phone').value || 'Not provided';
+        const address = document.getElementById('contact-address').value || 'Not provided';
         const industry = document.getElementById('contact-industry').value || 'Not specified';
         const message = document.getElementById('contact-message').value;
 
         // Build a fake transcript so the existing n8n voice-lead workflow can parse it
-        const transcript = `Website contact form submission. My name is ${name}. I work for ${company}. My email is ${email}. My phone number is ${phone}. Industry: ${industry}. Message: ${message}`;
+        const transcript = `Website contact form submission. My name is ${name}. I work for ${company}. My email is ${email}. My phone number is ${phone}. Address: ${address}. Industry: ${industry}. Message: ${message}`;
 
         const data = {
             transcript: transcript,
@@ -456,6 +461,24 @@
         }
     });
     </script>
+    <!-- Google Maps Places Autocomplete -->
+    <script>
+    function initAutocomplete() {
+        const input = document.getElementById('contact-address');
+        if (!input) return;
+        const autocomplete = new google.maps.places.Autocomplete(input, {
+            types: ['establishment', 'geocode'],
+            fields: ['formatted_address', 'name', 'geometry']
+        });
+        autocomplete.addListener('place_changed', function() {
+            const place = autocomplete.getPlace();
+            if (place.formatted_address) {
+                input.value = place.name ? place.name + ', ' + place.formatted_address : place.formatted_address;
+            }
+        });
+    }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDOcwjYl9stPSF4VJsn3S1NN4Y7GcQCB2A&libraries=places&callback=initAutocomplete" async defer></script>
     <script type="module" src="script.js"></script>
     <!-- ElevenLabs Voice Agent Widget -->
     <script src="https://elevenlabs.io/convai-widget/index.js" async type="text/javascript"></script>
