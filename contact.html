@@ -12,6 +12,18 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;600;700;800;900&display=swap&amp;font-display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="style.css"/>
+    <style>
+        @media (max-width: 600px) {
+            .contact__form [style*="grid-template-columns"] {
+                grid-template-columns: 1fr !important;
+            }
+        }
+        .pac-container { z-index: 99999 !important; background: #111 !important; border: 1px solid #333 !important; border-radius: 8px !important; margin-top: 4px !important; }
+        .pac-item { padding: 8px 12px !important; color: #ccc !important; border-bottom: 1px solid #222 !important; cursor: pointer !important; }
+        .pac-item:hover { background: #1a1a1a !important; }
+        .pac-item-query { color: #00D4FF !important; }
+        .pac-icon { display: none !important; }
+    </style>
     <meta name="keywords" content="contact NovaGenAI, book AI demo, enterprise AI consultation, Cyberjaya Malaysia" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Contact NovaGenAI" />
@@ -255,29 +267,34 @@
 
             <div class="contact-page__form-wrap">
                 <form class="contact__form" id="contact-form" action="" method="POST">
-                    <div class="contact__field">
-                        <label class="contact__label" for="contact-name">Name *</label>
-                        <input class="contact__input" type="text" id="contact-name" name="name" placeholder="Your full name" required/>
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+                        <div class="contact__field">
+                            <label class="contact__label" for="contact-name">Name *</label>
+                            <input class="contact__input" type="text" id="contact-name" name="name" placeholder="Your full name" required/>
+                        </div>
+                        <div class="contact__field">
+                            <label class="contact__label" for="contact-email">Email *</label>
+                            <input class="contact__input" type="email" id="contact-email" name="email" placeholder="you@company.com" required/>
+                        </div>
                     </div>
-                    <div class="contact__field">
-                        <label class="contact__label" for="contact-email">Email *</label>
-                        <input class="contact__input" type="email" id="contact-email" name="email" placeholder="you@company.com" required/>
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+                        <div class="contact__field">
+                            <label class="contact__label" for="contact-company">Company</label>
+                            <input class="contact__input" type="text" id="contact-company" name="company" placeholder="Your company name"/>
+                        </div>
+                        <div class="contact__field">
+                            <label class="contact__label" for="contact-phone">Phone</label>
+                            <input class="contact__input" type="tel" id="contact-phone" name="phone" placeholder="+60 12-345 6789"/>
+                        </div>
                     </div>
-                    <div class="contact__field">
-                        <label class="contact__label" for="contact-company">Company</label>
-                        <input class="contact__input" type="text" id="contact-company" name="company" placeholder="Your company name"/>
-                    </div>
-                    <div class="contact__field">
-                        <label class="contact__label" for="contact-phone">Phone</label>
-                        <input class="contact__input" type="tel" id="contact-phone" name="phone" placeholder="+60 12-345 6789"/>
-                    </div>
-                    <div class="contact__field">
-                        <label class="contact__label" for="contact-address">Company Address</label>
-                        <input class="contact__input" type="text" id="contact-address" name="address" placeholder="Start typing your address..." autocomplete="off"/>
-                    </div>
-                    <div class="contact__field">
-                        <label class="contact__label" for="contact-industry">Industry</label>
-                        <select class="contact__input" id="contact-industry" name="industry">
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+                        <div class="contact__field">
+                            <label class="contact__label" for="contact-address">Company Address</label>
+                            <input class="contact__input" type="text" id="contact-address" name="address" placeholder="Start typing your address..." autocomplete="off"/>
+                        </div>
+                        <div class="contact__field">
+                            <label class="contact__label" for="contact-industry">Industry</label>
+                            <select class="contact__input" id="contact-industry" name="industry">
                             <option value="" disabled selected>Select your industry</option>
                             <option value="healthcare">Healthcare</option>
                             <option value="biotech">Biotech / Life Sciences</option>
@@ -307,10 +324,11 @@
                             <option value="nonprofit">Non-Profit / NGO</option>
                             <option value="other">Other</option>
                         </select>
+                        </div>
                     </div>
                     <div class="contact__field">
                         <label class="contact__label" for="contact-message">Message *</label>
-                        <textarea class="contact__textarea" id="contact-message" name="message" rows="5" placeholder="Tell us about your project and what you're looking to achieve..." required></textarea>
+                        <textarea class="contact__textarea" id="contact-message" name="message" rows="4" placeholder="Tell us about your project and what you're looking to achieve..." required></textarea>
                     </div>
                     <button class="contact__submit" type="submit">Book a Demo</button>
                 </form>
