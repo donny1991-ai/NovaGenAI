@@ -574,7 +574,8 @@
         if (!input) return;
         var ac = new google.maps.places.Autocomplete(input, {
             types: ['establishment', 'geocode'],
-            fields: ['formatted_address', 'name']
+            fields: ['formatted_address', 'name'],
+            componentRestrictions: { country: ['my', 'sg', 'au'] }
         });
         ac.addListener('place_changed', function() {
             var p = ac.getPlace();
