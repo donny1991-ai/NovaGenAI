@@ -551,14 +551,10 @@
     });
     </script>
     <!-- Google Maps Places Autocomplete -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDOcwjYl9stPSF4VJsn3S1NN4Y7GcQCB2A&libraries=places&loading=async"></script>
     <script>
-    window.addEventListener('load', function() {
+    function initPlaces() {
         var input = document.getElementById('contact-address');
-        if (!input || !window.google || !google.maps || !google.maps.places) {
-            console.error('Google Maps Places not loaded');
-            return;
-        }
+        if (!input) return;
         var autocomplete = new google.maps.places.Autocomplete(input, {
             types: ['establishment', 'geocode'],
             fields: ['formatted_address', 'name', 'geometry']
@@ -569,9 +565,9 @@
                 input.value = place.name ? place.name + ', ' + place.formatted_address : place.formatted_address;
             }
         });
-        console.log('Places Autocomplete initialized');
-    });
+    }
     </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDOcwjYl9stPSF4VJsn3S1NN4Y7GcQCB2A&libraries=places&callback=initPlaces" async defer></script>
     <script type="module" src="script.js"></script>
     <!-- ElevenLabs Voice Agent Widget -->
     <script src="https://elevenlabs.io/convai-widget/index.js" async type="text/javascript"></script>
