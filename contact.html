@@ -27,6 +27,17 @@
         .pac-item:hover { background: #1a1a1a !important; }
         .pac-item-query { color: #00D4FF !important; }
         .pac-icon { display: none !important; }
+        .faq-item { border-bottom: 1px solid #1a1a1a; }
+        .faq-item__question { display: flex; justify-content: space-between; align-items: center; width: 100%; padding: 1.25rem 0; background: none; border: none; color: #fff; font-size: 1rem; font-family: Outfit, sans-serif; font-weight: 600; cursor: pointer; text-align: left; }
+        .faq-item__question:hover { color: #00D4FF; }
+        .faq-item__icon { width: 24px; height: 24px; position: relative; flex-shrink: 0; margin-left: 1rem; }
+        .faq-item__icon::before, .faq-item__icon::after { content: ''; position: absolute; background: #00D4FF; border-radius: 2px; transition: transform 0.3s ease; }
+        .faq-item__icon::before { width: 16px; height: 2px; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        .faq-item__icon::after { width: 2px; height: 16px; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        .faq-item.active .faq-item__icon::after { transform: translate(-50%, -50%) rotate(90deg); }
+        .faq-item__answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+        .faq-item.active .faq-item__answer { max-height: 500px; }
+        .faq-item__answer-inner { padding: 0 0 1.25rem; color: #999; line-height: 1.7; font-size: 0.95rem; }
     </style>
     <meta name="keywords" content="contact NovaGenAI, book AI demo, enterprise AI consultation, Cyberjaya Malaysia" />
     <meta property="og:type" content="website" />
@@ -570,6 +581,16 @@
     }
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDOcwjYl9stPSF4VJsn3S1NN4Y7GcQCB2A&libraries=places&callback=initPlaces" async defer></script>
+    <script>
+    document.querySelectorAll('.faq-item__question').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            var item = this.closest('.faq-item');
+            var wasActive = item.classList.contains('active');
+            document.querySelectorAll('.faq-item').forEach(function(el) { el.classList.remove('active'); });
+            if (!wasActive) item.classList.add('active');
+        });
+    });
+    </script>
     <script type="module" src="script.js"></script>
     <!-- ElevenLabs Voice Agent Widget -->
     <script src="https://elevenlabs.io/convai-widget/index.js" async type="text/javascript"></script>
