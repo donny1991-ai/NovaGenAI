@@ -519,8 +519,8 @@ spline-viewer #logo, spline-viewer [class*="logo"], spline-viewer a[href*="splin
     background: var(--clr-bg); display: flex; flex-direction: column; align-items: center;
 }
 .contact__card {
-    position: relative; display: grid; grid-template-columns: 2fr 1fr;
-    width: 100%; max-width: 960px;
+    position: relative; display: grid; grid-template-columns: 1fr 2fr;
+    width: 100%; max-width: 1200px;
     background: var(--clr-surface);
     border: 1px solid rgba(255, 255, 255, .08);
     box-shadow: 0 4px 40px rgba(0, 0, 0, .4);
