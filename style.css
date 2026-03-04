@@ -516,7 +516,7 @@ spline-viewer #logo, spline-viewer [class*="logo"], spline-viewer a[href*="splin
 .contact {
     position: relative; z-index: 10;
     padding: 5rem clamp(1.25rem, 3vw, 3rem);
-    background: var(--clr-bg); display: flex; justify-content: center;
+    background: var(--clr-bg); display: flex; flex-direction: column; align-items: center;
 }
 .contact__card {
     position: relative; display: grid; grid-template-columns: 2fr 1fr;
