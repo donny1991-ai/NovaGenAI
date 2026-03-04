@@ -13,6 +13,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;600;700;800;900&display=swap&amp;font-display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="style.css"/>
     <style>
+        .contact__input.invalid { border: 1.5px solid #ef4444 !important; box-shadow: 0 0 8px rgba(239,68,68,0.3) !important; }
+        .contact__input.valid { border: 1.5px solid #22c55e !important; }
+        .contact__error { color: #ef4444; font-size: 0.75rem; margin-top: 4px; display: none; }
+        .contact__error.show { display: block; }
         @media (max-width: 600px) {
             .contact__form [style*="grid-template-columns"] {
                 grid-template-columns: 1fr !important;
@@ -275,6 +279,7 @@
                         <div class="contact__field">
                             <label class="contact__label" for="contact-email">Email *</label>
                             <input class="contact__input" type="email" id="contact-email" name="email" placeholder="you@company.com" required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" title="Please enter a valid email address"/>
+                            <span class="contact__error" id="email-error">Please enter a valid email address</span>
                         </div>
                     </div>
                     <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
@@ -285,6 +290,7 @@
                         <div class="contact__field">
                             <label class="contact__label" for="contact-phone">Phone *</label>
                             <input class="contact__input" type="tel" id="contact-phone" name="phone" placeholder="+60 12-345 6789" required pattern="[\+]?[0-9\s\-]{8,}" title="Please enter a valid phone number (minimum 8 digits)"/>
+                            <span class="contact__error" id="phone-error">Please enter a valid phone number</span>
                         </div>
                     </div>
                     <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
@@ -423,6 +429,51 @@
         </div>
     </footer>
     <script>
+    // Real-time validation on blur (when user leaves a field)
+    const emailInput = document.getElementById('contact-email');
+    const phoneInput = document.getElementById('contact-phone');
+    const emailError = document.getElementById('email-error');
+    const phoneError = document.getElementById('phone-error');
+    const emailRegex = /^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$/;
+
+    emailInput.addEventListener('blur', function() {
+        if (this.value && !emailRegex.test(this.value)) {
+            this.classList.add('invalid'); this.classList.remove('valid');
+            emailError.classList.add('show');
+        } else if (this.value) {
+            this.classList.remove('invalid'); this.classList.add('valid');
+            emailError.classList.remove('show');
+        } else {
+            this.classList.remove('invalid','valid'); emailError.classList.remove('show');
+        }
+    });
+    emailInput.addEventListener('input', function() {
+        if (this.classList.contains('invalid') && emailRegex.test(this.value)) {
+            this.classList.remove('invalid'); this.classList.add('valid');
+            emailError.classList.remove('show');
+        }
+    });
+
+    phoneInput.addEventListener('blur', function() {
+        const digits = this.value.replace(/\D/g, '');
+        if (this.value && digits.length < 8) {
+            this.classList.add('invalid'); this.classList.remove('valid');
+            phoneError.classList.add('show');
+        } else if (this.value) {
+            this.classList.remove('invalid'); this.classList.add('valid');
+            phoneError.classList.remove('show');
+        } else {
+            this.classList.remove('invalid','valid'); phoneError.classList.remove('show');
+        }
+    });
+    phoneInput.addEventListener('input', function() {
+        const digits = this.value.replace(/\D/g, '');
+        if (this.classList.contains('invalid') && digits.length >= 8) {
+            this.classList.remove('invalid'); this.classList.add('valid');
+            phoneError.classList.remove('show');
+        }
+    });
+
     document.getElementById('contact-form').addEventListener('submit', async function(e) {
         e.preventDefault();
         const btn = this.querySelector('.contact__submit');
