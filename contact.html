@@ -274,7 +274,7 @@
                         </div>
                         <div class="contact__field">
                             <label class="contact__label" for="contact-email">Email *</label>
-                            <input class="contact__input" type="email" id="contact-email" name="email" placeholder="you@company.com" required/>
+                            <input class="contact__input" type="email" id="contact-email" name="email" placeholder="you@company.com" required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" title="Please enter a valid email address"/>
                         </div>
                     </div>
                     <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
@@ -283,8 +283,8 @@
                             <input class="contact__input" type="text" id="contact-company" name="company" placeholder="Your company name"/>
                         </div>
                         <div class="contact__field">
-                            <label class="contact__label" for="contact-phone">Phone</label>
-                            <input class="contact__input" type="tel" id="contact-phone" name="phone" placeholder="+60 12-345 6789"/>
+                            <label class="contact__label" for="contact-phone">Phone *</label>
+                            <input class="contact__input" type="tel" id="contact-phone" name="phone" placeholder="+60 12-345 6789" required pattern="[\+]?[0-9\s\-]{8,}" title="Please enter a valid phone number (minimum 8 digits)"/>
                         </div>
                     </div>
                     <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
@@ -435,6 +435,21 @@
         const email = document.getElementById('contact-email').value;
         const company = document.getElementById('contact-company').value || 'Not provided';
         const phone = document.getElementById('contact-phone').value || 'Not provided';
+
+        // Validate email format
+        const emailRegex = /^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$/;
+        if (!emailRegex.test(email)) {
+            alert('Please enter a valid email address');
+            btn.textContent = origText; btn.disabled = false; btn.style.opacity = '1';
+            return;
+        }
+        // Validate phone format (min 8 digits)
+        const phoneDigits = phone.replace(/\D/g, '');
+        if (phoneDigits.length < 8) {
+            alert('Please enter a valid phone number (minimum 8 digits)');
+            btn.textContent = origText; btn.disabled = false; btn.style.opacity = '1';
+            return;
+        }
         const address = document.getElementById('contact-address').value || 'Not provided';
         const industry = document.getElementById('contact-industry').value || 'Not specified';
         const message = document.getElementById('contact-message').value;
