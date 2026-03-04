@@ -355,7 +355,7 @@
         <!-- Full-width Google Map -->
         <div style="margin-top:3rem;border-radius:16px;overflow:hidden;border:1px solid rgba(0,212,255,0.15);box-shadow:0 4px 30px rgba(0,0,0,0.4);max-width:1200px;margin-left:auto;margin-right:auto;padding:0 1.5rem;">
             <div style="border-radius:16px;overflow:hidden;">
-                <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDOcwjYl9stPSF4VJsn3S1NN4Y7GcQCB2A&q=Bio-X+Centre,Cyberjaya,Malaysia&zoom=16&maptype=roadmap" width="100%" height="280" style="border:0;display:block;" allowfullscreen="" loading="lazy"></iframe>
+                <iframe src="https://www.google.com/maps?q=Bio-X+Centre,+Cyberjaya,+Malaysia&output=embed&z=16" width="100%" height="280" style="border:0;display:block;" allowfullscreen="" loading="lazy"></iframe>
             </div>
         </div>
     </section>
@@ -565,22 +565,24 @@
     </script>
     <!-- Google Maps Places Autocomplete -->
     <script>
-    function initPlaces() {
+    function initPlacesAutocomplete() {
+        if (!window.google || !google.maps || !google.maps.places) {
+            setTimeout(initPlacesAutocomplete, 500);
+            return;
+        }
         var input = document.getElementById('contact-address');
         if (!input) return;
-        var autocomplete = new google.maps.places.Autocomplete(input, {
+        var ac = new google.maps.places.Autocomplete(input, {
             types: ['establishment', 'geocode'],
-            fields: ['formatted_address', 'name', 'geometry']
+            fields: ['formatted_address', 'name']
         });
-        autocomplete.addListener('place_changed', function() {
-            var place = autocomplete.getPlace();
-            if (place.formatted_address) {
-                input.value = place.name ? place.name + ', ' + place.formatted_address : place.formatted_address;
-            }
+        ac.addListener('place_changed', function() {
+            var p = ac.getPlace();
+            if (p.formatted_address) input.value = p.name ? p.name + ', ' + p.formatted_address : p.formatted_address;
         });
     }
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDOcwjYl9stPSF4VJsn3S1NN4Y7GcQCB2A&libraries=places&callback=initPlaces" async defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDOcwjYl9stPSF4VJsn3S1NN4Y7GcQCB2A&libraries=places" onload="initPlacesAutocomplete()"></script>
     <script>
     document.querySelectorAll('.faq-item__question').forEach(function(btn) {
         btn.addEventListener('click', function() {
