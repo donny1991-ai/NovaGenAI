@@ -228,6 +228,108 @@
       }
     ]
     </script>
+<!-- GBP-Aligned ProfessionalService Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "@id": "https://novagenai.com.my/#local-business",
+  "additionalType": "https://schema.org/ITCompany",
+  "name": "NovaGenAI",
+  "legalName": "NOVAGENAI SDN. BHD.",
+  "alternateName": "NovaGenAI Sdn. Bhd.",
+  "url": "https://novagenai.com.my",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://novagenai.com.my/novagenai-logo-new.png",
+    "width": 1213,
+    "height": 339
+  },
+  "image": "https://novagenai.com.my/images/og-image.png",
+  "description": "NovaGenAI is a Malaysian enterprise AI company specialising in AI consulting, voice AI agent development, custom LLM engineering, RAG document intelligence, ERP AI integration, and computational biotech intelligence. Headquartered in Cyberjaya.",
+  "telephone": "+60111401 0362",
+  "email": "enquiries@novagenai.com.my",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Suite 1-1, 1st Floor, Bio-X Centre, Persiaran Cyberpoint Selatan, Cyber 8",
+    "addressLocality": "Cyberjaya",
+    "addressRegion": "Selangor",
+    "postalCode": "63000",
+    "addressCountry": "MY"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 2.9213,
+    "longitude": 101.6559
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+      "opens": "09:00",
+      "closes": "18:00"
+    }
+  ],
+  "priceRange": "$$$$",
+  "currenciesAccepted": "MYR, USD, SGD, AUD",
+  "paymentAccepted": "Bank Transfer, Credit Card",
+  "foundingDate": "2024",
+  "founder": {
+    "@type": "Person",
+    "@id": "https://novagenai.com.my/#don-calaki",
+    "name": "Don Calaki"
+  },
+  "areaServed": [
+    {"@type": "City", "name": "Kuala Lumpur"},
+    {"@type": "State", "name": "Selangor"},
+    {"@type": "City", "name": "Cyberjaya"},
+    {"@type": "City", "name": "Putrajaya"},
+    {"@type": "City", "name": "Penang"},
+    {"@type": "City", "name": "Johor Bahru"},
+    {"@type": "City", "name": "Petaling Jaya"},
+    {"@type": "Country", "name": "Singapore"}
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "NovaGenAI Services",
+    "itemListElement": [
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "@id": "https://novagenai.com.my/#service-ai-consulting", "name": "AI Consulting"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "@id": "https://novagenai.com.my/#service-voice-ai", "name": "Voice AI Agent Development"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "@id": "https://novagenai.com.my/#service-custom-llm", "name": "Custom LLM Engineering"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "@id": "https://novagenai.com.my/#service-rag", "name": "RAG Document Intelligence"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "@id": "https://novagenai.com.my/#service-erp-crm", "name": "ERP & CRM AI Integration"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "@id": "https://novagenai.com.my/#service-on-premise", "name": "On-Premise AI Deployment"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "@id": "https://novagenai.com.my/#service-cloud", "name": "Cloud Migration & AI Infrastructure"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "@id": "https://novagenai.com.my/#service-custom-systems", "name": "Custom AI Systems Development"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "@id": "https://novagenai.com.my/#service-conversational", "name": "Conversational AI Platform"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "@id": "https://novagenai.com.my/#service-biotech", "name": "Computational Biotech Intelligence"}}
+    ]
+  },
+  "sameAs": [
+    "https://www.linkedin.com/company/novagenai",
+    "https://www.instagram.com/nova.genai",
+    "https://www.facebook.com/NovaGenAI",
+    "https://x.com/Nova_GenAI",
+    "https://www.youtube.com/@Nova_GenAI"
+  ],
+  "parentOrganization": {"@id": "https://novagenai.com.my/#organization"}
+}
+</script>
+<!-- 10 Service Schemas -->
+<script type="application/ld+json">
+[
+  {"@context":"https://schema.org","@type":"Service","@id":"https://novagenai.com.my/#service-ai-consulting","name":"AI Consulting","description":"Strategic AI consulting to identify automation opportunities, build AI roadmaps, and guide enterprises through AI adoption — from feasibility studies to production deployment.","provider":{"@id":"https://novagenai.com.my/#local-business"},"serviceType":"AI Consulting","areaServed":[{"@type":"Country","name":"Malaysia"},{"@type":"Country","name":"Singapore"}],"url":"https://novagenai.com.my/solutions.html"},
+  {"@context":"https://schema.org","@type":"Service","@id":"https://novagenai.com.my/#service-voice-ai","name":"Voice AI Agent Development","description":"Build production-grade voice AI agents that handle real phone calls in multiple languages. Appointment booking, lead qualification, customer support — 24/7 autonomous voice conversations.","provider":{"@id":"https://novagenai.com.my/#local-business"},"serviceType":"Voice AI Development","areaServed":[{"@type":"Country","name":"Malaysia"},{"@type":"Country","name":"Singapore"}],"url":"https://novagenai.com.my/solutions.html"},
+  {"@context":"https://schema.org","@type":"Service","@id":"https://novagenai.com.my/#service-custom-llm","name":"Custom LLM Engineering","description":"Fine-tune and deploy custom large language models tailored to your domain — healthcare, legal, finance. Private models on your infrastructure with full data sovereignty.","provider":{"@id":"https://novagenai.com.my/#local-business"},"serviceType":"LLM Engineering","areaServed":[{"@type":"Country","name":"Malaysia"},{"@type":"Country","name":"Singapore"}],"url":"https://novagenai.com.my/solutions.html"},
+  {"@context":"https://schema.org","@type":"Service","@id":"https://novagenai.com.my/#service-rag","name":"RAG Document Intelligence","description":"Transform your knowledge base into an AI-powered search engine using Retrieval-Augmented Generation. Query SOPs, contracts, and medical protocols through natural language with source citations.","provider":{"@id":"https://novagenai.com.my/#local-business"},"serviceType":"Document Intelligence","areaServed":[{"@type":"Country","name":"Malaysia"},{"@type":"Country","name":"Singapore"}],"url":"https://novagenai.com.my/solutions.html"},
+  {"@context":"https://schema.org","@type":"Service","@id":"https://novagenai.com.my/#service-erp-crm","name":"ERP & CRM AI Integration","description":"Integrate AI capabilities into existing ERP and CRM systems — SAP, Oracle, legacy platforms. Intelligent lead scoring, automated workflows, predictive analytics, and AI-powered customer insights.","provider":{"@id":"https://novagenai.com.my/#local-business"},"serviceType":"ERP CRM Integration","areaServed":[{"@type":"Country","name":"Malaysia"},{"@type":"Country","name":"Singapore"}],"url":"https://novagenai.com.my/erp-consulting.html"},
+  {"@context":"https://schema.org","@type":"Service","@id":"https://novagenai.com.my/#service-on-premise","name":"On-Premise AI Deployment","description":"Deploy AI models and systems on your own infrastructure for maximum data sovereignty, compliance, and security. NVIDIA DGX and custom hardware support.","provider":{"@id":"https://novagenai.com.my/#local-business"},"serviceType":"On-Premise AI","areaServed":[{"@type":"Country","name":"Malaysia"},{"@type":"Country","name":"Singapore"}],"url":"https://novagenai.com.my/solutions.html"},
+  {"@context":"https://schema.org","@type":"Service","@id":"https://novagenai.com.my/#service-cloud","name":"Cloud Migration & AI Infrastructure","description":"Migrate workloads to AI-optimised cloud infrastructure. Google Cloud, hybrid cloud, and multi-cloud architectures designed for AI/ML workloads at scale.","provider":{"@id":"https://novagenai.com.my/#local-business"},"serviceType":"Cloud Migration","areaServed":[{"@type":"Country","name":"Malaysia"},{"@type":"Country","name":"Singapore"}],"url":"https://novagenai.com.my/cloud-migration.html"},
+  {"@context":"https://schema.org","@type":"Service","@id":"https://novagenai.com.my/#service-custom-systems","name":"Custom AI Systems Development","description":"End-to-end custom AI software development. From autonomous agent platforms to AI-native business applications — designed, built, and deployed for your specific needs.","provider":{"@id":"https://novagenai.com.my/#local-business"},"serviceType":"Custom Software Development","areaServed":[{"@type":"Country","name":"Malaysia"},{"@type":"Country","name":"Singapore"}],"url":"https://novagenai.com.my/custom-ai-systems.html"},
+  {"@context":"https://schema.org","@type":"Service","@id":"https://novagenai.com.my/#service-conversational","name":"Conversational AI Platform","description":"White-label conversational AI platform for enterprises. Multilingual chatbots and voice agents with RAG, knowledge base integration, and human handoff capabilities.","provider":{"@id":"https://novagenai.com.my/#local-business"},"serviceType":"Conversational AI","areaServed":[{"@type":"Country","name":"Malaysia"},{"@type":"Country","name":"Singapore"}],"url":"https://novagenai.com.my/solutions.html"},
+  {"@context":"https://schema.org","@type":"Service","@id":"https://novagenai.com.my/#service-biotech","name":"Computational Biotech Intelligence","description":"AI-powered computational biology and biotech intelligence — in-silico modelling, drug discovery acceleration, genomic analysis, and biological data processing at scale.","provider":{"@id":"https://novagenai.com.my/#local-business"},"serviceType":"Computational Biotech","areaServed":[{"@type":"Country","name":"Malaysia"},{"@type":"Country","name":"Singapore"}],"url":"https://novagenai.com.my/solutions.html"}
+]
+</script>
 </head>
 
 <body>
@@ -820,6 +922,204 @@
         }
       ]
     }
+    </script>
+    <script type="application/ld+json">
+    [
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "@id": "https://novagenai.com.my/#local-business",
+        "additionalType": "https://schema.org/ITCompany",
+        "name": "NovaGenAI",
+        "legalName": "NOVAGENAI SDN. BHD.",
+        "alternateName": "NovaGenAI Sdn. Bhd.",
+        "url": "https://novagenai.com.my",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://novagenai.com.my/novagenai-logo-new.png",
+          "width": 1213,
+          "height": 339
+        },
+        "image": "https://novagenai.com.my/images/og-image.png",
+        "description": "NovaGenAI is a Malaysian enterprise AI company specialising in AI consulting, voice AI agent development, custom LLM engineering, RAG document intelligence, and computational biotech intelligence. Headquartered in Cyberjaya.",
+        "telephone": "+60 11-1401 0362",
+        "email": "enquiries@novagenai.com.my",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Suite 1-1, 1st Floor, Bio-X Centre, Persiaran Cyberpoint Selatan, Cyber 8",
+          "addressLocality": "Cyberjaya",
+          "addressRegion": "Selangor",
+          "postalCode": "63000",
+          "addressCountry": "MY"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 2.9213,
+          "longitude": 101.6559
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "09:00",
+            "closes": "18:00"
+          }
+        ],
+        "priceRange": "$$$$",
+        "currenciesAccepted": "MYR, USD, SGD, AUD",
+        "paymentAccepted": "Bank Transfer, Credit Card",
+        "foundingDate": "2024",
+        "founder": {
+          "@type": "Person",
+          "@id": "https://novagenai.com.my/#don-calaki",
+          "name": "Don Calaki"
+        },
+        "areaServed": [
+          {"@type": "City", "name": "Kuala Lumpur", "containedInPlace": {"@type": "Country", "name": "Malaysia"}},
+          {"@type": "State", "name": "Selangor", "containedInPlace": {"@type": "Country", "name": "Malaysia"}},
+          {"@type": "City", "name": "Cyberjaya", "containedInPlace": {"@type": "Country", "name": "Malaysia"}},
+          {"@type": "City", "name": "Putrajaya", "containedInPlace": {"@type": "Country", "name": "Malaysia"}},
+          {"@type": "City", "name": "Penang", "containedInPlace": {"@type": "Country", "name": "Malaysia"}},
+          {"@type": "City", "name": "Johor Bahru", "containedInPlace": {"@type": "Country", "name": "Malaysia"}},
+          {"@type": "City", "name": "Petaling Jaya", "containedInPlace": {"@type": "Country", "name": "Malaysia"}},
+          {"@type": "Country", "name": "Singapore"}
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "NovaGenAI Services",
+          "itemListElement": [
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "@id": "https://novagenai.com.my/#service-custom-systems", "name": "Custom AI Systems Development"}},
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "@id": "https://novagenai.com.my/#service-erp-crm", "name": "ERP & CRM AI Integration"}},
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "@id": "https://novagenai.com.my/#service-voice-ai", "name": "Voice AI Agent Development"}},
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "@id": "https://novagenai.com.my/#service-rag", "name": "RAG Document Intelligence"}},
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "@id": "https://novagenai.com.my/#service-ai-consulting", "name": "AI Consulting"}},
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "@id": "https://novagenai.com.my/#service-on-premise", "name": "On-Premise AI Deployment"}},
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "@id": "https://novagenai.com.my/#service-cloud", "name": "Cloud Migration & AI Infrastructure"}},
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "@id": "https://novagenai.com.my/#service-custom-llm", "name": "Custom LLM Engineering"}},
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "@id": "https://novagenai.com.my/#service-conversational", "name": "Conversational AI Platform"}},
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "@id": "https://novagenai.com.my/#service-biotech", "name": "Computational Biotech Intelligence"}}
+          ]
+        },
+        "sameAs": [
+          "https://www.linkedin.com/company/novagenai",
+          "https://www.instagram.com/nova.genai",
+          "https://www.facebook.com/NovaGenAI",
+          "https://x.com/Nova_GenAI",
+          "https://www.youtube.com/@Nova_GenAI"
+        ],
+        "parentOrganization": {"@id": "https://novagenai.com.my/#organization"}
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "@id": "https://novagenai.com.my/#service-custom-systems",
+        "name": "Custom AI Systems Development",
+        "description": "End-to-end custom AI software development. From autonomous agent platforms to AI-native business applications — designed, built, and deployed for your specific needs.",
+        "provider": {"@id": "https://novagenai.com.my/#local-business"},
+        "serviceType": "Custom Software Development",
+        "areaServed": [{"@type": "Country", "name": "Malaysia"}, {"@type": "Country", "name": "Singapore"}],
+        "url": "https://novagenai.com.my/solutions.html"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "@id": "https://novagenai.com.my/#service-erp-crm",
+        "name": "ERP & CRM AI Integration",
+        "description": "Integrate AI capabilities into existing ERP and CRM systems. Intelligent lead scoring, automated workflows, predictive analytics, and AI-powered customer insights.",
+        "provider": {"@id": "https://novagenai.com.my/#local-business"},
+        "serviceType": "ERP CRM Integration",
+        "areaServed": [{"@type": "Country", "name": "Malaysia"}, {"@type": "Country", "name": "Singapore"}],
+        "url": "https://novagenai.com.my/solutions.html#clarify"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "@id": "https://novagenai.com.my/#service-voice-ai",
+        "name": "Voice AI Agent Development",
+        "description": "Build production-grade voice AI agents that handle real phone calls in multiple languages. Appointment booking, lead qualification, customer support — 24/7 autonomous voice conversations.",
+        "provider": {"@id": "https://novagenai.com.my/#local-business"},
+        "serviceType": "Voice AI Development",
+        "areaServed": [{"@type": "Country", "name": "Malaysia"}, {"@type": "Country", "name": "Singapore"}],
+        "url": "https://novagenai.com.my/solutions.html#voice-agents"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "@id": "https://novagenai.com.my/#service-rag",
+        "name": "RAG Document Intelligence",
+        "description": "Transform your knowledge base into an AI-powered search engine using Retrieval-Augmented Generation. Query SOPs, contracts, and medical protocols through natural language with source citations.",
+        "provider": {"@id": "https://novagenai.com.my/#local-business"},
+        "serviceType": "Document Intelligence",
+        "areaServed": [{"@type": "Country", "name": "Malaysia"}, {"@type": "Country", "name": "Singapore"}],
+        "url": "https://novagenai.com.my/solutions.html#rag"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "@id": "https://novagenai.com.my/#service-ai-consulting",
+        "name": "AI Consulting",
+        "description": "Strategic AI consulting to identify automation opportunities, build AI roadmaps, and guide enterprises through AI adoption — from feasibility studies to production deployment.",
+        "provider": {"@id": "https://novagenai.com.my/#local-business"},
+        "serviceType": "AI Consulting",
+        "areaServed": [{"@type": "Country", "name": "Malaysia"}, {"@type": "Country", "name": "Singapore"}],
+        "url": "https://novagenai.com.my/solutions.html"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "@id": "https://novagenai.com.my/#service-on-premise",
+        "name": "On-Premise AI Deployment",
+        "description": "Deploy AI models and systems on your own infrastructure for maximum data sovereignty, compliance, and security. NVIDIA DGX, AMD, and custom hardware support.",
+        "provider": {"@id": "https://novagenai.com.my/#local-business"},
+        "serviceType": "On-Premise AI Deployment",
+        "areaServed": [{"@type": "Country", "name": "Malaysia"}, {"@type": "Country", "name": "Singapore"}],
+        "url": "https://novagenai.com.my/solutions.html"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "@id": "https://novagenai.com.my/#service-cloud",
+        "name": "Cloud Migration & AI Infrastructure",
+        "description": "Migrate workloads to AI-optimised cloud infrastructure. Google Cloud, hybrid cloud, and multi-cloud architectures designed for AI/ML workloads at scale.",
+        "provider": {"@id": "https://novagenai.com.my/#local-business"},
+        "serviceType": "Cloud Migration",
+        "areaServed": [{"@type": "Country", "name": "Malaysia"}, {"@type": "Country", "name": "Singapore"}],
+        "url": "https://novagenai.com.my/solutions.html"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "@id": "https://novagenai.com.my/#service-custom-llm",
+        "name": "Custom LLM Engineering",
+        "description": "Fine-tune and deploy custom large language models tailored to your domain — healthcare, legal, finance. Private models on your infrastructure with full data sovereignty.",
+        "provider": {"@id": "https://novagenai.com.my/#local-business"},
+        "serviceType": "LLM Engineering",
+        "areaServed": [{"@type": "Country", "name": "Malaysia"}, {"@type": "Country", "name": "Singapore"}],
+        "url": "https://novagenai.com.my/solutions.html"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "@id": "https://novagenai.com.my/#service-conversational",
+        "name": "Conversational AI Platform",
+        "description": "White-label conversational AI platform for enterprises. Multilingual chatbots and voice agents with RAG, knowledge base integration, and human handoff capabilities.",
+        "provider": {"@id": "https://novagenai.com.my/#local-business"},
+        "serviceType": "Conversational AI",
+        "areaServed": [{"@type": "Country", "name": "Malaysia"}, {"@type": "Country", "name": "Singapore"}],
+        "url": "https://novagenai.com.my/solutions.html#voice-agents"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "@id": "https://novagenai.com.my/#service-biotech",
+        "name": "Computational Biotech Intelligence",
+        "description": "AI-powered computational biology and biotech intelligence — in-silico modelling, drug discovery acceleration, genomic analysis, and biological data processing at scale.",
+        "provider": {"@id": "https://novagenai.com.my/#local-business"},
+        "serviceType": "Computational Biotech",
+        "areaServed": [{"@type": "Country", "name": "Malaysia"}, {"@type": "Country", "name": "Singapore"}],
+        "url": "https://novagenai.com.my/solutions.html#biotech"
+      }
+    ]
     </script>
     <style>
     .faq { padding: 6rem 2rem; background: #0a0a0a; }
