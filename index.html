@@ -59,7 +59,8 @@
         "areaServed": [{"@type":"Country","name":"Malaysia"},{"@type":"Country","name":"Australia"},{"@type":"Country","name":"Singapore"}],
         "knowsAbout": ["Enterprise AI","Autonomous AI Agents","Computational Biotech","Voice AI","LLM Engineering","Document Intelligence","In-Silico Modelling","Retrieval-Augmented Generation","AI-Native CRM","Marketing Automation","Drug Discovery","Natural Language Processing"],
         "slogan": "Intelligence That Transforms Business",
-        "naics": "511210"
+        "naics": "511210",
+        "memberOf": {"@type":"ProgramMembership","name":"NVIDIA Inception Program","hostingOrganization":{"@type":"Organization","name":"NVIDIA","url":"https://www.nvidia.com"},"programName":"NVIDIA Inception","url":"https://www.nvidia.com/en-us/startups/"}
       },
       {
         "@context": "https://schema.org",
@@ -410,7 +411,10 @@
             <div style="position:absolute;bottom:0;right:0;width:220px;height:60px;background:#000;z-index:10;"></div>
         </div>
 
-        <!-- Status badge (removed) -->
+        <!-- NVIDIA Inception Badge -->
+        <div style="position:absolute;top:20px;right:30px;z-index:20;display:flex;align-items:center;gap:10px;background:rgba(0,0,0,0.6);backdrop-filter:blur(10px);padding:8px 16px;border-radius:8px;border:1px solid rgba(118,185,0,0.3);">
+            <img src="images/nvidia-inception-badge.png" alt="NVIDIA Inception Program Member" style="height:36px;filter:brightness(0) invert(1);" loading="lazy">
+        </div>
 
         <!-- Giant overlapping text -->
         <div class="hero__headline">
@@ -515,7 +519,7 @@
 <img src="images/dgx-spark.jpg" alt="NVIDIA DGX Spark" loading="lazy">
             </div>
             <div class="team-eng-featured-content">
-                <div class="team-eng-badge" style="background:rgba(118,185,0,.1);color:#76B900;border-color:#76B900;">NVIDIA POWERED</div>
+                <div class="team-eng-badge" style="background:rgba(118,185,0,.1);color:#76B900;border-color:#76B900;">NVIDIA INCEPTION MEMBER</div>
                 <h3>On-Premise AI (DGX Spark)</h3>
                 <p>NVIDIA DGX Spark infrastructure deployed on-site. Run 200B+ parameter models inside your building. Your data never leaves your premises — complete sovereignty for healthcare, finance, government, and defence.</p>
                 <ul class="team-eng-list">
