@@ -3,6 +3,10 @@
 
 User-agent: *
 Allow: /
+Disallow: /email-template-lead.html
+Disallow: /email-preview.html
+Disallow: /blog/_template.html
+Disallow: /blog/_video-card.html
 
 User-agent: GPTBot
 Allow: /
