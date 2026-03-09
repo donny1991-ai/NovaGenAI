@@ -184,6 +184,7 @@ spline-viewer #logo, spline-viewer [class*="logo"], spline-viewer a[href*="splin
 
 /* Giant overlapping headline — centred over robot */
 .hero__headline {
+    margin: 0;
     position: relative;
     z-index: 2;
     display: flex; flex-direction: column;
