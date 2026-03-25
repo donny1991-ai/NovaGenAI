@@ -1,0 +1,34 @@
+# humanstxt.org/
+# The humans responsible for building this site
+
+/* TEAM */
+Founder & CEO: Don Calaki
+Chief Technology Officer: David Tan
+Head of AI Engineering: Sarah Lee
+Lead Developer: Marcus Wong
+Site: https://novagenai.com.my
+Location: Cyberjaya, Malaysia
+
+/* THANKS */
+NVIDIA Inception Program — GPU infrastructure & startup support
+CryoCord Group — Strategic partnership & operational excellence
+Malaysian Digital Economy Corporation (MDEC) — Ecosystem support
+
+/* TECHNOLOGY */
+Frontend: HTML5, CSS3, JavaScript (ES2024+)
+3D Graphics: Three.js, Spline
+Analytics: Custom event tracking
+Hosting: GitHub Pages
+CDN: CloudFlare
+Design: Figma, custom vector graphics
+AI Models: OpenAI GPT-5, Anthropic Claude, Google Gemini
+Voice AI: ElevenLabs, custom synthesis
+Infrastructure: NVIDIA DGX, Google Cloud, Azure
+
+/* SITE */
+Last update: 2026/03/25
+Standards: HTML5, CSS3, WCAG 2.1 AA
+Components: Responsive, progressive enhancement
+Language: English (primary), Bahasa Malaysia, Chinese
+Doctype: HTML5
+IDE: Visual Studio Code

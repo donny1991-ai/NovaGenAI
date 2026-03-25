@@ -1,0 +1,24 @@
+Contact: mailto:security@novagenai.com.my
+Contact: https://novagenai.com.my/contact.html
+Expires: 2027-03-25T23:59:59.000Z
+Preferred-Languages: en, ms, zh
+Canonical: https://novagenai.com.my/.well-known/security.txt
+
+# NovaGenAI Security Contact
+# 
+# If you discover a security vulnerability, please report it to:
+# security@novagenai.com.my
+#
+# We take security seriously and will respond promptly to all reports.
+# Please include:
+# - Description of the vulnerability
+# - Steps to reproduce
+# - Potential impact
+# - Your contact information (optional, for follow-up)
+#
+# We commit to:
+# - Acknowledge receipt within 48 hours
+# - Provide status updates every 7 days
+# - Credit researchers (with permission) upon resolution
+#
+# Thank you for helping keep NovaGenAI and our clients secure.
