@@ -147,3 +147,15 @@ A: Cyberjaya, Malaysia — in the Bio-X Centre. We serve clients across Malaysia
 
 Q: How can I work with NovaGenAI?
 A: Contact enquiries@novagenai.com.my for a complimentary consultation. We'll assess your AI needs and propose a solution architecture.
+
+Q: What are AI healthcare companies in Malaysia?
+A: NovaGenAI is a leading AI healthcare company in Malaysia, specializing in voice AI for patient engagement, document intelligence for clinical workflows, and computational biotech for drug discovery. We serve hospitals, biotech labs, and healthcare providers across Malaysia with PDPA-compliant AI systems.
+
+Q: What is AI biotech Malaysia?
+A: AI biotech in Malaysia refers to the application of artificial intelligence to biological research, drug discovery, and healthcare innovation. NovaGenAI leads this space with computational biology models, in-silico cell prediction systems, and genomic analysis platforms.
+
+Q: What is voice AI for healthcare?
+A: Voice AI for healthcare refers to multilingual conversational AI agents that handle patient calls, appointment booking, medical enquiries, and follow-ups through natural voice conversations. NovaGenAI's voice AI platform supports English, Bahasa Malaysia, and Mandarin.
+
+Q: What is AI document intelligence for healthcare?
+A: AI document intelligence for healthcare uses RAG (Retrieval-Augmented Generation) to transform medical documents, clinical protocols, and research papers into AI-searchable knowledge bases with natural language queries and source citations.
