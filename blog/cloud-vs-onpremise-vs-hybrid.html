@@ -148,7 +148,7 @@
     <header class="nav" id="nav">
         <a href="#" class="nav__brand">
             
-<img loading="lazy" src="../images/novagenai-logo-new.png" alt="NovaGenAI" class="nav__logo-img">
+<img width="1213" height="339" loading="lazy" src="../images/novagenai-logo-new.png" alt="NovaGenAI" class="nav__logo-img">
         </a>
 
         <nav class="nav__links" id="nav-links">
@@ -233,6 +233,15 @@
 
     <!-- ════════════════════════════════════════════════════════ ARTICLE BODY -->
     <article class="post-body">
+        <!-- Breadcrumb Navigation -->
+        <nav class="post-breadcrumb" aria-label="Breadcrumb">
+            <ol class="post-breadcrumb__list">
+                <li class="post-breadcrumb__item"><a href="../index.html">Home</a></li>
+                <li class="post-breadcrumb__item"><a href="./index.html">Blog</a></li>
+                <li class="post-breadcrumb__item post-breadcrumb__item--active">Cloud vs On-Premise vs Hybrid AI: Which Deployment is Right for Your Enterprise?</li>
+            </ol>
+        </nav>
+
 
         <p>Every enterprise AI project eventually hits the same question: <strong>where does the infrastructure live?</strong> Cloud providers promise infinite scale and zero maintenance. On-premise advocates counter with data sovereignty and predictable costs. And increasingly, the smartest organisations are realising the answer isn't either/or — it's both.</p>
 
@@ -262,7 +271,7 @@
 
         <p><strong>Egress fees are the silent killer.</strong> Cloud providers charge for data leaving their networks. AI workloads — particularly those involving large document corpora, image processing, or video analysis — generate substantial egress. AWS charges $0.09 per GB for data transfer out. An organisation processing terabytes of documents monthly can face five-figure egress bills that never appeared in the initial cost estimate.</p>
 
-        <p><strong>Storage costs scale linearly.</strong> Vector databases, model weights, training data, and inference logs all consume storage. Cloud storage pricing seems trivial per-GB, but AI workloads generate enormous volumes. A production RAG system with millions of document embeddings, plus versioned model weights, plus query logs for evaluation, can easily reach tens of terabytes — costing thousands per month in storage alone.</p>
+        <p><strong>Storage costs scale linearly.</strong> Vector databases, model weights, training data, and inference logs all consume storage. Cloud storage pricing seems trivial per-GB, but AI workloads generate enormous volumes. A production <a href="../solutions.html#rag">RAG</a> system with millions of document embeddings, plus versioned model weights, plus query logs for evaluation, can easily reach tens of terabytes — costing thousands per month in storage alone.</p>
 
         <p><strong>Vendor lock-in is real.</strong> Each cloud provider's ML platform has proprietary APIs, data formats, and tooling. Moving a production pipeline from AWS SageMaker to Google Vertex AI is a multi-month engineering project. This lock-in gives providers pricing power: once you're embedded, switching costs make price increases painful to resist.</p>
 
@@ -278,7 +287,7 @@
 
         <p><strong>Consistent, high-utilisation workloads.</strong> If your GPUs run inference 18+ hours per day, every day, the math flips decisively in favour of ownership. A DGX system running at 70% utilisation costs roughly 30–50% less over three years than equivalent cloud GPU hours. The break-even point for most enterprise workloads falls between 12–18 months, after which on-premise savings compound year over year.</p>
 
-        <p><strong>Latency-critical applications.</strong> Cloud introduces network latency — typically 20–100ms per round trip, plus variable queueing delays under load. For real-time applications like <a href="./voice-ai-enterprise.html">enterprise voice agents</a> where response time directly impacts user experience, on-premise inference eliminates network variability entirely. Sub-10ms inference latency is achievable on local hardware but impossible through cloud API calls.</p>
+        <p><strong>Latency-critical applications.</strong> Cloud introduces network latency — typically 20–100ms per round trip, plus variable queueing delays under load. For real-time applications like <a href="./voice-ai-enterprise.html">enterprise <a href="../solutions.html#voice-agents">voice agents</a></a> where response time directly impacts user experience, on-premise inference eliminates network variability entirely. Sub-10ms inference latency is achievable on local hardware but impossible through cloud API calls.</p>
 
         <p><strong>Data gravity.</strong> When your data already lives on-premise — in hospital information systems, manufacturing control systems, or financial trading platforms — moving it to the cloud for AI processing adds complexity, latency, and cost. It's far simpler to bring the AI to the data than to move the data to the AI.</p>
 
@@ -357,7 +366,7 @@
 
         <p><strong>Manufacturing and logistics:</strong> Hybrid. Edge inference on-premise (quality inspection, predictive maintenance) with cloud-based training and analytics. Low latency at the edge is critical; data aggregation benefits from cloud scale.</p>
 
-        <p><strong>SMBs and startups:</strong> Cloud-first, with the NVIDIA DGX Spark as an accessible entry point for organisations that want to run smaller AI models locally without building a server room. DGX Spark provides a compact, desktop-form-factor option for on-premise inference — ideal for professional services firms, clinics, or small enterprises exploring local AI without enterprise-scale investment.</p>
+        <p><strong>SMBs and startups:</strong> Cloud-first, with the NVIDIA <a href="../technology.html#dgx-spark">DGX Spark</a> as an accessible entry point for organisations that want to run smaller AI models locally without building a server room. DGX Spark provides a compact, desktop-form-factor option for on-premise inference — ideal for professional services firms, clinics, or small enterprises exploring local AI without enterprise-scale investment.</p>
 
         <h2>NovaGenAI: Infrastructure-Agnostic by Design</h2>
 
@@ -487,7 +496,7 @@
         <div class="footer__inner">
             <div class="footer__brand">
                 <span class="footer__logo">
-                    <img loading="lazy" src="../images/novagenai-logo-new.png" alt="NovaGenAI" class="footer__logo-img">
+                    <img width="1213" height="339" loading="lazy" src="../images/novagenai-logo-new.png" alt="NovaGenAI" class="footer__logo-img">
                 </span>
                 <p class="footer__tagline">Enterprise AI Systems — Asia-Pacific &amp; Global</p>
                 <p class="footer__tagline" style="margin-top:.25rem;font-size:.7rem;opacity:.6;">Malaysia · Australia · Singapore</p>

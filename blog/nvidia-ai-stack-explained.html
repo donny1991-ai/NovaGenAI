@@ -144,7 +144,7 @@
     <header class="nav" id="nav">
         <a href="#" class="nav__brand">
             
-<img loading="lazy" src="../images/novagenai-logo-new.png" alt="NovaGenAI" class="nav__logo-img">
+<img width="1213" height="339" loading="lazy" src="../images/novagenai-logo-new.png" alt="NovaGenAI" class="nav__logo-img">
         </a>
 
         <nav class="nav__links" id="nav-links">
@@ -218,6 +218,15 @@
 
     <!-- ════════════════════════════════════════════════════════ ARTICLE -->
     <article class="post-body">
+        <!-- Breadcrumb Navigation -->
+        <nav class="post-breadcrumb" aria-label="Breadcrumb">
+            <ol class="post-breadcrumb__list">
+                <li class="post-breadcrumb__item"><a href="../index.html">Home</a></li>
+                <li class="post-breadcrumb__item"><a href="./index.html">Blog</a></li>
+                <li class="post-breadcrumb__item post-breadcrumb__item--active">The NVIDIA AI Stack Explained: NeMo, NIM, CUDA, TensorRT, Triton, and RAPIDS</li>
+            </ol>
+        </nav>
+
 
         <p class="post-body__lead">NVIDIA doesn't just make GPUs. They've built the most comprehensive AI software ecosystem in existence — a vertically integrated stack that spans from silicon-level compute through to production model serving. Understanding this stack is essential for any enterprise deploying AI at scale.</p>
 
@@ -254,7 +263,7 @@
 
         <h2>Layer 6: NIM — Inference Microservices</h2>
         <p>NVIDIA Inference Microservices (NIM) package optimized models as containerized microservices with standard API endpoints. NIM handles the complexity of model optimization (automatically applying TensorRT), scaling, and deployment. Developers get a simple API call; NIM handles GPU allocation, batching, and model management behind the scenes.</p>
-        <p>NIM containers can run on any NVIDIA GPU — from a desktop DGX Spark to cloud instances — making it the deployment layer for hybrid and on-premise architectures.</p>
+        <p>NIM containers can run on any NVIDIA GPU — from a desktop <a href="../technology.html#dgx-spark">DGX Spark</a> to cloud instances — making it the deployment layer for hybrid and on-premise architectures.</p>
 
         <h2>Layer 7: RAPIDS — GPU-Accelerated Data Science</h2>
         <p>RAPIDS accelerates the entire data pipeline: cuDF for DataFrames (pandas replacement), cuML for machine learning (scikit-learn replacement), cuGraph for graph analytics, and cuSpatial for geospatial data. RAPIDS delivers 10-100x speedups over CPU-based tools, compressing data preparation cycles from hours to minutes.</p>
@@ -367,7 +376,7 @@
         <div class="footer__inner">
             <div class="footer__brand">
                 <span class="footer__logo">
-                    <img loading="lazy" src="../images/novagenai-logo-new.png" alt="NovaGenAI" class="footer__logo-img">
+                    <img width="1213" height="339" loading="lazy" src="../images/novagenai-logo-new.png" alt="NovaGenAI" class="footer__logo-img">
                 </span>
                 <p class="footer__tagline">Enterprise AI Systems — Asia-Pacific &amp; Global</p>
                 <p class="footer__tagline" style="margin-top:.25rem;font-size:.7rem;opacity:.6;">Malaysia · Australia · Singapore</p>

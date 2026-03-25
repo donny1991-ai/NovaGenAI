@@ -148,7 +148,7 @@
     <header class="nav" id="nav">
         <a href="#" class="nav__brand">
             
-<img loading="lazy" src="../images/novagenai-logo-new.png" alt="NovaGenAI" class="nav__logo-img">
+<img width="1213" height="339" loading="lazy" src="../images/novagenai-logo-new.png" alt="NovaGenAI" class="nav__logo-img">
         </a>
 
         <nav class="nav__links" id="nav-links">
@@ -233,8 +233,17 @@
 
     <!-- ════════════════════════════════════════════════════════ ARTICLE BODY -->
     <article class="post-body">
+        <!-- Breadcrumb Navigation -->
+        <nav class="post-breadcrumb" aria-label="Breadcrumb">
+            <ol class="post-breadcrumb__list">
+                <li class="post-breadcrumb__item"><a href="../index.html">Home</a></li>
+                <li class="post-breadcrumb__item"><a href="./index.html">Blog</a></li>
+                <li class="post-breadcrumb__item post-breadcrumb__item--active">What is NVIDIA DGX Spark? The Complete Enterprise Guide</li>
+            </ol>
+        </nav>
 
-        <p>NVIDIA DGX Spark is the most significant shift in enterprise AI hardware since the introduction of the GPU for deep learning. <strong>One petaflop of AI compute. 128GB of unified memory. Desktop form factor. Standard power.</strong> It puts capabilities that previously required a data centre rack into a system that sits next to your monitor.</p>
+
+        <p>NVIDIA <a href="../technology.html#dgx-spark">DGX Spark</a> is the most significant shift in enterprise AI hardware since the introduction of the GPU for deep learning. <strong>One petaflop of AI compute. 128GB of unified memory. Desktop form factor. Standard power.</strong> It puts capabilities that previously required a data centre rack into a system that sits next to your monitor.</p>
 
         <p>This is the definitive guide to DGX Spark — full technical specifications, real-world use cases, cost analysis, cloud comparison, and how it fits into the broader NVIDIA ecosystem. If you're evaluating DGX Spark for your enterprise, this is the resource you need.</p>
 
@@ -296,7 +305,7 @@
             <li>Adapter training for domain-specific customisation of any model that fits in memory</li>
         </ul>
 
-        <p>For enterprise deployments, this means a single DGX Spark can run a production-grade 70B language model serving multiple concurrent users, a domain-specific fine-tuned model for clinical decision support or financial analysis, or a multi-model pipeline combining a retrieval model with a generation model for RAG applications.</p>
+        <p>For enterprise deployments, this means a single DGX Spark can run a production-grade 70B language model serving multiple concurrent users, a domain-specific fine-tuned model for clinical decision support or financial analysis, or a multi-model pipeline combining a retrieval model with a generation model for <a href="../solutions.html#rag">RAG</a> applications.</p>
 
         <div class="post-pull-quote">
             "128GB of unified memory isn't just a spec. It's the difference between running a toy demo and deploying a production AI system that handles real enterprise workloads."
@@ -347,7 +356,7 @@
 
         <p><strong>Data sovereignty.</strong> DGX Spark: data never leaves your premises. Cloud: data transits to and is processed in a third-party data centre, potentially in another jurisdiction. For regulated industries, this alone decides the question.</p>
 
-        <p><strong>Latency.</strong> DGX Spark: sub-millisecond inference latency with no network round-trip. Cloud: 50–200ms minimum depending on region, plus network variability. For real-time applications — clinical decision support, live fraud detection, voice agents — local inference is materially faster.</p>
+        <p><strong>Latency.</strong> DGX Spark: sub-millisecond inference latency with no network round-trip. Cloud: 50–200ms minimum depending on region, plus network variability. For real-time applications — clinical decision support, live fraud detection, <a href="../solutions.html#voice-agents">voice agents</a> — local inference is materially faster.</p>
 
         <p><strong>Availability.</strong> DGX Spark: available whenever the power is on. No GPU capacity shortages, no spot instance preemptions, no regional outages. Cloud: subject to capacity constraints (H100 instances remain scarce in many regions), provider outages, and network connectivity.</p>
 
@@ -524,7 +533,7 @@
         <div class="footer__inner">
             <div class="footer__brand">
                 <span class="footer__logo">
-                    <img loading="lazy" src="../images/novagenai-logo-new.png" alt="NovaGenAI" class="footer__logo-img">
+                    <img width="1213" height="339" loading="lazy" src="../images/novagenai-logo-new.png" alt="NovaGenAI" class="footer__logo-img">
                 </span>
                 <p class="footer__tagline">Enterprise AI Systems — Asia-Pacific &amp; Global</p>
                 <p class="footer__tagline" style="margin-top:.25rem;font-size:.7rem;opacity:.6;">Malaysia · Australia · Singapore</p>

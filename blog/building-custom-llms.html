@@ -148,7 +148,7 @@
     <header class="nav" id="nav">
         <a href="#" class="nav__brand">
             
-<img loading="lazy" src="../images/novagenai-logo-new.png" alt="NovaGenAI" class="nav__logo-img">
+<img width="1213" height="339" loading="lazy" src="../images/novagenai-logo-new.png" alt="NovaGenAI" class="nav__logo-img">
         </a>
 
         <nav class="nav__links" id="nav-links">
@@ -233,6 +233,15 @@
 
     <!-- ════════════════════════════════════════════════════════ ARTICLE BODY -->
     <article class="post-body">
+        <!-- Breadcrumb Navigation -->
+        <nav class="post-breadcrumb" aria-label="Breadcrumb">
+            <ol class="post-breadcrumb__list">
+                <li class="post-breadcrumb__item"><a href="../index.html">Home</a></li>
+                <li class="post-breadcrumb__item"><a href="./index.html">Blog</a></li>
+                <li class="post-breadcrumb__item post-breadcrumb__item--active">Building Custom LLMs on Proprietary Data: A Complete Enterprise Guide</li>
+            </ol>
+        </nav>
+
 
         <p>Every enterprise is experimenting with large language models. Most are using them wrong. They're feeding sensitive corporate data into public APIs, accepting generic outputs that miss domain nuances, and wondering why the ROI isn't materialising. <strong>The gap between a demo and a production AI system is a custom model trained on your data, deployed on your infrastructure, governed by your policies.</strong></p>
 
@@ -260,7 +269,7 @@
 
         <p><strong>Level 2: Few-Shot Learning.</strong> You provide 5–50 examples of desired input-output pairs within the prompt context. The model learns the pattern from examples without any weight updates. Effective for format standardisation, classification tasks, and output style. Limited by context window size — you can't fit thousands of examples in a prompt.</p>
 
-        <p><strong>Level 3: Retrieval-Augmented Generation (RAG).</strong> Instead of training the model on your data, you build a retrieval pipeline that fetches relevant documents at query time and provides them as context. The model's weights don't change, but it can now answer questions about your proprietary data with citations. RAG is the sweet spot for most <a href="ai-document-intelligence.html">enterprise document intelligence</a> use cases — current, auditable, and cost-effective. We've covered RAG architecture in depth in our <a href="ai-document-intelligence.html">AI Document Intelligence</a> guide.</p>
+        <p><strong>Level 3: Retrieval-Augmented Generation (<a href="../solutions.html#rag">RAG</a>).</strong> Instead of training the model on your data, you build a retrieval pipeline that fetches relevant documents at query time and provides them as context. The model's weights don't change, but it can now answer questions about your proprietary data with citations. RAG is the sweet spot for most <a href="ai-document-intelligence.html">enterprise document intelligence</a> use cases — current, auditable, and cost-effective. We've covered RAG architecture in depth in our <a href="ai-document-intelligence.html">AI Document Intelligence</a> guide.</p>
 
         <p><strong>Level 4: Parameter-Efficient Fine-Tuning (LoRA/QLoRA).</strong> This is where you start modifying model weights — but surgically. LoRA (Low-Rank Adaptation) adds small trainable matrices alongside the frozen base model, typically updating less than 1% of parameters. QLoRA adds quantisation for memory efficiency. This teaches the model domain-specific reasoning patterns, output formats, and terminology without the compute cost of full fine-tuning. You need 1,000–10,000 high-quality training examples. Training a 7B model with LoRA takes hours on a single GPU, not weeks on a cluster.</p>
 
@@ -306,7 +315,7 @@
 
         <p>Infrastructure requirements vary dramatically across the customisation spectrum. Here's what each level demands:</p>
 
-        <p><strong>Prompt engineering and RAG</strong> need inference infrastructure only. A capable GPU (NVIDIA A100, H100, or DGX Spark) running the base model, plus a vector database for RAG. <a href="nvidia-ai-stack-explained.html">NVIDIA's TensorRT</a> optimises inference throughput by 2–6x, and Triton Inference Server handles production model serving with batching, queuing, and multi-model management.</p>
+        <p><strong>Prompt engineering and RAG</strong> need inference infrastructure only. A capable GPU (NVIDIA A100, H100, or <a href="../technology.html#dgx-spark">DGX Spark</a>) running the base model, plus a vector database for RAG. <a href="nvidia-ai-stack-explained.html">NVIDIA's TensorRT</a> optimises inference throughput by 2–6x, and Triton Inference Server handles production model serving with batching, queuing, and multi-model management.</p>
 
         <p><strong>LoRA fine-tuning</strong> is remarkably efficient. A single NVIDIA A100 (80GB) can fine-tune a 7B parameter model in hours. QLoRA pushes this further — fine-tuning a 70B model on a single GPU via 4-bit quantisation. NVIDIA NeMo provides the framework, handling distributed training, checkpointing, and experiment tracking. <a href="dgx-spark-complete-guide.html">DGX Spark</a> with its 128GB unified memory makes this accessible on-premise without a data centre.</p>
 
@@ -466,7 +475,7 @@
         <div class="footer__inner">
             <div class="footer__brand">
                 <span class="footer__logo">
-                    <img loading="lazy" src="../images/novagenai-logo-new.png" alt="NovaGenAI" class="footer__logo-img">
+                    <img width="1213" height="339" loading="lazy" src="../images/novagenai-logo-new.png" alt="NovaGenAI" class="footer__logo-img">
                 </span>
                 <p class="footer__tagline">Enterprise AI Systems — Asia-Pacific &amp; Global</p>
                 <p class="footer__tagline" style="margin-top:.25rem;font-size:.7rem;opacity:.6;">Malaysia · Australia · Singapore</p>

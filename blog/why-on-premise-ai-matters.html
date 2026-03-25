@@ -148,7 +148,7 @@
     <header class="nav" id="nav">
         <a href="#" class="nav__brand">
             
-<img loading="lazy" src="../images/novagenai-logo-new.png" alt="NovaGenAI" class="nav__logo-img">
+<img width="1213" height="339" loading="lazy" src="../images/novagenai-logo-new.png" alt="NovaGenAI" class="nav__logo-img">
         </a>
 
         <nav class="nav__links" id="nav-links">
@@ -233,10 +233,19 @@
 
     <!-- ════════════════════════════════════════════════════════ ARTICLE BODY -->
     <article class="post-body">
+        <!-- Breadcrumb Navigation -->
+        <nav class="post-breadcrumb" aria-label="Breadcrumb">
+            <ol class="post-breadcrumb__list">
+                <li class="post-breadcrumb__item"><a href="../index.html">Home</a></li>
+                <li class="post-breadcrumb__item"><a href="./index.html">Blog</a></li>
+                <li class="post-breadcrumb__item post-breadcrumb__item--active">Why On-Premise AI Matters for Regulated Industries</li>
+            </ol>
+        </nav>
+
 
         <p>Every enterprise wants AI. Not every enterprise can afford to be reckless about where its data goes. For organisations in healthcare, financial services, government, and defence, the question isn't <em>whether</em> to adopt AI — it's <strong>where the computation happens and who controls the data</strong>. The answer, increasingly, is on-premise.</p>
 
-        <p>This is the definitive guide to why on-premise AI has become mission-critical for regulated industries, the compliance frameworks driving the shift, the real-world risks of getting it wrong, and how organisations are deploying production-grade AI infrastructure that never leaves their four walls.</p>
+        <p>This is the definitive guide to why <a href="../solutions.html#on-premise">on-premise AI</a> has become mission-critical for regulated industries, the compliance frameworks driving the shift, the real-world risks of getting it wrong, and how organisations are deploying production-grade AI infrastructure that never leaves their four walls.</p>
 
         <h2>What Is On-Premise AI and Why Does It Matter?</h2>
 
@@ -281,7 +290,7 @@
 
         <p>This isn't theoretical. Defence agencies, intelligence services, and critical national infrastructure operators have always required air-gapped computing. What's new is that AI — specifically large language models, computer vision systems, and predictive analytics — can now run at production scale within these isolated environments.</p>
 
-        <p>The enabler is hardware like <a href="./dgx-spark-complete-guide.html">NVIDIA's DGX Spark</a>: 1 petaflop of AI compute, 128GB of unified memory, desktop form factor, standard power. An air-gapped DGX Spark deployment gives a defence installation or government agency the ability to run 200-billion-parameter language models, perform real-time document analysis, and deploy computer vision — all without a single packet ever leaving the facility.</p>
+        <p>The enabler is hardware like <a href="./dgx-spark-complete-guide.html">NVIDIA's <a href="../technology.html#dgx-spark">DGX Spark</a></a>: 1 petaflop of AI compute, 128GB of unified memory, desktop form factor, standard power. An air-gapped DGX Spark deployment gives a defence installation or government agency the ability to run 200-billion-parameter language models, perform real-time document analysis, and deploy computer vision — all without a single packet ever leaving the facility.</p>
 
         <figure>
             <img src="images/on-premise-airgap-security.jpg" alt="Air-gapped AI infrastructure with physical security barriers" loading="lazy" />
@@ -318,7 +327,7 @@
 
         <p><strong>Inference optimisation.</strong> The full NVIDIA AI stack: NeMo for model training and customisation, NIM for optimised inference microservices, CUDA for GPU-accelerated computing, TensorRT for inference optimisation delivering up to 40x faster performance than CPU-only inference, Triton Inference Server for production model serving, and RAPIDS for GPU-accelerated data science and analytics pipelines.</p>
 
-        <p><strong>RAG document intelligence.</strong> Retrieval-Augmented Generation systems that connect language models to live, internal knowledge bases — policy documents, medical literature, regulatory filings, operational procedures — without that data ever being used to train external models or leaving the secure perimeter.</p>
+        <p><strong>RAG <a href="ai-document-intelligence.html">document intelligence</a>.</strong> Retrieval-Augmented Generation systems that connect language models to live, internal knowledge bases — policy documents, medical literature, regulatory filings, operational procedures — without that data ever being used to train external models or leaving the secure perimeter.</p>
 
         <p><strong>Security architecture.</strong> Encryption at rest and in transit (even within the local network), role-based access controls, multi-factor authentication, comprehensive audit logging, and data loss prevention policies. Every interaction with the AI system is logged, traceable, and auditable.</p>
 
@@ -357,7 +366,7 @@
 
         <p><strong>Government.</strong> Citizen records, tax data, immigration systems, judicial proceedings, national statistics. Government data is held in trust for citizens and must be treated with the highest standard of care. On-premise AI enables government agencies to modernise with AI while maintaining absolute data sovereignty.</p>
 
-        <p><strong>Legal.</strong> Client-attorney privileged communications, case files, litigation strategy, contract analysis. Legal firms cannot send client data to third-party AI providers without breaching privilege. On-premise RAG systems allow firms to deploy AI-powered document review and legal research without any data leaving the firm's network.</p>
+        <p><strong>Legal.</strong> Client-attorney privileged communications, case files, litigation strategy, contract analysis. Legal firms cannot send client data to third-party AI providers without breaching privilege. On-premise <a href="../solutions.html#rag">RAG</a> systems allow firms to deploy AI-powered document review and legal research without any data leaving the firm's network.</p>
 
         <h2>What Are the Limitations of On-Premise AI?</h2>
 
@@ -492,7 +501,7 @@
         <div class="footer__inner">
             <div class="footer__brand">
                 <span class="footer__logo">
-                    <img loading="lazy" src="../images/novagenai-logo-new.png" alt="NovaGenAI" class="footer__logo-img">
+                    <img width="1213" height="339" loading="lazy" src="../images/novagenai-logo-new.png" alt="NovaGenAI" class="footer__logo-img">
                 </span>
                 <p class="footer__tagline">Enterprise AI Systems — Asia-Pacific &amp; Global</p>
                 <p class="footer__tagline" style="margin-top:.25rem;font-size:.7rem;opacity:.6;">Malaysia · Australia · Singapore</p>

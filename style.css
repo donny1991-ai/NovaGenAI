@@ -621,11 +621,31 @@ spline-viewer #logo, spline-viewer [class*="logo"], spline-viewer a[href*="splin
     font-family: var(--ff-body); font-size: .75rem;
     color: var(--clr-muted); letter-spacing: .06em;
 }
-.footer__links { display: flex; gap: 2rem; }
+.footer__links { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 2rem; 
+    width: 100%;
+    max-width: 800px;
+}
+.footer__links-column {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+.footer__links-heading {
+    font-family: var(--ff-body);
+    font-size: 0.65rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.5);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 0.25rem;
+}
 .footer__links a {
     font-family: var(--ff-body); font-size: .75rem;
-    color: var(--clr-muted); letter-spacing: .1em;
-    text-transform: uppercase; transition: color .3s;
+    color: var(--clr-muted); letter-spacing: .06em;
+    transition: color .3s;
 }
 .footer__links a:hover { color: var(--clr-accent); }
 .footer__copy {

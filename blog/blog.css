@@ -811,6 +811,44 @@
     .post-author { padding: 1.5rem; }
 }
 
+/* ── BREADCRUMB NAVIGATION ──────────────────────── */
+.post-breadcrumb {
+    max-width: 900px;
+    margin: 0 auto 2rem;
+    padding: 1rem 1.5rem 0;
+}
+.post-breadcrumb__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+.post-breadcrumb__item {
+    display: flex;
+    align-items: center;
+}
+.post-breadcrumb__item:not(:last-child)::after {
+    content: '›';
+    margin-left: 0.5rem;
+    color: rgba(255, 255, 255, 0.3);
+}
+.post-breadcrumb__item a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+.post-breadcrumb__item a:hover {
+    color: var(--clr-accent);
+}
+.post-breadcrumb__item--active {
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+}
+
 /* ── SCROLL ANIMATION UTILITY ──────────────────────── */
 .fade-in-up {
     opacity: 0;

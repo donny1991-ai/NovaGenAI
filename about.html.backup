@@ -156,18 +156,6 @@
   ]
 }
 </script>
-<!-- Speakable Schema for Voice Assistants -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "About NovaGenAI",
-  "speakable": {
-    "@type": "SpeakableSpecification",
-    "cssSelector": [".hero__title", ".about-intro"]
-  }
-}
-</script>
 </head>
 <body>
     <header class="nav" id="nav">

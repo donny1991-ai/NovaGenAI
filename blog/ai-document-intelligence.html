@@ -148,7 +148,7 @@
     <header class="nav" id="nav">
         <a href="#" class="nav__brand">
             
-<img loading="lazy" src="../images/novagenai-logo-new.png" alt="NovaGenAI" class="nav__logo-img">
+<img width="1213" height="339" loading="lazy" src="../images/novagenai-logo-new.png" alt="NovaGenAI" class="nav__logo-img">
         </a>
 
         <nav class="nav__links" id="nav-links">
@@ -234,6 +234,15 @@
     <!-- ════════════════════════════════════════════════════════ ARTICLE BODY -->
     <article class="post-body">
 
+        <!-- Breadcrumb Navigation -->
+        <nav class="post-breadcrumb" aria-label="Breadcrumb">
+            <ol class="post-breadcrumb__list">
+                <li class="post-breadcrumb__item"><a href="../index.html">Home</a></li>
+                <li class="post-breadcrumb__item"><a href="./index.html">Blog</a></li>
+                <li class="post-breadcrumb__item post-breadcrumb__item--active">AI Document Intelligence</li>
+            </ol>
+        </nav>
+
         <p>Eighty percent of enterprise data is unstructured. It lives in PDFs, email threads, scanned contracts, medical records, invoices, and regulatory filings — formats that traditional software cannot query, reason over, or act upon. <strong>This is the single largest untapped resource in every organisation</strong>, and until recently, unlocking it required armies of analysts doing manual extraction.</p>
 
         <p>AI document intelligence changes this equation entirely. Not by digitising text — OCR has done that for decades — but by <em>understanding</em> documents the way a domain expert would: grasping context, identifying relationships, extracting structured decisions from unstructured chaos.</p>
@@ -258,7 +267,7 @@
 
         <h2>How Does Retrieval-Augmented Generation (RAG) Work?</h2>
 
-        <p>RAG is the architectural pattern that makes enterprise document intelligence possible at scale. It solves a fundamental limitation of large language models: LLMs are trained on public data up to a cutoff date. They don't know about your contracts, your policies, your patient records, or your financial reports. RAG bridges this gap by retrieving relevant information from your documents and feeding it to the LLM at query time.</p>
+        <p><a href="../solutions.html#rag">RAG</a> is the architectural pattern that makes enterprise document intelligence possible at scale. It solves a fundamental limitation of large language models: LLMs are trained on public data up to a cutoff date. They don't know about your contracts, your policies, your patient records, or your financial reports. RAG bridges this gap by retrieving relevant information from your documents and feeding it to the LLM at query time.</p>
 
         <p>Here's how a production RAG pipeline works, step by step:</p>
 
@@ -317,7 +326,7 @@
 
         <p><strong>Compliance Monitoring.</strong> Regulated industries must continuously monitor their operations against evolving regulatory requirements. AI document intelligence can ingest regulatory updates, compare them against current policies, and flag gaps. When a new data protection guideline is published, the system identifies which internal policies need updating and what specific changes are required.</p>
 
-        <p>The pattern across all these use cases is the same: humans are doing cognitively demanding, repetitive document work that AI can do faster, more consistently, and at scale — while keeping humans in the loop for judgment calls. <a href="what-are-autonomous-ai-agents.html">Autonomous AI agents</a> can orchestrate these document intelligence pipelines end-to-end, routing documents, triggering analyses, and escalating exceptions to human reviewers.</p>
+        <p>The pattern across all these use cases is the same: humans are doing cognitively demanding, repetitive document work that AI can do faster, more consistently, and at scale — while keeping humans in the loop for judgment calls. <a href="what-are-autonomous-ai-agents.html">Autonomous <a href="what-are-agents.html">AI agents</a></a> can orchestrate these document intelligence pipelines end-to-end, routing documents, triggering analyses, and escalating exceptions to human reviewers.</p>
 
         <figure>
             <img src="images/on-premise-data-sovereignty.jpg" alt="Enterprise data sovereignty with on-premise AI document processing" loading="lazy" />
@@ -346,7 +355,7 @@
 
         <p>A production RAG pipeline is not a weekend project. It requires purpose-built infrastructure across several layers:</p>
 
-        <p><strong>Compute.</strong> Embedding models and LLM inference require GPU acceleration. NVIDIA's ecosystem provides the foundation: <strong>CUDA</strong> for parallel computation, <strong>TensorRT</strong> for inference optimisation (delivering 2–6x speedup over unoptimised models), and <strong>Triton Inference Server</strong> for production model serving with batching, queuing, and multi-model management. For on-premise deployments, NVIDIA DGX Spark provides 1 petaflop of AI compute in a desk-side form factor.</p>
+        <p><strong>Compute.</strong> Embedding models and LLM inference require GPU acceleration. NVIDIA's ecosystem provides the foundation: <strong>CUDA</strong> for parallel computation, <strong>TensorRT</strong> for inference optimisation (delivering 2–6x speedup over unoptimised models), and <strong>Triton Inference Server</strong> for production model serving with batching, queuing, and multi-model management. For on-premise deployments, NVIDIA <a href="../technology.html#dgx-spark">DGX Spark</a> provides 1 petaflop of AI compute in a desk-side form factor.</p>
 
         <p><strong>Vector database.</strong> At enterprise scale — millions of document chunks — the vector database must handle high-throughput queries with sub-100ms latency while supporting filtering, access controls, and real-time ingestion. This is a specialised infrastructure component, not a feature you bolt onto PostgreSQL.</p>
 
@@ -476,7 +485,7 @@
         <div class="footer__inner">
             <div class="footer__brand">
                 <span class="footer__logo">
-                    <img loading="lazy" src="../images/novagenai-logo-new.png" alt="NovaGenAI" class="footer__logo-img">
+                    <img width="1213" height="339" loading="lazy" src="../images/novagenai-logo-new.png" alt="NovaGenAI" class="footer__logo-img">
                 </span>
                 <p class="footer__tagline">Enterprise AI Systems — Asia-Pacific &amp; Global</p>
                 <p class="footer__tagline" style="margin-top:.25rem;font-size:.7rem;opacity:.6;">Malaysia · Australia · Singapore</p>
