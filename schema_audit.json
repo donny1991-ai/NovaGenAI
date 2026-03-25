@@ -1,0 +1,220 @@
+{
+  "timestamp": "2026-03-25T01:42:45.044129",
+  "total_files": 33,
+  "issues_found": 28,
+  "details": [
+    {
+      "file": "about.html",
+      "severity": "MEDIUM",
+      "issues": [
+        "Missing BreadcrumbList schema"
+      ]
+    },
+    {
+      "file": "erp-consulting.html",
+      "severity": "MEDIUM",
+      "issues": [
+        "Missing BreadcrumbList schema"
+      ]
+    },
+    {
+      "file": "contact.html",
+      "severity": "MEDIUM",
+      "issues": [
+        "Missing BreadcrumbList schema"
+      ]
+    },
+    {
+      "file": "solutions.html",
+      "severity": "MEDIUM",
+      "issues": [
+        "Missing BreadcrumbList schema"
+      ]
+    },
+    {
+      "file": "case-studies.html",
+      "severity": "MEDIUM",
+      "issues": [
+        "Missing BreadcrumbList schema"
+      ]
+    },
+    {
+      "file": "technology.html",
+      "severity": "MEDIUM",
+      "issues": [
+        "Missing BreadcrumbList schema"
+      ]
+    },
+    {
+      "file": "custom-ai-systems.html",
+      "severity": "MEDIUM",
+      "issues": [
+        "Missing BreadcrumbList schema"
+      ]
+    },
+    {
+      "file": "agents.html",
+      "severity": "MEDIUM",
+      "issues": [
+        "Missing BreadcrumbList schema"
+      ]
+    },
+    {
+      "file": "what-are-agents.html",
+      "severity": "MEDIUM",
+      "issues": [
+        "Missing BreadcrumbList schema"
+      ]
+    },
+    {
+      "file": "404.html",
+      "severity": "HIGH",
+      "issues": [
+        "NO STRUCTURED DATA FOUND"
+      ]
+    },
+    {
+      "file": "cloud-migration.html",
+      "severity": "MEDIUM",
+      "issues": [
+        "Missing BreadcrumbList schema"
+      ]
+    },
+    {
+      "file": "team.html",
+      "severity": "MEDIUM",
+      "issues": [
+        "Missing BreadcrumbList schema"
+      ]
+    },
+    {
+      "file": "blog/ai-document-intelligence.html",
+      "severity": "MEDIUM",
+      "issues": [
+        "Using Article instead of BlogPosting",
+        "Missing BreadcrumbList schema"
+      ]
+    },
+    {
+      "file": "blog/what-is-cell2sentence.html",
+      "severity": "MEDIUM",
+      "issues": [
+        "Using Article instead of BlogPosting",
+        "Missing BreadcrumbList schema"
+      ]
+    },
+    {
+      "file": "blog/when-biology-becomes-code.html",
+      "severity": "MEDIUM",
+      "issues": [
+        "Using Article instead of BlogPosting",
+        "Missing BreadcrumbList schema"
+      ]
+    },
+    {
+      "file": "blog/dgx-spark-complete-guide.html",
+      "severity": "MEDIUM",
+      "issues": [
+        "Using Article instead of BlogPosting",
+        "Missing BreadcrumbList schema"
+      ]
+    },
+    {
+      "file": "blog/voice-ai-enterprise.html",
+      "severity": "MEDIUM",
+      "issues": [
+        "Using Article instead of BlogPosting",
+        "Missing BreadcrumbList schema"
+      ]
+    },
+    {
+      "file": "blog/building-custom-llms.html",
+      "severity": "MEDIUM",
+      "issues": [
+        "Using Article instead of BlogPosting",
+        "Missing BreadcrumbList schema"
+      ]
+    },
+    {
+      "file": "blog/what-are-autonomous-ai-agents.html",
+      "severity": "MEDIUM",
+      "issues": [
+        "Using Article instead of BlogPosting",
+        "Missing BreadcrumbList schema"
+      ]
+    },
+    {
+      "file": "blog/ai-drug-discovery.html",
+      "severity": "MEDIUM",
+      "issues": [
+        "Using Article instead of BlogPosting",
+        "Missing BreadcrumbList schema"
+      ]
+    },
+    {
+      "file": "blog/cloud-vs-onpremise-vs-hybrid.html",
+      "severity": "MEDIUM",
+      "issues": [
+        "Using Article instead of BlogPosting",
+        "Missing BreadcrumbList schema"
+      ]
+    },
+    {
+      "file": "blog/single-omics-vs-multi-omics.html",
+      "severity": "MEDIUM",
+      "issues": [
+        "Using Article instead of BlogPosting",
+        "Missing BreadcrumbList schema"
+      ]
+    },
+    {
+      "file": "blog/index.html",
+      "severity": "HIGH",
+      "issues": [
+        "NO STRUCTURED DATA FOUND"
+      ]
+    },
+    {
+      "file": "blog/why-on-premise-ai-matters.html",
+      "severity": "MEDIUM",
+      "issues": [
+        "Using Article instead of BlogPosting",
+        "Missing BreadcrumbList schema"
+      ]
+    },
+    {
+      "file": "blog/nvidia-ai-stack-explained.html",
+      "severity": "MEDIUM",
+      "issues": [
+        "Using Article instead of BlogPosting",
+        "Missing BreadcrumbList schema"
+      ]
+    },
+    {
+      "file": "blog/novagenai-vision-2026.html",
+      "severity": "MEDIUM",
+      "issues": [
+        "Using Article instead of BlogPosting",
+        "Missing BreadcrumbList schema"
+      ]
+    },
+    {
+      "file": "blog/in-silico-modelling.html",
+      "severity": "MEDIUM",
+      "issues": [
+        "Using Article instead of BlogPosting",
+        "Missing BreadcrumbList schema"
+      ]
+    },
+    {
+      "file": "blog/cell2sentence-computational-biotech.html",
+      "severity": "HIGH",
+      "issues": [
+        "Using Article instead of BlogPosting",
+        "Missing required property: image",
+        "Publisher missing logo property",
+        "Missing BreadcrumbList schema"
+      ]
+    }
+  ]
+}
