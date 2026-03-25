@@ -1794,3 +1794,64 @@ elevenlabs-convai::part(button) {
   .nova-cursor, .nova-cursor__dot { display: none !important; }
   #nova-3d-canvas { display: none !important; }
 }
+
+/* ═══════════════════ PARTNER STRIP ═══════════════════ */
+.partners-strip {
+  padding: 3rem 0;
+  background: #000;
+  border-top: 1px solid rgba(255,255,255,0.04);
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  overflow: hidden;
+}
+.partners-strip__inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3.5rem;
+}
+.partners-strip__inner img {
+  height: 28px;
+  width: auto;
+  opacity: 0.5;
+  filter: grayscale(100%) brightness(1.8);
+  transition: opacity 0.4s ease, filter 0.4s ease;
+  flex-shrink: 0;
+}
+.partners-strip__inner img:first-child {
+  height: 36px; /* NVIDIA badge is denser */
+}
+.partners-strip__inner img:hover {
+  opacity: 1;
+  filter: grayscale(0%) brightness(1);
+}
+@media (max-width: 768px) {
+  .partners-strip {
+    padding: 2rem 0;
+  }
+  .partners-strip__inner {
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .partners-strip__inner img {
+    height: 20px;
+  }
+  .partners-strip__inner img:first-child {
+    height: 26px;
+  }
+}
+@media (max-width: 480px) {
+  .partners-strip__inner {
+    gap: 1.5rem;
+    padding: 0 1.5rem;
+  }
+  .partners-strip__inner img {
+    height: 16px;
+  }
+  .partners-strip__inner img:first-child {
+    height: 22px;
+  }
+}
