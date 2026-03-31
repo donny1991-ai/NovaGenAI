@@ -75,7 +75,7 @@ MerakInvestments, CryoCord Group, Brighton Healthcare Group
 
 ## Company Size
 
-6 employees. ML engineer joined February 2026. Currently raising $1M seed round.
+6 employees. ML engineer joined February 2026. Currently raising $1M seed round (Q2 2026).
 
 ## Social
 
@@ -159,3 +159,5 @@ A: Voice AI for healthcare refers to multilingual conversational AI agents that 
 
 Q: What is AI document intelligence for healthcare?
 A: AI document intelligence for healthcare uses RAG (Retrieval-Augmented Generation) to transform medical documents, clinical protocols, and research papers into AI-searchable knowledge bases with natural language queries and source citations.
+guage queries and source citations.
+AI-searchable knowledge bases with natural language queries and source citations.
