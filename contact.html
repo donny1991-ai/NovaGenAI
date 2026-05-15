@@ -544,21 +544,20 @@
         const industry = document.getElementById('contact-industry').value || 'Not specified';
         const message = document.getElementById('contact-message').value;
 
-        // Build a fake transcript so the existing n8n voice-lead workflow can parse it
-        const transcript = `Website contact form submission. My name is ${name}. I work for ${company}. My email is ${email}. My phone number is ${phone}. Address: ${address}. Industry: ${industry}. Message: ${message}`;
-
         const data = {
-            transcript: transcript,
-            conversation_id: 'web-form-' + Date.now(),
-            metadata: {
-                call_duration_secs: 0,
-                language: 'en',
-                source: 'website-contact-form'
-            }
+            name,
+            email,
+            phone,
+            company,
+            address,
+            industry,
+            message,
+            timestamp: new Date().toISOString(),
+            source: 'website-contact-form'
         };
 
         try {
-            await fetch('https://doncalaki.app.n8n.cloud/webhook/novagen-voice-lead', {
+            await fetch('https://doncalaki.app.n8n.cloud/webhook/novagen-contact-form', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(data)
