@@ -178,23 +178,6 @@ if (orgDiagram) {
     });
 }
 
-// ── Contact form handling ────────────────────────────
-const contactForm = document.getElementById('contact-form');
-if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const btn = contactForm.querySelector('.contact__submit');
-        const origText = btn.textContent;
-        btn.textContent = 'Sent! We\'ll be in touch.';
-        btn.style.background = '#22C55E';
-        setTimeout(() => {
-            btn.textContent = origText;
-            btn.style.background = '';
-            contactForm.reset();
-        }, 3000);
-    });
-}
-
 /* ── Agents Page: Org Diagram Click Interaction ── */
 document.querySelectorAll('.ag-org-node').forEach(node => {
     node.addEventListener('click', () => {

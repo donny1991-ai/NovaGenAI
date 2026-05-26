@@ -48,6 +48,27 @@ Headquartered in **Cyberjaya, Malaysia** with operations in **Australia** and **
 
 ---
 
+## ✉️ Email API
+
+The website contact forms submit to an Azure Functions email microservice in `src/email-api`.
+
+- **Azure environment:** `novagen-email-prod`
+- **Resource group:** `rg-novagen-email-prod`
+- **Function App:** `func-novagen-email-prod-email-75z4am2jefaks`
+- **Contact endpoint:** `https://func-novagen-email-prod-email-75z4am2jefaks.azurewebsites.net/api/contact`
+- **SMTP config:** stored directly in Function App environment variables
+
+Deploy with:
+
+```bash
+azd provision
+azd deploy
+```
+
+SMTP credentials are not stored in this repository. The Function App reads `SMTP_HOST`, `SMTP_USER`, `SMTP_PASS`, `MAIL_FROM`, and `MAIL_TO` directly from Azure Function App environment variables. See `src/email-api/README.md`.
+
+---
+
 ## 📄 License
 
 © 2026 NovaGenAI Sdn. Bhd. All rights reserved.

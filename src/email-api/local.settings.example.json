@@ -1,0 +1,16 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "FUNCTIONS_WORKER_RUNTIME": "node",
+    "SMTP_HOST": "smtp.example.com",
+    "SMTP_PORT": "587",
+    "SMTP_SECURE": "false",
+    "SMTP_USER": "smtp-user",
+    "SMTP_PASS": "smtp-password",
+    "MAIL_FROM": "NovaGenAI Website <enquiries@novagenai.com.my>",
+    "MAIL_TO": "enquiries@novagenai.com.my",
+    "ALLOWED_ORIGINS": "https://novagenai.com.my,https://www.novagenai.com.my,http://localhost:8080,http://127.0.0.1:8080",
+    "EMAIL_DRY_RUN": "true"
+  }
+}

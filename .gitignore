@@ -1,0 +1,6 @@
+.azure/
+node_modules/
+src/email-api/node_modules/
+src/email-api/local.settings.json
+src/email-api/dist/
+*.log

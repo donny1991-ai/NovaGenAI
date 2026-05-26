@@ -467,6 +467,7 @@
             <p class="footer__copy">&copy; 2026 NovaGenAI. All rights reserved.</p>
         </div>
     </footer>
+    <script src="contact-config.js"></script>
     <script>
     // Real-time validation on blur (when user leaves a field)
     const emailInput = document.getElementById('contact-email');
@@ -557,11 +558,19 @@
         };
 
         try {
-            await fetch('https://doncalaki.app.n8n.cloud/webhook/novagen-contact-form-live', {
+            const contactEndpoint = window.NOVAGEN_CONTACT_API_URL;
+            if (!contactEndpoint || contactEndpoint.includes('replace-with')) {
+                throw new Error('Contact API endpoint is not configured');
+            }
+
+            const response = await fetch(contactEndpoint, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(data)
             });
+            if (!response.ok) {
+                throw new Error('Contact API request failed');
+            }
             btn.textContent = '✓ Message Sent!';
             btn.style.background = '#22c55e';
             this.reset();

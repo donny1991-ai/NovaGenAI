@@ -1,0 +1,8 @@
+name: novagen-email-api
+metadata:
+  template: novagen-email-api@0.0.1
+services:
+  email-api:
+    project: ./src/email-api
+    language: js
+    host: function

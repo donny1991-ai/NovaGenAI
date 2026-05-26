@@ -1848,6 +1848,7 @@
         </div>
     </footer>
 
+    <script src="contact-config.js"></script>
     <script>
     // Animated counters
     function animateCounters() {
@@ -1977,11 +1978,19 @@
         };
 
         try {
-            await fetch('https://doncalaki.app.n8n.cloud/webhook/novagen-contact-form-live', {
+            const contactEndpoint = window.NOVAGEN_CONTACT_API_URL;
+            if (!contactEndpoint || contactEndpoint.includes('replace-with')) {
+                throw new Error('Contact API endpoint is not configured');
+            }
+
+            const response = await fetch(contactEndpoint, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(data)
             });
+            if (!response.ok) {
+                throw new Error('Contact API request failed');
+            }
             btn.textContent = '✓ Message Sent!';
             btn.style.background = '#22c55e';
             this.reset();
