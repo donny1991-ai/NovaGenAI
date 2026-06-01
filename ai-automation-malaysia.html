@@ -12,76 +12,115 @@
     <meta name="description" content="NovaGenAI builds enterprise AI automation for Malaysian companies. Document processing (5x faster), voice AI (85% call deflection), workflow orchestration (60% less manual work). ERP/CRM integrated. Cyberjaya."/>
     <link rel="canonical" href="https://novagenai.com.my/ai-automation-malaysia.html"/>
     <link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
     <meta property="og:title" content="AI Automation Company Malaysia — Automation That Shows Up on the P&L"/>
     <meta property="og:description" content="Enterprise AI automation with measurable results. 85% call deflection. 60% less manual work. 5x faster documents. Live at CryoCord Group. Cyberjaya, Malaysia."/>
-    <meta property="og:image" content="https://novagenai.com.my/images/og-image.webp"/>
+    <meta property="og:image" content="https://novagenai.com.my/images/aeo/ai-automation-hero.jpg"/>
     <meta property="og:url" content="https://novagenai.com.my/ai-automation-malaysia.html"/>
     <meta name="twitter:card" content="summary_large_image"/>
     <style>
-:root{--bg:#08090a;--bg-panel:#0f1011;--bg-surface:#141516;--bg-elevated:#191a1b;--text-primary:#f7f8f8;--text-secondary:#d0d6e0;--text-tertiary:#8a8f98;--text-quaternary:#62666d;--accent:#D4A017;--accent-glow:#00D4FF;--accent-bg:rgba(212,160,23,0.10);--border-subtle:rgba(255,255,255,0.05);--border-standard:rgba(255,255,255,0.08);--border-emphasis:rgba(255,255,255,0.12)}
+:root{--bg:#08090a;--bg-panel:#0f1011;--bg-surface:#141516;--bg-elevated:#191a1b;--text-primary:#f7f8f8;--text-secondary:#d0d6e0;--text-tertiary:#8a8f98;--text-quaternary:#62666d;--accent:#D4A017;--accent-glow:#00D4FF;--accent-bg:rgba(212,160,23,0.10);--accent-glow-bg:rgba(0,212,255,0.06);--border-subtle:rgba(255,255,255,0.05);--border-standard:rgba(255,255,255,0.08);--border-emphasis:rgba(255,255,255,0.12)}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text-secondary);line-height:1.6;-webkit-font-smoothing:antialiased}
-.nav{position:sticky;top:0;z-index:100;background:rgba(8,9,10,0.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border-subtle);padding:0 32px;height:56px;display:flex;align-items:center;justify-content:space-between}
+.nav{position:sticky;top:0;z-index:100;background:rgba(8,9,10,0.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border-subtle);padding:0 32px;height:56px;display:flex;align-items:center;justify-content:space-between}
 .nav__logo{font-size:18px;font-weight:600;color:var(--text-primary);text-decoration:none;letter-spacing:-0.3px;display:flex;align-items:center;gap:6px}
 .nav__logo img{height:28px}
 .nav__links{display:flex;gap:24px;align-items:center}
 .nav__links a{font-size:13px;font-weight:500;color:var(--text-tertiary);text-decoration:none;transition:color .15s}
 .nav__links a:hover{color:var(--text-primary)}
-.nav__cta{font-size:13px;font-weight:500;color:var(--bg);background:var(--accent);padding:6px 14px;border-radius:6px;text-decoration:none;transition:filter .15s}
-.nav__cta:hover{filter:brightness(1.15)}
-.hero{padding:120px 32px 80px;text-align:center;max-width:900px;margin:0 auto}
-.hero__label{font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);margin-bottom:20px}
-.hero__title{font-size:clamp(36px,5vw,56px);font-weight:600;color:var(--text-primary);line-height:1.08;letter-spacing:-1.4px;margin-bottom:24px}
+.nav__cta{font-size:13px;font-weight:500;color:var(--bg);background:var(--accent);padding:6px 14px;border-radius:6px;text-decoration:none;transition:filter .15s,box-shadow .15s}
+.nav__cta:hover{filter:brightness(1.15);box-shadow:0 0 20px rgba(212,160,23,0.25)}
+
+/* ── HERO with background image ── */
+.hero{position:relative;padding:160px 32px 120px;text-align:center;max-width:100%;overflow:hidden}
+.hero__bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.18;pointer-events:none}
+.hero__overlay{position:absolute;inset:0;background:linear-gradient(180deg,var(--bg) 0%,transparent 40%,transparent 70%,var(--bg) 100%)}
+.hero__glow{position:absolute;top:20%;left:50%;transform:translateX(-50%);width:600px;height:400px;background:radial-gradient(ellipse,var(--accent-glow-bg) 0%,transparent 70%);pointer-events:none}
+.hero__inner{position:relative;z-index:1;max-width:900px;margin:0 auto}
+.hero__label{font-size:11px;font-weight:600;letter-spacing:0.10em;text-transform:uppercase;color:var(--accent);margin-bottom:20px}
+.hero__title{font-size:clamp(38px,5.5vw,60px);font-weight:600;color:var(--text-primary);line-height:1.06;letter-spacing:-1.6px;margin-bottom:24px}
 .hero__title span{color:var(--accent-glow)}
-.hero__subtitle{font-size:17px;color:var(--text-tertiary);line-height:1.6;max-width:640px;margin:0 auto}
+.hero__subtitle{font-size:18px;color:var(--text-tertiary);line-height:1.6;max-width:660px;margin:0 auto}
+
+/* ── SECTIONS ── */
 .section{padding:80px 32px;max-width:1100px;margin:0 auto}
-.section__label{font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);margin-bottom:16px}
+.section__label{font-size:11px;font-weight:600;letter-spacing:0.10em;text-transform:uppercase;color:var(--accent);margin-bottom:16px}
 .section__title{font-size:28px;font-weight:600;color:var(--text-primary);letter-spacing:-0.5px;line-height:1.2;margin-bottom:12px}
 .section__title span{color:var(--accent-glow)}
-.section__text{font-size:15px;color:var(--text-tertiary);line-height:1.7;max-width:800px}
+.section__text{font-size:15px;color:var(--text-tertiary);line-height:1.75;max-width:800px}
 .section__text strong{color:var(--text-secondary);font-weight:500}
-.answer-box{background:var(--bg-panel);border:1px solid var(--border-standard);border-radius:8px;padding:24px;margin-top:32px}
+.section-divider{height:1px;background:linear-gradient(90deg,transparent,var(--border-standard),transparent);margin:0 32px;max-width:1100px;margin:0 auto}
+
+/* ── ANSWER BOX ── */
+.answer-box{background:var(--bg-panel);border:1px solid var(--border-standard);border-left:2px solid var(--accent-glow);border-radius:0 8px 8px 0;padding:24px;margin-top:32px;transition:border-color .2s}
 .answer-box p{font-size:15px;color:var(--text-secondary);line-height:1.7}
 .answer-box p strong{color:var(--text-primary);font-weight:500}
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border-subtle);border-radius:10px;overflow:hidden;margin-top:40px}
-.stat{background:var(--bg-panel);padding:28px 24px;text-align:center}
-.stat__num{font-size:32px;font-weight:600;color:var(--text-primary);letter-spacing:-0.5px;margin-bottom:4px}
-.stat__label{font-size:12px;font-weight:500;color:var(--text-tertiary);text-transform:uppercase;letter-spacing:0.05em}
-.stat__desc{font-size:12px;color:var(--text-quaternary);margin-top:4px;line-height:1.4}
+
+/* ── STATS ── */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border-subtle);border-radius:12px;overflow:hidden;margin-top:40px}
+.stat{background:var(--bg-panel);padding:32px 24px;text-align:center;transition:background .2s}
+.stat:hover{background:var(--bg-surface)}
+.stat__num{font-size:36px;font-weight:600;color:var(--text-primary);letter-spacing:-0.5px;margin-bottom:4px}
+.stat__label{font-size:12px;font-weight:500;color:var(--text-tertiary);text-transform:uppercase;letter-spacing:0.06em}
+.stat__desc{font-size:12px;color:var(--text-quaternary);margin-top:6px;line-height:1.4}
+
+/* ── CARDS ── */
 .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
-.card{background:var(--bg-panel);border:1px solid var(--border-subtle);border-radius:8px;padding:24px;transition:border-color .2s,background .2s}
-.card:hover{border-color:var(--border-standard);background:var(--bg-surface)}
-.card__icon{font-size:24px;margin-bottom:16px}
-.card__title{font-size:15px;font-weight:600;color:var(--text-primary);letter-spacing:-0.2px;margin-bottom:8px}
+.card{background:var(--bg-panel);border:1px solid var(--border-subtle);border-radius:10px;padding:28px;transition:all .25s;position:relative;overflow:hidden}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--accent-glow),transparent);opacity:0;transition:opacity .25s}
+.card:hover{border-color:var(--border-standard);background:var(--bg-surface);transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,0.4)}
+.card:hover::before{opacity:0.4}
+.card__icon{font-size:28px;margin-bottom:16px}
+.card__title{font-size:15px;font-weight:600;color:var(--text-primary);letter-spacing:-0.2px;margin-bottom:10px}
 .card__text{font-size:13px;color:var(--text-tertiary);line-height:1.6}
+
+/* ── WHY CARDS ── */
 .why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:40px}
-.why-card{background:var(--bg-panel);border:1px solid var(--border-subtle);border-radius:8px;padding:28px;transition:border-color .2s}
-.why-card:hover{border-color:var(--border-standard)}
-.why-card__num{font-size:11px;font-weight:600;color:var(--accent);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:12px}
-.why-card__title{font-size:16px;font-weight:600;color:var(--text-primary);letter-spacing:-0.3px;margin-bottom:8px}
-.why-card__text{font-size:14px;color:var(--text-tertiary);line-height:1.6}
-.partners{display:flex;justify-content:center;gap:32px;flex-wrap:wrap;margin-top:24px;opacity:0.35}
+.why-card{background:var(--bg-panel);border:1px solid var(--border-subtle);border-radius:10px;padding:32px;transition:all .25s;position:relative}
+.why-card:hover{border-color:var(--border-standard);background:var(--bg-surface);box-shadow:0 4px 20px rgba(0,0,0,0.3)}
+.why-card__num{font-size:11px;font-weight:600;color:var(--accent);letter-spacing:0.10em;text-transform:uppercase;margin-bottom:12px}
+.why-card__title{font-size:17px;font-weight:600;color:var(--text-primary);letter-spacing:-0.3px;margin-bottom:10px}
+.why-card__text{font-size:14px;color:var(--text-tertiary);line-height:1.65}
+
+/* ── PARTNERS ── */
+.partners{display:flex;justify-content:center;gap:36px;flex-wrap:wrap;margin-top:24px;opacity:0.30;transition:opacity .3s}
+.partners:hover{opacity:0.45}
 .partners img{height:28px}
-.faq{margin-top:40px;display:flex;flex-direction:column;gap:1px;background:var(--border-subtle);border-radius:10px;overflow:hidden}
+
+/* ── DROPDOWN FAQ ── */
+.faq{margin-top:40px;display:flex;flex-direction:column;gap:1px;background:var(--border-subtle);border-radius:12px;overflow:hidden}
 .faq details{background:var(--bg-panel);transition:background .15s}
 .faq details:hover{background:var(--bg-surface)}
-.faq summary{font-size:14px;font-weight:500;color:var(--text-primary);padding:20px 24px;cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;user-select:none}
+.faq details[open]{background:var(--bg-surface);box-shadow:inset 0 0 0 1px var(--border-standard)}
+.faq summary{font-size:14px;font-weight:500;color:var(--text-primary);padding:22px 28px;cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;user-select:none;transition:color .15s}
+.faq details[open] summary{color:var(--accent-glow)}
 .faq summary::-webkit-details-marker{display:none}
-.faq summary::after{content:'+';font-size:18px;font-weight:400;color:var(--text-quaternary);transition:transform .2s,color .15s;flex-shrink:0;margin-left:12px}
-.faq details[open] summary::after{content:'−';color:var(--accent-glow)}
-.faq .faq__a{font-size:14px;color:var(--text-tertiary);line-height:1.7;padding:0 24px 20px 24px}
-.cta{text-align:center;padding:64px 32px;background:linear-gradient(180deg,var(--bg) 0%,var(--accent-bg) 100%);border:1px solid var(--border-subtle);border-radius:12px;margin-top:64px}
-.cta__title{font-size:24px;font-weight:600;color:var(--text-primary);letter-spacing:-0.4px;margin-bottom:8px}
-.cta__text{font-size:15px;color:var(--text-tertiary);margin-bottom:24px}
-.cta__btn{display:inline-block;font-size:14px;font-weight:500;color:var(--bg);background:var(--accent);padding:10px 24px;border-radius:6px;text-decoration:none;transition:filter .15s}
-.cta__btn:hover{filter:brightness(1.15)}
+.faq summary::after{content:'+';font-size:20px;font-weight:300;color:var(--text-quaternary);transition:all .2s;flex-shrink:0;margin-left:16px}
+.faq details[open] summary::after{content:'−';color:var(--accent-glow);transform:rotate(180deg)}
+.faq .faq__a{font-size:14px;color:var(--text-tertiary);line-height:1.75;padding:0 28px 24px 28px}
+
+/* ── CTA ── */
+.cta{text-align:center;padding:80px 32px;background:linear-gradient(180deg,var(--bg) 0%,var(--accent-bg) 50%,rgba(0,212,255,0.03) 100%);border:1px solid var(--border-subtle);border-radius:14px;margin:64px 32px 0;position:relative;overflow:hidden}
+.cta::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:400px;height:200px;background:radial-gradient(ellipse,var(--accent-glow-bg) 0%,transparent 70%);pointer-events:none}
+.cta__title{font-size:26px;font-weight:600;color:var(--text-primary);letter-spacing:-0.5px;margin-bottom:12px;position:relative}
+.cta__text{font-size:16px;color:var(--text-tertiary);margin-bottom:28px;position:relative}
+.cta__btn{display:inline-block;font-size:15px;font-weight:500;color:var(--bg);background:var(--accent);padding:12px 28px;border-radius:8px;text-decoration:none;transition:all .2s;position:relative}
+.cta__btn:hover{filter:brightness(1.15);box-shadow:0 0 30px rgba(212,160,23,0.3);transform:translateY(-1px)}
+
+/* ── FOOTER ── */
 .footer{border-top:1px solid var(--border-subtle);padding:48px 32px;text-align:center}
 .footer__links{display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin-bottom:16px}
 .footer__links a{font-size:13px;color:var(--text-quaternary);text-decoration:none;transition:color .15s}
 .footer__links a:hover{color:var(--text-secondary)}
 .footer__copy{font-size:12px;color:var(--text-quaternary)}
-@media(max-width:768px){.stats{grid-template-columns:repeat(2,1fr)}.cards{grid-template-columns:1fr}.why-grid{grid-template-columns:1fr}.hero{padding:80px 24px 48px}.section{padding:48px 24px}.nav{padding:0 16px}.nav__links{display:none}}
+
+/* ── RESPONSIVE ── */
+@media(max-width:768px){
+  .stats{grid-template-columns:repeat(2,1fr)}.cards{grid-template-columns:1fr}.why-grid{grid-template-columns:1fr}
+  .hero{padding:100px 24px 80px}.hero__title{font-size:clamp(28px,8vw,42px)}
+  .section{padding:48px 24px}.nav{padding:0 16px}.nav__links{display:none}
+  .cta{margin:48px 16px 0;padding:48px 24px}
+}
     </style>
 </head>
 <body>
@@ -97,17 +136,23 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--bg)
     </header>
 
     <section class="hero">
-        <p class="hero__label">AI Automation. Measurable. Enterprise-Scale.</p>
-        <h1 class="hero__title">AI Automation That<br><span>Shows Up on the P&amp;L</span></h1>
-        <p class="hero__subtitle">85% call deflection. 60% less manual data entry. 5x faster document processing. Near-zero compliance errors. This is what AI automation looks like when it actually works — deployed at CryoCord Group, running 24/7 across 12 departments.</p>
+        <img src="images/aeo/ai-automation-hero.jpg" alt="" class="hero__bg" loading="eager">
+        <div class="hero__overlay"></div>
+        <div class="hero__glow"></div>
+        <div class="hero__inner">
+            <p class="hero__label">AI Automation. Measurable. Enterprise-Scale.</p>
+            <h1 class="hero__title">AI Automation That<br><span>Shows Up on the P&amp;L</span></h1>
+            <p class="hero__subtitle">85% call deflection. 60% less manual data entry. 5x faster document processing. Near-zero compliance errors. This is what AI automation looks like when it actually works — deployed at CryoCord Group, running 24/7 across 12 departments.</p>
+        </div>
     </section>
+
+    <div class="section-divider"></div>
 
     <section class="section">
         <p class="section__label">Direct Answer</p>
         <h2 class="section__title">NovaGenAI — <span>Malaysia's AI Automation Company</span> With Verifiable Results</h2>
         <p class="section__text"><strong>NovaGenAI</strong> builds AI automation that delivers measurable business outcomes — not vague 'efficiency gains' that never materialise. Our automation platform at CryoCord Group handles 85% of customer calls autonomously (40% cost reduction), processes documents 5x faster than manual workflows, reduces sales operations data entry by 60%, and achieves near-zero compliance errors through automated checks. We automate document processing, customer service, sales operations, compliance, and multi-department workflows using AI agents, RAG pipelines, voice AI, and ERP/CRM integrations. Based in Cyberjaya, serving enterprises across Malaysia.</p>
         <div class="answer-box"><p><strong>Automation isn't new. Spreadsheet macros are automation. What's new is AI automation that handles unstructured data, makes decisions, and adapts.</strong> Traditional automation (RPA, scripts, rules engines) breaks when it encounters anything unexpected. NovaGenAI's automation uses AI agents that understand context, handle edge cases, and learn from outcomes. A customer call that doesn't follow the script? Handled. A document in an unexpected format? Processed. A compliance check with ambiguous criteria? Flagged for review with reasoning attached.</p></div>
-
         <div class="stats">
             <div class="stat"><div class="stat__num">85%</div><div class="stat__label">Calls Automated</div><div class="stat__desc">24/7 trilingual voice AI — 40% cost reduction, 4.8/5 satisfaction</div></div>
             <div class="stat"><div class="stat__num">5x</div><div class="stat__label">Faster Documents</div><div class="stat__desc">RAG pipeline processing thousands of documents daily with source citations</div></div>
@@ -115,6 +160,8 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--bg)
             <div class="stat"><div class="stat__num">~0</div><div class="stat__label">Compliance Errors</div><div class="stat__desc">Automated regulatory checks with full audit trails and traceability</div></div>
         </div>
     </section>
+
+    <div class="section-divider"></div>
 
     <section class="section">
         <p class="section__label">AI Automation Solutions</p>
@@ -129,6 +176,8 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--bg)
         </div>
     </section>
 
+    <div class="section-divider"></div>
+
     <section class="section">
         <p class="section__label">Differentiation</p>
         <h2 class="section__title">Why <span>AI Automation</span> (Not Just Automation)</h2>
@@ -140,6 +189,7 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--bg)
         </div>
     </section>
 
+    <div class="section-divider"></div>
     <section class="section">
         <p class="section__label">Technology Partners</p>
         <div class="partners">
@@ -150,6 +200,8 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--bg)
             <img src="images/elevenlabs-logo.svg" alt="ElevenLabs">
         </div>
     </section>
+
+    <div class="section-divider"></div>
 
     <section class="section">
         <p class="section__label">FAQ</p>
