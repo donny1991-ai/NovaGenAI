@@ -1,0 +1,33 @@
+{
+  "name": "NovaGenAI",
+  "short_name": "NovaGenAI",
+  "description": "Enterprise AI Systems Company — Autonomous Agents, Voice AI, Computational Biotech, and On-Premise AI Infrastructure. Based in Cyberjaya, Malaysia.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0A0E27",
+  "theme_color": "#D4A017",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "/images/favicon-64.png",
+      "sizes": "64x64",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "categories": ["business", "technology", "healthcare"],
+  "lang": "en-MY",
+  "dir": "ltr",
+  "scope": "/",
+  "id": "novagenai-pwa",
+  "prefer_related_applications": false
+}

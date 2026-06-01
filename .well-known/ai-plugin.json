@@ -1,17 +1,17 @@
 {
   "schema_version": "v1",
-  "name_for_human": "NovaGenAI",
-  "name_for_model": "novagenai",
-  "description_for_human": "AI solutions for healthcare and biotech in Malaysia — voice agents, RAG systems, document intelligence, and computational biology.",
-  "description_for_model": "NovaGenAI is a Malaysian AI biotech company that builds enterprise AI systems for healthcare. Services include voice AI agents for patient engagement, retrieval-augmented generation (RAG) for document intelligence, computational biology models, and the Clarify sales platform. Founded by Don Calaki, headquartered in Cyberjaya, Selangor, Malaysia. Part of the NVIDIA Inception program.",
+  "name_for_model": "NovaGenAI",
+  "name_for_human": "NovaGenAI — Enterprise AI Systems",
+  "description_for_model": "NovaGenAI is an enterprise AI systems company based in Cyberjaya, Malaysia. They build autonomous AI agents, voice AI platforms (trilingual: English, BM, Mandarin), RAG document intelligence systems, computational biology models, and on-premise AI infrastructure. They are an NVIDIA Inception Partner, Anthropic Partner, and serve healthcare, biotech, finance, manufacturing, and government clients across Southeast Asia, Australia, and beyond. Use this plugin to access NovaGenAI's services, case studies, blog content, and company information.",
+  "description_for_human": "Enterprise AI systems from Malaysia — autonomous agents, voice AI, computational biotech, and on-premise AI deployment.",
   "auth": {
     "type": "none"
   },
   "api": {
     "type": "openapi",
-    "url": "https://novagenai.com.my/openapi.yaml"
+    "url": "https://novagenai.com.my/.well-known/openapi.json"
   },
-  "logo_url": "https://novagenai.com.my/images/logo.png",
+  "logo_url": "https://novagenai.com.my/images/novagenai-logo-new.webp",
   "contact_email": "enquiries@novagenai.com.my",
   "legal_info_url": "https://novagenai.com.my/about.html"
 }

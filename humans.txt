@@ -12,7 +12,6 @@ Location: Cyberjaya, Malaysia
 /* THANKS */
 NVIDIA Inception Program — GPU infrastructure & startup support
 CryoCord Group — Strategic partnership & operational excellence
-Malaysian Digital Economy Corporation (MDEC) — Ecosystem support
 
 /* TECHNOLOGY */
 Frontend: HTML5, CSS3, JavaScript (ES2024+)
