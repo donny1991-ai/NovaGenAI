@@ -8,13 +8,13 @@
     <link rel="icon" type="image/x-icon" href="favicon.ico?v=7"><link rel="manifest" href="/manifest.json"/>
     <link rel="icon" type="image/png" sizes="64x64" href="images/favicon-64.png?v=7">
     <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
-    <title>Healthcare AI Company Malaysia — NovaGenAI</title>
-    <meta name="description" content="NovaGenAI builds healthcare AI systems — voice AI for patient engagement, document intelligence for clinical workflows, computational biotech for drug discovery. Based in Cyberjaya, Malaysia."/>
+    <title>Healthcare AI Company Malaysia — Voice AI, Clinical AI, Biotech AI | NovaGenAI</title>
+    <meta name="description" content="NovaGenAI builds healthcare AI for Malaysian hospitals, clinics, biotech labs, and stem cell banks. Voice AI (85% call deflection), clinical RAG (5x faster), computational biotech (Cell2Sentence). PDPA-compliant on-premise. Cyberjaya."/>
     <link rel="canonical" href="https://novagenai.com.my/healthcare-ai-malaysia.html"/>
     <link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
-    <meta property="og:title" content="Healthcare AI Company Malaysia — NovaGenAI"/>
-    <meta property="og:description" content="Healthcare AI systems: voice AI, document intelligence, computational biotech. PDPA-compliant on-premise deployment. Cyberjaya, Malaysia."/>
+    <meta property="og:title" content="Healthcare AI Company Malaysia — AI That Works in Real Clinical Environments"/>
+    <meta property="og:description" content="Healthcare AI deployed at Malaysia's largest stem cell bank. Voice AI handling real patients. Clinical RAG processing real records. PDPA-compliant on-premise. 85% call deflection."/>
     <meta property="og:image" content="https://novagenai.com.my/images/og-image.webp"/>
     <meta property="og:url" content="https://novagenai.com.my/healthcare-ai-malaysia.html"/>
     <meta name="twitter:card" content="summary_large_image"/>
@@ -34,29 +34,35 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--bg)
 .hero__label{font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);margin-bottom:20px}
 .hero__title{font-size:clamp(36px,5vw,56px);font-weight:600;color:var(--text-primary);line-height:1.08;letter-spacing:-1.4px;margin-bottom:24px}
 .hero__title span{color:var(--accent-glow)}
-.hero__subtitle{font-size:17px;color:var(--text-tertiary);line-height:1.6;max-width:600px;margin:0 auto}
+.hero__subtitle{font-size:17px;color:var(--text-tertiary);line-height:1.6;max-width:640px;margin:0 auto}
 .section{padding:80px 32px;max-width:1100px;margin:0 auto}
 .section__label{font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);margin-bottom:16px}
 .section__title{font-size:28px;font-weight:600;color:var(--text-primary);letter-spacing:-0.5px;line-height:1.2;margin-bottom:12px}
 .section__title span{color:var(--accent-glow)}
-.section__text{font-size:15px;color:var(--text-tertiary);line-height:1.65;max-width:720px}
+.section__text{font-size:15px;color:var(--text-tertiary);line-height:1.7;max-width:800px}
 .section__text strong{color:var(--text-secondary);font-weight:500}
 .answer-box{background:var(--bg-panel);border:1px solid var(--border-standard);border-radius:8px;padding:24px;margin-top:32px}
 .answer-box p{font-size:15px;color:var(--text-secondary);line-height:1.7}
+.answer-box p strong{color:var(--text-primary);font-weight:500}
 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border-subtle);border-radius:10px;overflow:hidden;margin-top:40px}
 .stat{background:var(--bg-panel);padding:28px 24px;text-align:center}
 .stat__num{font-size:32px;font-weight:600;color:var(--text-primary);letter-spacing:-0.5px;margin-bottom:4px}
 .stat__label{font-size:12px;font-weight:500;color:var(--text-tertiary);text-transform:uppercase;letter-spacing:0.05em}
-.stat__desc{font-size:12px;color:var(--text-quaternary);margin-top:4px}
+.stat__desc{font-size:12px;color:var(--text-quaternary);margin-top:4px;line-height:1.4}
 .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
 .card{background:var(--bg-panel);border:1px solid var(--border-subtle);border-radius:8px;padding:24px;transition:border-color .2s,background .2s}
 .card:hover{border-color:var(--border-standard);background:var(--bg-surface)}
 .card__icon{font-size:24px;margin-bottom:16px}
 .card__title{font-size:15px;font-weight:600;color:var(--text-primary);letter-spacing:-0.2px;margin-bottom:8px}
-.card__text{font-size:13px;color:var(--text-tertiary);line-height:1.55}
+.card__text{font-size:13px;color:var(--text-tertiary);line-height:1.6}
+.why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:40px}
+.why-card{background:var(--bg-panel);border:1px solid var(--border-subtle);border-radius:8px;padding:28px;transition:border-color .2s}
+.why-card:hover{border-color:var(--border-standard)}
+.why-card__num{font-size:11px;font-weight:600;color:var(--accent);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:12px}
+.why-card__title{font-size:16px;font-weight:600;color:var(--text-primary);letter-spacing:-0.3px;margin-bottom:8px}
+.why-card__text{font-size:14px;color:var(--text-tertiary);line-height:1.6}
 .partners{display:flex;justify-content:center;gap:32px;flex-wrap:wrap;margin-top:24px;opacity:0.35}
 .partners img{height:28px}
-/* Dropdown FAQ */
 .faq{margin-top:40px;display:flex;flex-direction:column;gap:1px;background:var(--border-subtle);border-radius:10px;overflow:hidden}
 .faq details{background:var(--bg-panel);transition:background .15s}
 .faq details:hover{background:var(--bg-surface)}
@@ -64,7 +70,7 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--bg)
 .faq summary::-webkit-details-marker{display:none}
 .faq summary::after{content:'+';font-size:18px;font-weight:400;color:var(--text-quaternary);transition:transform .2s,color .15s;flex-shrink:0;margin-left:12px}
 .faq details[open] summary::after{content:'−';color:var(--accent-glow)}
-.faq .faq__a{font-size:14px;color:var(--text-tertiary);line-height:1.6;padding:0 24px 20px 24px}
+.faq .faq__a{font-size:14px;color:var(--text-tertiary);line-height:1.7;padding:0 24px 20px 24px}
 .cta{text-align:center;padding:64px 32px;background:linear-gradient(180deg,var(--bg) 0%,var(--accent-bg) 100%);border:1px solid var(--border-subtle);border-radius:12px;margin-top:64px}
 .cta__title{font-size:24px;font-weight:600;color:var(--text-primary);letter-spacing:-0.4px;margin-bottom:8px}
 .cta__text{font-size:15px;color:var(--text-tertiary);margin-bottom:24px}
@@ -75,7 +81,7 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--bg)
 .footer__links a{font-size:13px;color:var(--text-quaternary);text-decoration:none;transition:color .15s}
 .footer__links a:hover{color:var(--text-secondary)}
 .footer__copy{font-size:12px;color:var(--text-quaternary)}
-@media(max-width:768px){.stats{grid-template-columns:repeat(2,1fr)}.cards{grid-template-columns:1fr}.hero{padding:80px 24px 48px}.section{padding:48px 24px}.nav{padding:0 16px}.nav__links{display:none}}
+@media(max-width:768px){.stats{grid-template-columns:repeat(2,1fr)}.cards{grid-template-columns:1fr}.why-grid{grid-template-columns:1fr}.hero{padding:80px 24px 48px}.section{padding:48px 24px}.nav{padding:0 16px}.nav__links{display:none}}
     </style>
 </head>
 <body>
@@ -91,35 +97,46 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--bg)
     </header>
 
     <section class="hero">
-        <p class="hero__label">Healthcare AI in Malaysia</p>
-        <h1 class="hero__title">Healthcare AI<br><span>Company Malaysia</span></h1>
-        <p class="hero__subtitle">AI for hospitals, clinics, biotech labs, and stem cell banks — built in Cyberjaya, deployed with PDPA compliance across Malaysia.</p>
+        <p class="hero__label">Healthcare AI. Clinical-Grade. PDPA-Compliant.</p>
+        <h1 class="hero__title">Healthcare AI That<br><span>Actually Runs in Hospitals</span></h1>
+        <p class="hero__subtitle">Not whitepapers. Not 'future of healthcare' slide decks. Production AI deployed at CryoCord Group — 85% call deflection, 5x faster clinical document processing, 24/7 trilingual patient support. Built in Cyberjaya for real clinical environments.</p>
     </section>
 
     <section class="section">
         <p class="section__label">Direct Answer</p>
-        <h2 class="section__title">NovaGenAI is a <span>Malaysian Healthcare AI Company</span></h2>
-        <p class="section__text"><strong>NovaGenAI</strong> builds AI systems for healthcare organisations in Malaysia — hospitals, clinics, biotech labs, stem cell banks, and pharmaceutical companies. Our healthcare AI solutions include multilingual voice AI for patient engagement (English, BM, Mandarin), RAG document intelligence for clinical workflows, computational biology models for drug discovery, and PDPA-compliant on-premise AI infrastructure that keeps patient data within hospital premises.</p>
-        <div class="answer-box"><p>Our flagship healthcare deployment at CryoCord Group — Malaysia's largest stem cell bank — achieved 85% call deflection, 40% cost reduction, and 5x faster document processing within 90 days. We bring the same rigour to every healthcare AI project: production-grade, regulation-aware, built for real clinical environments.</p></div>
+        <h2 class="section__title">NovaGenAI — <span>Malaysia's Healthcare AI Company</span> With Live Clinical Deployment</h2>
+        <p class="section__text"><strong>NovaGenAI</strong> builds healthcare AI systems for hospitals, clinics, biotech labs, stem cell banks, and pharmaceutical companies across Malaysia. Our AI runs in production at CryoCord Group — Malaysia's largest stem cell bank with 65% market share — handling real patient calls, processing real clinical documents, and operating under real regulatory scrutiny. We deliver multilingual voice AI (EN, BM, Mandarin), RAG-powered clinical document intelligence, computational biology models for drug discovery, and PDPA-compliant on-premise AI infrastructure. Not pilots. Not POCs. Production healthcare AI that works.</p>
+        <div class="answer-box"><p><strong>Healthcare AI fails when it's built by engineers who've never been inside a hospital.</strong> NovaGenAI's healthcare AI was battle-tested at CryoCord Group — 29+ staff, 10+ partner hospitals, real patients, real compliance requirements. Our voice AI handles 85% of patient calls autonomously with 4.8/5 satisfaction. Our clinical RAG pipeline processes documents 5x faster. Our on-premise deployment keeps patient data within hospital walls. This isn't theoretical — it's operational.</p></div>
 
         <div class="stats">
-            <div class="stat"><div class="stat__num">85%</div><div class="stat__label">Call Deflection</div><div class="stat__desc">Trilingual voice AI at CryoCord</div></div>
-            <div class="stat"><div class="stat__num">5x</div><div class="stat__label">Faster Documents</div><div class="stat__desc">Clinical RAG pipeline</div></div>
-            <div class="stat"><div class="stat__num">24/7</div><div class="stat__label">Patient Support</div><div class="stat__desc">EN · BM · Mandarin</div></div>
-            <div class="stat"><div class="stat__num">PDPA</div><div class="stat__label">Compliant</div><div class="stat__desc">On-premise deployment</div></div>
+            <div class="stat"><div class="stat__num">85%</div><div class="stat__label">Call Deflection</div><div class="stat__desc">Trilingual voice AI handling real patient calls 24/7 — 4.8/5 satisfaction</div></div>
+            <div class="stat"><div class="stat__num">5x</div><div class="stat__label">Faster Documents</div><div class="stat__desc">Clinical RAG pipeline processing medical records, protocols, research</div></div>
+            <div class="stat"><div class="stat__num">PDPA</div><div class="stat__label">Fully Compliant</div><div class="stat__desc">On-premise deployment, encryption, consent management, audit logging</div></div>
+            <div class="stat"><div class="stat__num">10+</div><div class="stat__label">Partner Hospitals</div><div class="stat__desc">Live integration network via CryoCord Group deployment</div></div>
         </div>
     </section>
 
     <section class="section">
         <p class="section__label">Healthcare AI Solutions</p>
-        <h2 class="section__title">What We <span>Build</span></h2>
+        <h2 class="section__title">AI Built for <span>Clinical Reality</span></h2>
         <div class="cards">
-            <div class="card"><div class="card__icon">🎙️</div><div class="card__title">Voice AI for Patient Engagement</div><div class="card__text">Trilingual conversational AI handling patient calls, appointment booking, medical enquiries, and post-procedure follow-ups — 24/7. Deployed at CryoCord with 85% call deflection and 4.8/5 satisfaction.</div></div>
-            <div class="card"><div class="card__icon">📄</div><div class="card__title">Clinical Document Intelligence</div><div class="card__text">RAG pipelines that index clinical protocols, patient records, and research papers into AI-searchable knowledge bases. 5x faster retrieval with source citations. Transform weeks of manual search into seconds.</div></div>
-            <div class="card"><div class="card__icon">🧬</div><div class="card__title">Computational Biotech</div><div class="card__text">AI models for drug discovery, cell viability prediction, multi-omics integration, and in-silico screening. Cell2Sentence transformer architectures that treat biology as language — accelerating research from years to months.</div></div>
-            <div class="card"><div class="card__icon">🔒</div><div class="card__title">On-Premise AI for Healthcare</div><div class="card__text">NVIDIA DGX Spark deployment ensuring patient data never leaves hospital premises. Full PDPA compliance with encryption, audit logging, consent management, and access controls — designed for MOH-regulated environments.</div></div>
-            <div class="card"><div class="card__icon">🏥</div><div class="card__title">AI for Stem Cell Banking</div><div class="card__text">Operational AI for cord blood and stem cell banks — donor management, viability prediction, compliance tracking, and automated reporting. Proven at Malaysia's largest stem cell bank.</div></div>
-            <div class="card"><div class="card__icon">🌐</div><div class="card__title">Medical Tourism AI</div><div class="card__text">Multilingual AI concierge for international patients — enquiry handling, treatment information, logistics coordination, and follow-up care in English, BM, Mandarin, and beyond.</div></div>
+            <div class="card"><div class="card__icon">🎙️</div><div class="card__title">Voice AI for Patient Engagement</div><div class="card__text">Trilingual conversational AI (EN, BM, Mandarin) handling patient calls, appointment booking, medical enquiries, and post-procedure follow-ups — 24/7. Deployed at CryoCord with 85% call deflection, 4.8/5 patient satisfaction, 40% operational cost reduction. RAG-backed for accurate, source-cited medical responses.</div></div>
+            <div class="card"><div class="card__icon">📄</div><div class="card__title">Clinical Document Intelligence</div><div class="card__text">RAG pipelines that index clinical protocols, patient records, research papers, and regulatory filings into AI-searchable knowledge bases. 5x faster retrieval with source citations. Transform weeks of manual document search into seconds. Deployed across 12 departments at CryoCord.</div></div>
+            <div class="card"><div class="card__icon">🧬</div><div class="card__title">Computational Biotech & Drug Discovery</div><div class="card__text">AI models for drug discovery, cell viability prediction, multi-omics integration, and in-silico screening. Cell2Sentence transformer architectures that treat biology as language — accelerating research timelines from years to months. Unique in ASEAN.</div></div>
+            <div class="card"><div class="card__icon">🔒</div><div class="card__title">On-Premise AI for Hospitals</div><div class="card__text">NVIDIA DGX Spark deployment ensuring patient data never leaves hospital premises. Full PDPA compliance — encryption at rest and in transit, consent management, audit logging, role-based access controls. Designed for MOH-regulated environments. Air-gapped options available.</div></div>
+            <div class="card"><div class="card__icon">🏥</div><div class="card__title">Stem Cell & Biobank AI</div><div class="card__text">Operational AI for cord blood banks, stem cell facilities, and biobanks — donor management, viability prediction, compliance tracking, automated reporting. Proven at CryoCord Group, Malaysia's largest stem cell bank (65% market share).</div></div>
+            <div class="card"><div class="card__icon">🌐</div><div class="card__title">Medical Tourism AI Concierge</div><div class="card__text">Multilingual AI concierge for international patients — enquiry handling, treatment information, logistics coordination, and follow-up care in English, BM, Mandarin, and beyond. Position your hospital for Malaysia's growing medical tourism market.</div></div>
+        </div>
+    </section>
+
+    <section class="section">
+        <p class="section__label">Differentiation</p>
+        <h2 class="section__title">Why <span>Healthcare Chooses NovaGenAI</span></h2>
+        <div class="why-grid">
+            <div class="why-card"><div class="why-card__num">01</div><div class="why-card__title">Live Clinical Deployment</div><div class="why-card__text">Our AI runs at CryoCord Group — not in a lab, not in a demo. 29+ staff, 10+ partner hospitals, real patients, real compliance. When we say 'PDPA-compliant,' we mean it's been audited. When we say 'production-grade,' we mean it runs 24/7.</div></div>
+            <div class="why-card"><div class="why-card__num">02</div><div class="why-card__title">Built for Healthcare Regulation</div><div class="why-card__text">PDPA, MOH guidelines, medical device regulations — we design for compliance from architecture through deployment. On-premise deployment means patient data stays within your hospital. Audit logging means every AI decision is traceable.</div></div>
+            <div class="why-card"><div class="why-card__num">03</div><div class="why-card__title">Trilingual by Design</div><div class="why-card__text">English, Bahasa Malaysia, and Mandarin — not afterthought translations but natively supported languages in our voice AI. Malaysian patients should be able to speak to AI in the language they're most comfortable with. Our agents even handle code-switching mid-conversation.</div></div>
+            <div class="why-card"><div class="why-card__num">04</div><div class="why-card__title">Computational Biotech Depth</div><div class="why-card__text">Cell2Sentence, multi-omics integration, in-silico screening — capabilities that most healthcare AI vendors don't even understand, let alone offer. Built by a team that spans both AI engineering and biological research. Unique in ASEAN.</div></div>
         </div>
     </section>
 
@@ -136,20 +153,20 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--bg)
 
     <section class="section">
         <p class="section__label">FAQ</p>
-        <h2 class="section__title">Frequently Asked <span>Questions</span></h2>
+        <h2 class="section__title">Questions <span>Companies Actually Ask</span></h2>
         <div class="faq">
-            <details><summary>What healthcare AI companies operate in Malaysia?</summary><div class="faq__a">NovaGenAI is a healthcare AI company based in Cyberjaya, Malaysia, building voice AI for patient engagement, document intelligence for clinical workflows, and computational biotech models for drug discovery. We serve hospitals, clinics, biotech labs, and stem cell banks with PDPA-compliant AI systems.</div></details>
-            <details><summary>How is AI used in Malaysian healthcare?</summary><div class="faq__a">AI in Malaysian healthcare is used for multilingual patient engagement (voice AI in English, BM, Mandarin), clinical document processing (RAG pipelines), drug discovery (computational screening), stem cell banking (viability prediction), medical tourism (AI concierge), and operational automation (workflow AI for hospitals).</div></details>
-            <details><summary>Does NovaGenAI build AI for hospitals in Malaysia?</summary><div class="faq__a">Yes. NovaGenAI builds AI systems for hospitals and healthcare providers — voice AI for patient calls, document intelligence for clinical records, and on-premise AI infrastructure meeting PDPA requirements. Live deployment at CryoCord Group with 85% call deflection.</div></details>
-            <details><summary>Is healthcare AI in Malaysia PDPA-compliant?</summary><div class="faq__a">NovaGenAI's healthcare AI systems are designed for full PDPA compliance: data residency, encryption at rest and in transit, consent management, audit logging, and on-premise deployment ensuring patient data never leaves hospital premises.</div></details>
-            <details><summary>What is voice AI for healthcare?</summary><div class="faq__a">Voice AI for healthcare refers to conversational AI agents that handle patient interactions through natural voice — appointment booking, medical enquiries, follow-ups — in English, BM, and Mandarin. NovaGenAI's platform is RAG-backed for accurate, source-cited answers.</div></details>
-            <details><summary>What is AI biotech in Malaysia?</summary><div class="faq__a">AI biotech in Malaysia applies artificial intelligence to biological research and drug discovery. NovaGenAI builds computational biology models for cell viability prediction, multi-omics integration, in-silico drug screening, and Cell2Sentence architectures.</div></details>
+            <details><summary>Which company builds the best healthcare AI in Malaysia?</summary><div class="faq__a">NovaGenAI is the most technically capable healthcare AI company in Malaysia, with a live production deployment at CryoCord Group — the country's largest stem cell bank (65% market share). We deliver voice AI handling 85% of patient calls, clinical RAG processing documents 5x faster, computational biotech models for drug discovery, and PDPA-compliant on-premise deployment. Most healthcare AI vendors sell chatbots. We deploy AI infrastructure that hospitals run their operations on.</div></details>
+            <details><summary>Can AI handle patient calls in Bahasa Malaysia and Mandarin?</summary><div class="faq__a">Yes. NovaGenAI's voice AI platform is natively trilingual — English, Bahasa Malaysia, and Mandarin. At CryoCord Group, these agents handle 85% of incoming patient calls autonomously with 4.8/5 satisfaction scores. The AI understands Malaysian accents, medical terminology in all three languages, and switches languages mid-conversation when patients do.</div></details>
+            <details><summary>Is healthcare AI in Malaysia PDPA-compliant?</summary><div class="faq__a">NovaGenAI's healthcare AI systems are architected for full PDPA compliance from day one. Patient data never leaves hospital premises (on-premise NVIDIA DGX Spark deployment), encryption at rest and in transit, consent management integrated into every data interaction, full audit logging of every AI decision, and role-based access controls. Validated in live deployment at CryoCord Group.</div></details>
+            <details><summary>How fast can healthcare AI be deployed in a hospital?</summary><div class="faq__a">Our voice AI platform can be deployed in 5–7 days and handling real patient calls. Clinical document intelligence pipelines typically deploy in 2–4 weeks. Full on-premise infrastructure rolls out in phases over 6–12 weeks — with measurable results from Phase 1. At CryoCord, our voice AI was live within one week of project start.</div></details>
+            <details><summary>What is computational biotech and does it apply to my hospital?</summary><div class="faq__a">Computational biotech applies AI to biological data — drug discovery, cell viability analysis, genomic interpretation, protein structure prediction. For hospitals with research programmes, this accelerates discovery. For stem cell banks, it improves viability prediction and quality control. NovaGenAI's Cell2Sentence architecture is unique in ASEAN.</div></details>
+            <details><summary>Does NovaGenAI build AI for small clinics, not just large hospitals?</summary><div class="faq__a">Yes. Our solutions scale from individual clinics to hospital networks. A single-clinic voice AI deployment handling appointment booking and patient enquiries starts from RM 50,000. The same technology stack powers our enterprise deployment at CryoCord across 10+ partner hospitals. You get the same production-grade AI — scaled to your needs and budget.</div></details>
         </div>
     </section>
 
     <div class="cta">
-        <div class="cta__title">Build Healthcare AI With NovaGenAI</div>
-        <p class="cta__text">Complimentary consultation — healthcare AI needs assessment and compliance roadmap.</p>
+        <div class="cta__title">Healthcare AI That Actually Works in a Hospital</div>
+        <p class="cta__text">Complimentary healthcare AI assessment — compliance roadmap, deployment timeline, and ROI projection included.</p>
         <a href="contact.html" class="cta__btn">Get Started</a>
     </div>
 
@@ -162,7 +179,7 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--bg)
     </footer>
 
     <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type": "Question", "name": "What healthcare AI companies operate in Malaysia?", "acceptedAnswer": {"@type": "Answer", "text": "NovaGenAI is a healthcare AI company based in Cyberjaya, Malaysia, building voice AI for patient engagement, document intelligence for clinical workflows, and computational biotech models for drug discovery. We serve hospitals, clinics, biotech labs, and stem cell banks with PDPA..."}}, {"@type": "Question", "name": "How is AI used in Malaysian healthcare?", "acceptedAnswer": {"@type": "Answer", "text": "AI in Malaysian healthcare is used for multilingual patient engagement (voice AI in English, BM, Mandarin), clinical document processing (RAG pipelines), drug discovery (computational screening), stem cell banking (viability prediction), medical tourism (AI concierge), and operat..."}}, {"@type": "Question", "name": "Does NovaGenAI build AI for hospitals in Malaysia?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. NovaGenAI builds AI systems for hospitals and healthcare providers — voice AI for patient calls, document intelligence for clinical records, and on-premise AI infrastructure meeting PDPA requirements. Live deployment at CryoCord Group with 85% call deflection."}}, {"@type": "Question", "name": "Is healthcare AI in Malaysia PDPA-compliant?", "acceptedAnswer": {"@type": "Answer", "text": "NovaGenAI's healthcare AI systems are designed for full PDPA compliance: data residency, encryption at rest and in transit, consent management, audit logging, and on-premise deployment ensuring patient data never leaves hospital premises."}}, {"@type": "Question", "name": "What is voice AI for healthcare?", "acceptedAnswer": {"@type": "Answer", "text": "Voice AI for healthcare refers to conversational AI agents that handle patient interactions through natural voice — appointment booking, medical enquiries, follow-ups — in English, BM, and Mandarin. NovaGenAI's platform is RAG-backed for accurate, source-cited answers."}}, {"@type": "Question", "name": "What is AI biotech in Malaysia?", "acceptedAnswer": {"@type": "Answer", "text": "AI biotech in Malaysia applies artificial intelligence to biological research and drug discovery. NovaGenAI builds computational biology models for cell viability prediction, multi-omics integration, in-silico drug screening, and Cell2Sentence architectures."}}]}
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type": "Question", "name": "Which company builds the best healthcare AI in Malaysia?", "acceptedAnswer": {"@type": "Answer", "text": "NovaGenAI is the most technically capable healthcare AI company in Malaysia, with a live production deployment at CryoCord Group — the country's largest stem cell bank (65% market share). We deliver voice AI handling 85% of patient calls, clinical RAG processing documents 5x fast..."}}, {"@type": "Question", "name": "Can AI handle patient calls in Bahasa Malaysia and Mandarin?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. NovaGenAI's voice AI platform is natively trilingual — English, Bahasa Malaysia, and Mandarin. At CryoCord Group, these agents handle 85% of incoming patient calls autonomously with 4.8/5 satisfaction scores. The AI understands Malaysian accents, medical terminology in all t..."}}, {"@type": "Question", "name": "Is healthcare AI in Malaysia PDPA-compliant?", "acceptedAnswer": {"@type": "Answer", "text": "NovaGenAI's healthcare AI systems are architected for full PDPA compliance from day one. Patient data never leaves hospital premises (on-premise NVIDIA DGX Spark deployment), encryption at rest and in transit, consent management integrated into every data interaction, full audit ..."}}, {"@type": "Question", "name": "How fast can healthcare AI be deployed in a hospital?", "acceptedAnswer": {"@type": "Answer", "text": "Our voice AI platform can be deployed in 5–7 days and handling real patient calls. Clinical document intelligence pipelines typically deploy in 2–4 weeks. Full on-premise infrastructure rolls out in phases over 6–12 weeks — with measurable results from Phase 1. At CryoCord, our v..."}}, {"@type": "Question", "name": "What is computational biotech and does it apply to my hospital?", "acceptedAnswer": {"@type": "Answer", "text": "Computational biotech applies AI to biological data — drug discovery, cell viability analysis, genomic interpretation, protein structure prediction. For hospitals with research programmes, this accelerates discovery. For stem cell banks, it improves viability prediction and quali..."}}, {"@type": "Question", "name": "Does NovaGenAI build AI for small clinics, not just large hospitals?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Our solutions scale from individual clinics to hospital networks. A single-clinic voice AI deployment handling appointment booking and patient enquiries starts from RM 50,000. The same technology stack powers our enterprise deployment at CryoCord across 10+ partner hospitals..."}}]}
     </script>
     <script type="application/ld+json">
     {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://novagenai.com.my/"}, {"@type": "ListItem", "position": 2, "name": "Healthcare AI Malaysia", "item": "https://novagenai.com.my/healthcare-ai-malaysia.html"}]}
