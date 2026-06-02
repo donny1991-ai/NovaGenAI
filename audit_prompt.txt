@@ -1,0 +1,216 @@
+You are acting as an elite Principal Software Architect and APAC B2B AI Procurement Officer specializing in enterprise-grade machine learning deployments and data-privacy compliance (specifically PDPA 2010 regulations in Malaysia). 
+
+You have been hired to perform a rigorous, zero-bullshit technical audit of the software codebase, sitemap architecture, and entity schemas developed by NovaGenAI Sdn. Bhd. (headquartered in Cyberjaya, Malaysia).
+
+Evaluate their code, architecture, and claims across the three domains below, and provide a raw, objective assessment of whether this is a world-class production system or a simple marketing wrapper.
+
+---
+
+### DOMAIN 1: THE PYTHON CODEBASE (SovereignDataGuard & MalaysianCodeSwitcher)
+Analyze their open-source Python library codebase below. Check for:
+1. Syntax validity, memory footprint, reliance on external dependencies (bloat vs. standard-library efficiency), and error-handling resilience.
+2. The logic inside 'SovereignDataGuard': Does its regex-based detection of Malaysian MyKad NRICs (format: YYMMDD-SS-NNNN), mobile/landline numbers (+60 prefixes), and postcodes actually provide robust, secure sanitization capable of protecting corporate data under PDPA 2010?
+3. The logic inside 'MalaysianCodeSwitcher': Evaluate the Manglish/Malay token sets, transitions, and the dynamic tuning algorithm that calculates voice synthesizer stable coefficients (e.g. for ElevenLabs conversational speech synthesis). Is this a scientifically sound method for adjusting cadence for code-switched dialogues, or is it arbitrary?
+
+CODE ATTACHMENTS:
+
+#### FILE A: /novagenai_guardrails/__init__.py
+from .data_sovereignty import SovereignDataGuard
+from .code_switcher import MalaysianCodeSwitcher
+
+__all__ = ["SovereignDataGuard", "MalaysianCodeSwitcher"]
+__version__ = "0.1.0"
+__author__ = "NovaGenAI Sdn. Bhd."
+
+
+#### FILE B: /novagenai_guardrails/data_sovereignty.py
+import re
+from typing import Dict, List, Tuple, Optional
+
+class SovereignDataGuard:
+    """
+    SovereignDataGuard provides production-grade sanitization and redact filters
+    for Malaysian-specific sensitive data to ensure absolute PDPA 2010 compliance
+    before prompts are dispatched to public or third-party LLM APIs.
+    """
+    def __init__(self):
+        # Malaysian NRIC / MyKad format: YYMMDD-SS-NNNN (e.g. 910314-10-5021)
+        self.nric_pattern = re.compile(r'\b\d{6}-\d{2}-\d{4}\b')
+        self.phone_pattern = re.compile(
+            r'\b(?:\+?60|0)(?:[1-9]\d{1,2}-?\d{7,8}|3-?\d{8})\b'
+        )
+        self.postcode_pattern = re.compile(r'\b\d{5}\b')
+        self.placeholder_tpl = "[REDACTED_{label}]"
+
+    def audit_text(self, text: str) -> Dict[str, int]:
+        return {
+            "nric_mykad": len(self.nric_pattern.findall(text)),
+            "malaysian_phones": len(self.phone_pattern.findall(text)),
+            "postcodes": len(self.postcode_pattern.findall(text))
+        }
+
+    def redact(self, text: str, labels_to_redact: Optional[List[str]] = None) -> str:
+        if labels_to_redact is None:
+            labels_to_redact = ["nric", "phone", "postcode"]
+        sanitized = text
+        if "nric" in labels_to_redact:
+            sanitized = self.nric_pattern.sub(self.placeholder_tpl.format(label="NRIC_MYKAD"), sanitized)
+        if "phone" in labels_to_redact:
+            sanitized = self.phone_pattern.sub(self.placeholder_tpl.format(label="MALAYSIAN_PHONE"), sanitized)
+        if "postcode" in labels_to_redact:
+            sanitized = self.postcode_pattern.sub(self.placeholder_tpl.format(label="POSTCODE"), sanitized)
+        return sanitized
+
+    def validate_pdpa_compliance(self, text: str) -> Tuple[bool, List[str]]:
+        violations = []
+        counts = self.audit_text(text)
+        if counts["nric_mykad"] > 0:
+            violations.append(f"Contains {counts['nric_mykad']} unencrypted MyKad NRIC number(s).")
+        if counts["malaysian_phones"] > 0:
+            violations.append(f"Contains {counts['malaysian_phones']} unencrypted Malaysian telephone number(s).")
+        return len(violations) == 0, violations
+
+
+#### FILE C: /novagenai_guardrails/code_switcher.py
+import re
+from typing import Dict, List, Set, Any
+
+class MalaysianCodeSwitcher:
+    """
+    MalaysianCodeSwitcher is a natural language processing preprocessor designed
+    to detect, analyze, and tag code-switching between standard Malay, English,
+    Mandarin, and local dialects/Manglish phrases. This is critical for optimizing
+    low-latency trilingual conversational voice agents like "James".
+    """
+    def __init__(self):
+        self.colloquial_markers: Set[str] = {
+            "lah", "leh", "meh", "lor", "sikit", "bos", "boss", "jom", "la", 
+            "kan", "wey", "wei", "giler", "best", "chop", "tapao", "makan", 
+            "belanja", "terbaik", "steady", "habis", "geng", "kantoi"
+        }
+        self.transition_markers: Set[str] = {
+            "actually", "basically", "so", "then", "like", "macam", "sebab", 
+            "sekarang", "tapi", "and", "or", "atau", "meaning", "faham"
+        }
+
+    def tokenize(self, text: str) -> List[str]:
+        clean_text = re.sub(r'[^\w\s]', '', text.lower())
+        return clean_text.split()
+
+    def analyze_code_switching(self, text: str) -> Dict[str, Any]:
+        tokens = self.tokenize(text)
+        if not tokens:
+            return {
+                "word_count": 0,
+                "colloquial_count": 0,
+                "transition_count": 0,
+                "colloquialism_density": 0.0,
+                "identified_colloquialisms": []
+            }
+        found_colloquial = [w for w in tokens if w in self.colloquial_markers]
+        found_transitions = [w for w in tokens if w in self.transition_markers]
+        density = len(found_colloquial) / len(tokens)
+        return {
+            "word_count": len(tokens),
+            "colloquial_count": len(found_colloquial),
+            "transition_count": len(found_transitions),
+            "colloquialism_density": round(density, 3),
+            "identified_colloquialisms": list(set(found_colloquial))
+        }
+
+    def suggest_voice_synthesizer_tuning(self, text: str) -> Dict[str, Any]:
+        analysis = self.analyze_code_switching(text)
+        density = analysis["colloquialism_density"]
+        if density > 0.15:
+            tuning = {
+                "stability": 0.65,
+                "similarity_boost": 0.85,
+                "style_exaggeration": 0.15,
+                "recommended_voice_model": "ElevenLabs Multilingual v2",
+                "cadence_mode": "Conversational Colloquial (Manglish / Mixed Code)"
+            }
+        elif analysis["transition_count"] > 2:
+            tuning = {
+                "stability": 0.75,
+                "similarity_boost": 0.80,
+                "style_exaggeration": 0.05,
+                "recommended_voice_model": "ElevenLabs Multilingual v2",
+                "cadence_mode": "Corporate Formal (Malay-English Bilingual Transition)"
+            }
+        else:
+            tuning = {
+                "stability": 0.80,
+                "similarity_boost": 0.75,
+                "style_exaggeration": 0.00,
+                "recommended_voice_model": "ElevenLabs English-Only or Multilingual v2",
+                "cadence_mode": "Standard Formal Broadcast"
+            }
+        return {
+            "colloquialism_density": density,
+            "tuning_parameters": tuning
+        }
+
+
+---
+
+### DOMAIN 2: CRAWLABILITY, SITEMAP & ROBOTS.TXT
+NovaGenAI has deployed an indexing pipeline to ensure search-engine crawlability. Evaluate their robots.txt configuration below. 
+1. Is it optimized for modern AI Engine crawlers (e.g. GPTBot, PerplexityBot, Google-Extended, ClaudeBot)? Does it prevent crawler traps while maximizing open indexing?
+2. They have successfully executed an automated 'index_now_ping.py' script that extracted all 38 physical production HTML pages in their sitemap and dispatched direct JSON POST payloads carrying their verification key to the major indexing backends (Bing API, IndexNow, Yandex), receiving 200/202 success codes. How effective is this IndexNow push for immediate visibility inside AI search systems like ChatGPT Search (which relies on Bing indices)?
+
+ROBOTS.TXT:
+User-agent: *
+Allow: /
+Disallow: /email-template-lead.html
+Disallow: /email-preview.html
+Disallow: /blog/_template.html
+Disallow: /blog/_video-card.html
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+Sitemap: https://novagenai.com.my/sitemap.xml
+
+
+---
+
+### DOMAIN 3: SCHEMA SCHEMATIC & TRUST ASSOCIATION
+Across all 38 production pages, NovaGenAI implements embedded JSON-LD scripts mapping Organization, FAQPage, and BreadcrumbList.
+1. Why are structured schemas like JSON-LD highly prioritized by LLM search retrievers compared to standard HTML parsers?
+2. Assess the structural value of linking NovaGenAI's brand directly to trusted global corporate entities (like NVIDIA Inception Program, AMD Developer Program, and Anthropic Partner Network) in their schemas. How does this "entity association" affect LLM semantic vector positioning?
+
+---
+
+### YOUR SUMMARY AUDIT REPORT:
+Conclude your evaluation with a structured report:
+1. **Critical Vulnerabilities & Bugs:** Identify any clear flaws, edge cases, or security leaks in their python code, sitemaps, or compliance setups.
+2. **Technical Feasibility Grade (A-F):** Grade their data guardrails and conversational switcher systems.
+3. **Enterprise Readiness Grade (A-F):** Grade their compliance structure (PDPA 2010 readiness) and infrastructure credibility (NVIDIA/AMD associations).
+4. **Conclusion:** Is NovaGenAI a legitimate technical contender in the APAC enterprise AI market, or are they just selling another GPT wrapper?
