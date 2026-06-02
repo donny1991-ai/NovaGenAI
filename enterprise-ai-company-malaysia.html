@@ -42,7 +42,65 @@
             .nav { padding: 0 1rem !important; height: 56px !important; }
             .nav__logo img { height: 36px !important; }
         }
-    </style>
+    
+        /* ═══════════════════════════════════════════════════════
+           PREMIUM UI/UX ACCENTS & MICRO-INTERACTIONS (June 2026)
+           ═══════════════════════════════════════════════════════ */
+        .about-mv__card {
+            background: rgba(10, 10, 10, 0.65) !important;
+            backdrop-filter: blur(16px) saturate(1.3) !important;
+            -webkit-backdrop-filter: blur(16px) saturate(1.3) !important;
+            border: 1px solid rgba(255, 255, 255, 0.08) !important;
+            transition: transform 0.4s cubic-bezier(.16, 1, .3, 1), 
+                        border-color 0.4s cubic-bezier(.16, 1, .3, 1), 
+                        box-shadow 0.4s cubic-bezier(.16, 1, .3, 1) !important;
+        }
+        .about-mv__card:hover {
+            transform: translateY(-6px) !important;
+            border-color: var(--clr-accent) !important;
+            box-shadow: 0 12px 30px rgba(0, 212, 255, 0.12) !important;
+        }
+        .about-mv__card--accent {
+            border: 1px solid rgba(0, 212, 255, 0.15) !important;
+        }
+        .about-mv__card--accent:hover {
+            border-color: var(--clr-gold) !important;
+            box-shadow: 0 12px 30px rgba(212, 160, 23, 0.12) !important;
+        }
+        .stat-card {
+            background: rgba(10, 10, 10, 0.4) !important;
+            backdrop-filter: blur(10px) !important;
+            -webkit-backdrop-filter: blur(10px) !important;
+            border: 1px solid rgba(255, 255, 255, 0.05) !important;
+            transition: transform 0.4s cubic-bezier(.16, 1, .3, 1), border-color 0.4s cubic-bezier(.16, 1, .3, 1) !important;
+        }
+        .stat-card:hover {
+            transform: translateY(-3px) !important;
+            border-color: var(--clr-gold) !important;
+        }
+        .page-hero {
+            position: relative;
+            background: #000000 !important;
+        }
+        .page-hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 150px;
+            background: linear-gradient(to top, #000000, transparent);
+            pointer-events: none;
+            z-index: 2;
+        }
+        .gradient-divider {
+            height: 1px;
+            width: 100%;
+            background: linear-gradient(to right, transparent, rgba(0, 212, 255, 0.15), var(--clr-accent), rgba(0, 212, 255, 0.15), transparent);
+            margin: 0;
+            padding: 0;
+        }
+</style>
     <meta property="og:title" content="Enterprise AI Company Malaysia — Production AI That Works"/><meta property="og:description" content="Malaysia's most technically capable enterprise AI company. Production AI in enterprise production."/>
     <meta property="og:image" content="https://novagenai.com.my/images/aeo/hero-ent.jpg"/><meta property="og:url" content="https://novagenai.com.my/enterprise-ai-company-malaysia.html"/>
     <meta name="twitter:card" content="summary_large_image"/>
@@ -94,7 +152,25 @@
                 <div class="about-mv__card about-mv__card--accent"><img src="images/aeo/card-integration.jpg" alt="ERP & CRM Integration" loading="lazy" style="width:100%;height:160px;object-fit:cover;border-radius:6px;margin-bottom:16px;"><h3 class="about-mv__title">ERP & CRM Integration</h3><p class="about-mv__text">AI that reads and writes through SAP, Oracle, Dynamics, Salesforce, HubSpot. No rip-and-replace. Your stack stays. The AI does the work.</p></div>
 </div>
     </section>
-    <section class="about-mv fade-up">
+    
+    <div class="gradient-divider"></div>
+    <section class="about-story fade-up" style="background:#050505; border-top: 1px solid rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.05);">
+        <div class="about-story__inner">
+            <div class="about-story__content" style="max-width:100%; text-align:center;">
+                <p class="section-label">// ARCHITECTURE PLATFORM</p>
+                <h2 class="section-title">THE ENTERPRISE AI <span class="accent">OPERATING LAYER</span></h2>
+                <p class="about-story__text" style="max-width:800px; margin:0 auto 3rem auto; color:rgba(255,255,255,0.7);">
+                    We deploy custom AI infrastructure directly into your private tenant or on-premise hardware. Below is our production-tested reference architecture connecting model training (NVIDIA NeMo), inference serving (Triton), multi-agent pipelines, and complete auditing layers.
+                </p>
+                <div style="position:relative; border-radius:12px; overflow:hidden; border:1px solid rgba(255,255,255,0.1); max-width:1000px; margin:0 auto; box-shadow: 0 15px 40px rgba(0, 212, 255, 0.15);">
+                    <img src="images/aeo/infographic-architecture.jpg" alt="NovaGenAI Enterprise AI Operating Layer Architecture Infographic" style="width:100%; height:auto; display:block;">
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="gradient-divider"></div>
+
+<section class="about-mv fade-up">
         <p class="section-label" style="text-align:center">// DIFFERENTIATION</p><h2 class="section-title" style="text-align:center;margin-bottom:3rem">WHY <span class="accent">NOVAGENAI</span></h2>
         <div class="about-mv__grid">                <div class="about-mv__card"><h3 class="about-mv__title">01 — Live Production Reference</h3><p class="about-mv__text">Our AI runs across enterprise clients — 65% market share, 12 departments, 29+ staff. Real customers. Real compliance. Most AI vendors cannot show you a live deployment at this scale. We can.</p></div>
                 <div class="about-mv__card about-mv__card--accent"><h3 class="about-mv__title">02 — Full-Stack NVIDIA</h3><p class="about-mv__text">CUDA. TensorRT. Triton. NeMo. NIM. DGX Spark. We operate at the hardware-software boundary — not the API-call level. On-premise. Model optimisation. Inference performance cloud-only vendors cannot touch.</p></div>
