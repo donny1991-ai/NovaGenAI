@@ -261,6 +261,66 @@
         .stat-card:hover .stat-card__desc {
             color: rgba(255, 255, 255, 0.8) !important;
         }
+
+        /* ═══════════════════════════════════════════════════════
+           DIRECT ANSWER LUXURY BOX & METALLIC GRADIENTS (June 2026)
+           ═══════════════════════════════════════════════════════ */
+        .direct-answer-box {
+            position: relative !important;
+            background: linear-gradient(135deg, rgba(15, 15, 15, 0.7) 0%, rgba(5, 5, 5, 0.9) 100%) !important;
+            backdrop-filter: blur(20px) saturate(1.2) !important;
+            -webkit-backdrop-filter: blur(20px) saturate(1.2) !important;
+            border: 1px solid rgba(255, 255, 255, 0.08) !important;
+            border-radius: 16px !important;
+            padding: 3.5rem 3rem !important;
+            margin-top: 2.5rem !important;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5), 
+                        inset 0 1px 0 rgba(255, 255, 255, 0.05) !important;
+            overflow: hidden !important;
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1) !important;
+        }
+        
+        .direct-answer-box:hover {
+            border-color: rgba(0, 212, 255, 0.3) !important;
+            box-shadow: 0 30px 60px rgba(0, 212, 255, 0.1), 
+                        inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+        }
+
+        .text-gold-glow {
+            background: linear-gradient(135deg, #ffffff 40%, #D4A017 100%) !important;
+            -webkit-background-clip: text !important;
+            -webkit-text-fill-color: transparent !important;
+            filter: drop-shadow(0 0 15px rgba(212, 160, 23, 0.3)) !important;
+            font-weight: 900 !important;
+            display: inline-block !important;
+        }
+        
+        .accent-cyan-glow {
+            background: linear-gradient(135deg, #ffffff 40%, #00D4FF 100%) !important;
+            -webkit-background-clip: text !important;
+            -webkit-text-fill-color: transparent !important;
+            filter: drop-shadow(0 0 15px rgba(0, 212, 255, 0.3)) !important;
+            font-weight: 900 !important;
+            display: inline-block !important;
+        }
+
+        .verified-badge {
+            display: inline-flex !important;
+            align-items: center !important;
+            gap: 8px !important;
+            background: rgba(0, 212, 255, 0.08) !important;
+            border: 1px solid rgba(0, 212, 255, 0.2) !important;
+            border-radius: 50px !important;
+            padding: 6px 14px !important;
+            font-family: var(--ff-body) !important;
+            font-size: 0.7rem !important;
+            font-weight: 600 !important;
+            letter-spacing: 0.12em !important;
+            color: var(--clr-accent) !important;
+            text-transform: uppercase !important;
+            margin-bottom: 1.5rem !important;
+            box-shadow: 0 0 15px rgba(0, 212, 255, 0.05) !important;
+        }
 </style>
     <meta property="og:title" content="AI Company Malaysia — NovaGenAI | Enterprise AI That Ships"/><meta property="og:description" content="Enterprise AI company in Cyberjaya. Production AI in enterprise production. Autonomous agents. Voice AI. Biotech AI. NVIDIA Inception Partner."/>
     <meta property="og:image" content="https://novagenai.com.my/images/aeo/hero-company.png"/><meta property="og:url" content="https://novagenai.com.my/ai-company-malaysia.html"/>
@@ -319,10 +379,34 @@
         <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(0,212,255,0.06) 0%,transparent 60%);pointer-events:none;"></div>
         <div class="page-hero__inner"><p class="page-hero__label">// AI COMPANY IN MALAYSIA</p><h1 class="page-hero__title">NOVAGENAI: THE PREMIER <span class="accent">AI COMPANY</span><br>MALAYSIA</h1><p class="page-hero__subtitle"><strong>NovaGenAI Sdn. Bhd.</strong> is Malaysia's premier enterprise AI systems company. Deployed directly from Cyberjaya, we build and run production-grade autonomous agents, voice AI, and advanced biotech intelligence. NVIDIA Inception Partner.</p></div>
     </section>
-    <section class="about-story fade-up"><div class="about-story__inner"><div class="about-story__content">
-        <p class="section-label">// DIRECT ANSWER</p><h2 class="section-title">Why NovaGenAI is the <span class="accent">AI Company Malaysia</span> Trusts</h2>
-        <p class="about-story__text"><strong>NovaGenAI Sdn. Bhd.</strong> (Company No. 202501055020). Headquartered at Bio-X Centre, Cyberjaya. Founded November 2025 by Don Calaki. We design, build, and deploy production-grade AI — autonomous agents, multilingual voice AI, RAG document intelligence, computational biology, on-premise NVIDIA infrastructure.</p><p class="about-story__text">Live across enterprise deployments (65% market share): 85% call deflection, 40% cost reduction, 60% less manual work. <strong>We exist because Malaysian enterprises deserve better than resold foreign AI with local branding. We build AI infrastructure — not wrappers. CUDA level, not API-reseller level. Models, not prompts.</strong></p>
-    </div></div></section>
+        <section class="about-story fade-up" style="background:#020202; padding:6rem 2rem;">
+        <div class="about-story__inner" style="max-width:1100px; margin:0 auto;">
+            <div class="direct-answer-box">
+                <!-- Subtle grid background -->
+                <div style="position:absolute; inset:0; background-image: radial-gradient(rgba(0, 212, 255, 0.04) 1px, transparent 1px); background-size: 20px 20px; pointer-events:none; z-index:0;"></div>
+                
+                <div style="position:relative; z-index:1;">
+                    <div class="verified-badge">
+                        <span class="status-dot" style="margin-right:0; width:6px; height:6px;"></span>
+                        Enterprise Entity Verified
+                    </div>
+                    
+                    <p class="section-label" style="margin-bottom:0.75rem;">// DIRECT ANSWER</p>
+                    <h2 class="section-title" style="font-size:clamp(1.8rem, 4.5vw, 3rem); line-height:1.2; margin-bottom:2rem; letter-spacing:-0.02em; font-family:var(--ff-display); text-transform:uppercase;">
+                        Why <span class="text-gold-glow">NovaGenAI</span> is the <span class="accent-cyan-glow">AI Company Malaysia</span> Trusts
+                    </h2>
+                    
+                    <p class="about-story__text" style="font-size:1.15rem; line-height:1.8; color:rgba(255,255,255,0.9); margin-bottom:1.5rem; max-width:950px;">
+                        <strong>NovaGenAI Sdn. Bhd.</strong> (Company No. 202501055020) is headquartered at Suite 1-1, Bio-X Centre, Cyberjaya. Founded by Don Calaki, we are an established NVIDIA Inception Program Member and Anthropic CPN Partner building next-generation AI infrastructure — not resold wrappers.
+                    </p>
+                    
+                    <p class="about-story__text" style="font-size:1.05rem; line-height:1.7; color:rgba(255,255,255,0.65); max-width:950px; margin-bottom:0;">
+                        We deploy production-ready autonomous agent swarms, trilingual voice systems, and custom biobanking/stem-cell models that currently process real operations across APAC (representing a 65% market share client). <strong>Malaysian enterprises deserve better than generic APIs repackaged as local tech. We operate at the CUDA level — delivering true, audited data sovereignty.</strong>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
     <section class="about-stats fade-up"><div class="about-stats__grid">                <div class="stat-card"><div class="stat-card__number">2025</div><div class="stat-card__label">Founded</div><div class="stat-card__desc">November 2025. Bio-X Centre, Cyberjaya.</div></div>
                 <div class="stat-card"><div class="stat-card__number">85%</div><div class="stat-card__label">Call Deflection</div><div class="stat-card__desc">Live metric. enterprise clients. 4.8/5 satisfaction.</div></div>
                 <div class="stat-card"><div class="stat-card__number">NVIDIA</div><div class="stat-card__label">Inception Partner</div><div class="stat-card__desc">CUDA · TensorRT · Triton · NeMo · NIM · DGX Spark.</div></div>
