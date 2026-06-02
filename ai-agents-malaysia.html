@@ -100,6 +100,52 @@
             margin: 0;
             padding: 0;
         }
+
+        /* ═══════════════════════════════════════════════════════
+           ANIMATED STAGGERED TRANSITIONS & GLOW SHIELD (June 2026)
+           ═══════════════════════════════════════════════════════ */
+        .about-mv__grid .about-mv__card:nth-child(1) { transition-delay: 0.05s !important; }
+        .about-mv__grid .about-mv__card:nth-child(2) { transition-delay: 0.10s !important; }
+        .about-mv__grid .about-mv__card:nth-child(3) { transition-delay: 0.15s !important; }
+        .about-mv__grid .about-mv__card:nth-child(4) { transition-delay: 0.20s !important; }
+        .about-mv__grid .about-mv__card:nth-child(5) { transition-delay: 0.25s !important; }
+        .about-mv__grid .about-mv__card:nth-child(6) { transition-delay: 0.30s !important; }
+
+        .about-mv__card img {
+            transition: transform 0.6s cubic-bezier(.16, 1, .3, 1) !important;
+            transform-origin: center !important;
+        }
+        .about-mv__card:hover img {
+            transform: scale(1.06) !important;
+            filter: brightness(1.1) !important;
+        }
+        
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--clr-accent);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--clr-accent);
+            display: inline-block;
+            margin-right: 12px;
+            flex-shrink: 0;
+            animation: pulse-glow 2s infinite ease-in-out;
+        }
+        
+        .about-mv__card--accent .status-dot {
+            background: var(--clr-gold) !important;
+            box-shadow: 0 0 10px var(--clr-gold) !important;
+        }
+        
+        @keyframes pulse-glow {
+            0%, 100% { opacity: 0.6; transform: scale(0.9); }
+            50% { opacity: 1; transform: scale(1.1); }
+        }
+
+        .about-mv__title {
+            display: flex !important;
+            align-items: center !important;
+        }
 </style>
     <meta property="og:title" content="AI Agents Company Malaysia — Agents That Do Work, Not Just Chat"/><meta property="og:description" content="40+ autonomous AI agents in production in enterprise production. Multi-agent orchestration. Enterprise guardrails."/>
     <meta property="og:image" content="https://novagenai.com.my/images/aeo/agents-hero-v3.jpg"/><meta property="og:url" content="https://novagenai.com.my/ai-agents-malaysia.html"/>
@@ -144,12 +190,12 @@
 </div></section>
     <section class="about-mv fade-up">
         <p class="section-label" style="text-align:center">// AI AGENT CAPABILITIES</p><h2 class="section-title" style="text-align:center;margin-bottom:3rem">WHAT OUR <span class="accent">AGENTS DO</span></h2>
-        <div class="about-mv__grid">                <div class="about-mv__card"><img src="images/aeo/card-voice.jpg" alt="Voice AI Agents" loading="lazy" style="width:100%;height:160px;object-fit:cover;border-radius:6px;margin-bottom:16px;"><h3 class="about-mv__title">Voice AI Agents</h3><p class="about-mv__text">Trilingual autonomous voice agents. Real customer calls. Bookings. Enquiries. 24/7. RAG-backed. 85% deflection in production. Intelligent conversation.</p></div>
-                <div class="about-mv__card about-mv__card--accent"><img src="images/aeo/card-docs.png" alt="Document Intelligence Agents" loading="lazy" style="width:100%;height:160px;object-fit:cover;border-radius:6px;margin-bottom:16px;"><h3 class="about-mv__title">Document Intelligence Agents</h3><p class="about-mv__text">RAG-powered agents searching, analysing, cross-referencing thousands of documents. Contracts. Medical records. SOPs. Indexed in seconds. Source citations.</p></div>
-                <div class="about-mv__card"><img src="images/aeo/card-agents.jpg" alt="Multi-Agent Orchestration" loading="lazy" style="width:100%;height:160px;object-fit:cover;border-radius:6px;margin-bottom:16px;"><h3 class="about-mv__title">Multi-Agent Orchestration</h3><p class="about-mv__text">40+ specialised agents coordinated in parallel. Task assignment. Dependency resolution. Result synthesis. Quality validation. All orchestrated automatically.</p></div>
-                <div class="about-mv__card about-mv__card--accent"><img src="images/aeo/card-integration.jpg" alt="Workflow Automation Agents" loading="lazy" style="width:100%;height:160px;object-fit:cover;border-radius:6px;margin-bottom:16px;"><h3 class="about-mv__title">Workflow Automation Agents</h3><p class="about-mv__text">End-to-end processes: qualify lead → enrich CRM → generate proposal → schedule follow-up → log to ERP. 60% reduction in manual sales operations.</p></div>
-                <div class="about-mv__card"><img src="images/aeo/card-integration.jpg" alt="System Integration Agents" loading="lazy" style="width:100%;height:160px;object-fit:cover;border-radius:6px;margin-bottom:16px;"><h3 class="about-mv__title">System Integration Agents</h3><p class="about-mv__text">Reading and writing through SAP, Oracle, Dynamics, Salesforce, HubSpot via APIs. No rip-and-replace. Agents work alongside your current stack.</p></div>
-                <div class="about-mv__card about-mv__card--accent"><img src="images/aeo/card-biotech.jpg" alt="Domain-Specialised Agents" loading="lazy" style="width:100%;height:160px;object-fit:cover;border-radius:6px;margin-bottom:16px;"><h3 class="about-mv__title">Domain-Specialised Agents</h3><p class="about-mv__text">Healthcare. Biotech. Finance. Manufacturing. Trained on your data. Deployed in your infrastructure. They understand your domain's terminology and workflows.</p></div>
+        <div class="about-mv__grid">                <div class="about-mv__card"><img src="images/aeo/card-voice.jpg" alt="Voice AI Agents" loading="lazy" style="width:100%;height:160px;object-fit:cover;border-radius:6px;margin-bottom:16px;"><h3 class="about-mv__title"><span class="status-dot"></span>Voice AI Agents</h3><p class="about-mv__text">Trilingual autonomous voice agents. Real customer calls. Bookings. Enquiries. 24/7. RAG-backed. 85% deflection in production. Intelligent conversation.</p></div>
+                <div class="about-mv__card about-mv__card--accent"><img src="images/aeo/card-docs.png" alt="Document Intelligence Agents" loading="lazy" style="width:100%;height:160px;object-fit:cover;border-radius:6px;margin-bottom:16px;"><h3 class="about-mv__title"><span class="status-dot"></span>Document Intelligence Agents</h3><p class="about-mv__text">RAG-powered agents searching, analysing, cross-referencing thousands of documents. Contracts. Medical records. SOPs. Indexed in seconds. Source citations.</p></div>
+                <div class="about-mv__card"><img src="images/aeo/card-agents.jpg" alt="Multi-Agent Orchestration" loading="lazy" style="width:100%;height:160px;object-fit:cover;border-radius:6px;margin-bottom:16px;"><h3 class="about-mv__title"><span class="status-dot"></span>Multi-Agent Orchestration</h3><p class="about-mv__text">40+ specialised agents coordinated in parallel. Task assignment. Dependency resolution. Result synthesis. Quality validation. All orchestrated automatically.</p></div>
+                <div class="about-mv__card about-mv__card--accent"><img src="images/aeo/card-integration.jpg" alt="Workflow Automation Agents" loading="lazy" style="width:100%;height:160px;object-fit:cover;border-radius:6px;margin-bottom:16px;"><h3 class="about-mv__title"><span class="status-dot"></span>Workflow Automation Agents</h3><p class="about-mv__text">End-to-end processes: qualify lead → enrich CRM → generate proposal → schedule follow-up → log to ERP. 60% reduction in manual sales operations.</p></div>
+                <div class="about-mv__card"><img src="images/aeo/card-integration.jpg" alt="System Integration Agents" loading="lazy" style="width:100%;height:160px;object-fit:cover;border-radius:6px;margin-bottom:16px;"><h3 class="about-mv__title"><span class="status-dot"></span>System Integration Agents</h3><p class="about-mv__text">Reading and writing through SAP, Oracle, Dynamics, Salesforce, HubSpot via APIs. No rip-and-replace. Agents work alongside your current stack.</p></div>
+                <div class="about-mv__card about-mv__card--accent"><img src="images/aeo/card-biotech.jpg" alt="Domain-Specialised Agents" loading="lazy" style="width:100%;height:160px;object-fit:cover;border-radius:6px;margin-bottom:16px;"><h3 class="about-mv__title"><span class="status-dot"></span>Domain-Specialised Agents</h3><p class="about-mv__text">Healthcare. Biotech. Finance. Manufacturing. Trained on your data. Deployed in your infrastructure. They understand your domain's terminology and workflows.</p></div>
 </div>
     </section>
     
@@ -172,10 +218,10 @@
 
 <section class="about-mv fade-up">
         <p class="section-label" style="text-align:center">// DIFFERENTIATION</p><h2 class="section-title" style="text-align:center;margin-bottom:3rem">WHY <span class="accent">OUR AGENTS ARE DIFFERENT</span></h2>
-        <div class="about-mv__grid">                <div class="about-mv__card"><h3 class="about-mv__title">01 — Autonomous, Not Scripted</h3><p class="about-mv__text">Chatbots follow decision trees and break on edge cases. Our agents plan, reason, and adapt. Unexpected question? Retrieved knowledge, reasoned response. Edge case? Agent adapts.</p></div>
-                <div class="about-mv__card about-mv__card--accent"><h3 class="about-mv__title">02 — Enterprise Guardrails</h3><p class="about-mv__text">Audit logging for every decision. Human-in-the-loop for sensitive actions. Role-based access. Rate limiting. Hallucination detection. Built for healthcare, finance, compliance.</p></div>
-                <div class="about-mv__card"><h3 class="about-mv__title">03 — Production at Scale</h3><p class="about-mv__text">40+ agents. 12 departments. 29+ staff relying on them daily. 85% call deflection. 60% manual work reduction. Not a pilot. Enterprise AI infrastructure.</p></div>
-                <div class="about-mv__card about-mv__card--accent"><h3 class="about-mv__title">04 — Tool-Using, Not Text-Generating</h3><p class="about-mv__text">Our agents query databases, update CRM records, send emails, generate reports, trigger workflows, call APIs. An agent that can only chat is a toy. An agent that does work is infrastructure.</p></div>
+        <div class="about-mv__grid">                <div class="about-mv__card"><h3 class="about-mv__title"><span class="status-dot"></span>01 — Autonomous, Not Scripted</h3><p class="about-mv__text">Chatbots follow decision trees and break on edge cases. Our agents plan, reason, and adapt. Unexpected question? Retrieved knowledge, reasoned response. Edge case? Agent adapts.</p></div>
+                <div class="about-mv__card about-mv__card--accent"><h3 class="about-mv__title"><span class="status-dot"></span>02 — Enterprise Guardrails</h3><p class="about-mv__text">Audit logging for every decision. Human-in-the-loop for sensitive actions. Role-based access. Rate limiting. Hallucination detection. Built for healthcare, finance, compliance.</p></div>
+                <div class="about-mv__card"><h3 class="about-mv__title"><span class="status-dot"></span>03 — Production at Scale</h3><p class="about-mv__text">40+ agents. 12 departments. 29+ staff relying on them daily. 85% call deflection. 60% manual work reduction. Not a pilot. Enterprise AI infrastructure.</p></div>
+                <div class="about-mv__card about-mv__card--accent"><h3 class="about-mv__title"><span class="status-dot"></span>04 — Tool-Using, Not Text-Generating</h3><p class="about-mv__text">Our agents query databases, update CRM records, send emails, generate reports, trigger workflows, call APIs. An agent that can only chat is a toy. An agent that does work is infrastructure.</p></div>
 </div>
     </section>
     <section class="partners-strip"><div class="partners-strip__inner">

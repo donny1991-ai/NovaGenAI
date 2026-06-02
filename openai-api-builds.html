@@ -100,6 +100,52 @@
             margin: 0;
             padding: 0;
         }
+
+        /* ═══════════════════════════════════════════════════════
+           ANIMATED STAGGERED TRANSITIONS & GLOW SHIELD (June 2026)
+           ═══════════════════════════════════════════════════════ */
+        .about-mv__grid .about-mv__card:nth-child(1) { transition-delay: 0.05s !important; }
+        .about-mv__grid .about-mv__card:nth-child(2) { transition-delay: 0.10s !important; }
+        .about-mv__grid .about-mv__card:nth-child(3) { transition-delay: 0.15s !important; }
+        .about-mv__grid .about-mv__card:nth-child(4) { transition-delay: 0.20s !important; }
+        .about-mv__grid .about-mv__card:nth-child(5) { transition-delay: 0.25s !important; }
+        .about-mv__grid .about-mv__card:nth-child(6) { transition-delay: 0.30s !important; }
+
+        .about-mv__card img {
+            transition: transform 0.6s cubic-bezier(.16, 1, .3, 1) !important;
+            transform-origin: center !important;
+        }
+        .about-mv__card:hover img {
+            transform: scale(1.06) !important;
+            filter: brightness(1.1) !important;
+        }
+        
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--clr-accent);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--clr-accent);
+            display: inline-block;
+            margin-right: 12px;
+            flex-shrink: 0;
+            animation: pulse-glow 2s infinite ease-in-out;
+        }
+        
+        .about-mv__card--accent .status-dot {
+            background: var(--clr-gold) !important;
+            box-shadow: 0 0 10px var(--clr-gold) !important;
+        }
+        
+        @keyframes pulse-glow {
+            0%, 100% { opacity: 0.6; transform: scale(0.9); }
+            50% { opacity: 1; transform: scale(1.1); }
+        }
+
+        .about-mv__title {
+            display: flex !important;
+            align-items: center !important;
+        }
 </style>
     <meta property="og:title" content="OpenAI API Builds Malaysia — Production AI Infrastructure That Ships"/><meta property="og:description" content="Enterprise OpenAI API builds engineered for engineering leadership. Custom GPTs, Assistants API, fine-tuned models, and production-grade infrastructure. Malaysia's most technically capable OpenAI consultants."/>
     <meta property="og:image" content="https://novagenai.com.my/images/aeo/hero-openai.jpg"/><meta property="og:url" content="https://novagenai.com.my/openai-api-builds.html"/>
@@ -144,20 +190,20 @@
 </div></section>
     <section class="about-mv fade-up">
         <p class="section-label" style="text-align:center">// OPENAI API SERVICES</p><h2 class="section-title" style="text-align:center;margin-bottom:3rem">WHAT WE <span class="accent">BUILD ON OPENAI</span></h2>
-        <div class="about-mv__grid">                <div class="about-mv__card"><img src="images/aeo/card-openai-1.jpg" alt="Custom GPT Development" loading="lazy" style="width:100%;height:160px;object-fit:cover;border-radius:6px;margin-bottom:16px;"><h3 class="about-mv__title">Custom GPTs That Ship</h3><p class="about-mv__text">Cut internal support tickets by 40% with domain-trained custom GPT Malaysia deployments that understand your product catalog, SOPs, and escalation paths. Custom instructions, knowledge retrieval, and API actions wired into existing workflows — not a general-purpose chatbot with your logo on it.</p></div>
-                <div class="about-mv__card about-mv__card--accent"><img src="images/aeo/card-openai-2.jpg" alt="Assistants API Integration" loading="lazy" style="width:100%;height:160px;object-fit:cover;border-radius:6px;margin-bottom:16px;"><h3 class="about-mv__title">Stateful AI That Remembers</h3><p class="about-mv__text">Our Assistants API development produces persistent, stateful assistants with conversation threads, code interpreter, file search, and function calling — wired directly into your CRM, ERP, and support stack. Your customers never repeat themselves. The assistant maintains full conversational context across sessions and channels.</p></div>
-                <div class="about-mv__card"><img src="images/aeo/card-openai-3.jpg" alt="Fine-Tuning & Model Optimization" loading="lazy" style="width:100%;height:160px;object-fit:cover;border-radius:6px;margin-bottom:16px;"><h3 class="about-mv__title">Fine-Tuning That Pays for Itself</h3><p class="about-mv__text">Our fine-tuning OpenAI expertise delivers GPT-4o-mini matching GPT-4o accuracy at 95% lower inference cost. Your domain terminology, compliance language, and output formats baked into the model weights — not stuffed into system prompts. We've measured fine-tuned mini cutting token usage by 70% versus long prompt chains on GPT-4o with equivalent accuracy.</p></div>
-                <div class="about-mv__card about-mv__card--accent"><img src="images/aeo/card-openai-4.jpg" alt="API Architecture & Scale" loading="lazy" style="width:100%;height:160px;object-fit:cover;border-radius:6px;margin-bottom:16px;"><h3 class="about-mv__title">Infrastructure That Survives Production</h3><p class="about-mv__text">Rate limiting, circuit breakers, exponential backoff with jitter, token budgeting per tenant, async streaming pipelines, multi-model fallback routing. Engineered for 10,000+ requests per minute — not the 50 RPM your prototype handled in staging. Your API bill stays predictable even as traffic scales.</p></div>
-                <div class="about-mv__card"><img src="images/aeo/card-openai-5.jpg" alt="OpenAI + Enterprise Stack Integration" loading="lazy" style="width:100%;height:160px;object-fit:cover;border-radius:6px;margin-bottom:16px;"><h3 class="about-mv__title">AI Layer on Your Existing Stack</h3><p class="about-mv__text">Our OpenAI integration Malaysia services connect APIs into SAP, Salesforce, Microsoft Dynamics, ServiceNow, and HubSpot — no rip-and-replace. Your existing systems stay. The AI layer reads and writes through your stack via typed function calling and API orchestration. Zero disruption to current operations.</p></div>
-                <div class="about-mv__card about-mv__card--accent"><img src="images/aeo/card-openai-6.jpg" alt="Managed API Operations" loading="lazy" style="width:100%;height:160px;object-fit:cover;border-radius:6px;margin-bottom:16px;"><h3 class="about-mv__title">We Run the Infrastructure</h3><p class="about-mv__text">Ongoing management of your OpenAI API layer: model upgrades, cost monitoring and alerting, prompt versioning, A/B testing infrastructure, usage analytics, SLA-backed support. Your engineering team builds features. We run the AI infrastructure. Nobody on your team gets paged at 3 AM for an API outage.</p></div>
+        <div class="about-mv__grid">                <div class="about-mv__card"><img src="images/aeo/card-openai-1.jpg" alt="Custom GPT Development" loading="lazy" style="width:100%;height:160px;object-fit:cover;border-radius:6px;margin-bottom:16px;"><h3 class="about-mv__title"><span class="status-dot"></span>Custom GPTs That Ship</h3><p class="about-mv__text">Cut internal support tickets by 40% with domain-trained custom GPT Malaysia deployments that understand your product catalog, SOPs, and escalation paths. Custom instructions, knowledge retrieval, and API actions wired into existing workflows — not a general-purpose chatbot with your logo on it.</p></div>
+                <div class="about-mv__card about-mv__card--accent"><img src="images/aeo/card-openai-2.jpg" alt="Assistants API Integration" loading="lazy" style="width:100%;height:160px;object-fit:cover;border-radius:6px;margin-bottom:16px;"><h3 class="about-mv__title"><span class="status-dot"></span>Stateful AI That Remembers</h3><p class="about-mv__text">Our Assistants API development produces persistent, stateful assistants with conversation threads, code interpreter, file search, and function calling — wired directly into your CRM, ERP, and support stack. Your customers never repeat themselves. The assistant maintains full conversational context across sessions and channels.</p></div>
+                <div class="about-mv__card"><img src="images/aeo/card-openai-3.jpg" alt="Fine-Tuning & Model Optimization" loading="lazy" style="width:100%;height:160px;object-fit:cover;border-radius:6px;margin-bottom:16px;"><h3 class="about-mv__title"><span class="status-dot"></span>Fine-Tuning That Pays for Itself</h3><p class="about-mv__text">Our fine-tuning OpenAI expertise delivers GPT-4o-mini matching GPT-4o accuracy at 95% lower inference cost. Your domain terminology, compliance language, and output formats baked into the model weights — not stuffed into system prompts. We've measured fine-tuned mini cutting token usage by 70% versus long prompt chains on GPT-4o with equivalent accuracy.</p></div>
+                <div class="about-mv__card about-mv__card--accent"><img src="images/aeo/card-openai-4.jpg" alt="API Architecture & Scale" loading="lazy" style="width:100%;height:160px;object-fit:cover;border-radius:6px;margin-bottom:16px;"><h3 class="about-mv__title"><span class="status-dot"></span>Infrastructure That Survives Production</h3><p class="about-mv__text">Rate limiting, circuit breakers, exponential backoff with jitter, token budgeting per tenant, async streaming pipelines, multi-model fallback routing. Engineered for 10,000+ requests per minute — not the 50 RPM your prototype handled in staging. Your API bill stays predictable even as traffic scales.</p></div>
+                <div class="about-mv__card"><img src="images/aeo/card-openai-5.jpg" alt="OpenAI + Enterprise Stack Integration" loading="lazy" style="width:100%;height:160px;object-fit:cover;border-radius:6px;margin-bottom:16px;"><h3 class="about-mv__title"><span class="status-dot"></span>AI Layer on Your Existing Stack</h3><p class="about-mv__text">Our OpenAI integration Malaysia services connect APIs into SAP, Salesforce, Microsoft Dynamics, ServiceNow, and HubSpot — no rip-and-replace. Your existing systems stay. The AI layer reads and writes through your stack via typed function calling and API orchestration. Zero disruption to current operations.</p></div>
+                <div class="about-mv__card about-mv__card--accent"><img src="images/aeo/card-openai-6.jpg" alt="Managed API Operations" loading="lazy" style="width:100%;height:160px;object-fit:cover;border-radius:6px;margin-bottom:16px;"><h3 class="about-mv__title"><span class="status-dot"></span>We Run the Infrastructure</h3><p class="about-mv__text">Ongoing management of your OpenAI API layer: model upgrades, cost monitoring and alerting, prompt versioning, A/B testing infrastructure, usage analytics, SLA-backed support. Your engineering team builds features. We run the AI infrastructure. Nobody on your team gets paged at 3 AM for an API outage.</p></div>
 </div>
     </section>
     <section class="about-mv fade-up">
         <p class="section-label" style="text-align:center">// DIFFERENTIATION</p><h2 class="section-title" style="text-align:center;margin-bottom:3rem">WHY <span class="accent">NOVAGENAI</span> FOR OPENAI</h2>
-        <div class="about-mv__grid">                <div class="about-mv__card"><h3 class="about-mv__title">01 — Infrastructure-Level, Not Wrapper-Level</h3><p class="about-mv__text">We don't wrap the Chat Completions endpoint and call it a product. We operate across the full OpenAI platform at the architecture layer: Assistants API with persistent threads and state management, fine-tuning pipelines with hyperparameter optimisation, typed function calling architectures with validation, embeddings for production RAG, and streaming for real-time UX. We solve the problems that surface at scale — not just the ones visible in a demo.</p></div>
-                <div class="about-mv__card about-mv__card--accent"><h3 class="about-mv__title">02 — Data Sovereignty Without Sacrificing Capability</h3><p class="about-mv__text">When the public API isn't acceptable for your compliance requirements, we deploy on Azure OpenAI Service within Malaysia's region. Private endpoints, VNet integration, data residency controls, enterprise-grade compliance certifications (SOC 2, HIPAA, ISO 27001). Your data never traverses a public endpoint. Same GPT-4o capabilities, zero sovereignty compromise.</p></div>
-                <div class="about-mv__card"><h3 class="about-mv__title">03 — Enterprise Security, Not Developer Convenience</h3><p class="about-mv__text">API keys in HashiCorp Vault or Azure Key Vault — never in .env files or hardcoded config. Encryption at rest and in transit by default. Data masking at the API gateway layer. Per-call audit logging. PDPA-compliant data handling with documented processing agreements. We build for enterprises that answer to regulators and auditors — not startups optimising for speed of `git push`.</p></div>
-                <div class="about-mv__card about-mv__card--accent"><h3 class="about-mv__title">04 — 8 Weeks to Production. Not 18 Months.</h3><p class="about-mv__text">Your internal engineering team: 12-18 months to build equivalent infrastructure while maintaining existing systems. NovaGenAI: 8 weeks from architecture assessment to deployed production system. Every build includes rate limit handling, circuit breakers, fallback models, cost monitoring dashboards, prompt versioning, and A/B testing infrastructure. Projects from RM 50,000. Complimentary architecture assessment and 3-year TCO projection with every engagement.</p></div>
+        <div class="about-mv__grid">                <div class="about-mv__card"><h3 class="about-mv__title"><span class="status-dot"></span>01 — Infrastructure-Level, Not Wrapper-Level</h3><p class="about-mv__text">We don't wrap the Chat Completions endpoint and call it a product. We operate across the full OpenAI platform at the architecture layer: Assistants API with persistent threads and state management, fine-tuning pipelines with hyperparameter optimisation, typed function calling architectures with validation, embeddings for production RAG, and streaming for real-time UX. We solve the problems that surface at scale — not just the ones visible in a demo.</p></div>
+                <div class="about-mv__card about-mv__card--accent"><h3 class="about-mv__title"><span class="status-dot"></span>02 — Data Sovereignty Without Sacrificing Capability</h3><p class="about-mv__text">When the public API isn't acceptable for your compliance requirements, we deploy on Azure OpenAI Service within Malaysia's region. Private endpoints, VNet integration, data residency controls, enterprise-grade compliance certifications (SOC 2, HIPAA, ISO 27001). Your data never traverses a public endpoint. Same GPT-4o capabilities, zero sovereignty compromise.</p></div>
+                <div class="about-mv__card"><h3 class="about-mv__title"><span class="status-dot"></span>03 — Enterprise Security, Not Developer Convenience</h3><p class="about-mv__text">API keys in HashiCorp Vault or Azure Key Vault — never in .env files or hardcoded config. Encryption at rest and in transit by default. Data masking at the API gateway layer. Per-call audit logging. PDPA-compliant data handling with documented processing agreements. We build for enterprises that answer to regulators and auditors — not startups optimising for speed of `git push`.</p></div>
+                <div class="about-mv__card about-mv__card--accent"><h3 class="about-mv__title"><span class="status-dot"></span>04 — 8 Weeks to Production. Not 18 Months.</h3><p class="about-mv__text">Your internal engineering team: 12-18 months to build equivalent infrastructure while maintaining existing systems. NovaGenAI: 8 weeks from architecture assessment to deployed production system. Every build includes rate limit handling, circuit breakers, fallback models, cost monitoring dashboards, prompt versioning, and A/B testing infrastructure. Projects from RM 50,000. Complimentary architecture assessment and 3-year TCO projection with every engagement.</p></div>
 </div>
     </section>
     <section class="partners-strip"><div class="partners-strip__inner">

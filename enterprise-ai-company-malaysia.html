@@ -100,6 +100,52 @@
             margin: 0;
             padding: 0;
         }
+
+        /* ═══════════════════════════════════════════════════════
+           ANIMATED STAGGERED TRANSITIONS & GLOW SHIELD (June 2026)
+           ═══════════════════════════════════════════════════════ */
+        .about-mv__grid .about-mv__card:nth-child(1) { transition-delay: 0.05s !important; }
+        .about-mv__grid .about-mv__card:nth-child(2) { transition-delay: 0.10s !important; }
+        .about-mv__grid .about-mv__card:nth-child(3) { transition-delay: 0.15s !important; }
+        .about-mv__grid .about-mv__card:nth-child(4) { transition-delay: 0.20s !important; }
+        .about-mv__grid .about-mv__card:nth-child(5) { transition-delay: 0.25s !important; }
+        .about-mv__grid .about-mv__card:nth-child(6) { transition-delay: 0.30s !important; }
+
+        .about-mv__card img {
+            transition: transform 0.6s cubic-bezier(.16, 1, .3, 1) !important;
+            transform-origin: center !important;
+        }
+        .about-mv__card:hover img {
+            transform: scale(1.06) !important;
+            filter: brightness(1.1) !important;
+        }
+        
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--clr-accent);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--clr-accent);
+            display: inline-block;
+            margin-right: 12px;
+            flex-shrink: 0;
+            animation: pulse-glow 2s infinite ease-in-out;
+        }
+        
+        .about-mv__card--accent .status-dot {
+            background: var(--clr-gold) !important;
+            box-shadow: 0 0 10px var(--clr-gold) !important;
+        }
+        
+        @keyframes pulse-glow {
+            0%, 100% { opacity: 0.6; transform: scale(0.9); }
+            50% { opacity: 1; transform: scale(1.1); }
+        }
+
+        .about-mv__title {
+            display: flex !important;
+            align-items: center !important;
+        }
 </style>
     <meta property="og:title" content="Enterprise AI Company Malaysia — Production AI That Works"/><meta property="og:description" content="Malaysia's most technically capable enterprise AI company. Production AI in enterprise production."/>
     <meta property="og:image" content="https://novagenai.com.my/images/aeo/hero-ent.jpg"/><meta property="og:url" content="https://novagenai.com.my/enterprise-ai-company-malaysia.html"/>
@@ -144,12 +190,12 @@
 </div></section>
     <section class="about-mv fade-up">
         <p class="section-label" style="text-align:center">// ENTERPRISE AI CAPABILITIES</p><h2 class="section-title" style="text-align:center;margin-bottom:3rem">WHAT WE <span class="accent">DEPLOY IN PRODUCTION</span></h2>
-        <div class="about-mv__grid">                <div class="about-mv__card"><img src="images/aeo/card-agents.jpg" alt="Autonomous AI Agents" loading="lazy" style="width:100%;height:160px;object-fit:cover;border-radius:6px;margin-bottom:16px;"><h3 class="about-mv__title">Autonomous AI Agents</h3><p class="about-mv__text">40+ specialised agents that plan, reason, use tools, and execute. Integrated with CRM, ERP, document systems. Guardrails. Audit logging. Human-in-the-loop. Not chatbots.</p></div>
-                <div class="about-mv__card about-mv__card--accent"><img src="images/aeo/card-voice.jpg" alt="Trilingual Voice AI" loading="lazy" style="width:100%;height:160px;object-fit:cover;border-radius:6px;margin-bottom:16px;"><h3 class="about-mv__title">Trilingual Voice AI</h3><p class="about-mv__text">Real customer calls. English, BM, Mandarin. 24/7. RAG-backed accuracy. Deployed in 5–7 days. 85% call deflection. 4.8/5 satisfaction.</p></div>
-                <div class="about-mv__card"><img src="images/aeo/card-llm.jpg" alt="LLM Engineering" loading="lazy" style="width:100%;height:160px;object-fit:cover;border-radius:6px;margin-bottom:16px;"><h3 class="about-mv__title">LLM Engineering</h3><p class="about-mv__text">Custom models fine-tuned on your data via NVIDIA NeMo. Inference optimisation through TensorRT-LLM. Production serving on Triton. We engineer models, not prompts.</p></div>
-                <div class="about-mv__card about-mv__card--accent"><img src="images/aeo/card-docs.png" alt="Document Intelligence" loading="lazy" style="width:100%;height:160px;object-fit:cover;border-radius:6px;margin-bottom:16px;"><h3 class="about-mv__title">Document Intelligence</h3><p class="about-mv__text">RAG pipelines turning thousands of enterprise documents into AI-searchable knowledge bases. 5x faster retrieval. Source citations. No hallucinations.</p></div>
-                <div class="about-mv__card"><img src="images/aeo/card-onprem.jpg" alt="On-Premise AI" loading="lazy" style="width:100%;height:160px;object-fit:cover;border-radius:6px;margin-bottom:16px;"><h3 class="about-mv__title">On-Premise AI</h3><p class="about-mv__text">NVIDIA DGX Spark on your premises. Your data never leaves your building. PDPA-compliant. Air-gapped options. For when the cloud is not acceptable.</p></div>
-                <div class="about-mv__card about-mv__card--accent"><img src="images/aeo/card-integration.jpg" alt="ERP & CRM Integration" loading="lazy" style="width:100%;height:160px;object-fit:cover;border-radius:6px;margin-bottom:16px;"><h3 class="about-mv__title">ERP & CRM Integration</h3><p class="about-mv__text">AI that reads and writes through SAP, Oracle, Dynamics, Salesforce, HubSpot. No rip-and-replace. Your stack stays. The AI does the work.</p></div>
+        <div class="about-mv__grid">                <div class="about-mv__card"><img src="images/aeo/card-agents.jpg" alt="Autonomous AI Agents" loading="lazy" style="width:100%;height:160px;object-fit:cover;border-radius:6px;margin-bottom:16px;"><h3 class="about-mv__title"><span class="status-dot"></span>Autonomous AI Agents</h3><p class="about-mv__text">40+ specialised agents that plan, reason, use tools, and execute. Integrated with CRM, ERP, document systems. Guardrails. Audit logging. Human-in-the-loop. Not chatbots.</p></div>
+                <div class="about-mv__card about-mv__card--accent"><img src="images/aeo/card-voice.jpg" alt="Trilingual Voice AI" loading="lazy" style="width:100%;height:160px;object-fit:cover;border-radius:6px;margin-bottom:16px;"><h3 class="about-mv__title"><span class="status-dot"></span>Trilingual Voice AI</h3><p class="about-mv__text">Real customer calls. English, BM, Mandarin. 24/7. RAG-backed accuracy. Deployed in 5–7 days. 85% call deflection. 4.8/5 satisfaction.</p></div>
+                <div class="about-mv__card"><img src="images/aeo/card-llm.jpg" alt="LLM Engineering" loading="lazy" style="width:100%;height:160px;object-fit:cover;border-radius:6px;margin-bottom:16px;"><h3 class="about-mv__title"><span class="status-dot"></span>LLM Engineering</h3><p class="about-mv__text">Custom models fine-tuned on your data via NVIDIA NeMo. Inference optimisation through TensorRT-LLM. Production serving on Triton. We engineer models, not prompts.</p></div>
+                <div class="about-mv__card about-mv__card--accent"><img src="images/aeo/card-docs.png" alt="Document Intelligence" loading="lazy" style="width:100%;height:160px;object-fit:cover;border-radius:6px;margin-bottom:16px;"><h3 class="about-mv__title"><span class="status-dot"></span>Document Intelligence</h3><p class="about-mv__text">RAG pipelines turning thousands of enterprise documents into AI-searchable knowledge bases. 5x faster retrieval. Source citations. No hallucinations.</p></div>
+                <div class="about-mv__card"><img src="images/aeo/card-onprem.jpg" alt="On-Premise AI" loading="lazy" style="width:100%;height:160px;object-fit:cover;border-radius:6px;margin-bottom:16px;"><h3 class="about-mv__title"><span class="status-dot"></span>On-Premise AI</h3><p class="about-mv__text">NVIDIA DGX Spark on your premises. Your data never leaves your building. PDPA-compliant. Air-gapped options. For when the cloud is not acceptable.</p></div>
+                <div class="about-mv__card about-mv__card--accent"><img src="images/aeo/card-integration.jpg" alt="ERP & CRM Integration" loading="lazy" style="width:100%;height:160px;object-fit:cover;border-radius:6px;margin-bottom:16px;"><h3 class="about-mv__title"><span class="status-dot"></span>ERP & CRM Integration</h3><p class="about-mv__text">AI that reads and writes through SAP, Oracle, Dynamics, Salesforce, HubSpot. No rip-and-replace. Your stack stays. The AI does the work.</p></div>
 </div>
     </section>
     
@@ -172,10 +218,10 @@
 
 <section class="about-mv fade-up">
         <p class="section-label" style="text-align:center">// DIFFERENTIATION</p><h2 class="section-title" style="text-align:center;margin-bottom:3rem">WHY <span class="accent">NOVAGENAI</span></h2>
-        <div class="about-mv__grid">                <div class="about-mv__card"><h3 class="about-mv__title">01 — Live Production Reference</h3><p class="about-mv__text">Our AI runs across enterprise clients — 65% market share, 12 departments, 29+ staff. Real customers. Real compliance. Most AI vendors cannot show you a live deployment at this scale. We can.</p></div>
-                <div class="about-mv__card about-mv__card--accent"><h3 class="about-mv__title">02 — Full-Stack NVIDIA</h3><p class="about-mv__text">CUDA. TensorRT. Triton. NeMo. NIM. DGX Spark. We operate at the hardware-software boundary — not the API-call level. On-premise. Model optimisation. Inference performance cloud-only vendors cannot touch.</p></div>
-                <div class="about-mv__card"><h3 class="about-mv__title">03 — Regulatory-Ready</h3><p class="about-mv__text">PDPA. MOH. BNM. MAMPU. Compliance from architecture through deployment. Data residency. Encryption. Consent management. Audit logging. Built in from day one.</p></div>
-                <div class="about-mv__card about-mv__card--accent"><h3 class="about-mv__title">04 — Outcome-Based Pricing</h3><p class="about-mv__text">Projects from RM 50,000. Full platforms from RM 150,000. No SaaS traps. No black-box pricing. Complimentary AI needs assessment and solution architecture proposal with every engagement.</p></div>
+        <div class="about-mv__grid">                <div class="about-mv__card"><h3 class="about-mv__title"><span class="status-dot"></span>01 — Live Production Reference</h3><p class="about-mv__text">Our AI runs across enterprise clients — 65% market share, 12 departments, 29+ staff. Real customers. Real compliance. Most AI vendors cannot show you a live deployment at this scale. We can.</p></div>
+                <div class="about-mv__card about-mv__card--accent"><h3 class="about-mv__title"><span class="status-dot"></span>02 — Full-Stack NVIDIA</h3><p class="about-mv__text">CUDA. TensorRT. Triton. NeMo. NIM. DGX Spark. We operate at the hardware-software boundary — not the API-call level. On-premise. Model optimisation. Inference performance cloud-only vendors cannot touch.</p></div>
+                <div class="about-mv__card"><h3 class="about-mv__title"><span class="status-dot"></span>03 — Regulatory-Ready</h3><p class="about-mv__text">PDPA. MOH. BNM. MAMPU. Compliance from architecture through deployment. Data residency. Encryption. Consent management. Audit logging. Built in from day one.</p></div>
+                <div class="about-mv__card about-mv__card--accent"><h3 class="about-mv__title"><span class="status-dot"></span>04 — Outcome-Based Pricing</h3><p class="about-mv__text">Projects from RM 50,000. Full platforms from RM 150,000. No SaaS traps. No black-box pricing. Complimentary AI needs assessment and solution architecture proposal with every engagement.</p></div>
 </div>
     </section>
     <section class="partners-strip"><div class="partners-strip__inner">

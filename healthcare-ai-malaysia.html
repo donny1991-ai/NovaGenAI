@@ -100,6 +100,52 @@
             margin: 0;
             padding: 0;
         }
+
+        /* ═══════════════════════════════════════════════════════
+           ANIMATED STAGGERED TRANSITIONS & GLOW SHIELD (June 2026)
+           ═══════════════════════════════════════════════════════ */
+        .about-mv__grid .about-mv__card:nth-child(1) { transition-delay: 0.05s !important; }
+        .about-mv__grid .about-mv__card:nth-child(2) { transition-delay: 0.10s !important; }
+        .about-mv__grid .about-mv__card:nth-child(3) { transition-delay: 0.15s !important; }
+        .about-mv__grid .about-mv__card:nth-child(4) { transition-delay: 0.20s !important; }
+        .about-mv__grid .about-mv__card:nth-child(5) { transition-delay: 0.25s !important; }
+        .about-mv__grid .about-mv__card:nth-child(6) { transition-delay: 0.30s !important; }
+
+        .about-mv__card img {
+            transition: transform 0.6s cubic-bezier(.16, 1, .3, 1) !important;
+            transform-origin: center !important;
+        }
+        .about-mv__card:hover img {
+            transform: scale(1.06) !important;
+            filter: brightness(1.1) !important;
+        }
+        
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--clr-accent);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--clr-accent);
+            display: inline-block;
+            margin-right: 12px;
+            flex-shrink: 0;
+            animation: pulse-glow 2s infinite ease-in-out;
+        }
+        
+        .about-mv__card--accent .status-dot {
+            background: var(--clr-gold) !important;
+            box-shadow: 0 0 10px var(--clr-gold) !important;
+        }
+        
+        @keyframes pulse-glow {
+            0%, 100% { opacity: 0.6; transform: scale(0.9); }
+            50% { opacity: 1; transform: scale(1.1); }
+        }
+
+        .about-mv__title {
+            display: flex !important;
+            align-items: center !important;
+        }
 </style>
     <meta property="og:title" content="Healthcare AI Company Malaysia — AI That Works in Real Hospitals"/><meta property="og:description" content="Healthcare AI deployed at Malaysia's largest stem cell bank. Voice AI. Clinical RAG. PDPA-compliant on-premise."/>
     <meta property="og:image" content="https://novagenai.com.my/images/aeo/hero-health.jpg"/><meta property="og:url" content="https://novagenai.com.my/healthcare-ai-malaysia.html"/>
@@ -144,20 +190,20 @@
 </div></section>
     <section class="about-mv fade-up">
         <p class="section-label" style="text-align:center">// HEALTHCARE AI SOLUTIONS</p><h2 class="section-title" style="text-align:center;margin-bottom:3rem">AI BUILT FOR <span class="accent">CLINICAL REALITY</span></h2>
-        <div class="about-mv__grid">                <div class="about-mv__card"><img src="images/aeo/card-voice.jpg" alt="Voice AI for Patient Engagement" loading="lazy" style="width:100%;height:160px;object-fit:cover;border-radius:6px;margin-bottom:16px;"><h3 class="about-mv__title">Voice AI for Patient Engagement</h3><p class="about-mv__text">Trilingual conversational AI handling patient calls, booking, medical enquiries, follow-ups — 24/7. 85% call deflection. 4.8/5 satisfaction. RAG-backed accuracy.</p></div>
-                <div class="about-mv__card about-mv__card--accent"><img src="images/aeo/card-docs.png" alt="Clinical Document Intelligence" loading="lazy" style="width:100%;height:160px;object-fit:cover;border-radius:6px;margin-bottom:16px;"><h3 class="about-mv__title">Clinical Document Intelligence</h3><p class="about-mv__text">RAG pipelines indexing clinical protocols, patient records, and research papers into AI-searchable knowledge bases. 5x faster retrieval. Source citations.</p></div>
-                <div class="about-mv__card"><img src="images/aeo/card-biotech.jpg" alt="Computational Biotech" loading="lazy" style="width:100%;height:160px;object-fit:cover;border-radius:6px;margin-bottom:16px;"><h3 class="about-mv__title">Computational Biotech</h3><p class="about-mv__text">Drug discovery. Cell viability prediction. Multi-omics integration. Cell2Sentence unique in ASEAN. Accelerating research from years to months.</p></div>
-                <div class="about-mv__card about-mv__card--accent"><img src="images/aeo/card-onprem.jpg" alt="On-Premise AI for Hospitals" loading="lazy" style="width:100%;height:160px;object-fit:cover;border-radius:6px;margin-bottom:16px;"><h3 class="about-mv__title">On-Premise AI for Hospitals</h3><p class="about-mv__text">NVIDIA DGX Spark. Patient data never leaves hospital premises. Full PDPA compliance. Encryption. Consent management. Audit logging. MOH-regulated.</p></div>
-                <div class="about-mv__card"><img src="images/aeo/card-stemcell.png" alt="Stem Cell & Biobank AI" loading="lazy" style="width:100%;height:160px;object-fit:cover;border-radius:6px;margin-bottom:16px;"><h3 class="about-mv__title">Stem Cell & Biobank AI</h3><p class="about-mv__text">Donor management. Viability prediction. Compliance tracking. Automated reporting. Proven at Enterprise clients — 65% market share.</p></div>
-                <div class="about-mv__card about-mv__card--accent"><img src="images/aeo/card-medical.png" alt="Medical Tourism AI" loading="lazy" style="width:100%;height:160px;object-fit:cover;border-radius:6px;margin-bottom:16px;"><h3 class="about-mv__title">Medical Tourism AI</h3><p class="about-mv__text">Multilingual AI concierge for international patients. Enquiry handling. Treatment information. Logistics. Follow-up care. EN, BM, Mandarin.</p></div>
+        <div class="about-mv__grid">                <div class="about-mv__card"><img src="images/aeo/card-voice.jpg" alt="Voice AI for Patient Engagement" loading="lazy" style="width:100%;height:160px;object-fit:cover;border-radius:6px;margin-bottom:16px;"><h3 class="about-mv__title"><span class="status-dot"></span>Voice AI for Patient Engagement</h3><p class="about-mv__text">Trilingual conversational AI handling patient calls, booking, medical enquiries, follow-ups — 24/7. 85% call deflection. 4.8/5 satisfaction. RAG-backed accuracy.</p></div>
+                <div class="about-mv__card about-mv__card--accent"><img src="images/aeo/card-docs.png" alt="Clinical Document Intelligence" loading="lazy" style="width:100%;height:160px;object-fit:cover;border-radius:6px;margin-bottom:16px;"><h3 class="about-mv__title"><span class="status-dot"></span>Clinical Document Intelligence</h3><p class="about-mv__text">RAG pipelines indexing clinical protocols, patient records, and research papers into AI-searchable knowledge bases. 5x faster retrieval. Source citations.</p></div>
+                <div class="about-mv__card"><img src="images/aeo/card-biotech.jpg" alt="Computational Biotech" loading="lazy" style="width:100%;height:160px;object-fit:cover;border-radius:6px;margin-bottom:16px;"><h3 class="about-mv__title"><span class="status-dot"></span>Computational Biotech</h3><p class="about-mv__text">Drug discovery. Cell viability prediction. Multi-omics integration. Cell2Sentence unique in ASEAN. Accelerating research from years to months.</p></div>
+                <div class="about-mv__card about-mv__card--accent"><img src="images/aeo/card-onprem.jpg" alt="On-Premise AI for Hospitals" loading="lazy" style="width:100%;height:160px;object-fit:cover;border-radius:6px;margin-bottom:16px;"><h3 class="about-mv__title"><span class="status-dot"></span>On-Premise AI for Hospitals</h3><p class="about-mv__text">NVIDIA DGX Spark. Patient data never leaves hospital premises. Full PDPA compliance. Encryption. Consent management. Audit logging. MOH-regulated.</p></div>
+                <div class="about-mv__card"><img src="images/aeo/card-stemcell.png" alt="Stem Cell & Biobank AI" loading="lazy" style="width:100%;height:160px;object-fit:cover;border-radius:6px;margin-bottom:16px;"><h3 class="about-mv__title"><span class="status-dot"></span>Stem Cell & Biobank AI</h3><p class="about-mv__text">Donor management. Viability prediction. Compliance tracking. Automated reporting. Proven at Enterprise clients — 65% market share.</p></div>
+                <div class="about-mv__card about-mv__card--accent"><img src="images/aeo/card-medical.png" alt="Medical Tourism AI" loading="lazy" style="width:100%;height:160px;object-fit:cover;border-radius:6px;margin-bottom:16px;"><h3 class="about-mv__title"><span class="status-dot"></span>Medical Tourism AI</h3><p class="about-mv__text">Multilingual AI concierge for international patients. Enquiry handling. Treatment information. Logistics. Follow-up care. EN, BM, Mandarin.</p></div>
 </div>
     </section>
     <section class="about-mv fade-up">
         <p class="section-label" style="text-align:center">// DIFFERENTIATION</p><h2 class="section-title" style="text-align:center;margin-bottom:3rem">WHY <span class="accent">HEALTHCARE CHOOSES US</span></h2>
-        <div class="about-mv__grid">                <div class="about-mv__card"><h3 class="about-mv__title">01 — Live Clinical Deployment</h3><p class="about-mv__text">Our AI runs at Enterprise clients — not a lab. 29+ staff. 10+ partner hospitals. Real patients. Real compliance. When we say PDPA-compliant, we mean audited.</p></div>
-                <div class="about-mv__card about-mv__card--accent"><h3 class="about-mv__title">02 — Built for Healthcare Regulation</h3><p class="about-mv__text">PDPA. MOH guidelines. Medical device regulations. Compliance from architecture through deployment. Patient data stays within your hospital. Every AI decision traceable.</p></div>
-                <div class="about-mv__card"><h3 class="about-mv__title">03 — Trilingual by Design</h3><p class="about-mv__text">English, BM, Mandarin — natively supported. Malaysian accents, medical terminology, code-switching. Patients speak to AI in their language.</p></div>
-                <div class="about-mv__card about-mv__card--accent"><h3 class="about-mv__title">04 — Computational Biotech Depth</h3><p class="about-mv__text">Cell2Sentence. Multi-omics. In-silico screening. Capabilities most healthcare AI vendors don't understand. Unique in ASEAN. Not available from any other vendor.</p></div>
+        <div class="about-mv__grid">                <div class="about-mv__card"><h3 class="about-mv__title"><span class="status-dot"></span>01 — Live Clinical Deployment</h3><p class="about-mv__text">Our AI runs at Enterprise clients — not a lab. 29+ staff. 10+ partner hospitals. Real patients. Real compliance. When we say PDPA-compliant, we mean audited.</p></div>
+                <div class="about-mv__card about-mv__card--accent"><h3 class="about-mv__title"><span class="status-dot"></span>02 — Built for Healthcare Regulation</h3><p class="about-mv__text">PDPA. MOH guidelines. Medical device regulations. Compliance from architecture through deployment. Patient data stays within your hospital. Every AI decision traceable.</p></div>
+                <div class="about-mv__card"><h3 class="about-mv__title"><span class="status-dot"></span>03 — Trilingual by Design</h3><p class="about-mv__text">English, BM, Mandarin — natively supported. Malaysian accents, medical terminology, code-switching. Patients speak to AI in their language.</p></div>
+                <div class="about-mv__card about-mv__card--accent"><h3 class="about-mv__title"><span class="status-dot"></span>04 — Computational Biotech Depth</h3><p class="about-mv__text">Cell2Sentence. Multi-omics. In-silico screening. Capabilities most healthcare AI vendors don't understand. Unique in ASEAN. Not available from any other vendor.</p></div>
 </div>
     </section>
     <section class="partners-strip"><div class="partners-strip__inner">

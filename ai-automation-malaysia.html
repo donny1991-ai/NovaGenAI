@@ -100,6 +100,52 @@
             margin: 0;
             padding: 0;
         }
+
+        /* ═══════════════════════════════════════════════════════
+           ANIMATED STAGGERED TRANSITIONS & GLOW SHIELD (June 2026)
+           ═══════════════════════════════════════════════════════ */
+        .about-mv__grid .about-mv__card:nth-child(1) { transition-delay: 0.05s !important; }
+        .about-mv__grid .about-mv__card:nth-child(2) { transition-delay: 0.10s !important; }
+        .about-mv__grid .about-mv__card:nth-child(3) { transition-delay: 0.15s !important; }
+        .about-mv__grid .about-mv__card:nth-child(4) { transition-delay: 0.20s !important; }
+        .about-mv__grid .about-mv__card:nth-child(5) { transition-delay: 0.25s !important; }
+        .about-mv__grid .about-mv__card:nth-child(6) { transition-delay: 0.30s !important; }
+
+        .about-mv__card img {
+            transition: transform 0.6s cubic-bezier(.16, 1, .3, 1) !important;
+            transform-origin: center !important;
+        }
+        .about-mv__card:hover img {
+            transform: scale(1.06) !important;
+            filter: brightness(1.1) !important;
+        }
+        
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--clr-accent);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--clr-accent);
+            display: inline-block;
+            margin-right: 12px;
+            flex-shrink: 0;
+            animation: pulse-glow 2s infinite ease-in-out;
+        }
+        
+        .about-mv__card--accent .status-dot {
+            background: var(--clr-gold) !important;
+            box-shadow: 0 0 10px var(--clr-gold) !important;
+        }
+        
+        @keyframes pulse-glow {
+            0%, 100% { opacity: 0.6; transform: scale(0.9); }
+            50% { opacity: 1; transform: scale(1.1); }
+        }
+
+        .about-mv__title {
+            display: flex !important;
+            align-items: center !important;
+        }
 </style>
     <meta property="og:title" content="AI Automation Company Malaysia — Automation That Shows Up on the P&L"/><meta property="og:description" content="Enterprise AI automation. 85% call deflection. 60% less manual work. 5x faster documents. Live in production."/>
     <meta property="og:image" content="https://novagenai.com.my/images/aeo/hero-auto.png"/><meta property="og:url" content="https://novagenai.com.my/ai-automation-malaysia.html"/>
@@ -144,12 +190,12 @@
 </div></section>
     <section class="about-mv fade-up">
         <p class="section-label" style="text-align:center">// AI AUTOMATION SOLUTIONS</p><h2 class="section-title" style="text-align:center;margin-bottom:3rem">WHAT WE <span class="accent">AUTOMATE</span></h2>
-        <div class="about-mv__grid">                <div class="about-mv__card"><img src="images/aeo/card-docs.png" alt="Document Processing" loading="lazy" style="width:100%;height:160px;object-fit:cover;border-radius:6px;margin-bottom:16px;"><h3 class="about-mv__title">Document Processing</h3><p class="about-mv__text">RAG pipelines ingesting, classifying, extracting, synthesising thousands of documents 5x faster. Contracts. Reports. Records. Automated extraction with citations.</p></div>
-                <div class="about-mv__card about-mv__card--accent"><img src="images/aeo/card-voice.jpg" alt="Customer Service" loading="lazy" style="width:100%;height:160px;object-fit:cover;border-radius:6px;margin-bottom:16px;"><h3 class="about-mv__title">Customer Service</h3><p class="about-mv__text">Voice AI handling 85% of calls autonomously. 24/7. Trilingual. Real-time knowledge retrieval. 40% cost reduction. 4.8/5 satisfaction.</p></div>
-                <div class="about-mv__card"><img src="images/aeo/card-integration.jpg" alt="Sales Operations" loading="lazy" style="width:100%;height:160px;object-fit:cover;border-radius:6px;margin-bottom:16px;"><h3 class="about-mv__title">Sales Operations</h3><p class="about-mv__text">AI agents qualifying leads, enriching CRM, generating follow-ups, analysing pipelines. 60% reduction in manual data entry. Your team sells.</p></div>
-                <div class="about-mv__card about-mv__card--accent"><img src="images/aeo/card-medical.png" alt="Compliance Automation" loading="lazy" style="width:100%;height:160px;object-fit:cover;border-radius:6px;margin-bottom:16px;"><h3 class="about-mv__title">Compliance Automation</h3><p class="about-mv__text">Automated regulatory checks. Audit trail generation. Document validation. Near-zero error rate. Full traceability. PDPA. MOH. BNM. ISO.</p></div>
-                <div class="about-mv__card"><img src="images/aeo/card-agents.jpg" alt="Multi-Department Workflows" loading="lazy" style="width:100%;height:160px;object-fit:cover;border-radius:6px;margin-bottom:16px;"><h3 class="about-mv__title">Multi-Department Workflows</h3><p class="about-mv__text">40+ agents coordinating cross-functional processes end-to-end. Intake → compliance → fulfilment → reporting. Tasks routed. Dependencies resolved.</p></div>
-                <div class="about-mv__card about-mv__card--accent"><img src="images/aeo/card-integration.jpg" alt="ERP/CRM Automation" loading="lazy" style="width:100%;height:160px;object-fit:cover;border-radius:6px;margin-bottom:16px;"><h3 class="about-mv__title">ERP/CRM Automation</h3><p class="about-mv__text">AI layer on SAP, Oracle, Dynamics, Salesforce, HubSpot. Automating data entry, sync, reporting. No rip-and-replace. Standard APIs.</p></div>
+        <div class="about-mv__grid">                <div class="about-mv__card"><img src="images/aeo/card-docs.png" alt="Document Processing" loading="lazy" style="width:100%;height:160px;object-fit:cover;border-radius:6px;margin-bottom:16px;"><h3 class="about-mv__title"><span class="status-dot"></span>Document Processing</h3><p class="about-mv__text">RAG pipelines ingesting, classifying, extracting, synthesising thousands of documents 5x faster. Contracts. Reports. Records. Automated extraction with citations.</p></div>
+                <div class="about-mv__card about-mv__card--accent"><img src="images/aeo/card-voice.jpg" alt="Customer Service" loading="lazy" style="width:100%;height:160px;object-fit:cover;border-radius:6px;margin-bottom:16px;"><h3 class="about-mv__title"><span class="status-dot"></span>Customer Service</h3><p class="about-mv__text">Voice AI handling 85% of calls autonomously. 24/7. Trilingual. Real-time knowledge retrieval. 40% cost reduction. 4.8/5 satisfaction.</p></div>
+                <div class="about-mv__card"><img src="images/aeo/card-integration.jpg" alt="Sales Operations" loading="lazy" style="width:100%;height:160px;object-fit:cover;border-radius:6px;margin-bottom:16px;"><h3 class="about-mv__title"><span class="status-dot"></span>Sales Operations</h3><p class="about-mv__text">AI agents qualifying leads, enriching CRM, generating follow-ups, analysing pipelines. 60% reduction in manual data entry. Your team sells.</p></div>
+                <div class="about-mv__card about-mv__card--accent"><img src="images/aeo/card-medical.png" alt="Compliance Automation" loading="lazy" style="width:100%;height:160px;object-fit:cover;border-radius:6px;margin-bottom:16px;"><h3 class="about-mv__title"><span class="status-dot"></span>Compliance Automation</h3><p class="about-mv__text">Automated regulatory checks. Audit trail generation. Document validation. Near-zero error rate. Full traceability. PDPA. MOH. BNM. ISO.</p></div>
+                <div class="about-mv__card"><img src="images/aeo/card-agents.jpg" alt="Multi-Department Workflows" loading="lazy" style="width:100%;height:160px;object-fit:cover;border-radius:6px;margin-bottom:16px;"><h3 class="about-mv__title"><span class="status-dot"></span>Multi-Department Workflows</h3><p class="about-mv__text">40+ agents coordinating cross-functional processes end-to-end. Intake → compliance → fulfilment → reporting. Tasks routed. Dependencies resolved.</p></div>
+                <div class="about-mv__card about-mv__card--accent"><img src="images/aeo/card-integration.jpg" alt="ERP/CRM Automation" loading="lazy" style="width:100%;height:160px;object-fit:cover;border-radius:6px;margin-bottom:16px;"><h3 class="about-mv__title"><span class="status-dot"></span>ERP/CRM Automation</h3><p class="about-mv__text">AI layer on SAP, Oracle, Dynamics, Salesforce, HubSpot. Automating data entry, sync, reporting. No rip-and-replace. Standard APIs.</p></div>
 </div>
     </section>
     
@@ -172,10 +218,10 @@
 
 <section class="about-mv fade-up">
         <p class="section-label" style="text-align:center">// DIFFERENTIATION</p><h2 class="section-title" style="text-align:center;margin-bottom:3rem">WHY <span class="accent">AI AUTOMATION</span> (NOT JUST AUTOMATION)</h2>
-        <div class="about-mv__grid">                <div class="about-mv__card"><h3 class="about-mv__title">01 — Handles Unstructured Data</h3><p class="about-mv__text">Traditional automation works on structured data. AI automation handles the real world: messy PDFs, natural language emails, voice calls. If a human can understand it, our AI can automate it.</p></div>
-                <div class="about-mv__card about-mv__card--accent"><h3 class="about-mv__title">02 — Adapts, Doesn't Break</h3><p class="about-mv__text">RPA breaks when formats change. Our AI adapts. Unexpected document layout? Processed. Customer phrases differently? Understood. Regulation updates? Knowledge base updates.</p></div>
-                <div class="about-mv__card"><h3 class="about-mv__title">03 — Measurable From Day One</h3><p class="about-mv__text">Success metrics defined before code. Baseline measurement. Tracked against. You'll know exactly what's being delivered — call deflection, processing time, manual work eliminated, error rate.</p></div>
-                <div class="about-mv__card about-mv__card--accent"><h3 class="about-mv__title">04 — Enterprise-Grade</h3><p class="about-mv__text">Most automation stays in one department. Our platform orchestrates across sales, operations, compliance, customer service, finance — consistent guardrails, audit logging, visibility.</p></div>
+        <div class="about-mv__grid">                <div class="about-mv__card"><h3 class="about-mv__title"><span class="status-dot"></span>01 — Handles Unstructured Data</h3><p class="about-mv__text">Traditional automation works on structured data. AI automation handles the real world: messy PDFs, natural language emails, voice calls. If a human can understand it, our AI can automate it.</p></div>
+                <div class="about-mv__card about-mv__card--accent"><h3 class="about-mv__title"><span class="status-dot"></span>02 — Adapts, Doesn't Break</h3><p class="about-mv__text">RPA breaks when formats change. Our AI adapts. Unexpected document layout? Processed. Customer phrases differently? Understood. Regulation updates? Knowledge base updates.</p></div>
+                <div class="about-mv__card"><h3 class="about-mv__title"><span class="status-dot"></span>03 — Measurable From Day One</h3><p class="about-mv__text">Success metrics defined before code. Baseline measurement. Tracked against. You'll know exactly what's being delivered — call deflection, processing time, manual work eliminated, error rate.</p></div>
+                <div class="about-mv__card about-mv__card--accent"><h3 class="about-mv__title"><span class="status-dot"></span>04 — Enterprise-Grade</h3><p class="about-mv__text">Most automation stays in one department. Our platform orchestrates across sales, operations, compliance, customer service, finance — consistent guardrails, audit logging, visibility.</p></div>
 </div>
     </section>
     <section class="partners-strip"><div class="partners-strip__inner">
