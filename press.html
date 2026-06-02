@@ -31,20 +31,45 @@
             padding: 4rem 2rem;
             display: grid;
             grid-template-columns: 1fr;
-            gap: 2.5rem;
+            gap: 3.5rem;
         }
 
-        /* High-End Glassmorphic Card Style */
+        /* High-End Glassmorphic Card Style (Flexible Row Structure) */
         .press-card {
             position: relative;
-            background: linear-gradient(135deg, rgba(15, 15, 15, 0.7) 0%, rgba(5, 5, 5, 0.9) 100%);
+            background: linear-gradient(135deg, rgba(15, 15, 15, 0.75) 0%, rgba(5, 5, 5, 0.95) 100%);
             border: 1px solid rgba(0, 212, 255, 0.12); /* Cyan subtle border */
-            border-radius: 16px;
+            border-radius: 20px;
             padding: 2.5rem;
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
             overflow: hidden;
+            display: flex;
+            flex-direction: row;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        /* Alternate card layouts for dynamic page flow */
+        .press-card:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        @media (max-width: 900px) {
+            .press-card, .press-card:nth-child(even) {
+                flex-direction: column !important;
+                gap: 2rem;
+                padding: 2rem;
+            }
+            .press-img-container {
+                width: 100% !important;
+                max-width: 100% !important;
+                height: 220px !important;
+            }
+            .press-text-content {
+                width: 100% !important;
+            }
         }
 
         .press-card::before {
@@ -54,15 +79,50 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(800px circle at var(--mouse-x, 0) var(--mouse-y, 0), rgba(0, 212, 255, 0.06), transparent 40%);
+            background: radial-gradient(800px circle at var(--mouse-x, 0) var(--mouse-y, 0), rgba(0, 212, 255, 0.08), transparent 45%);
             z-index: 0;
             pointer-events: none;
         }
 
         .press-card:hover {
-            transform: translateY(-6px);
-            border-color: rgba(0, 212, 255, 0.35); /* Neon cyan glow */
-            box-shadow: 0 12px 40px rgba(0, 212, 255, 0.08);
+            transform: translateY(-8px);
+            border-color: rgba(0, 212, 255, 0.4); /* Neon cyan glow */
+            box-shadow: 0 16px 50px rgba(0, 212, 255, 0.12);
+        }
+
+        /* Two Column Layout Inner Styles */
+        .press-text-content {
+            width: 60%;
+            position: relative;
+            z-index: 1;
+        }
+
+        .press-img-container {
+            width: 40%;
+            max-width: 400px;
+            height: 280px;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+            position: relative;
+            z-index: 1;
+            transition: border-color 0.4s ease;
+        }
+
+        .press-card:hover .press-img-container {
+            border-color: rgba(0, 212, 255, 0.5);
+        }
+
+        .press-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .press-card:hover .press-img-container img {
+            transform: scale(1.06);
         }
 
         /* Cyber Tags */
@@ -71,8 +131,6 @@
             flex-wrap: wrap;
             gap: 0.75rem;
             margin-bottom: 1.5rem;
-            position: relative;
-            z-index: 1;
         }
 
         .tag-date {
@@ -103,18 +161,16 @@
 
         .press-card-title {
             font-family: 'Outfit', sans-serif;
-            font-size: clamp(1.4rem, 3vw, 2rem);
+            font-size: clamp(1.4rem, 2.5vw, 1.8rem);
             font-weight: 800;
             line-height: 1.3;
             margin-bottom: 1.25rem;
             color: #ffffff;
             letter-spacing: -0.01em;
-            position: relative;
-            z-index: 1;
         }
 
         .press-card-title span {
-            background: linear-gradient(135deg, #ffffff 40%, #D4A017 100%);
+            background: linear-gradient(135deg, #ffffff 40%, #00D4FF 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -124,21 +180,19 @@
             font-size: 1.05rem;
             line-height: 1.75;
             margin-bottom: 0;
-            position: relative;
-            z-index: 1;
         }
 
         /* Call To Action Box */
         .press-cta {
             position: relative;
-            background: linear-gradient(135deg, rgba(20, 20, 20, 0.8) 0%, rgba(5, 5, 5, 0.95) 100%);
+            background: linear-gradient(135deg, rgba(15, 15, 15, 0.9) 0%, rgba(5, 5, 5, 0.98) 100%);
             border: 2px solid #D4A017; /* Solid gold frame */
-            border-radius: 16px;
+            border-radius: 20px;
             padding: 4rem 2rem;
             text-align: center;
             max-width: 1200px;
             margin: 4rem auto;
-            box-shadow: 0 10px 30px rgba(212, 160, 23, 0.05);
+            box-shadow: 0 10px 40px rgba(212, 160, 23, 0.08);
             overflow: hidden;
         }
 
@@ -244,8 +298,8 @@
 
     <!-- HERO -->
     <section class="page-hero" style="position:relative;overflow:hidden;">
-        <img src="images/contact-hero.jpg" alt="Press &amp; Newsroom Representing Milestones" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.1;pointer-events:none;">
-        <div class="page-hero__inner">
+        <img src="images/press/hero-press.jpg" alt="Press &amp; Newsroom Representing Milestones" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.15;pointer-events:none;">
+        <div class="page-hero__inner" style="position:relative; z-index:1;">
             <p class="page-hero__label">// NEWS &amp; MILESTONES</p>
             <h1 class="page-hero__title">PRESS &amp; <span class="accent">NEWSROOM</span></h1>
             <p class="page-hero__subtitle">Latest announcements, product releases, and corporate milestones from NovaGenAI.</p>
@@ -257,74 +311,104 @@
         
         <!-- March 2026 -->
         <article class="press-card">
-            <div class="press-badge-row">
-                <span class="tag-date">March 2026</span>
-                <span class="tag-category">Partnerships &amp; Infrastructure</span>
+            <div class="press-text-content">
+                <div class="press-badge-row">
+                    <span class="tag-date">March 2026</span>
+                    <span class="tag-category">Partnerships &amp; Infrastructure</span>
+                </div>
+                <h2 class="press-card-title">NovaGenAI Joins <span>NVIDIA Inception Program</span></h2>
+                <p class="press-card-excerpt">
+                    NovaGenAI Sdn. Bhd. has been accepted into the NVIDIA Inception Program, gaining access to cutting-edge GPU infrastructure, technical support, and go-to-market assistance. This partnership accelerates our computational biotech and enterprise AI capabilities, particularly in AI-driven drug discovery and in-silico cellular modelling.
+                </p>
             </div>
-            <h2 class="press-card-title">NovaGenAI Joins <span>NVIDIA Inception Program</span></h2>
-            <p class="press-card-excerpt">
-                NovaGenAI Sdn. Bhd. has been accepted into the NVIDIA Inception Program, gaining access to cutting-edge GPU infrastructure, technical support, and go-to-market assistance. This partnership accelerates our computational biotech and enterprise AI capabilities, particularly in AI-driven drug discovery and in-silico cellular modelling.
-            </p>
+            <div class="press-img-container">
+                <img loading="lazy" src="images/press/card-press-nvidia.jpg" alt="NVIDIA Inception Partnership Badge Represented as Glowing Microchip">
+            </div>
         </article>
 
         <!-- February 2026 -->
         <article class="press-card">
-            <div class="press-badge-row">
-                <span class="tag-date">February 2026</span>
-                <span class="tag-category">Case Study · Client Success</span>
+            <div class="press-text-content">
+                <div class="press-badge-row">
+                    <span class="tag-date">February 2026</span>
+                    <span class="tag-category">Case Study · Client Success</span>
+                </div>
+                <h2 class="press-card-title">CryoCord Deploys Voice Agent — <span>85% Call Deflection Achieved</span></h2>
+                <p class="press-card-excerpt">
+                    CryoCord Group, Malaysia's largest stem cell and cord blood banking company, deployed NovaGenAI's multilingual voice agent "James" across customer service operations. Within 90 days, the system achieved 85% call deflection, 24/7 availability in English, Bahasa Malaysia, and Mandarin, and a 40% reduction in customer service costs while maintaining 4.8/5 customer satisfaction scores.
+                </p>
             </div>
-            <h2 class="press-card-title">CryoCord Deploys NovaGenAI Voice Agent — <span>85% Call Deflection Achieved</span></h2>
-            <p class="press-card-excerpt">
-                CryoCord Group, Malaysia's largest stem cell and cord blood banking company, deployed NovaGenAI's multilingual voice agent "James" across customer service operations. Within 90 days, the system achieved 85% call deflection, 24/7 availability in English, Bahasa Malaysia, and Mandarin, and a 40% reduction in customer service costs while maintaining 4.8/5 customer satisfaction scores.
-            </p>
+            <div class="press-img-container">
+                <img loading="lazy" src="images/press/card-press-cryocord.jpg" alt="Voice Waveform Hologram Representing Autonomous Voice Agent James">
+            </div>
         </article>
 
         <!-- January 2026 -->
         <article class="press-card">
-            <div class="press-badge-row">
-                <span class="tag-date">January 2026</span>
-                <span class="tag-category">Company News · Expansion</span>
+            <div class="press-text-content">
+                <div class="press-badge-row">
+                    <span class="tag-date">January 2026</span>
+                    <span class="tag-category">Company News · Expansion</span>
+                </div>
+                <h2 class="press-card-title">NovaGenAI Expands to <span>Australia and Singapore</span></h2>
+                <p class="press-card-excerpt">
+                    NovaGenAI announced regional expansion with operations now active in Melbourne, Australia and Singapore. The company maintains its headquarters in Cyberjaya, Malaysia at the Bio-X Centre innovation hub. This multi-market presence enables closer collaboration with enterprise clients across the Asia-Pacific region.
+                </p>
             </div>
-            <h2 class="press-card-title">NovaGenAI Expands to <span>Australia and Singapore</span></h2>
-            <p class="press-card-excerpt">
-                NovaGenAI announced regional expansion with operations now active in Melbourne, Australia and Singapore. The company maintains its headquarters in Cyberjaya, Malaysia at the Bio-X Centre innovation hub. This multi-market presence enables closer collaboration with enterprise clients across the Asia-Pacific region.
-            </p>
+            <div class="press-img-container">
+                <img loading="lazy" src="images/press/card-press-expansion.jpg" alt="Translucent Globe Mapping highlighting Southeast Asia and Australia">
+            </div>
         </article>
 
         <!-- December 2025 -->
         <article class="press-card">
-            <div class="press-badge-row">
-                <span class="tag-date">December 2025</span>
-                <span class="tag-category">Product Launch · Enterprise Software</span>
+            <div class="press-text-content">
+                <div class="press-badge-row">
+                    <span class="tag-date">December 2025</span>
+                    <span class="tag-category">Product Launch · Enterprise Software</span>
+                </div>
+                <h2 class="press-card-title">NovaGenAI Launches <span>Clarify — AI-Native CRM</span></h2>
+                <p class="press-card-excerpt">
+                    NovaGenAI unveiled Clarify, an AI-native customer relationship management platform built for enterprise sales teams. Clarify combines document intelligence, automated lead enrichment, voice transcription, and predictive pipeline analytics — all powered by custom-trained language models. Early adopters report 60% reduction in manual data entry and 35% improvement in forecast accuracy.
+                </p>
             </div>
-            <h2 class="press-card-title">NovaGenAI Launches <span>Clarify — AI-Native CRM</span> for Enterprise Sales</h2>
-            <p class="press-card-excerpt">
-                NovaGenAI unveiled Clarify, an AI-native customer relationship management platform built for enterprise sales teams. Clarify combines document intelligence, automated lead enrichment, voice transcription, and predictive pipeline analytics — all powered by custom-trained language models. Early adopters report 60% reduction in manual data entry and 35% improvement in forecast accuracy.
-            </p>
+            <div class="press-img-container">
+                <img loading="lazy" src="images/press/card-press-clarify.jpg" alt="Glossmorphic Enterprise Dashboard Hologram Representing Clarify CRM">
+            </div>
         </article>
 
         <!-- November 2025 -->
         <article class="press-card">
-            <div class="press-badge-row">
-                <span class="tag-date">November 2025</span>
-                <span class="tag-category">Speaking Engagement · Thought Leadership</span>
+            <div class="press-text-content">
+                <div class="press-badge-row">
+                    <span class="tag-date">November 2025</span>
+                    <span class="tag-category">Speaking Engagement · Thought Leadership</span>
+                </div>
+                <h2 class="press-card-title">Founder Speaks at <span>AI in Healthcare Summit</span> Kuala Lumpur</h2>
+                <p class="press-card-excerpt">
+                    NovaGenAI Founder and CEO Don Calaki presented "Voice AI and Document Intelligence in Healthcare Operations" at the AI in Healthcare Summit in Kuala Lumpur. The session explored real-world deployments of conversational AI in medical tourism, patient support, and clinical documentation.
+                </p>
             </div>
-            <h2 class="press-card-title">Founder Don Calaki Speaks at <span>AI in Healthcare Summit</span> Kuala Lumpur</h2>
-            <p class="press-card-excerpt">
-                NovaGenAI Founder and CEO Don Calaki presented "Voice AI and Document Intelligence in Healthcare Operations" at the AI in Healthcare Summit in Kuala Lumpur. The session explored real-world deployments of conversational AI in medical tourism, patient support, and clinical documentation.
-            </p>
+            <div class="press-img-container">
+                <img loading="lazy" src="images/press/card-press-summit.jpg" alt="Glassmorphic Speaker Podium Hologram Representing Keynote Presentation">
+            </div>
         </article>
 
         <!-- October 2025 -->
         <article class="press-card">
-            <div class="press-badge-row">
-                <span class="tag-date">October 2025</span>
-                <span class="tag-category">Company Founding · Milestones</span>
+            <div class="press-text-content">
+                <div class="press-badge-row">
+                    <span class="tag-date">October 2025</span>
+                    <span class="tag-category">Company Founding · Milestones</span>
+                </div>
+                <h2 class="press-card-title">NovaGenAI Sdn. Bhd. <span>Incorporated in Malaysia</span></h2>
+                <p class="press-card-excerpt">
+                    NovaGenAI Sdn. Bhd. officially incorporated in Malaysia as an enterprise AI solutions provider focused on autonomous agents, voice AI, computational biotech, and custom AI systems. Headquartered at Bio-X Centre in Cyberjaya, the company brings together expertise in LLM engineering, bioinformatics, and production AI deployment.
+                </p>
             </div>
-            <h2 class="press-card-title">NovaGenAI Sdn. Bhd. <span>Incorporated in Malaysia</span></h2>
-            <p class="press-card-excerpt">
-                NovaGenAI Sdn. Bhd. officially incorporated in Malaysia as an enterprise AI solutions provider focused on autonomous agents, voice AI, computational biotech, and custom AI systems. Headquartered at Bio-X Centre in Cyberjaya, the company brings together expertise in LLM engineering, bioinformatics, and production AI deployment.
-            </p>
+            <div class="press-img-container">
+                <img loading="lazy" src="images/press/card-press-inc.jpg" alt="Luxury Glassmorphic Plaque Emblem with Golden-Cyan Lights representing Incorporation">
+            </div>
         </article>
 
     </div>
