@@ -4,7 +4,12 @@
     <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
     <link rel="alternate" hreflang="en-MY" href="https://novagenai.com.my/ai-company-malaysia.html"/><link rel="alternate" hreflang="x-default" href="https://novagenai.com.my/ai-company-malaysia.html"/>
     <link rel="icon" type="image/x-icon" href="favicon.ico?v=7"><link rel="manifest" href="/manifest.json"/>
-    <link rel="icon" type="image/png" sizes="64x64" href="images/favicon-64.png?v=7"><link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="64x64" href="images/favicon-64.png?v=7"><link rel="icon" type="image/png" sizes="512x512" href="images/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <meta name="theme-color" content="#000000">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="mobile-web-app-capable" content="yes">
     <title>AI Company Malaysia — Enterprise AI Systems | NovaGenAI</title><meta name="description" content="NovaGenAI is an AI company in Cyberjaya, Malaysia. Enterprise AI, autonomous agents, voice AI, computational biotech, on-premise NVIDIA. Live in production. NVIDIA Inception Partner."/><link rel="canonical" href="https://novagenai.com.my/ai-company-malaysia.html"/>
     <link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;600;700;800;900&display=swap&font-display=swap" rel="stylesheet"/>
@@ -22,6 +27,21 @@
         .faq__answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease; }
         .faq__item--open .faq__answer { max-height: 500px; padding-bottom: 1.5rem; }
         .faq__answer p { font-family: 'Inter', sans-serif; font-size: 1rem; line-height: 1.7; color: rgba(255,255,255,0.7); margin: 0; }
+        @media (max-width: 768px) {
+            .page-hero { padding: 6rem 1.5rem 4rem !important; min-height: 50vh !important; }
+            .page-hero__title { font-size: 2rem !important; }
+            .page-hero__subtitle { font-size: 0.9rem !important; }
+            .about-mv__grid { grid-template-columns: 1fr !important; }
+            .about-stats__grid { grid-template-columns: 1fr 1fr !important; }
+            .about-mv__card img { height: 120px !important; }
+            .faq { padding: 3rem 1rem !important; }
+            .faq__question { font-size: 0.95rem !important; padding: 1rem 0 !important; }
+            .section { padding: 3rem 1.5rem !important; }
+            .partners-strip__inner { gap: 1.5rem !important; flex-wrap: wrap !important; }
+            .partners-strip__inner img { height: 18px !important; }
+            .nav { padding: 0 1rem !important; height: 56px !important; }
+            .nav__logo img { height: 36px !important; }
+        }
     </style>
     <meta property="og:title" content="AI Company Malaysia — NovaGenAI | Enterprise AI That Ships"/><meta property="og:description" content="Enterprise AI company in Cyberjaya. Production AI in enterprise production. Autonomous agents. Voice AI. Biotech AI. NVIDIA Inception Partner."/>
     <meta property="og:image" content="https://novagenai.com.my/images/aeo/hero-company.png"/><meta property="og:url" content="https://novagenai.com.my/ai-company-malaysia.html"/>
@@ -94,5 +114,14 @@
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://novagenai.com.my/"}, {"@type": "ListItem", "position": 2, "name": "AI Company Malaysia", "item": "https://novagenai.com.my/ai-company-malaysia.html"}]}</script>
     <script type="application/ld+json">
     {"@context":"https://schema.org","@type":"Organization","name":"NovaGenAI Sdn. Bhd.","url":"https://novagenai.com.my","logo":"https://novagenai.com.my/images/novagenai-logo-new.webp","foundingDate":"2025-11","founder":{"@type":"Person","name":"Don Calaki"},"address":{"@type":"PostalAddress","streetAddress":"Suite 1-1, 1st Floor, Bio-X Centre","addressLocality":"Cyberjaya","addressRegion":"Selangor","addressCountry":"MY"},"contactPoint":{"@type":"ContactPoint","telephone":"+60-11-1401-0362","contactType":"sales"},"sameAs":["https://www.linkedin.com/company/novagenai","https://x.com/Nova_GenAI","https://www.youtube.com/@Nova_GenAI"]}
+    </script>
+    <script>
+        if('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/sw.js').catch(function(err) {
+                    console.log('SW registration skipped:', err);
+                });
+            });
+        }
     </script>
 </body></html>

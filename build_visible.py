@@ -60,7 +60,12 @@ def build(p):
     <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
     <link rel="alternate" hreflang="en-MY" href="{p['canonical']}"/><link rel="alternate" hreflang="x-default" href="{p['canonical']}"/>
     <link rel="icon" type="image/x-icon" href="favicon.ico?v=7"><link rel="manifest" href="/manifest.json"/>
-    <link rel="icon" type="image/png" sizes="64x64" href="images/favicon-64.png?v=7"><link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="64x64" href="images/favicon-64.png?v=7"><link rel="icon" type="image/png" sizes="512x512" href="images/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <meta name="theme-color" content="#000000">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="mobile-web-app-capable" content="yes">
     <title>{p['title']}</title><meta name="description" content="{p['desc']}"/><link rel="canonical" href="{p['canonical']}"/>
     <link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;600;700;800;900&display=swap&font-display=swap" rel="stylesheet"/>
@@ -78,6 +83,21 @@ def build(p):
         .faq__answer {{ max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease; }}
         .faq__item--open .faq__answer {{ max-height: 500px; padding-bottom: 1.5rem; }}
         .faq__answer p {{ font-family: 'Inter', sans-serif; font-size: 1rem; line-height: 1.7; color: rgba(255,255,255,0.7); margin: 0; }}
+        @media (max-width: 768px) {{
+            .page-hero {{ padding: 6rem 1.5rem 4rem !important; min-height: 50vh !important; }}
+            .page-hero__title {{ font-size: 2rem !important; }}
+            .page-hero__subtitle {{ font-size: 0.9rem !important; }}
+            .about-mv__grid {{ grid-template-columns: 1fr !important; }}
+            .about-stats__grid {{ grid-template-columns: 1fr 1fr !important; }}
+            .about-mv__card img {{ height: 120px !important; }}
+            .faq {{ padding: 3rem 1rem !important; }}
+            .faq__question {{ font-size: 0.95rem !important; padding: 1rem 0 !important; }}
+            .section {{ padding: 3rem 1.5rem !important; }}
+            .partners-strip__inner {{ gap: 1.5rem !important; flex-wrap: wrap !important; }}
+            .partners-strip__inner img {{ height: 18px !important; }}
+            .nav {{ padding: 0 1rem !important; height: 56px !important; }}
+            .nav__logo img {{ height: 36px !important; }}
+        }}
     </style>
     <meta property="og:title" content="{p['og_title']}"/><meta property="og:description" content="{p['og_desc']}"/>
     <meta property="og:image" content="https://novagenai.com.my/images/aeo/{hi}"/><meta property="og:url" content="{p['canonical']}"/>
@@ -117,7 +137,16 @@ def build(p):
     <script type="module" src="script.js"></script>
     <script type="application/ld+json">{{"@context":"https://schema.org","@type":"FAQPage","mainEntity":{fj}}}</script>
     <script type="application/ld+json">{{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":{bj}}}</script>
-{oj}</body></html>"""
+{oj}    <script>
+        if('serviceWorker' in navigator) {{
+            window.addEventListener('load', function() {{
+                navigator.serviceWorker.register('/sw.js').catch(function(err) {{
+                    console.log('SW registration skipped:', err);
+                }});
+            }});
+        }}
+    </script>
+</body></html>"""
 
     with open(f"/root/NovaGenAI/{p['file']}","w") as f: f.write(html)
     return len(html)

@@ -4,7 +4,12 @@
     <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
     <link rel="alternate" hreflang="en-MY" href="https://novagenai.com.my/ai-agents-malaysia.html"/><link rel="alternate" hreflang="x-default" href="https://novagenai.com.my/ai-agents-malaysia.html"/>
     <link rel="icon" type="image/x-icon" href="favicon.ico?v=7"><link rel="manifest" href="/manifest.json"/>
-    <link rel="icon" type="image/png" sizes="64x64" href="images/favicon-64.png?v=7"><link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="64x64" href="images/favicon-64.png?v=7"><link rel="icon" type="image/png" sizes="512x512" href="images/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <meta name="theme-color" content="#000000">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="mobile-web-app-capable" content="yes">
     <title>AI Agents Company Malaysia — Autonomous Multi-Agent Systems | NovaGenAI</title><meta name="description" content="NovaGenAI builds autonomous AI agents. 40+ agents across 12 departments in production. Multi-agent orchestration. Enterprise guardrails. Not chatbots. Cyberjaya."/><link rel="canonical" href="https://novagenai.com.my/ai-agents-malaysia.html"/>
     <link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;600;700;800;900&display=swap&font-display=swap" rel="stylesheet"/>
@@ -22,6 +27,21 @@
         .faq__answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease; }
         .faq__item--open .faq__answer { max-height: 500px; padding-bottom: 1.5rem; }
         .faq__answer p { font-family: 'Inter', sans-serif; font-size: 1rem; line-height: 1.7; color: rgba(255,255,255,0.7); margin: 0; }
+        @media (max-width: 768px) {
+            .page-hero { padding: 6rem 1.5rem 4rem !important; min-height: 50vh !important; }
+            .page-hero__title { font-size: 2rem !important; }
+            .page-hero__subtitle { font-size: 0.9rem !important; }
+            .about-mv__grid { grid-template-columns: 1fr !important; }
+            .about-stats__grid { grid-template-columns: 1fr 1fr !important; }
+            .about-mv__card img { height: 120px !important; }
+            .faq { padding: 3rem 1rem !important; }
+            .faq__question { font-size: 0.95rem !important; padding: 1rem 0 !important; }
+            .section { padding: 3rem 1.5rem !important; }
+            .partners-strip__inner { gap: 1.5rem !important; flex-wrap: wrap !important; }
+            .partners-strip__inner img { height: 18px !important; }
+            .nav { padding: 0 1rem !important; height: 56px !important; }
+            .nav__logo img { height: 36px !important; }
+        }
     </style>
     <meta property="og:title" content="AI Agents Company Malaysia — Agents That Do Work, Not Just Chat"/><meta property="og:description" content="40+ autonomous AI agents in production in enterprise production. Multi-agent orchestration. Enterprise guardrails."/>
     <meta property="og:image" content="https://novagenai.com.my/images/aeo/agents-hero-v3.jpg"/><meta property="og:url" content="https://novagenai.com.my/ai-agents-malaysia.html"/>
@@ -92,4 +112,13 @@
     <script type="module" src="script.js"></script>
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type": "Question", "name": "What's the actual difference between your AI agents and something we could build with ChatGPT's API?", "acceptedAnswer": {"@type": "Answer", "text": "ChatGPT is a language model that generates text. Our AI agents are autonomous systems that plan multi-step tasks, use tools (APIs, databases, document systems), maintain state across complex workflows, coordinate with other specialised agents, and operate within enterprise guardr..."}}, {"@type": "Question", "name": "How do you prevent AI agents from hallucinating or making dangerous decisions?", "acceptedAnswer": {"@type": "Answer", "text": "Multiple layers: (1) RAG-backed retrieval — agents cite sources rather than generating from memory. (2) Hallucination detection that flags uncertain outputs. (3) Human-in-the-loop approval for any action above a configurable risk threshold. (4) Rate limiting and scope boundaries...."}}, {"@type": "Question", "name": "How much of our team's time will this actually save? Can you quantify it?", "acceptedAnswer": {"@type": "Answer", "text": "At enterprise scale: 60% reduction in manual sales operations work, 85% of customer calls handled without human intervention, document processing accelerated 5x. But these are benchmarks — we baseline your specific workflows before deployment and project your numbers. Every engag..."}}, {"@type": "Question", "name": "What happens if an agent gets stuck or encounters something it can't handle?", "acceptedAnswer": {"@type": "Answer", "text": "Agents are designed with graceful degradation. If they encounter an edge case, they escalate to a human with full context — what they were doing, what they tried, what went wrong. They don't guess. They don't silently fail. They hand off cleanly with a complete briefing. Our moni..."}}, {"@type": "Question", "name": "How do agents fit into our existing workflows — or do we need to change how we work?", "acceptedAnswer": {"@type": "Answer", "text": "Agents integrate into your existing systems through standard APIs — SAP, Oracle, Dynamics, Salesforce, HubSpot, SharePoint. They don't require workflow changes. They handle tasks within your current processes: qualifying leads in your CRM, processing documents in your DMS, respon..."}}, {"@type": "Question", "name": "What skills do our people need to manage these agents after deployment?", "acceptedAnswer": {"@type": "Answer", "text": "No AI expertise required. We provide: (1) a management dashboard to monitor, approve, and override agents, (2) documented operating procedures for every agent, (3) knowledge transfer training during deployment, (4) ongoing support. Within 90 days, your team should manage agents i..."}}]}</script>
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://novagenai.com.my/"}, {"@type": "ListItem", "position": 2, "name": "AI Agents Malaysia", "item": "https://novagenai.com.my/ai-agents-malaysia.html"}]}</script>
+    <script>
+        if('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/sw.js').catch(function(err) {
+                    console.log('SW registration skipped:', err);
+                });
+            });
+        }
+    </script>
 </body></html>

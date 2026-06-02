@@ -4,7 +4,12 @@
     <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
     <link rel="alternate" hreflang="en-MY" href="https://novagenai.com.my/healthcare-ai-malaysia.html"/><link rel="alternate" hreflang="x-default" href="https://novagenai.com.my/healthcare-ai-malaysia.html"/>
     <link rel="icon" type="image/x-icon" href="favicon.ico?v=7"><link rel="manifest" href="/manifest.json"/>
-    <link rel="icon" type="image/png" sizes="64x64" href="images/favicon-64.png?v=7"><link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="64x64" href="images/favicon-64.png?v=7"><link rel="icon" type="image/png" sizes="512x512" href="images/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <meta name="theme-color" content="#000000">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="mobile-web-app-capable" content="yes">
     <title>Healthcare AI Company Malaysia — Voice AI, Clinical AI, Biotech AI | NovaGenAI</title><meta name="description" content="NovaGenAI builds healthcare AI for Malaysian hospitals, clinics, biotech labs, stem cell banks. Voice AI (85% deflection), clinical RAG (5x faster), computational biotech. PDPA-compliant on-premise. Cyberjaya."/><link rel="canonical" href="https://novagenai.com.my/healthcare-ai-malaysia.html"/>
     <link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;600;700;800;900&display=swap&font-display=swap" rel="stylesheet"/>
@@ -22,6 +27,21 @@
         .faq__answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease; }
         .faq__item--open .faq__answer { max-height: 500px; padding-bottom: 1.5rem; }
         .faq__answer p { font-family: 'Inter', sans-serif; font-size: 1rem; line-height: 1.7; color: rgba(255,255,255,0.7); margin: 0; }
+        @media (max-width: 768px) {
+            .page-hero { padding: 6rem 1.5rem 4rem !important; min-height: 50vh !important; }
+            .page-hero__title { font-size: 2rem !important; }
+            .page-hero__subtitle { font-size: 0.9rem !important; }
+            .about-mv__grid { grid-template-columns: 1fr !important; }
+            .about-stats__grid { grid-template-columns: 1fr 1fr !important; }
+            .about-mv__card img { height: 120px !important; }
+            .faq { padding: 3rem 1rem !important; }
+            .faq__question { font-size: 0.95rem !important; padding: 1rem 0 !important; }
+            .section { padding: 3rem 1.5rem !important; }
+            .partners-strip__inner { gap: 1.5rem !important; flex-wrap: wrap !important; }
+            .partners-strip__inner img { height: 18px !important; }
+            .nav { padding: 0 1rem !important; height: 56px !important; }
+            .nav__logo img { height: 36px !important; }
+        }
     </style>
     <meta property="og:title" content="Healthcare AI Company Malaysia — AI That Works in Real Hospitals"/><meta property="og:description" content="Healthcare AI deployed at Malaysia's largest stem cell bank. Voice AI. Clinical RAG. PDPA-compliant on-premise."/>
     <meta property="og:image" content="https://novagenai.com.my/images/aeo/hero-health.jpg"/><meta property="og:url" content="https://novagenai.com.my/healthcare-ai-malaysia.html"/>
@@ -92,4 +112,13 @@
     <script type="module" src="script.js"></script>
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type": "Question", "name": "How do you handle MOH regulatory compliance and audits? Is your AI audit-ready?", "acceptedAnswer": {"@type": "Answer", "text": "Every deployment includes: full audit logging of every AI decision, role-based access controls aligned with hospital hierarchies, consent management integrated into every patient data interaction, and automated compliance reporting. We design for MOH and PDPA requirements from ar..."}}, {"@type": "Question", "name": "What happens to patient data if we stop using NovaGenAI?", "acceptedAnswer": {"@type": "Answer", "text": "You own your data. Always. Patient records, model outputs, audit logs — everything resides in your infrastructure. If you discontinue, we provide a complete data export in standard formats (FHIR, HL7, CSV) and documented decommissioning procedures. No data hostage situations. No ..."}}, {"@type": "Question", "name": "Can your voice AI actually understand Malaysian patients — accents, code-switching, medical terms in BM?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, with production metrics to prove it. Our voice AI handles 85% of patient calls autonomously with 4.8/5 satisfaction in English, BM, and Mandarin. It understands Malaysian English accents, code-switching mid-sentence, and medical terminology in all three languages. This isn't..."}}, {"@type": "Question", "name": "How do you integrate with our existing Hospital Information System or EMR?", "acceptedAnswer": {"@type": "Answer", "text": "We integrate through standard healthcare APIs — FHIR, HL7, DICOM — as well as direct database connectors for common HIS platforms used in Malaysia. We don't require you to change your existing systems. Our AI reads from and writes to your current infrastructure. Integration is sc..."}}, {"@type": "Question", "name": "Do you train your AI models on patient data? How do you handle privacy?", "acceptedAnswer": {"@type": "Answer", "text": "For on-premise deployments, models can be fine-tuned on your data within your infrastructure — data never leaves. For base models, we use foundation models not trained on healthcare data. For fine-tuning, we use privacy-preserving techniques. Every model training approach is docu..."}}, {"@type": "Question", "name": "What's your experience with real clinical environments — not just labs or demos?", "acceptedAnswer": {"@type": "Answer", "text": "Our healthcare AI was built and tested in live clinical operations — handling real patient calls, processing real medical records, operating under real regulatory requirements. We understand hospitals run 24/7, that downtime means patients don't get served, and that 'move fast an..."}}]}</script>
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://novagenai.com.my/"}, {"@type": "ListItem", "position": 2, "name": "Healthcare AI Malaysia", "item": "https://novagenai.com.my/healthcare-ai-malaysia.html"}]}</script>
+    <script>
+        if('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/sw.js').catch(function(err) {
+                    console.log('SW registration skipped:', err);
+                });
+            });
+        }
+    </script>
 </body></html>
