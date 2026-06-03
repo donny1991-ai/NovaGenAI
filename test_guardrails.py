@@ -1,54 +1,89 @@
-import sys
-import os
+import pytest
 
-# Append libraries directory to python path for testing import
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), 'libraries')))
+from novagenai_guardrails import MalaysianCodeSwitcher, SovereignDataGuard
 
-from novagenai_guardrails import SovereignDataGuard, MalaysianCodeSwitcher
 
-def test_guardrails():
-    print("--- RUNNING INTEGRATION TESTS ---")
-    
-    # 1. Test SovereignDataGuard
-    guard = SovereignDataGuard()
-    test_text = "Call +6011-14010362 for details. Patient ID Card is 910314-10-5021. Postcode: 63000."
-    
-    counts = guard.audit_text(test_text)
-    print("Audit counts:", counts)
-    assert counts["nric_mykad"] == 1
-    assert counts["malaysian_phones"] == 1
-    assert counts["postcodes"] == 1
-    
-    is_comp, violations = guard.validate_pdpa_compliance(test_text)
-    print("PDPA Compliance Status:", is_comp)
-    print("Violations:", violations)
-    assert not is_comp
-    
-    redacted = guard.redact(test_text)
-    print("Redacted output:", redacted)
-    assert "[REDACTED_NRIC_MYKAD]" in redacted
-    assert "[REDACTED_MALAYSIAN_PHONE]" in redacted
-    assert "[REDACTED_POSTCODE]" in redacted
-    print("✓ SovereignDataGuard integration test passed!")
-    
-    # 2. Test MalaysianCodeSwitcher
-    switcher = MalaysianCodeSwitcher()
-    dialogue = "Actually boss, jom makan now, I am very hungry sikit la."
-    
-    analysis = switcher.analyze_code_switching(dialogue)
-    print("Code switching metrics:", analysis)
-    assert analysis["word_count"] == 11
-    assert analysis["colloquial_count"] == 5
-    assert analysis["colloquialism_density"] == 0.455
-    
-    tuning = switcher.suggest_voice_synthesizer_tuning(dialogue)
-    print("Tuning config:", tuning)
-    assert tuning["tuning_parameters"]["cadence_mode"] == "Conversational Colloquial (Manglish / Mixed Code)"
-    print("✓ MalaysianCodeSwitcher integration test passed!")
-    
-    print("\n=============================================")
-    print(" ALL NOVAGENAI-GUARDRAILS TESTS PASSED! 🛡️ ✓ ")
-    print("=============================================")
+@pytest.fixture
+def guard():
+    return SovereignDataGuard()
 
-if __name__ == "__main__":
-    test_guardrails()
+
+def test_hyphenated_nric_detected(guard):
+    assert guard.audit_text("IC 910314-10-5021")["NRIC_MYKAD"] == 1
+
+
+def test_unhyphenated_nric_detected(guard):
+    assert guard.audit_text("IC 910314105021")["NRIC_MYKAD"] == 1
+
+
+def test_invalid_nric_state_code_rejected_in_strict_scan(guard):
+    assert guard.audit_text("910314-60-5021")["NRIC_MYKAD"] == 0
+
+
+def test_redact_failsafe_redacts_implausible_nric(guard):
+    out = guard.redact("999999-99-9999", ["nric"])
+    assert "[REDACTED_NRIC_MYKAD]" in out
+
+
+def test_unknown_redaction_label_raises(guard):
+    with pytest.raises(ValueError):
+        guard.redact("hello", ["unknown"])
+
+
+def test_bare_five_digits_not_redacted_as_postcode(guard):
+    assert guard.redact("Invoice 63000 paid") == "Invoice 63000 paid"
+
+
+def test_postcode_with_locality_redacted(guard):
+    out = guard.redact("63000 Cyberjaya")
+    assert "[REDACTED_POSTCODE]" in out
+
+
+def test_email_detected(guard):
+    assert guard.audit_text("reach me at don@novagenai.my")["EMAIL"] == 1
+
+
+def test_card_luhn(guard):
+    assert guard.audit_text("card 4111 1111 1111 1111")["PAYMENT_CARD"] == 1
+    assert guard.audit_text("card 4111 1111 1111 1112")["PAYMENT_CARD"] == 0
+
+
+def test_input_type_safety(guard):
+    with pytest.raises(TypeError):
+        guard.audit_text(12345)
+    assert guard.audit_text(b"910314-10-5021")["NRIC_MYKAD"] == 1
+
+
+@pytest.fixture
+def code_switcher():
+    return MalaysianCodeSwitcher()
+
+
+def test_plain_english_low_density(code_switcher):
+    analysis = code_switcher.analyze_code_switching("So basically the best boss and the steady team.")
+    assert analysis["colloquialism_density"] < 0.12
+
+
+def test_manglish_high_density(code_switcher):
+    analysis = code_switcher.analyze_code_switching("Eh jom makan lah, tapi sikit only kan, alamak!")
+    assert analysis["colloquialism_density"] > 0.12
+    assert analysis["is_code_switching"]
+
+
+def test_cjk_detected(code_switcher):
+    analysis = code_switcher.analyze_code_switching("你好 can help me check 一下 lah?")
+    assert "cjk" in analysis["scripts_present"]
+    assert analysis["is_code_switching"]
+
+
+def test_empty(code_switcher):
+    analysis = code_switcher.analyze_code_switching("")
+    assert analysis["word_count"] == 0
+    assert analysis["colloquialism_density"] == 0.0
+
+
+def test_tuning_profiles(code_switcher):
+    formal = code_switcher.suggest_voice_synthesizer_tuning("The quarterly report is attached.")
+    colloquial = code_switcher.suggest_voice_synthesizer_tuning("Jom lah, makan sikit, terbaik kan!")
+    assert formal["tuning_parameters"]["profile"] == "standard_formal"
+    assert colloquial["tuning_parameters"]["profile"] == "conversational_colloquial"
