@@ -19,7 +19,7 @@ except ImportError:  # pragma: no cover - exercised in minimal installs
 
 
 _CJK_RE = re.compile(r"[\u4e00-\u9fff\u3400-\u4dbf]+")
-_TOKEN_RE = re.compile(r"[^\W\d_]+", re.UNICODE)
+_TOKEN_RE = re.compile(r"[A-Za-z\u00C0-\u00FF\u0100-\u017F\u0180-\u024F']+", re.UNICODE)
 
 
 class MalaysianCodeSwitcher:
@@ -81,7 +81,6 @@ class MalaysianCodeSwitcher:
 
     def tokenize(self, text: object) -> List[str]:
         """Return lowercase Latin tokens plus segmented CJK tokens."""
-
         coerced = self._coerce(text).lower()
         tokens: List[str] = []
         idx = 0
@@ -121,7 +120,14 @@ class MalaysianCodeSwitcher:
         transitions = [token for token in tokens if token in self._TRANSITION_MARKERS]
         weighted = sum(found.values())
         density = round(weighted / len(tokens), 3)
-        mixed_lexicon = bool(found) and any(token.isascii() and token not in self._markers for token in tokens)
+
+        # Code-switching is true if we have multiple scripts present, OR
+        # if we have high-confidence colloquial markers mixed with standard tokens.
+        # We define mixed_lexicon as having at least one strong marker (slang) 
+        # and standard ASCII tokens, preventing weak markers like "best" or "boss" 
+        # from falsely triggering code-switching in plain English.
+        has_strong_marker = any(token in self._STRONG_MARKERS for token in tokens)
+        mixed_lexicon = has_strong_marker and any(token.isascii() and token not in self._markers for token in tokens)
 
         return {
             "word_count": len(tokens),
@@ -135,7 +141,6 @@ class MalaysianCodeSwitcher:
 
     def suggest_voice_synthesizer_tuning(self, text: object) -> Dict[str, Any]:
         """Map analysis to documented voice profile defaults."""
-
         analysis = self.analyze_code_switching(text)
         density = analysis["colloquialism_density"]
         transitions = analysis["transition_count"]

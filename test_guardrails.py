@@ -87,3 +87,19 @@ def test_tuning_profiles(code_switcher):
     colloquial = code_switcher.suggest_voice_synthesizer_tuning("Jom lah, makan sikit, terbaik kan!")
     assert formal["tuning_parameters"]["profile"] == "standard_formal"
     assert colloquial["tuning_parameters"]["profile"] == "conversational_colloquial"
+
+
+def test_full_width_nric_detected(guard):
+    assert guard.audit_text("IC ９１０３１４-１０-５０２１")["NRIC_MYKAD"] == 1
+
+
+def test_overlapping_redaction_remains_clean(guard):
+    text = "card 4111 1111 1111 1111 63000"
+    out = guard.redact(text)
+    assert "[REDACTED_PAYMENT_CARD]" in out
+
+
+def test_weak_marker_no_code_switch(code_switcher):
+    analysis = code_switcher.analyze_code_switching("The manager is the best boss.")
+    assert not analysis["is_code_switching"]
+

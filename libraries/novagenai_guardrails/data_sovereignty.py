@@ -66,13 +66,23 @@ class SovereignDataGuard:
     _EMAIL_RE = re.compile(r"\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b")
     _PASSPORT_RE = re.compile(r"\b[AHK]\d{8}\b")
     _CARD_RE = re.compile(r"\b(?:\d[ -]?){13,19}\b")
+    
+    # Python 3.9/3.10 look-behind compatible fixed-width case-insensitive character-class postcode regex
     _POSTCODE_RE = re.compile(
         r"\b\d{5}\b(?=\s+[A-Z][a-z]+)"
         r"|(?<=,\s)\b\d{5}\b"
-        r"|(?<=(?i:poskod)\s)\b\d{5}\b"
-        r"|(?<=(?i:poskod):\s)\b\d{5}\b"
-        r"|(?<=(?i:postcode)\s)\b\d{5}\b"
-        r"|(?<=(?i:postcode):\s)\b\d{5}\b",
+        r"|(?<=poskod\s)\b\d{5}\b"
+        r"|(?<=poskod:\s)\b\d{5}\b"
+        r"|(?<=postcode\s)\b\d{5}\b"
+        r"|(?<=postcode:\s)\b\d{5}\b"
+        r"|(?<=POSKOD\s)\b\d{5}\b"
+        r"|(?<=POSKOD:\s)\b\d{5}\b"
+        r"|(?<=POSTCODE\s)\b\d{5}\b"
+        r"|(?<=POSTCODE:\s)\b\d{5}\b"
+        r"|(?<=Poskod\s)\b\d{5}\b"
+        r"|(?<=Poskod:\s)\b\d{5}\b"
+        r"|(?<=Postcode\s)\b\d{5}\b"
+        r"|(?<=Postcode:\s)\b\d{5}\b"
     )
 
     _LABELS = {
@@ -92,10 +102,15 @@ class SovereignDataGuard:
     @staticmethod
     def _coerce(text: object) -> str:
         if isinstance(text, str):
-            return text
-        if isinstance(text, (bytes, bytearray)):
-            return bytes(text).decode("utf-8", errors="replace")
-        raise TypeError(f"text must be str or bytes, got {type(text).__name__}")
+            coerced = text
+        elif isinstance(text, (bytes, bytearray)):
+            coerced = bytes(text).decode("utf-8", errors="replace")
+        else:
+            raise TypeError(f"text must be str or bytes, got {type(text).__name__}")
+        
+        # Apply Unicode normalization (NFKC) to neutralize homoglyph and full-width evasion vectors
+        import unicodedata
+        return unicodedata.normalize("NFKC", coerced)
 
     @staticmethod
     def _luhn_ok(digits: str) -> bool:
@@ -129,7 +144,6 @@ class SovereignDataGuard:
     @classmethod
     def supported_labels(cls) -> Dict[str, str]:
         """Return accepted short label names mapped to emitted finding labels."""
-
         return dict(cls._LABELS)
 
     def _find_nric(self, text: str, *, strict: bool) -> List[Finding]:
@@ -168,7 +182,6 @@ class SovereignDataGuard:
 
     def scan(self, text: object, *, strict: bool = True) -> List[Finding]:
         """Return findings sorted by position. In strict mode, NRICs are validated."""
-
         coerced = self._coerce(text)
         findings: List[Finding] = []
         findings += self._find_nric(coerced, strict=strict)
@@ -181,7 +194,6 @@ class SovereignDataGuard:
 
     def audit_text(self, text: object) -> Dict[str, int]:
         """Return counts per entity label."""
-
         counts: Dict[str, int] = {label: 0 for label in self._LABELS.values()}
         for finding in self.scan(text):
             counts[finding.label] = counts.get(finding.label, 0) + 1
@@ -206,23 +218,27 @@ class SovereignDataGuard:
         strict: bool = False,
     ) -> str:
         """Replace detected PII with ``[REDACTED_<LABEL>]`` placeholders."""
-
         coerced = self._coerce(text)
         wanted = self._wanted_labels(labels_to_redact)
         findings = [finding for finding in self.scan(coerced, strict=strict) if finding.label in wanted]
 
+        # Resolve overlaps by prioritizing earlier and longer matches (standard interval scheduling)
+        sorted_findings = sorted(findings, key=lambda f: (f.start, -(f.end - f.start)))
+        non_overlapping: List[Finding] = []
+        last_end = -1
+        for f in sorted_findings:
+            if f.start >= last_end:
+                non_overlapping.append(f)
+                last_end = f.end
+
+        # Replace right-to-left so offsets stay valid
         result = coerced
-        last_start = len(coerced) + 1
-        for finding in sorted(findings, key=lambda item: (item.start, item.end), reverse=True):
-            if finding.end > last_start:
-                continue
+        for finding in sorted(non_overlapping, key=lambda item: item.start, reverse=True):
             result = result[: finding.start] + f"[REDACTED_{finding.label}]" + result[finding.end :]
-            last_start = finding.start
         return result
 
     def validate_pdpa_compliance(self, text: object) -> Tuple[bool, List[str]]:
         """Heuristically report whether this string contains detectable PII."""
-
         counts = self.audit_text(text)
         violations = [
             f"Contains {count} unredacted {label.replace('_', ' ').title()} value(s)."
