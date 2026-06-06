@@ -1293,6 +1293,7 @@
                 const userWantsMuted = iconText ? iconText.textContent.includes('MUTED') : false;
                 if (!userWantsMuted) {
                     activeVideo.muted = false;
+                    userHasInteracted = true;
                     updateAudioUI(false);
                     activeVideo.play().catch(e => console.log(e));
                 }
@@ -1309,6 +1310,7 @@
                     const userWantsMuted = iconText ? iconText.textContent.includes('MUTED') : false;
                     if (!userWantsMuted) {
                         activeVideo.muted = false;
+                        userHasInteracted = true;
                         updateAudioUI(false);
                         activeVideo.play().catch(e => console.log(e));
                     }
@@ -1322,10 +1324,16 @@
             entries.forEach(entry => {
                 const activeVideo = document.querySelector('.showroom-video-item.active video');
                 if (activeVideo && entry.isIntersecting) {
-                    const iconText = document.getElementById('audio-text');
-                    const shouldBeMuted = iconText ? iconText.textContent.includes('MUTED') : false;
+                    // Only apply unmuted preference if the user has explicitly interacted
+                    if (userHasInteracted) {
+                        const iconText = document.getElementById('audio-text');
+                        const shouldBeMuted = iconText ? iconText.textContent.includes('MUTED') : false;
+                        activeVideo.muted = shouldBeMuted;
+                    } else {
+                        // Otherwise keep strictly muted to bypass browser block rules on scroll
+                        activeVideo.muted = true;
+                    }
                     
-                    activeVideo.muted = shouldBeMuted;
                     activeVideo.play().catch(err => {
                         activeVideo.muted = true;
                         activeVideo.play().catch(e => console.log(e));
