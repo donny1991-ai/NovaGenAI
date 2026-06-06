@@ -1155,14 +1155,14 @@
                 <div class="showroom-video-wrapper">
                     <!-- Video 1: Biotech (Active) -->
                     <div class="showroom-video-item active" id="video-item-0">
-                        <video preload="metadata" poster="blog/media/poster-biotech.jpg" playsinline controls loop>
+                        <video preload="metadata" poster="blog/media/poster-biotech.jpg" playsinline controls muted loop>
                             <source src="blog/media/vision-main.mp4" type="video/mp4">
                         </video>
                     </div>
 
                     <!-- Video 2: Intelligence -->
                     <div class="showroom-video-item" id="video-item-1">
-                        <video preload="metadata" poster="blog/media/poster-intelligence.jpg" playsinline controls loop>
+                        <video preload="metadata" poster="blog/media/poster-intelligence.jpg" playsinline controls muted loop>
                             <source src="blog/media/ai-intelligence-eye.mp4" type="video/mp4">
                         </video>
                     </div>
@@ -1271,19 +1271,38 @@
     }
 
     document.addEventListener('DOMContentLoaded', () => {
-        // Doc click gestural listener to unmute on click (defaulting sound to ON)
-        const unmuteOnFirstClick = () => {
-            if (userHasInteracted) return;
+        // Continuous unmute listener: unmutes active video on any click anywhere on the page
+        document.addEventListener('click', () => {
             const activeVideo = document.querySelector('.showroom-video-item.active video');
             if (activeVideo && activeVideo.muted) {
-                activeVideo.muted = false;
-                updateAudioUI(false);
-                activeVideo.play().catch(e => console.log(e));
+                const iconText = document.getElementById('audio-text');
+                const userWantsMuted = iconText ? iconText.textContent.includes('MUTED') : false;
+                if (!userWantsMuted) {
+                    activeVideo.muted = false;
+                    updateAudioUI(false);
+                    activeVideo.play().catch(e => console.log(e));
+                }
             }
-            userHasInteracted = true;
-            document.removeEventListener('click', unmuteOnFirstClick);
-        };
-        document.addEventListener('click', unmuteOnFirstClick);
+        });
+
+        // Also unmute immediately if they hover or touch inside the showroom container
+        const container = document.querySelector('.showroom-container');
+        if (container) {
+            const unmuteOnInteraction = () => {
+                const activeVideo = document.querySelector('.showroom-video-item.active video');
+                if (activeVideo && activeVideo.muted) {
+                    const iconText = document.getElementById('audio-text');
+                    const userWantsMuted = iconText ? iconText.textContent.includes('MUTED') : false;
+                    if (!userWantsMuted) {
+                        activeVideo.muted = false;
+                        updateAudioUI(false);
+                        activeVideo.play().catch(e => console.log(e));
+                    }
+                }
+            };
+            container.addEventListener('mouseenter', unmuteOnInteraction);
+            container.addEventListener('touchstart', unmuteOnInteraction);
+        }
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
