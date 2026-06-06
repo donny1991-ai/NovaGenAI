@@ -912,7 +912,7 @@
     }
     .showroom-tabs {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         gap: 1rem;
         margin-bottom: 2rem;
     }
@@ -1113,22 +1113,18 @@
     <section class="ag-section fade-up" id="vision-showroom" style="padding-bottom: 3rem;">
         <p class="ag-label">// THE NOVAGENAI VISION</p>
         <h2 class="ag-heading">ENGINEERED TO <span class="accent">PERFORM</span></h2>
-        <p class="ag-subtext">Enterprise-grade security, autonomous intelligence swarms, and DNA-level biotech AI. Experience the systems that power the future.</p>
+        <p class="ag-subtext">Autonomous intelligence swarms and DNA-level biotech AI. Experience the systems that power the future.</p>
 
         <div class="showroom-container">
             <!-- Tabs Navigation -->
             <div class="showroom-tabs">
                 <button class="showroom-tab active" onclick="switchShowroomTab(0)">
                     <span class="showroom-tab__num">01</span>
-                    <span class="showroom-tab__label">Sovereign Security</span>
+                    <span class="showroom-tab__label">Biotech Intelligence</span>
                 </button>
                 <button class="showroom-tab" onclick="switchShowroomTab(1)">
                     <span class="showroom-tab__num">02</span>
                     <span class="showroom-tab__label">Autonomous AI</span>
-                </button>
-                <button class="showroom-tab" onclick="switchShowroomTab(2)">
-                    <span class="showroom-tab__num">03</span>
-                    <span class="showroom-tab__label">Biotech Intelligence</span>
                 </button>
             </div>
 
@@ -1141,7 +1137,7 @@
                         <span class="dot dot--yellow"></span>
                         <span class="dot dot--green"></span>
                     </div>
-                    <div class="showroom-title" id="showroom-video-title">Sovereign Security System // Live Demo</div>
+                    <div class="showroom-title" id="showroom-video-title">Computational Biotech Intelligence // Live Demo</div>
                     
                     <!-- New Glowing Audio Controller -->
                     <div class="showroom-audio-ctrl" onclick="event.stopPropagation(); toggleShowroomAudio()">
@@ -1157,10 +1153,10 @@
 
                 <!-- Video wrapper -->
                 <div class="showroom-video-wrapper">
-                    <!-- Video 1: Security (Active) -->
+                    <!-- Video 1: Biotech (Active) -->
                     <div class="showroom-video-item active" id="video-item-0">
-                        <video preload="metadata" poster="blog/media/poster-security.jpg" playsinline controls loop>
-                            <source src="blog/media/enterprise-security-vault.mp4" type="video/mp4">
+                        <video preload="metadata" poster="blog/media/poster-biotech.jpg" playsinline controls loop>
+                            <source src="blog/media/vision-main.mp4" type="video/mp4">
                         </video>
                     </div>
 
@@ -1170,25 +1166,15 @@
                             <source src="blog/media/ai-intelligence-eye.mp4" type="video/mp4">
                         </video>
                     </div>
-
-                    <!-- Video 3: Biotech -->
-                    <div class="showroom-video-item" id="video-item-2">
-                        <video preload="metadata" poster="blog/media/poster-biotech.jpg" playsinline controls loop>
-                            <source src="blog/media/vision-main.mp4" type="video/mp4">
-                        </video>
-                    </div>
                 </div>
             </div>
 
             <!-- Descriptive content panels -->
             <div class="showroom-desc-panel" id="showroom-desc-0">
-                <p class="showroom-desc-text"><strong>Sovereign Security Layer:</strong> Vault-level data protection designed for regulated environments. Deploy models on on-premise airgapped hardware like NVIDIA DGX Spark, ensuring zero leakage of proprietary enterprise assets.</p>
+                <p class="showroom-desc-text"><strong>Computational Biotech:</strong> Bringing DNA-level modeling and predictive deep learning to the biological sphere. Accelerating stem-cell analysis, genomic matching, and computational in-silico experiments.</p>
             </div>
             <div class="showroom-desc-panel" style="display: none;" id="showroom-desc-1">
                 <p class="showroom-desc-text"><strong>Autonomous Agent Swarms:</strong> Complex multi-agent networks that coordinate specialized LLM models. Perceive contexts, reason through operation pipelines, and take high-fidelity actions without human intervention.</p>
-            </div>
-            <div class="showroom-desc-panel" style="display: none;" id="showroom-desc-2">
-                <p class="showroom-desc-text"><strong>Computational Biotech:</strong> Bringing DNA-level modeling and predictive deep learning to the biological sphere. Accelerating stem-cell analysis, genomic matching, and computational in-silico experiments.</p>
             </div>
         </div>
     </section>
@@ -1203,9 +1189,8 @@
         const titleEl = document.getElementById('showroom-video-title');
         
         const titles = [
-            'Sovereign Security System // Live Demo',
-            'Autonomous Agent Swarm // Live Demo',
-            'Computational Biotech Intelligence // Live Demo'
+            'Computational Biotech Intelligence // Live Demo',
+            'Autonomous Agent Swarm // Live Demo'
         ];
         
         tabs.forEach((tab, i) => {
