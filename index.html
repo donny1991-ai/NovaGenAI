@@ -1022,6 +1022,33 @@
         50% { opacity: 1; }
         100% { opacity: 0.4; }
     }
+    .showroom-audio-ctrl {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        background: rgba(0, 212, 255, 0.08);
+        border: 1px solid rgba(0, 212, 255, 0.25);
+        padding: 4px 10px;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: all 0.25s ease;
+        z-index: 15;
+    }
+    .showroom-audio-ctrl:hover {
+        background: rgba(0, 212, 255, 0.15);
+        border-color: #00D4FF;
+        box-shadow: 0 0 12px rgba(0, 212, 255, 0.3);
+    }
+    .showroom-audio-ctrl svg {
+        color: #00D4FF;
+    }
+    .showroom-audio-ctrl .audio-pulse {
+        animation: audioPulse 1.2s infinite alternate;
+    }
+    @keyframes audioPulse {
+        0% { transform: scale(0.95); opacity: 0.8; }
+        100% { transform: scale(1.05); opacity: 1; }
+    }
     .showroom-video-wrapper {
         position: relative;
         padding-top: 56.25%;
@@ -1115,6 +1142,13 @@
                         <span class="dot dot--green"></span>
                     </div>
                     <div class="showroom-title" id="showroom-video-title">Sovereign Security System // Live Demo</div>
+                    
+                    <!-- New Glowing Audio Controller -->
+                    <div class="showroom-audio-ctrl" onclick="event.stopPropagation(); toggleShowroomAudio()">
+                        <svg id="audio-icon" class="audio-pulse" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                        <span id="audio-text">SOUND ON</span>
+                    </div>
+
                     <div class="showroom-status">
                         <span class="status-indicator"></span>
                         <span class="status-text">SYSTEM ONLINE</span>
@@ -1125,22 +1159,22 @@
                 <div class="showroom-video-wrapper">
                     <!-- Video 1: Security (Active) -->
                     <div class="showroom-video-item active" id="video-item-0">
-                        <video preload="metadata" poster="blog/media/poster-security.jpg" playsinline controls muted loop>
-                            <source src="blog/media/vision-main.mp4" type="video/mp4">
+                        <video preload="metadata" poster="blog/media/poster-security.jpg" playsinline controls loop>
+                            <source src="blog/media/enterprise-security-vault.mp4" type="video/mp4">
                         </video>
                     </div>
 
                     <!-- Video 2: Intelligence -->
                     <div class="showroom-video-item" id="video-item-1">
-                        <video preload="metadata" poster="blog/media/poster-intelligence.jpg" playsinline controls muted loop>
+                        <video preload="metadata" poster="blog/media/poster-intelligence.jpg" playsinline controls loop>
                             <source src="blog/media/ai-intelligence-eye.mp4" type="video/mp4">
                         </video>
                     </div>
 
                     <!-- Video 3: Biotech -->
                     <div class="showroom-video-item" id="video-item-2">
-                        <video preload="metadata" poster="blog/media/poster-biotech.jpg" playsinline controls muted loop>
-                            <source src="blog/media/computational-biotech-dna.mp4" type="video/mp4">
+                        <video preload="metadata" poster="blog/media/poster-biotech.jpg" playsinline controls loop>
+                            <source src="blog/media/vision-main.mp4" type="video/mp4">
                         </video>
                     </div>
                 </div>
@@ -1160,6 +1194,8 @@
     </section>
 
     <script>
+    let userHasInteracted = false;
+
     function switchShowroomTab(index) {
         const tabs = document.querySelectorAll('.showroom-tab');
         const videos = document.querySelectorAll('.showroom-video-item');
@@ -1185,7 +1221,17 @@
             if (i === index) {
                 videoItem.classList.add('active');
                 video.currentTime = 0;
-                video.play().catch(err => console.log('Autoplay blocked:', err));
+                
+                // Keep audio preferences matched across switching tabs
+                const iconText = document.getElementById('audio-text');
+                const isCurrentlyMuted = iconText ? iconText.textContent.includes('MUTED') : true;
+                
+                video.muted = isCurrentlyMuted;
+                video.play().catch(err => {
+                    video.muted = true;
+                    video.play().catch(e => console.log(e));
+                    updateAudioUI(true);
+                });
             } else {
                 videoItem.classList.remove('active');
                 video.pause();
@@ -1205,18 +1251,76 @@
         }
     }
 
+    function toggleShowroomAudio() {
+        const activeVideo = document.querySelector('.showroom-video-item.active video');
+        const icon = document.getElementById('audio-icon');
+        const text = document.getElementById('audio-text');
+        
+        if (!activeVideo || !icon || !text) return;
+        
+        userHasInteracted = true;
+        
+        if (activeVideo.muted) {
+            activeVideo.muted = false;
+            updateAudioUI(false);
+            activeVideo.play().catch(e => console.log(e));
+        } else {
+            activeVideo.muted = true;
+            updateAudioUI(true);
+        }
+    }
+
+    function updateAudioUI(isMuted) {
+        const icon = document.getElementById('audio-icon');
+        const text = document.getElementById('audio-text');
+        if (!text || !icon) return;
+        
+        if (isMuted) {
+            text.textContent = "SOUND MUTED";
+            icon.classList.remove('audio-pulse');
+            icon.innerHTML = '<path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M23 9l-6 6M17 9l6 6"/>';
+        } else {
+            text.textContent = "SOUND ON";
+            icon.classList.add('audio-pulse');
+            icon.innerHTML = '<path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/>';
+        }
+    }
+
     document.addEventListener('DOMContentLoaded', () => {
+        // Doc click gestural listener to unmute on click
+        const unmuteOnFirstClick = () => {
+            if (userHasInteracted) return;
+            const activeVideo = document.querySelector('.showroom-video-item.active video');
+            if (activeVideo && activeVideo.muted) {
+                activeVideo.muted = false;
+                updateAudioUI(false);
+                activeVideo.play().catch(e => console.log(e));
+            }
+            userHasInteracted = true;
+            document.removeEventListener('click', unmuteOnFirstClick);
+        };
+        document.addEventListener('click', unmuteOnFirstClick);
+
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const activeVideo = document.querySelector('.showroom-video-item.active video');
-                    if (activeVideo) {
-                        activeVideo.play().catch(err => console.log('Autoplay blocked:', err));
+                const activeVideo = document.querySelector('.showroom-video-item.active video');
+                if (activeVideo) {
+                    if (entry.isIntersecting) {
+                        const iconText = document.getElementById('audio-text');
+                        const shouldBeMuted = iconText ? iconText.textContent.includes('MUTED') : true;
+                        
+                        activeVideo.muted = shouldBeMuted;
+                        activeVideo.play().catch(err => {
+                            activeVideo.muted = true;
+                            activeVideo.play().catch(e => console.log(e));
+                            updateAudioUI(true);
+                        });
+                    } else {
+                        activeVideo.pause();
                     }
-                    observer.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.2 });
+        }, { threshold: 0.15 });
         
         const section = document.getElementById('vision-showroom');
         if (section) {
