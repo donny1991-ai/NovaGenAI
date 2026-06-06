@@ -1275,16 +1275,6 @@
     }
 
     document.addEventListener('DOMContentLoaded', () => {
-        // Double-redundancy play trigger: forces autoplay on DOM load even if browser pre-rendering lag occurred
-        const initialVideo = document.querySelector('.showroom-video-item.active video');
-        if (initialVideo) {
-            initialVideo.play().catch(e => {
-                // If unmuted autoplay blocked, fall back to muted autoplay natively
-                initialVideo.muted = true;
-                initialVideo.play().catch(err => console.log(err));
-            });
-        }
-
         // Continuous unmute listener: unmutes active video on any click anywhere on the page
         document.addEventListener('click', () => {
             const activeVideo = document.querySelector('.showroom-video-item.active video');
@@ -1318,33 +1308,6 @@
             };
             container.addEventListener('mouseenter', unmuteOnInteraction);
             container.addEventListener('touchstart', unmuteOnInteraction);
-        }
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                const activeVideo = document.querySelector('.showroom-video-item.active video');
-                if (activeVideo && entry.isIntersecting) {
-                    // Only apply unmuted preference if the user has explicitly interacted
-                    if (userHasInteracted) {
-                        const iconText = document.getElementById('audio-text');
-                        const shouldBeMuted = iconText ? iconText.textContent.includes('MUTED') : false;
-                        activeVideo.muted = shouldBeMuted;
-                    } else {
-                        // Otherwise keep strictly muted to bypass browser block rules on scroll
-                        activeVideo.muted = true;
-                    }
-                    
-                    activeVideo.play().catch(err => {
-                        activeVideo.muted = true;
-                        activeVideo.play().catch(e => console.log(e));
-                    });
-                }
-            });
-        }, { threshold: 0.15 });
-        
-        const section = document.getElementById('vision-showroom');
-        if (section) {
-            observer.observe(section);
         }
     });
     </script>
