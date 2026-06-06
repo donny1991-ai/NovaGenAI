@@ -1307,19 +1307,15 @@
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 const activeVideo = document.querySelector('.showroom-video-item.active video');
-                if (activeVideo) {
-                    if (entry.isIntersecting) {
-                        const iconText = document.getElementById('audio-text');
-                        const shouldBeMuted = iconText ? iconText.textContent.includes('MUTED') : false;
-                        
-                        activeVideo.muted = shouldBeMuted;
-                        activeVideo.play().catch(err => {
-                            activeVideo.muted = true;
-                            activeVideo.play().catch(e => console.log(e));
-                        });
-                    } else {
-                        activeVideo.pause();
-                    }
+                if (activeVideo && entry.isIntersecting) {
+                    const iconText = document.getElementById('audio-text');
+                    const shouldBeMuted = iconText ? iconText.textContent.includes('MUTED') : false;
+                    
+                    activeVideo.muted = shouldBeMuted;
+                    activeVideo.play().catch(err => {
+                        activeVideo.muted = true;
+                        activeVideo.play().catch(e => console.log(e));
+                    });
                 }
             });
         }, { threshold: 0.15 });
