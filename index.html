@@ -1207,15 +1207,14 @@
                 videoItem.classList.add('active');
                 video.currentTime = 0;
                 
-                // Keep audio preferences matched across switching tabs
+                // Keep audio preferences matched across switching tabs (default to sound ON)
                 const iconText = document.getElementById('audio-text');
-                const isCurrentlyMuted = iconText ? iconText.textContent.includes('MUTED') : true;
+                const isCurrentlyMuted = iconText ? iconText.textContent.includes('MUTED') : false;
                 
                 video.muted = isCurrentlyMuted;
                 video.play().catch(err => {
                     video.muted = true;
                     video.play().catch(e => console.log(e));
-                    updateAudioUI(true);
                 });
             } else {
                 videoItem.classList.remove('active');
@@ -1272,7 +1271,7 @@
     }
 
     document.addEventListener('DOMContentLoaded', () => {
-        // Doc click gestural listener to unmute on click
+        // Doc click gestural listener to unmute on click (defaulting sound to ON)
         const unmuteOnFirstClick = () => {
             if (userHasInteracted) return;
             const activeVideo = document.querySelector('.showroom-video-item.active video');
@@ -1292,13 +1291,12 @@
                 if (activeVideo) {
                     if (entry.isIntersecting) {
                         const iconText = document.getElementById('audio-text');
-                        const shouldBeMuted = iconText ? iconText.textContent.includes('MUTED') : true;
+                        const shouldBeMuted = iconText ? iconText.textContent.includes('MUTED') : false;
                         
                         activeVideo.muted = shouldBeMuted;
                         activeVideo.play().catch(err => {
                             activeVideo.muted = true;
                             activeVideo.play().catch(e => console.log(e));
-                            updateAudioUI(true);
                         });
                     } else {
                         activeVideo.pause();
