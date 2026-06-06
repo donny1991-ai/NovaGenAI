@@ -886,6 +886,345 @@
         </div>
     </section>
 
+    <!-- ════════════════════════════════════════════════════════ VISION SHOWROOM -->
+    <style>
+    /* ── SHOWROOM STYLES ───────────────────────────────── */
+    #vision-showroom {
+        width: 100%;
+        margin: 4rem auto;
+    }
+    .showroom-container {
+        background: rgba(5, 5, 5, 0.6);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        border-radius: 16px;
+        padding: 2rem;
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+        position: relative;
+        overflow: hidden;
+    }
+    .showroom-container::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0; height: 1px;
+        background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.3), transparent);
+    }
+    .showroom-tabs {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
+    .showroom-tab {
+        background: rgba(255, 255, 255, 0.02);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        border-radius: 8px;
+        padding: 1rem;
+        cursor: pointer;
+        text-align: left;
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+    .showroom-tab:hover {
+        background: rgba(0, 212, 255, 0.03);
+        border-color: rgba(0, 212, 255, 0.2);
+        transform: translateY(-2px);
+    }
+    .showroom-tab.active {
+        background: rgba(0, 212, 255, 0.06);
+        border-color: #00D4FF;
+        box-shadow: 0 0 20px rgba(0, 212, 255, 0.15);
+    }
+    .showroom-tab__num {
+        font-family: 'Outfit', sans-serif;
+        font-size: 0.75rem;
+        font-weight: 800;
+        color: #00D4FF;
+        letter-spacing: 0.1em;
+    }
+    .showroom-tab__label {
+        font-family: 'Outfit', sans-serif;
+        font-size: 1rem;
+        font-weight: 700;
+        color: #fff;
+        text-transform: uppercase;
+    }
+    .showroom-tab:not(.active) .showroom-tab__num {
+        color: rgba(0, 212, 255, 0.5);
+    }
+    .showroom-tab:not(.active) .showroom-tab__label {
+        color: rgba(255, 255, 255, 0.6);
+    }
+    .showroom-viewport {
+        background: #000;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 12px;
+        overflow: hidden;
+        margin-bottom: 1.5rem;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+    }
+    .showroom-viewport:hover {
+        border-color: rgba(0, 212, 255, 0.15);
+    }
+    .showroom-frame-header {
+        background: rgba(15, 15, 15, 0.9);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        padding: 0.75rem 1.25rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .showroom-dots {
+        display: flex;
+        gap: 6px;
+    }
+    .showroom-dots .dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+    }
+    .showroom-dots .dot--red { background: #ff5f56; }
+    .showroom-dots .dot--yellow { background: #ffbd2e; }
+    .showroom-dots .dot--green { background: #27c93f; }
+    .showroom-title {
+        font-family: 'Outfit', sans-serif;
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: rgba(255, 255, 255, 0.5);
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+    }
+    .showroom-status {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+    .showroom-status .status-indicator {
+        width: 6px;
+        height: 6px;
+        background: #00D4FF;
+        border-radius: 50%;
+        box-shadow: 0 0 10px #00D4FF;
+        animation: pulseStatus 1.5s infinite;
+    }
+    .showroom-status .status-text {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.65rem;
+        font-weight: 700;
+        color: #00D4FF;
+        letter-spacing: 0.05em;
+    }
+    @keyframes pulseStatus {
+        0% { opacity: 0.4; }
+        50% { opacity: 1; }
+        100% { opacity: 0.4; }
+    }
+    .showroom-video-wrapper {
+        position: relative;
+        padding-top: 56.25%;
+        background: #050505;
+    }
+    .showroom-video-item {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.5s ease, visibility 0.5s ease;
+    }
+    .showroom-video-item.active {
+        opacity: 1;
+        visibility: visible;
+        z-index: 2;
+    }
+    .showroom-video-item video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        background: #000;
+    }
+    .showroom-desc-panel {
+        background: rgba(255, 255, 255, 0.01);
+        border-left: 2px solid #00D4FF;
+        padding: 1rem 1.5rem;
+        border-radius: 0 8px 8px 0;
+    }
+    .showroom-desc-text {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.95rem;
+        line-height: 1.7;
+        color: rgba(255, 255, 255, 0.7);
+        margin: 0;
+    }
+    .showroom-desc-text strong {
+        color: #fff;
+    }
+    @media (max-width: 768px) {
+        .showroom-tabs {
+            grid-template-columns: 1fr;
+            gap: 0.75rem;
+        }
+        .showroom-container {
+            padding: 1rem;
+        }
+        .showroom-title {
+            display: none;
+        }
+        .showroom-desc-panel {
+            padding: 0.75rem 1rem;
+        }
+        .showroom-desc-text {
+            font-size: 0.85rem;
+        }
+    }
+    </style>
+
+    <section class="ag-section fade-up" id="vision-showroom" style="padding-bottom: 3rem;">
+        <p class="ag-label">// THE NOVAGENAI VISION</p>
+        <h2 class="ag-heading">ENGINEERED TO <span class="accent">PERFORM</span></h2>
+        <p class="ag-subtext">Enterprise-grade security, autonomous intelligence swarms, and DNA-level biotech AI. Experience the systems that power the future.</p>
+
+        <div class="showroom-container">
+            <!-- Tabs Navigation -->
+            <div class="showroom-tabs">
+                <button class="showroom-tab active" onclick="switchShowroomTab(0)">
+                    <span class="showroom-tab__num">01</span>
+                    <span class="showroom-tab__label">Sovereign Security</span>
+                </button>
+                <button class="showroom-tab" onclick="switchShowroomTab(1)">
+                    <span class="showroom-tab__num">02</span>
+                    <span class="showroom-tab__label">Autonomous AI</span>
+                </button>
+                <button class="showroom-tab" onclick="switchShowroomTab(2)">
+                    <span class="showroom-tab__num">03</span>
+                    <span class="showroom-tab__label">Biotech Intelligence</span>
+                </button>
+            </div>
+
+            <!-- Video Player Window -->
+            <div class="showroom-viewport">
+                <!-- macOS-style Frame Header -->
+                <div class="showroom-frame-header">
+                    <div class="showroom-dots">
+                        <span class="dot dot--red"></span>
+                        <span class="dot dot--yellow"></span>
+                        <span class="dot dot--green"></span>
+                    </div>
+                    <div class="showroom-title" id="showroom-video-title">Sovereign Security System // Live Demo</div>
+                    <div class="showroom-status">
+                        <span class="status-indicator"></span>
+                        <span class="status-text">SYSTEM ONLINE</span>
+                    </div>
+                </div>
+
+                <!-- Video wrapper -->
+                <div class="showroom-video-wrapper">
+                    <!-- Video 1: Security (Active) -->
+                    <div class="showroom-video-item active" id="video-item-0">
+                        <video preload="metadata" poster="blog/media/poster-security.jpg" playsinline controls muted loop>
+                            <source src="blog/media/enterprise-security-vault.mp4" type="video/mp4">
+                        </video>
+                    </div>
+
+                    <!-- Video 2: Intelligence -->
+                    <div class="showroom-video-item" id="video-item-1">
+                        <video preload="metadata" poster="blog/media/poster-intelligence.jpg" playsinline controls muted loop>
+                            <source src="blog/media/ai-intelligence-eye.mp4" type="video/mp4">
+                        </video>
+                    </div>
+
+                    <!-- Video 3: Biotech -->
+                    <div class="showroom-video-item" id="video-item-2">
+                        <video preload="metadata" poster="blog/media/poster-biotech.jpg" playsinline controls muted loop>
+                            <source src="blog/media/computational-biotech-dna.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Descriptive content panels -->
+            <div class="showroom-desc-panel" id="showroom-desc-0">
+                <p class="showroom-desc-text"><strong>Sovereign Security Layer:</strong> Vault-level data protection designed for regulated environments. Deploy models on on-premise airgapped hardware like NVIDIA DGX Spark, ensuring zero leakage of proprietary enterprise assets.</p>
+            </div>
+            <div class="showroom-desc-panel" style="display: none;" id="showroom-desc-1">
+                <p class="showroom-desc-text"><strong>Autonomous Agent Swarms:</strong> Complex multi-agent networks that coordinate specialized LLM models. Perceive contexts, reason through operation pipelines, and take high-fidelity actions without human intervention.</p>
+            </div>
+            <div class="showroom-desc-panel" style="display: none;" id="showroom-desc-2">
+                <p class="showroom-desc-text"><strong>Computational Biotech:</strong> Bringing DNA-level modeling and predictive deep learning to the biological sphere. Accelerating stem-cell analysis, genomic matching, and computational in-silico experiments.</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+    function switchShowroomTab(index) {
+        const tabs = document.querySelectorAll('.showroom-tab');
+        const videos = document.querySelectorAll('.showroom-video-item');
+        const descs = document.querySelectorAll('.showroom-desc-panel');
+        const titleEl = document.getElementById('showroom-video-title');
+        
+        const titles = [
+            'Sovereign Security System // Live Demo',
+            'Autonomous Agent Swarm // Live Demo',
+            'Computational Biotech Intelligence // Live Demo'
+        ];
+        
+        tabs.forEach((tab, i) => {
+            if (i === index) {
+                tab.classList.add('active');
+            } else {
+                tab.classList.remove('active');
+            }
+        });
+        
+        videos.forEach((videoItem, i) => {
+            const video = videoItem.querySelector('video');
+            if (i === index) {
+                videoItem.classList.add('active');
+                video.currentTime = 0;
+                video.play().catch(err => console.log('Autoplay blocked:', err));
+            } else {
+                videoItem.classList.remove('active');
+                video.pause();
+            }
+        });
+        
+        descs.forEach((desc, i) => {
+            if (i === index) {
+                desc.style.display = 'block';
+            } else {
+                desc.style.display = 'none';
+            }
+        });
+        
+        if (titleEl) {
+            titleEl.textContent = titles[index];
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const activeVideo = document.querySelector('.showroom-video-item.active video');
+                    if (activeVideo) {
+                        activeVideo.play().catch(err => console.log('Autoplay blocked:', err));
+                    }
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
+        
+        const section = document.getElementById('vision-showroom');
+        if (section) {
+            observer.observe(section);
+        }
+    });
+    </script>
+
     <!-- ════════════════════════════════════════════════════════ SOLUTIONS -->
     <section class="ag-section" id="solutions">
         <p class="ag-label">// HOW WE SOLVE IT</p>
