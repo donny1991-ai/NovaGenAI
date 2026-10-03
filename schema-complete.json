@@ -113,15 +113,7 @@
     "url": "https://novagenai.com.my",
     "description": "NovaGenAI builds enterprise AI systems — autonomous agents, voice AI, computational biotech intelligence, and custom software. Based in Cyberjaya, Malaysia.",
     "publisher": { "@id": "https://novagenai.com.my/#organization" },
-    "inLanguage": ["en", "ms", "zh"],
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": {
-        "@type": "EntryPoint",
-        "urlTemplate": "https://novagenai.com.my/search?q={search_term_string}"
-      },
-      "query-input": "required name=search_term_string"
-    }
+    "inLanguage": ["en", "ms", "zh"]
   },
   {
     "@context": "https://schema.org",
