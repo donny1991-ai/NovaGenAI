@@ -51,7 +51,44 @@ function cleanHeader(value, fallback = '') {
   return clean(value, fallback).replace(/[\r\n]+/g, ' ').slice(0, 200);
 }
 
+async function readPayload(request) {
+  // Check streamed bytes even when Content-Length is missing or inaccurate.
+  if (!request.body) throw new SyntaxError('Empty request body');
+  const reader = request.body.getReader();
+  const chunks = [];
+  let size = 0;
+  try {
+    while (true) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      size += value.byteLength;
+      if (size > MAX_REQUEST_BYTES) {
+        await reader.cancel().catch(() => {});
+        const error = new Error('Request body is too large');
+        error.code = 'PAYLOAD_TOO_LARGE';
+        throw error;
+      }
+      chunks.push(Buffer.from(value));
+    }
+  } finally {
+    reader.releaseLock();
+  }
+  return JSON.parse(Buffer.concat(chunks, size).toString('utf8'));
+}
+
 function validatePayload(payload) {
+  if (!payload || typeof payload !== 'object' || Array.isArray(payload)) {
+    return 'Request body must be a JSON object';
+  }
+  const fields = ['name', 'email', 'phone', 'message', 'company', 'address', 'industry', 'source', 'timestamp'];
+  for (const field of fields) {
+    if (payload[field] !== undefined && typeof payload[field] !== 'string') {
+      return `${field} must be a string`;
+    }
+    if (typeof payload[field] === 'string' && payload[field].trim().length > 2000) {
+      return `${field} must be 2000 characters or fewer`;
+    }
+  }
   const required = ['name', 'email', 'phone', 'message'];
   const missing = required.filter((field) => !clean(payload[field]));
 
@@ -180,8 +217,11 @@ app.http('contact', {
 
     let payload;
     try {
-      payload = await request.json();
+      payload = await readPayload(request);
     } catch (error) {
+      if (error.code === 'PAYLOAD_TOO_LARGE') {
+        return jsonResponse(request, 413, { ok: false, error: 'Request body is too large' });
+      }
       return jsonResponse(request, 400, { ok: false, error: 'Request body must be valid JSON' });
     }
 

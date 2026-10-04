@@ -268,12 +268,17 @@
 </head>
 <body>
     <header class="nav" id="nav">
-        <a href="index.html" class="nav__brand"><img loading="lazy" src="images/novagenai-logo-new.webp" alt="NovaGenAI" class="nav__logo-img" width="1213" height="339"></a>
+        <a href="/" class="nav__brand"><img loading="lazy" src="images/novagenai-logo-new.webp" alt="NovaGenAI" class="nav__logo-img" width="1213" height="339"></a>
         <nav class="nav__links" id="nav-links">
             <div class="nav__dropdown">
                 <a href="solutions.html" class="nav__dropdown-trigger">SOLUTIONS</a>
                 <div class="nav__dropdown-menu">
                     <a href="solutions.html">All Solutions</a>
+                    <a href="/ai-voice-agents-malaysia.html">AI Voice Agents</a>
+                    <a href="/private-ai-malaysia.html">Private AI</a>
+                    <a href="/ai-document-intelligence-malaysia.html">Document Intelligence</a>
+                    <a href="/microsoft-365-copilot-malaysia.html">Microsoft 365 Copilot</a>
+                    <a href="/ai-implementation-cost-malaysia.html">AI Costs &amp; ROI</a>
                     <a href="enterprise-ai-company-malaysia.html">Enterprise AI Malaysia</a>
                     <a href="healthcare-ai-malaysia.html">Healthcare AI Malaysia</a>
                     <a href="ai-automation-malaysia.html">AI Automation Malaysia</a>
@@ -372,8 +377,36 @@
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Build on OpenAI API vs self-host open-source models — what's the real engineering calculus?","acceptedAnswer":{"@type":"Answer","text":"For 90% of enterprise use cases, OpenAI delivers faster time-to-production and lower total engineering cost. Your team would spend 6-12 months building equivalent infrastructure on open-source models — model serving, state management, function calling, streaming — before shipping a single feature. OpenAI's mature API ecosystem (Assistants API, fine-tuning infrastructure, multimodal GPT-4o) lets you ship in weeks. We recommend OpenAI for speed and reliability. For data sovereignty or extreme cost sensitivity, we deploy on Azure OpenAI and open-source alternatives. We're not dogmatic — the right model for the right workload."}},{"@type":"Question","name":"Does OpenAI train on our API data? What are the real data privacy guarantees?","acceptedAnswer":{"@type":"Answer","text":"No. OpenAI explicitly does not train on data submitted through the API — this is contractual and documented in their API data usage policies. For enterprises with stricter requirements, we deploy through Azure OpenAI Service: private networking, data residency in your chosen region, and enterprise compliance certifications (SOC 2, HIPAA, ISO 27001). We also implement data masking at our API gateway layer — sensitive PII, financial identifiers, and protected health data fields are stripped before they leave your environment. Your data stays yours. Period."}},{"@type":"Question","name":"How do you prevent runaway OpenAI API costs at enterprise scale?","acceptedAnswer":{"@type":"Answer","text":"Cost control is architectural, not operational. We engineer it into the system from day one: (1) token budgeting per user, session, and department with hard caps that can't be bypassed, (2) intelligent model routing — GPT-4o-mini for 80% of requests, GPT-4o only for complex reasoning, (3) semantic caching that eliminates redundant API calls, (4) prompt compression that reduces token counts without sacrificing quality, (5) real-time cost dashboards with anomaly detection and alerts. Average client saves 40-60% on API costs within the first month. Your finance team gets predictable line items, not surprises."}},{"@type":"Question","name":"What's the actual ROI on fine-tuning vs prompt engineering alone?","acceptedAnswer":{"@type":"Answer","text":"Fine-tuning delivers measurable ROI when: (1) your domain has specialised terminology the base model consistently misinterprets, (2) you need identical output formats across thousands of daily requests, (3) latency is critical and you need shorter prompts with fewer tokens, (4) you want GPT-4o-mini to handle tasks that currently require GPT-4o — a fine-tuned mini model often matches base GPT-4o accuracy at 5% of the inference cost. We've measured fine-tuned GPT-4o-mini reducing token usage by 70% versus long prompt chains on GPT-4o with equivalent accuracy. We recommend it when the data supports it — not because it sounds impressive in a slide deck."}},{"@type":"Question","name":"What happens when the OpenAI API has an outage? What's your reliability architecture?","acceptedAnswer":{"@type":"Answer","text":"We architect for resilience as a core requirement, not an afterthought. Every production deployment includes: (1) exponential backoff with jitter on all API calls — no thundering herd, (2) circuit breakers that halt requests when failure rates exceed thresholds, (3) graceful degradation — the system remains functional even when the API is degraded, (4) automatic multi-model failover: if GPT-4o is unavailable, requests route to GPT-4o-mini or Azure OpenAI without manual intervention, (5) request queuing with dead-letter handling — zero lost requests. Our enterprise deployments maintain 99.7%+ effective uptime. The OpenAI status page is not your SLA. Our architecture is."}},{"@type":"Question","name":"What's our vendor lock-in exposure? Can we switch providers later without a rewrite?","acceptedAnswer":{"@type":"Answer","text":"We design for portability from day one. Our API abstraction layer separates business logic from the model provider — your application code talks to our gateway, and the gateway routes to OpenAI, Azure OpenAI, or any other provider. Switching is a routing configuration change, not an application rewrite. For Custom GPTs and Assistants, we document every prompt template, every function definition, every knowledge file — transparent, version-controlled, exportable. You own all IP. No proprietary formats. No hidden dependencies. Success metric: your team can operate the system independently within 90 days of handover. We don't build dependency — we build capability."}}]}</script>
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://novagenai.com.my/"},{"@type":"ListItem","position":2,"name":"OpenAI API Builds","item":"https://novagenai.com.my/openai-api-builds.html"}]}</script>
     <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"Organization","name":"NovaGenAI Sdn. Bhd.","url":"https://novagenai.com.my","logo":"https://novagenai.com.my/images/novagenai-logo-new.webp","foundingDate":"2025-11","founder":{"@type":"Person","name":"Don Calaki"},"address":{"@type":"PostalAddress","streetAddress":"Suite 1-1, 1st Floor, Bio-X Centre","addressLocality":"Cyberjaya","addressRegion":"Selangor","addressCountry":"MY"},"contactPoint":{"@type":"ContactPoint","telephone":"+60-11-1401-0362","contactType":"sales"},"sameAs":["https://www.linkedin.com/company/novagenai","https://x.com/Nova_GenAI","https://www.youtube.com/@Nova_GenAI"]}
-    </script>
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "NovaGenAI Sdn. Bhd.",
+  "url": "https://novagenai.com.my",
+  "logo": "https://novagenai.com.my/images/novagenai-logo-new.webp",
+  "foundingDate": "2025",
+  "founder": {
+    "@type": "Person",
+    "name": "Don Calaki"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Suite 1-1, 1st Floor, Bio-X Centre",
+    "addressLocality": "Cyberjaya",
+    "addressRegion": "Selangor",
+    "addressCountry": "MY"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+60-11-1401-0362",
+    "contactType": "sales"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/company/novagenai",
+    "https://x.com/Nova_GenAI",
+    "https://www.youtube.com/@Nova_GenAI"
+  ]
+}
+</script>
     <script type="application/ld+json">
     {"@context":"https://schema.org","@type":"Service","serviceType":"OpenAI API Integration","provider":{"@type":"Organization","name":"NovaGenAI Sdn. Bhd."},"areaServed":{"@type":"Country","name":"Malaysia"},"description":"Enterprise OpenAI API infrastructure for Malaysian engineering leaders. Custom GPTs, Assistants API integration, fine-tuned models, and production API architecture engineered for thousands of requests per minute. 8-week deployment timelines, 40-60% cost reduction.","name":"OpenAI API Builds Malaysia"}
     </script>

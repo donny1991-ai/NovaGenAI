@@ -708,7 +708,8 @@ body::after {
    ═══════════════════════════════════════════════════════ */
 .hero__status, .hero__headline, .hero__subcopy, .hero__3d-container,
 .nav, .trust, .solutions, .testimonials, .contact, .footer {
-    opacity: 0; transform: translateY(30px);
+    /* Keep semantic content readable even when animations do not run. */
+    opacity: 1; transform: translateY(30px);
     animation: fadeSlideUp .9s var(--ease-out-expo) forwards;
 }
 .nav { animation-delay: .1s; }
@@ -720,7 +721,7 @@ body::after {
 
 /* Scroll-triggered sections use JS */
 .solutions, .testimonials, .contact, .footer {
-    animation: none; opacity: 0; transform: translateY(30px);
+    animation: none; opacity: 1; transform: translateY(30px);
 }
 .solutions.visible, .testimonials.visible, .contact.visible, .footer.visible {
     animation: fadeSlideUp .9s var(--ease-out-expo) forwards;
@@ -830,7 +831,7 @@ body::after {
 .btn-primary:hover { background: var(--clr-gold-warm); transform: translateY(-2px); box-shadow: 0 8px 30px var(--clr-gold-glow); }
 
 .fade-up {
-    opacity: 0; transform: translateY(30px);
+    opacity: 1; transform: translateY(30px);
 }
 .fade-up.visible {
     animation: fadeSlideUp .9s var(--ease-out-expo) forwards;
@@ -1517,7 +1518,7 @@ select.contact__input {
    PAGE HERO ENHANCEMENTS
    ═══════════════════════════════════════════════════════ */
 .page-hero {
-    opacity: 0; animation: fadeSlideUp .9s .15s var(--ease-out-expo) forwards;
+    opacity: 1; animation: fadeSlideUp .9s .15s var(--ease-out-expo) forwards;
 }
 .page-hero__title .accent {
     text-shadow: 0 0 40px rgba(0,212,255,.3), 0 0 80px rgba(0,212,255,.1);
@@ -1793,7 +1794,7 @@ elevenlabs-convai::part(button) {
 
 /* ─── Hero Entrance Animations ──────────────────────── */
 .nova-hero-enter {
-  opacity: 0;
+  opacity: 1;
   transform: translateY(40px);
   transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1),
               transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
@@ -1807,7 +1808,8 @@ elevenlabs-convai::part(button) {
 
 /* ─── Scroll-triggered Section Animations ───────────── */
 .nova-animate {
-  opacity: 0;
+  /* Scrolling enhances motion; it must never gate readable content. */
+  opacity: 1;
   transform: translateY(50px);
   transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
               transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
@@ -1895,3 +1897,34 @@ elevenlabs-convai::part(button) {
     height: 22px;
   }
 }
+
+
+/* NOVAGEN NAVIGATION QC v1: progressive enhancement, keyboard and small screens */
+.nav__menu-toggle { display:none; border:1px solid var(--clr-border-subtle); border-radius:8px; background:#111; color:#fff; padding:.65rem .85rem; font:inherit; cursor:pointer; }
+.nav__dropdown:focus-within .nav__dropdown-menu { opacity:1; visibility:visible; transform:translateX(-50%) translateY(0); }
+.nav a:focus-visible, .nav button:focus-visible { outline:2px solid var(--clr-accent); outline-offset:4px; }
+.hero { flex-direction:column; padding:8rem 1rem 3rem; gap:1.5rem; }
+.hero__status { position:relative; top:auto; left:auto; transform:none; max-width:100%; }
+.hero__headline { padding-top:0; }
+.hero__subcopy { position:relative; right:auto; bottom:auto; align-self:flex-end; margin-right:clamp(0px,2vw,32px); max-width:min(100%,380px); }
+@media(max-width:1200px) {
+  .nav { position:relative; flex-wrap:wrap; }
+  .nav .nav__social { display:none; }
+  .nav .nav__links { display:flex; flex-direction:column; align-items:stretch; gap:.65rem; width:100%; padding:1rem 0; }
+  .nav .nav__dropdown-menu { display:block; position:static; transform:none; min-width:0; opacity:1; visibility:visible; margin:.5rem 0; box-shadow:none; }
+  .nav .nav__dropdown-trigger::after { display:none; }
+  .nav--enhanced { position:fixed; }
+  .nav--enhanced .nav__menu-toggle { display:inline-flex; margin-left:auto; }
+  .nav--enhanced .nav__links { display:none; max-height:calc(100dvh - 100px); overflow-y:auto; }
+  .nav--enhanced.nav--open .nav__links { display:flex; }
+  .hero { padding-top:7rem; }
+  .hero__subcopy { align-self:center; margin-right:0; text-align:center; }
+  .hero__line { font-size:clamp(2.25rem,11vw,8rem); }
+}
+@media(prefers-reduced-motion:reduce) {
+  .hero__3d-container { display:none; }
+  .hero__status, .hero__headline, .hero__subcopy { animation:none !important; opacity:1 !important; transform:none !important; }
+}
+
+/* Keep the expanded services menu reachable at shorter desktop heights. */
+.nav__dropdown-menu { max-height: calc(100dvh - 6rem); overflow-y: auto; }

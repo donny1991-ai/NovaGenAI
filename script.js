@@ -1,3 +1,36 @@
+
+// NOVAGEN NAVIGATION QC v1
+(function () {
+  const header = document.getElementById('nav');
+  const links = document.getElementById('nav-links');
+  if (!header || !links || header.querySelector('.nav__menu-toggle')) return;
+  links.setAttribute('aria-label', 'Main navigation');
+  const toggle = document.createElement('button');
+  toggle.type = 'button';
+  toggle.className = 'nav__menu-toggle';
+  toggle.textContent = 'Menu';
+  toggle.setAttribute('aria-controls', links.id);
+  toggle.setAttribute('aria-expanded', 'false');
+  header.insertBefore(toggle, links);
+  const setOpen = (open) => {
+    header.classList.toggle('nav--open', open);
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.textContent = open ? 'Close menu' : 'Menu';
+  };
+  toggle.addEventListener('click', () => setOpen(toggle.getAttribute('aria-expanded') !== 'true'));
+  header.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
+      setOpen(false); toggle.focus();
+    }
+  });
+  links.addEventListener('click', (event) => {
+    if (event.target.closest('a')) setOpen(false);
+  });
+  const small = window.matchMedia('(max-width: 1200px)');
+  small.addEventListener('change', () => setOpen(false));
+  header.classList.add('nav--enhanced');
+})();
+
 /* ═══════════════════════════════════════════════════════
    NOVAGENAI — script.js
    ═══════════════════════════════════════════════════════ */
@@ -12,7 +45,7 @@ let ticking = false;
 window.addEventListener('scroll', () => {
     if (!ticking) {
         window.requestAnimationFrame(() => {
-            nav.style.background = window.scrollY > 40 ? 'rgba(0,0,0,.85)' : 'rgba(0,0,0,.6)';
+            if (nav) nav.style.background = window.scrollY > 40 ? 'rgba(0,0,0,.85)' : 'rgba(0,0,0,.6)';
             ticking = false;
         });
         ticking = true;
@@ -22,7 +55,8 @@ window.addEventListener('scroll', () => {
 // ── Smooth anchor scroll ─────────────────────────────
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', (e) => {
-        const target = document.querySelector(anchor.getAttribute('href'));
+        const hash = anchor.getAttribute('href');
+        const target = hash && hash !== '#' ? document.getElementById(decodeURIComponent(hash.slice(1))) : null;
         if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
     });
 });

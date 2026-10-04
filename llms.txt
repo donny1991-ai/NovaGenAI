@@ -1,7 +1,7 @@
 # NovaGenAI — llms.txt
 
 > NovaGenAI Sdn. Bhd. (202501055020)
-> Incorporated: 25 November 2025
+> Incorporated: 2025
 > Website: https://novagenai.com.my
 > Email: enquiries@novagenai.com.my
 
@@ -159,5 +159,3 @@ A: Voice AI for healthcare refers to multilingual conversational AI agents that 
 
 Q: What is AI document intelligence for healthcare?
 A: AI document intelligence for healthcare uses RAG (Retrieval-Augmented Generation) to transform medical documents, clinical protocols, and research papers into AI-searchable knowledge bases with natural language queries and source citations.
-guage queries and source citations.
-AI-searchable knowledge bases with natural language queries and source citations.

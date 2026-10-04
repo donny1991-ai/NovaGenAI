@@ -7,9 +7,11 @@
   'use strict';
 
   const isMobile = window.innerWidth < 768;
+  // NOVAGEN MOTION QC v1
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   // ─── CUSTOM CURSOR ───────────────────────────────────
-  if (!isMobile) {
+  if (!isMobile && !reduceMotion) {
     const cursor = document.createElement('div');
     cursor.className = 'nova-cursor';
     const cursorDot = document.createElement('div');
@@ -88,7 +90,7 @@
 
   // ─── THREE.JS PARTICLE CONSTELLATION ─────────────────
   function initParticles() {
-    if (isMobile) return;
+    if (isMobile || reduceMotion) return;
     if (typeof THREE === 'undefined') return;
 
     var container = document.getElementById('nova-3d-canvas');
@@ -98,7 +100,9 @@
     var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
     camera.position.z = 50;
 
-    var renderer = new THREE.WebGLRenderer({ alpha: true, antialias: false });
+    var renderer;
+    try { renderer = new THREE.WebGLRenderer({ alpha: true, antialias: false }); }
+    catch (error) { container.hidden = true; return; }
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     renderer.setClearColor(0x000000, 0);
@@ -224,6 +228,7 @@
 
     function animate() {
       requestAnimationFrame(animate);
+      if (document.hidden) return;
 
       var delta = clock.getDelta();
       var elapsed = clock.getElapsedTime();
@@ -291,11 +296,7 @@
 
     animate();
 
-    // Cleanup on reduced motion
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      renderer.dispose();
-      container.innerHTML = '';
-    }
+
   }
 
   // ─── INIT ────────────────────────────────────────────
