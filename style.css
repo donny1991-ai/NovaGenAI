@@ -1930,3 +1930,6 @@ elevenlabs-convai::part(button) {
 
 /* Keep the expanded services menu reachable at shorter desktop heights. */
 .nav__dropdown-menu { max-height: calc(100dvh - 6rem); overflow-y: auto; }
+@media (max-width: 768px) {
+  .contact-page__inner { grid-template-columns: minmax(0, 1fr); }
+}
