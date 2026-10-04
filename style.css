@@ -1912,6 +1912,8 @@ elevenlabs-convai::part(button) {
   .nav .nav__social { display:none; }
   .nav .nav__links { display:flex; flex-direction:column; align-items:stretch; gap:.65rem; width:100%; padding:1rem 0; }
   .nav .nav__dropdown-menu { display:block; position:static; transform:none; min-width:0; opacity:1; visibility:visible; margin:.5rem 0; box-shadow:none; }
+  .nav .nav__dropdown:hover .nav__dropdown-menu,
+  .nav .nav__dropdown:focus-within .nav__dropdown-menu { transform:none; }
   .nav .nav__dropdown-trigger::after { display:none; }
   .nav--enhanced { position:fixed; }
   .nav--enhanced .nav__menu-toggle { display:inline-flex; margin-left:auto; }
